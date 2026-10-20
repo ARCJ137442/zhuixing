@@ -1,0 +1,11 @@
+# Hash-pinned fixtures and embedded Markdown must have identical checkout bytes.
+* text=auto eol=lf
+*.woff -text
+*.woff2 -text
+*.ttf -text
+*.otf -text
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.zip -text
+*.bundle -text

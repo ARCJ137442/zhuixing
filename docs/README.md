@@ -17,3 +17,5 @@ app/editor-mode-spec 是早期设计矩阵，不自动表示完成验收。具�
 
 - [当前已知阻断](KNOWN-ISSUES.md)：0.3.1未发布候选，10项门禁3失败。
 - [0.3.1品牌来源](SOURCE-0.3.1.md)。
+
+- [跨平台换行与指纹](CHECKOUT-INTEGRITY.md)：LF checkout 约束、失败层次与 Windows/Linux 验证。
