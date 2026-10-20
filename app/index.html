@@ -1602,6 +1602,19 @@ const GlyphRenderer=(()=>{
 const CompositionMotion = (() => {
   const SETTINGS = Object.freeze({duration: 620, easing: 'cubic-bezier(.22,.8,.25,1)', maxLeaves: 18});
   const leaves = Core.layoutLeaves;
+  // Visual phases only: the source transaction and stable result already exist.
+  // Finish movement within the existing duration, then confirm the same slot.
+  function phases(durationMs, {compact=false, fading=false}={}) {
+    const short=compact||durationMs<=0;
+    return {duration:short?110:durationMs,arrival:.8,
+      confirmation:short?[{opacity:0},{opacity:.7,offset:.3},{opacity:0}]:[
+        {opacity:0,offset:0},{opacity:0,offset:.65},{opacity:.7,offset:.8},{opacity:.7,offset:.9},{opacity:0,offset:1}],
+      journey:(transform)=>[
+        {transform,opacity:fading ? .55 : .8,offset:0,easing:SETTINGS.easing},
+        {transform:'translate(0,0) scale(1,1)',opacity:fading?0:1,offset:.8},
+        {transform:'translate(0,0) scale(1,1)',opacity:fading?0:1,offset:1}]
+    };
+  }
   class Session {
     constructor() { this.current = null; }
     cancel() {
@@ -1643,9 +1656,9 @@ const CompositionMotion = (() => {
       if(fresh.length>SETTINGS.maxLeaves){lastReason='批量超过动效预算：直接呈现';return [];}
       if(!fresh.length)lastReason='没有新收起的完整结构；选中或展开编辑时保持原文';
       for (const part of fresh) {
-        const items = part.presentation?.leaves || leaves(part.node);
+        const items = part.unicode ? leaves(part.node) : (part.presentation?.leaves || leaves(part.node));
         if (items.length > SETTINGS.maxLeaves){lastReason='部件数量超过动效预算：直接呈现';continue;}
-        if(compact){plans.push({part,items:[],compact:true});lastReason='快速输入：短轮廓确认';continue;}
+        if(compact||(part.unicode&&items.length>4)){plans.push({part,items:[],compact:true});lastReason=compact?'快速输入：短轮廓确认':'已有字部件拥挤：短轮廓确认';continue;}
         let origins;
         try{origins = items.map(item => {
           const range = document.createRange();
@@ -1664,7 +1677,6 @@ const CompositionMotion = (() => {
     function play(plans) {
       if (!plans.length || !canAnimate()) return;
       const durationMs = duration(preferences.speed);
-      const compactDuration=110;
       const overlay = document.createElement('div');
       overlay.className = 'composition-overlay'; overlay.setAttribute('aria-hidden', 'true');
       const hidden = [], animations = [], completions = [];
@@ -1690,7 +1702,8 @@ const CompositionMotion = (() => {
             const confirmation=document.createElement('div');confirmation.className='composition-guide'+(part.fontFallback?' font-fallback-confirmation':'');
             Object.assign(confirmation.style,{left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px'});
             overlay.append(confirmation);
-            track(confirmation.animate([{opacity:0},{opacity:.7,offset:.3},{opacity:0}],{duration:compact||durationMs<=0?compactDuration:durationMs}));
+            const phase=phases(durationMs,{compact});
+            track(confirmation.animate(phase.confirmation,{duration:phase.duration}));
             if(compact||durationMs<=0){lastReason='快速或位置降级：已播放110ms非空间确认';continue;}
           }
           const cropped = target.getAttribute?.('viewBox') === '7 7 86 86';
@@ -1719,15 +1732,14 @@ const CompositionMotion = (() => {
               const guide = document.createElement('div'); guide.className = 'composition-guide';
               Object.assign(guide.style, {left: (rect.left+rect.width*box[0]/100)+'px',top:(rect.top+rect.height*box[1]/100)+'px',width:(rect.width*box[2]/100)+'px',height:(rect.height*box[3]/100)+'px'});
               overlay.append(guide);
-              track(guide.animate([{opacity:0},{opacity:.6,offset:.35},{opacity:0}], {duration:durationMs}));
+              track(guide.animate(phases(durationMs).confirmation, {duration:durationMs}));
             }
             // Raw text's line-box is taller than the glyph; begin at its centered em square.
             const size = Math.min(origin.width, origin.height);
             const startTop = origin.top+(origin.height-size)/2;
-            track(piece.animate([
-              {transform:`translate(${origin.left-left}px,${startTop-top}px) scale(${size/width},${size/height})`,opacity:.8},
-              {transform:'translate(0,0) scale(1,1)',opacity:part.unicode||part.fontFallback?0:1}
-            ], {duration:durationMs,easing:SETTINGS.easing,fill:'both'}));
+            const phase=phases(durationMs,{fading:!!(part.unicode||part.fontFallback)});
+            track(piece.animate(phase.journey(`translate(${origin.left-left}px,${startTop-top}px) scale(${size/width},${size/height})`),
+              {duration:phase.duration,easing:'linear',fill:'both'}));
           }
           if(!part.unicode&&!part.fontFallback){target.style.opacity = '0'; hidden.push(target);}
         }
@@ -1741,7 +1753,7 @@ const CompositionMotion = (() => {
     }
     return {preferences, capture, play, cancel, diagnostic};
   }
-  return {SETTINGS, leaves, Session, create};
+  return {SETTINGS, leaves, phases, Session, create};
 })();
 
 </script>
