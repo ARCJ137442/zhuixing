@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-10-20T05:58:38.394Z",
+  "htmlSha256": "f8306f803d7913e01f0f1bbca99afc565360540a9b4f874cc7deae3f0b4d67f3",
+  "cases": 10000,
+  "matched": 9990,
+  "ambiguous": 0,
+  "unresolved": 10,
+  "targetInCandidates": 9990,
+  "buildMs": 129.133958,
+  "lookupWallMs": 123.34210500000003,
+  "p50Ms": 0.005258000000026186,
+  "p95Ms": 0.011055999999996402,
+  "endRssMiB": 119.66015625,
+  "boundary": "Only new mapping index initialization and lookup, not glyph SVG rendering, DOM, animation, mobile, or complete cold page load."
+}

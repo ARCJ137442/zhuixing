@@ -1,0 +1,108 @@
+{
+  "scope": "Reproduced using preserved pre-fix source versus final candidate; algorithm evidence only.",
+  "cases": [
+    {
+      "name": "leaf-step-skips-inner",
+      "rows": [
+        {
+          "character": "丙",
+          "ids": "⿱⿰木木火"
+        }
+      ],
+      "source": "⿱⿰木木火",
+      "command": "fold-one",
+      "before": {
+        "source": "丙",
+        "changed": true,
+        "status": "applied",
+        "rounds": 1
+      },
+      "after": {
+        "source": "⿱⿰木木火",
+        "changed": false,
+        "status": "stable",
+        "rounds": 0
+      }
+    },
+    {
+      "name": "ZWJ-drifts-on-expand",
+      "rows": [
+        {
+          "character": "保",
+          "ids": "⿰亻呆"
+        },
+        {
+          "character": "呆",
+          "ids": "⿱口木"
+        }
+      ],
+      "source": "保‍保",
+      "command": "expand-one",
+      "before": {
+        "source": "⿰亻呆‍⿰亻呆",
+        "changed": true,
+        "status": "applied",
+        "rounds": 1
+      },
+      "after": {
+        "source": "保‍保",
+        "changed": false,
+        "status": "stable",
+        "rounds": 0
+      }
+    },
+    {
+      "name": "malformed-newline-changed",
+      "rows": [
+        {
+          "character": "保",
+          "ids": "⿰亻呆"
+        },
+        {
+          "character": "呆",
+          "ids": "⿱口木"
+        }
+      ],
+      "source": "⿰保\n",
+      "command": "expand-one",
+      "before": {
+        "source": "⿰⿰亻呆\n",
+        "changed": true,
+        "status": "applied",
+        "rounds": 1
+      },
+      "after": {
+        "source": "⿰保\n",
+        "changed": false,
+        "status": "invalid-or-incomplete"
+      }
+    },
+    {
+      "name": "emoji-modifier-drifts",
+      "rows": [
+        {
+          "character": "保",
+          "ids": "⿰亻呆"
+        },
+        {
+          "character": "呆",
+          "ids": "⿱口木"
+        }
+      ],
+      "source": "保🏽",
+      "command": "expand-one",
+      "before": {
+        "source": "⿰亻呆🏽",
+        "changed": true,
+        "status": "applied",
+        "rounds": 1
+      },
+      "after": {
+        "source": "保🏽",
+        "changed": false,
+        "status": "stable",
+        "rounds": 0
+      }
+    }
+  ]
+}

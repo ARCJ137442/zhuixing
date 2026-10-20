@@ -28,7 +28,8 @@ const EditorCommands=(()=>{
   let keys=r.hint?.map(k=>k==='Mod'?(mac?'⌘':'Ctrl'):k)||[];
   if(r.transform){const mode=settings['shortcuts.selectionTransform'];keys=mode==='off'?['更多菜单']:mode==='alt-shift'?['Alt','Shift',r.id==='split'?'D':'J']:['Ctrl','Alt',r.id==='split'?'D':'J'];}
   const unit=settings['editor.view']==='source'||settings['editor.unit']==='ids-grapheme'?'原字符簇':'完整呈现字';
-  return {...r,keys,label:r.label+(['left','right','backspace','delete'].includes(r.id)?' · '+unit:'')};
+  const commandId={split:'selection.expandOne',join:'selection.foldAll',undo:'edit.undo',redo:'edit.redo'}[r.id];const title=typeof CommandSystem!=='undefined'&&CommandSystem.catalogue.find(c=>c.id===commandId)?.title||r.label;
+  return {...r,keys,label:title+(['left','right','backspace','delete'].includes(r.id)?' · '+unit:'')};
  });}
  return {resolve,hints};
 })();

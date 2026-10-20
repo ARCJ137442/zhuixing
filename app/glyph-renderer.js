@@ -14,5 +14,13 @@ const GlyphRenderer=(()=>{
     const font=kind==='font';
     return {kind,fallbackReason:optical&&!withinInteractiveBudget?'interactive-complexity-budget':null,layoutMode:font?'font-fallback':'geometric',optical:false,svg:font?FontFallback.svg(node,source):Core.svg(node,source).replace('viewBox="0 0 100 100"','viewBox="7 7 86 86"'),viewBox:font?[0,0,100,100]:[7,7,86,86],leaves:Core.layoutLeaves(node),portableOutlines:!font};
   }
-  return {plan};
+  function presentation(node,source,options={}){
+    const ids=source.slice(node.start,node.end),character=options.unicode!==false&&!Core.hasModifierAt(source,node.end)&&UnicodeMatches.lookup(ids);
+    if(!character)return plan(node,source,options);
+    const family='Noto Serif CJK SC, serif';
+    const metadata={sourceIDS:ids,character,identity:'dataset-scoped-unique-match',portableOutlines:false,fontDependency:family};
+    const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-font-dependent="true" role="img"><title>'+Core.esc(character)+' · 已匹配字符的字体依赖呈现</title><metadata>'+Core.esc(JSON.stringify(metadata))+'</metadata><text x="50" y="84.2" text-anchor="middle" font-size="90" font-family="'+family+'" fill="currentColor">'+Core.esc(character)+'</text></svg>';
+    return {kind:'font',layoutMode:'matched-unicode-font',character,svg,portableOutlines:false,viewBox:[0,0,100,100],leaves:[]};
+  }
+  return {plan,presentation};
 })();

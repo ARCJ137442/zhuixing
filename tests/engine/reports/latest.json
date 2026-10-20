@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "status": "completed",
-  "startedAt": "2026-10-20T04:48:18.744Z",
-  "finishedAt": "2026-10-20T04:48:19.989Z",
-  "elapsedMs": 1241,
-  "seed": 4294967295,
+  "startedAt": "2026-10-20T05:57:30.804Z",
+  "finishedAt": "2026-10-20T05:57:32.101Z",
+  "elapsedMs": 1292,
+  "seed": 20261020,
   "iterations": 64,
   "bounds": {
     "timeoutMs": 120000,
@@ -35,7 +35,7 @@
     "app/optical-engine-source/browser/browser-adapter.js": "fdcb853adcc619187ac9ba874151cfa0b4c113528f0aeeb280d6c0691ff9e6be",
     "app/settings-module.js": "3975eb9fd57e7e12ae5518e9f93bf563e6797df6ddb80375ce8cfc48c3e890e1",
     "app/editor-boundary.js": "7fb71340e5699f3c072e4be256b2ca6698d0d4391424122213314a21627359c4",
-    "app/glyph-identity.js": "99488cb305ecf90c593da387fe4c2b0bb005704f58ce12f9c1025b86a0920644",
+    "app/glyph-identity.js": "e91b8de70225028b5cb3063c50226a37d4e57721a4f5307ad919a1bb98839b92",
     "app/releases/0.1.6/index.html": "360def624d7f924d906628679429933fd15d66db78c6e8da578874ee7d426794",
     "tests/engine/fixtures/host-v020.html": "a6c56ed2b288a1c6d0c236804f867b1c63dc3d0729cadac35543d7e2ee96736d"
   },

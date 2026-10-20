@@ -20,7 +20,7 @@
   "regressions/naizhi-inline.json": "f55d22777c6f46a8de97603f4d80fe3f16bc371dbd3e423e0a476f3423a49fba",
   "regressions/quality-guard-migration.json": "cb494d9c925c783c88ffc27e6a71cabb2b273cba49d2102487dbd6c2a0513288",
   "run.cjs": "584bd4719ff460b1eec08f3c0ca29e08db2e8fe30ea98fe8ddd18d8a4de37845",
-  "target-lock.json": "d8886b0ee17fbf44e3bacc2e9ad5211647236e9683e51e373c5b84a5dc89e93c",
+  "target-lock.json": "fe166c8b2dd960f67346a96030ccc02b523f01fc265ea73d0f01259ef049a261",
   "tests/corpus.test.cjs": "6b2de65ed49955b45fe6856d28ca0b27b2225bd4c8183f1d90369829a3890f41",
   "tests/editing.test.cjs": "35a77d852f1dfa0745f1ed25eb7b508cf9b51be53b877514cd9615fe4beb2baa",
   "tests/final-host.test.cjs": "1a2798e0cc7a07cdcb5607836a53332d9a75a2481d6bb6050d8069c1dea4de58",
