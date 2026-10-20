@@ -1,0 +1,10 @@
+{
+  "name": "glyph-engine-test-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bounded, layered local glyph-engine tests; not a production typography certification",
+  "engines": {"node": ">=22"},
+  "scripts": {"test": "node run.cjs", "visual:emit-own-svg": "node visual-descriptive.cjs"},
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,69 @@
+{
+  "size": 300,
+  "inkThreshold": 0.5,
+  "renderer": "Inkscape 1.4 (e7c3feb100, 2024-10-09)",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "files": [
+    {
+      "id": "naizhi",
+      "svgSha256": "0831b560da3c656cfc1187daa6abe18dbfbff66ae7054371cc7d38409bb8429b",
+      "pngSha256": "b570a1301eb331dc18fe5863bc334c02d58aad7cf0afc7578ca4d0450a1bb442",
+      "metrics": {
+        "bboxNormalized": [
+          0.06666666666666667,
+          0.19333333333333333,
+          0.9333333333333333,
+          0.8033333333333333
+        ],
+        "centroidNormalized": [
+          0.5405550937471137,
+          0.49309288507127247
+        ],
+        "inkCoverage": 0.1203,
+        "antialiasedInkCoverage": 0.10305080610021786,
+        "midBandEmptyProjectionProxy": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "runLengthQuartilesProxy": [
+          0.023333333333333334,
+          0.03333333333333333,
+          0.043333333333333335
+        ],
+        "semanticStrokeConsistency": "not-computed: requires component/stroke annotations",
+        "componentSpacing": "not-computed: requires independent component masks; projection is not a substitute"
+      }
+    },
+    {
+      "id": "renzhong",
+      "svgSha256": "c40b3975ecdc2b858b3371a35c6bf65f468d2abf9d1b6b8b88fe6e3e9987a051",
+      "pngSha256": "bb8d50b97cbf998243e1b1c86441067d8cee68d9e935a0638349ac267b4db5ae",
+      "metrics": {
+        "bboxNormalized": [
+          0.08,
+          0.06666666666666667,
+          0.9166666666666666,
+          0.9333333333333333
+        ],
+        "centroidNormalized": [
+          0.49384721854109603,
+          0.4919088847660277
+        ],
+        "inkCoverage": 0.12576666666666667,
+        "antialiasedInkCoverage": 0.1067480174291939,
+        "midBandEmptyProjectionProxy": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "runLengthQuartilesProxy": [
+          0.02,
+          0.05333333333333334,
+          0.056666666666666664
+        ],
+        "semanticStrokeConsistency": "not-computed: requires component/stroke annotations",
+        "componentSpacing": "not-computed: requires independent component masks; projection is not a substitute"
+      }
+    }
+  ]
+}

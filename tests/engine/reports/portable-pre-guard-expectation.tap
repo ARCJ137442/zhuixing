@@ -1,0 +1,342 @@
+TAP version 13
+# Subtest: corpus / raw user source including literal svg is not repaired or executed
+ok 1 - corpus / raw user source including literal svg is not repaired or executed
+  ---
+  duration_ms: 5.871862
+  type: 'test'
+  ...
+# Subtest: corpus / dataset qualifiers are not silently stripped
+ok 2 - corpus / dataset qualifiers are not silently stripped
+  ---
+  duration_ms: 0.151823
+  type: 'test'
+  ...
+# Subtest: corpus / review-only candidate roundtrips but is never an asserted Unicode equivalence
+ok 3 - corpus / review-only candidate roundtrips but is never an asserted Unicode equivalence
+  ---
+  duration_ms: 1.755234
+  type: 'test'
+  ...
+# Subtest: corpus / complex missing last or extra operand rejected
+ok 4 - corpus / complex missing last or extra operand rejected
+  ---
+  duration_ms: 0.318188
+  type: 'test'
+  ...
+# Subtest: corpus / astral scalar and synthetic IVS grapheme oracle, not host-editing proof
+ok 5 - corpus / astral scalar and synthetic IVS grapheme oracle, not host-editing proof
+  ---
+  duration_ms: 8.018602
+  type: 'test'
+  ...
+# Subtest: corpus / nine assigned fixtures versus unassigned U+3134B, independent of renderer coverage
+ok 6 - corpus / nine assigned fixtures versus unassigned U+3134B, independent of renderer coverage
+  ---
+  duration_ms: 0.250659
+  type: 'test'
+  ...
+# Subtest: corpus / 乃至 small-inline regression retained without claiming visual fix
+ok 7 - corpus / 乃至 small-inline regression retained without claiming visual fix
+  ---
+  duration_ms: 10.732856
+  type: 'test'
+  ...
+# Subtest: host-module / nine audited Unicode labels and no unassigned block inference
+ok 8 - host-module / nine audited Unicode labels and no unassigned block inference
+  ---
+  duration_ms: 3.738292
+  type: 'test'
+  ...
+# Subtest: host-module / actual edit-boundary graphemes retain astral, IVS, combining and ZWJ
+ok 9 - host-module / actual edit-boundary graphemes retain astral, IVS, combining and ZWJ
+  ---
+  duration_ms: 11.030294
+  type: 'test'
+  ...
+# Subtest: host-module / actual forward and backward deletion retain whole synthetic IVS grapheme
+ok 10 - host-module / actual forward and backward deletion retain whole synthetic IVS grapheme
+  ---
+  duration_ms: 2.716258
+  type: 'test'
+  ...
+# Subtest: host-module / source mode overrides display preference without altering preference object
+ok 11 - host-module / source mode overrides display preference without altering preference object
+  ---
+  duration_ms: 2.372882
+  type: 'test'
+  ...
+# Subtest: host-module / read-only preview cannot create editing transaction
+ok 12 - host-module / read-only preview cannot create editing transaction
+  ---
+  duration_ms: 1.973444
+  type: 'test'
+  ...
+# Subtest: host-module / edit normalization never bisects a surrogate or detaches IVS
+ok 13 - host-module / edit normalization never bisects a surrogate or detaches IVS
+  ---
+  duration_ms: 2.142213
+  type: 'test'
+  ...
+# Subtest: frozen-host-module / final 0.2 preview plan uses optical SVG and same exported component fragments
+not ok 14 - frozen-host-module / final 0.2 preview plan uses optical SVG and same exported component fragments
+  ---
+  duration_ms: 67.763942
+  type: 'test'
+  location: '[workspace]/structure-glyph-workbench/tests/engine/tests/final-host.test.cjs:4:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'same-font-geometric-fallback'
+    - 'optical'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'optical'
+  actual: 'same-font-geometric-fallback'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> ([workspace]/structure-glyph-workbench/tests/engine/tests/final-host.test.cjs:4:217)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: frozen-host-module / unsupported optical layout remains explicit geometric fallback
+ok 15 - frozen-host-module / unsupported optical layout remains explicit geometric fallback
+  ---
+  duration_ms: 0.636627
+  type: 'test'
+  ...
+# Subtest: frozen-host-module / invalid raw user input cannot emit guessed SVG
+ok 16 - frozen-host-module / invalid raw user input cannot emit guessed SVG
+  ---
+  duration_ms: 0.604019
+  type: 'test'
+  ...
+# Subtest: frozen-host-module / final edit boundary still deletes synthetic IVS atomically
+ok 17 - frozen-host-module / final edit boundary still deletes synthetic IVS atomically
+  ---
+  duration_ms: 8.298934
+  type: 'test'
+  ...
+# Subtest: frozen-host-module / inline settings invalid mixed transaction is atomic
+ok 18 - frozen-host-module / inline settings invalid mixed transaction is atomic
+  ---
+  duration_ms: 0.566574
+  type: 'test'
+  ...
+# Subtest: host-module / settings mixed valid+invalid patch is atomic
+ok 19 - host-module / settings mixed valid+invalid patch is atomic
+  ---
+  duration_ms: 3.260248
+  type: 'test'
+  ...
+# Subtest: host-module / settings valid change undo redo and frozen snapshot
+ok 20 - host-module / settings valid change undo redo and frozen snapshot
+  ---
+  duration_ms: 0.619922
+  type: 'test'
+  ...
+# Subtest: host-module / settings prototype pollution and unknown keys cannot partially commit
+ok 21 - host-module / settings prototype pollution and unknown keys cannot partially commit
+  ---
+  duration_ms: 0.264639
+  type: 'test'
+  ...
+# Subtest: host-module / eligibility distinguishes unsupported/missing from rejected unsafe source
+ok 22 - host-module / eligibility distinguishes unsupported/missing from rejected unsafe source
+  ---
+  duration_ms: 2.592315
+  type: 'test'
+  ...
+# Subtest: host-module / host depth 31,32,33 is not optical limit 16
+ok 23 - host-module / host depth 31,32,33 is not optical limit 16
+  ---
+  duration_ms: 1.31141
+  type: 'test'
+  ...
+# Subtest: host-module / source UTF16 ranges never split an astral component
+ok 24 - host-module / source UTF16 ranges never split an astral component
+  ---
+  duration_ms: 0.91003
+  type: 'test'
+  ...
+# Subtest: host-module / preview fragments come from exact export SVG, no second layout
+ok 25 - host-module / preview fragments come from exact export SVG, no second layout
+  ---
+  duration_ms: 16.0013
+  type: 'test'
+  ...
+# Subtest: host-module / cache normalized option identity, clear and bounded eviction
+ok 26 - host-module / cache normalized option identity, clear and bounded eviction
+  ---
+  duration_ms: 101.052886
+  type: 'test'
+  ...
+# Subtest: host-module / invalid setting cannot use permissive fallback
+ok 27 - host-module / invalid setting cannot use permissive fallback
+  ---
+  duration_ms: 1.331219
+  type: 'test'
+  ...
+# Subtest: visual / 你好后乃至字面与基线对齐
+ok 28 - visual / 你好后乃至字面与基线对齐 # SKIP User screenshot is a retained visual regression; actual integrated font fallback and browser layout must be inspected after final app freeze.
+  ---
+  duration_ms: 0.212062
+  type: 'test'
+  ...
+# Subtest: realbrowser / IME composition, caret, backspace, IVS and undo
+ok 29 - realbrowser / IME composition, caret, backspace, IVS and undo # SKIP No real browser execution in this suite. Intl grapheme oracle and pure modules do not prove browser editing.
+  ---
+  duration_ms: 0.107408
+  type: 'test'
+  ...
+# Subtest: realbrowser / preview/export download and reduced-motion
+ok 30 - realbrowser / preview/export download and reduced-motion # SKIP Requires final app in a real browser, actual downloads and OS preference checks.
+  ---
+  duration_ms: 0.057675
+  type: 'test'
+  ...
+# Subtest: property / seeded settings history agrees with independent bounded boolean model
+ok 31 - property / seeded settings history agrees with independent bounded boolean model
+  ---
+  duration_ms: 1.064116
+  type: 'test'
+  ...
+# Subtest: property / seeded AST roundtrip and recursive arity
+ok 32 - property / seeded AST roundtrip and recursive arity
+  ---
+  duration_ms: 4.200742
+  type: 'test'
+  ...
+# Subtest: property / seeded trailing leaf cannot silently disappear
+ok 33 - property / seeded trailing leaf cannot silently disappear
+  ---
+  duration_ms: 1.930581
+  type: 'test'
+  ...
+# Subtest: property / seeded incomplete operator extension never invents an operand
+ok 34 - property / seeded incomplete operator extension never invents an operand
+  ---
+  duration_ms: 1.285232
+  type: 'test'
+  ...
+# Subtest: property / deterministic finite local SVG and source retention on renderable generated structures
+ok 35 - property / deterministic finite local SVG and source retention on renderable generated structures
+  ---
+  duration_ms: 66.758393
+  type: 'test'
+  ...
+# Subtest: metamorphic / size affects export dimensions, not vector geometry
+ok 36 - metamorphic / size affects export dimensions, not vector geometry
+  ---
+  duration_ms: 1.449153
+  type: 'test'
+  ...
+# Subtest: metamorphic / color only changes declared paint, not paths/transforms
+ok 37 - metamorphic / color only changes declared paint, not paths/transforms
+  ---
+  duration_ms: 1.321866
+  type: 'test'
+  ...
+# Subtest: metamorphic / cache clear and returned result mutation preserve correct output
+ok 38 - metamorphic / cache clear and returned result mutation preserve correct output
+  ---
+  duration_ms: 1.160769
+  type: 'test'
+  ...
+# Subtest: metamorphic / explicit Unicode match is separate output policy
+ok 39 - metamorphic / explicit Unicode match is separate output policy
+  ---
+  duration_ms: 2.577664
+  type: 'test'
+  ...
+# Subtest: metamorphic / matched Unicode title and warnings do not mislabel encoding or geometry
+ok 40 - metamorphic / matched Unicode title and warnings do not mislabel encoding or geometry
+  ---
+  duration_ms: 0.415411
+  type: 'test'
+  ...
+# Subtest: unit / parser arity and exact AST serialization across all 17 operators
+ok 41 - unit / parser arity and exact AST serialization across all 17 operators
+  ---
+  duration_ms: 3.753575
+  type: 'test'
+  ...
+# Subtest: unit / missing, trailing, punctuation, lone surrogate and markup reject without source loss
+ok 42 - unit / missing, trailing, punctuation, lone surrogate and markup reject without source loss
+  ---
+  duration_ms: 0.793558
+  type: 'test'
+  ...
+# Subtest: unit / non-string input rejects without coercion
+ok 43 - unit / non-string input rejects without coercion
+  ---
+  duration_ms: 0.218051
+  type: 'test'
+  ...
+# Subtest: unit / independent frozen document parser preserves trailing tokens and astral ranges
+ok 44 - unit / independent frozen document parser preserves trailing tokens and astral ranges
+  ---
+  duration_ms: 2.899538
+  type: 'test'
+  ...
+# Subtest: unit / node count boundary 254,255,256
+ok 45 - unit / node count boundary 254,255,256
+  ---
+  duration_ms: 0.940595
+  type: 'test'
+  ...
+# Subtest: unit / depth boundary 15,16,17 with root depth zero
+ok 46 - unit / depth boundary 15,16,17 with root depth zero
+  ---
+  duration_ms: 0.426628
+  type: 'test'
+  ...
+# Subtest: unit / source guard 1023,1024,1025 is distinct from grammar failure
+ok 47 - unit / source guard 1023,1024,1025 is distinct from grammar failure
+  ---
+  duration_ms: 0.25827
+  type: 'test'
+  ...
+# Subtest: unit / numeric option limits include endpoints and reject neighbors/nonfinite
+ok 48 - unit / numeric option limits include endpoints and reject neighbors/nonfinite
+  ---
+  duration_ms: 22.180945
+  type: 'test'
+  ...
+# Subtest: unit / invalid options do not mutate defaults or poison following valid output
+ok 49 - unit / invalid options do not mutate defaults or poison following valid output
+  ---
+  duration_ms: 1.00607
+  type: 'test'
+  ...
+# Subtest: unit / deterministic bounded shrinker retains failure and reduces witness
+ok 50 - unit / deterministic bounded shrinker retains failure and reduces witness
+  ---
+  duration_ms: 0.526084
+  type: 'test'
+  ...
+# Subtest: unit / valid but pathologically deep geometry fails explicitly rather than emit zero scales
+ok 51 - unit / valid but pathologically deep geometry fails explicitly rather than emit zero scales
+  ---
+  duration_ms: 62.628414
+  type: 'test'
+  ...
+# Subtest: unit / injected paths and malformed ink masks are rejected before rendering
+ok 52 - unit / injected paths and malformed ink masks are rejected before rendering
+  ---
+  duration_ms: 5.691156
+  type: 'test'
+  ...
+1..52
+# tests 52
+# suites 0
+# pass 48
+# fail 1
+# cancelled 0
+# skipped 3
+# todo 0
+# duration_ms 1185.22882

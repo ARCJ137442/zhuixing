@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-20",
+  "case": "⿰乃至",
+  "userScreenshot": "image(20261020-042634).png",
+  "screenshotSha256": "e51d36626a51f7ef40503a7c8b8bbca213412462a622aa86f0b2a2fbc1baedad",
+  "previousAssetsSha256": "9373e6e1f3b3e512c69d4bd4afd67d79833d1fd662db0b696e486bc628fe1c06",
+  "previousBundle": {
+    "engineVersion": "optical-prototype-0.1",
+    "bundleSha256": "8e552adaacfe0ad82512feb0ef80624103ba3d7150bcab9cb6bbf0650ead1be3",
+    "bundleBytes": 459432,
+    "assetsSha256": "9373e6e1f3b3e512c69d4bd4afd67d79833d1fd662db0b696e486bc628fe1c06",
+    "api": "OpticalGlyph.render / eligibility / capabilities",
+    "network": false,
+    "nodeRuntimeDependencies": false,
+    "assetValidation": "once on module initialization"
+  },
+  "change": "Add 乃 from the same pinned OFL font; 至 was already available. No new Unicode mapping.",
+  "scopeNote": "Historical material-addition comparison before cross-axis occupancy guard; current integrated behavior is in optical-quality-guard-report.json and optical-bundle-provenance.json."
+}

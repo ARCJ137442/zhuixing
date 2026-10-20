@@ -1,0 +1,11 @@
+{
+  "engineVersion": "0.2.0",
+  "engineName": "optical-experimental",
+  "bundleSha256": "a3d40a7c39de93c4ebd200f2e9ccc0ba57ba741f4628b430145d0a3bd2902b2a",
+  "bundleBytes": 464799,
+  "assetsSha256": "de10eecc25e4600ceafaac2a1004236af61ec4e731346f9d76592ca3efe09f1c",
+  "api": "OpticalGlyph.render / eligibility / capabilities",
+  "network": false,
+  "nodeRuntimeDependencies": false,
+  "assetValidation": "once on module initialization"
+}

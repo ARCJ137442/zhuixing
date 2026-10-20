@@ -1,0 +1,10 @@
+'use strict';
+const test=require('node:test'),a=require('node:assert/strict');const {editBoundary,identity}=require('../lib/targets.cjs');const identities=require('../corpus/unicode-identity-fixtures.json');
+const settings=(view='live',unit='ids-grapheme')=>({'editor.view':view,'editor.unit':unit,'unicode.presentation':true});
+const caret=p=>({anchor:p,focus:p});
+test('host-module / nine audited Unicode labels and no unassigned block inference',()=>{const I=identity();for(const f of identities.entries){const label=I.describe(f.character);a.ok(label.includes('已收录'));a.ok(label.includes(f.codePoint));}a.equal(I.describe(String.fromCodePoint(0x3134B)),'字符身份未核对');});
+test('host-module / actual edit-boundary graphemes retain astral, IVS, combining and ZWJ',()=>{const B=editBoundary();const s='𰻝\u{E0100}e\u0301👩‍💻';a.equal(JSON.stringify(B.graphemes(s)),JSON.stringify([0,4,6,11]));});
+test('host-module / actual forward and backward deletion retain whole synthetic IVS grapheme',()=>{const B=editBoundary(),s='甲𰻝\u{E0100}乙';a.equal(B.deletion(s,caret(5),-1,settings()).source,'甲乙');a.equal(B.deletion(s,caret(1),1,settings()).source,'甲乙');});
+test('host-module / source mode overrides display preference without altering preference object',()=>{const B=editBoundary(),c=settings('source','display-glyph');a.equal(B.effective(c),'ids-grapheme');a.equal(c['editor.unit'],'display-glyph');a.equal(B.deletion('⿱人中',caret(3),-1,c).source,'⿱人');});
+test('host-module / read-only preview cannot create editing transaction',()=>{const B=editBoundary(),c=settings('preview');a.equal(B.deletion('⿱人中',caret(3),-1,c),null);a.equal(B.move('⿱人中',caret(3),-1,c),null);});
+test('host-module / edit normalization never bisects a surrogate or detaches IVS',()=>{const B=editBoundary(),s='甲𰻝\u{E0100}乙',valid=[0,1,5,6];for(let i=0;i<=s.length;i++){const n=B.normalize(s,caret(i),settings());a.ok(valid.includes(n.anchor));a.equal(n.anchor,n.focus);}});

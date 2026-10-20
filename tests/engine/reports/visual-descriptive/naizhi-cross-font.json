@@ -1,0 +1,63 @@
+{
+  "layer": "cross-font-or-uncontrolled-descriptive-only",
+  "a": {
+    "bboxNormalized": [
+      0.06666666666666667,
+      0.19333333333333333,
+      0.9333333333333333,
+      0.8033333333333333
+    ],
+    "centroidNormalized": [
+      0.5405550937471137,
+      0.49309288507127247
+    ],
+    "inkCoverage": 0.1203,
+    "antialiasedInkCoverage": 0.10305080610021786,
+    "midBandEmptyProjectionProxy": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "runLengthQuartilesProxy": [
+      0.023333333333333334,
+      0.03333333333333333,
+      0.043333333333333335
+    ],
+    "semanticStrokeConsistency": "not-computed: requires component/stroke annotations",
+    "componentSpacing": "not-computed: requires independent component masks; projection is not a substitute"
+  },
+  "b": {
+    "bboxNormalized": [
+      0.056666666666666664,
+      0.10666666666666667,
+      0.9366666666666666,
+      0.94
+    ],
+    "centroidNormalized": [
+      0.5228108630520925,
+      0.5158652749589253
+    ],
+    "inkCoverage": 0.19161111111111112,
+    "antialiasedInkCoverage": 0.18806409586056644,
+    "midBandEmptyProjectionProxy": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "runLengthQuartilesProxy": [
+      0.023333333333333334,
+      0.05,
+      0.06
+    ],
+    "semanticStrokeConsistency": "not-computed: requires component/stroke annotations",
+    "componentSpacing": "not-computed: requires independent component masks; projection is not a substitute"
+  },
+  "delta": {
+    "bboxMaxDelta": 0.1366666666666666,
+    "centroidMaxDelta": 0.022772389887652844,
+    "coverageDelta": 0.07131111111111112,
+    "pixelMAE": 0.20046270152505447,
+    "binaryIoU": 0.20475516072271577
+  },
+  "provisionalTolerance": null,
+  "regressionGatePassed": null,
+  "warning": "Pixel similarity is neither aesthetic quality nor correct/standard glyph identity. Do not use gate across fonts, screenshots or unaligned canvases."
+}

@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 1,
+  "policy": "Pass totals are not professional-readiness or coverage percentages. Requirements without a test remain explicit gaps.",
+  "layers": [
+    {
+      "id": "unit",
+      "scope": "Parser grammar, arity, depth/node/source/options boundaries, source retention, injection and immutable defaults",
+      "evidence": "tests/unit.test.cjs",
+      "notCovered": [
+        "all malformed Unicode strings",
+        "all path grammar combinations"
+      ]
+    },
+    {
+      "id": "property",
+      "scope": "Bounded custom seeded AST generator and metamorphic size/color/cache/settings sequences",
+      "evidence": "tests/property.test.cjs and tests/host.test.cjs",
+      "notCovered": [
+        "exhaustive trees",
+        "mature library shrink strategies",
+        "formal proofs"
+      ]
+    },
+    {
+      "id": "corpus",
+      "scope": "Raw user expression, qualifiers, reviewed-only candidate,9 positive UCD identities+U3134B negative,synthetic IVS,乃至 regression",
+      "evidence": "corpus/ and regressions/",
+      "notCovered": [
+        "all UCD17 data",
+        "registered IVS registry",
+        "variant equivalence",
+        "cmap coverage"
+      ]
+    },
+    {
+      "id": "visual",
+      "scope": "Two isolated external structure PNG comparisons only; both cross-font descriptive",
+      "evidence": "reports/visual-descriptive",
+      "notCovered": [
+        "professional palaeographic/typographic review",
+        "exact painted collision proof",
+        "inline乃至 browser regression",
+        "enclosure quality matrix",
+        "all stroke densities"
+      ]
+    },
+    {
+      "id": "host",
+      "scope": "Pure Settings/adapter and mixed legacy-boundary fixture, plus final author-SHA-pinned 0.2.0 same-version inline modules; no DOM/app event/real browser execution",
+      "evidence": "tests/host.test.cjs and tests/editing.test.cjs and tests/final-host.test.cjs",
+      "notCovered": [
+        "actual DOM event routing",
+        "clipboard",
+        "input composition transactions",
+        "cross-module app lifecycle",
+        "download artifacts"
+      ]
+    },
+    {
+      "id": "realbrowser",
+      "scope": "Explicitly not executed by this runner",
+      "evidence": "three visible skipped tests",
+      "notCovered": [
+        "IME on Windows/macOS/mobile",
+        "Safari/Firefox/Chromium actual matrix",
+        "touch,screen reader,keyboard",
+        "zoom/DPR/reduced-motion",
+        "font load failure",
+        "paste/drop/export download"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "name": "corpus / raw user source including literal svg is not repaired or executed",
+      "file": "tests/corpus.test.cjs",
+      "layer": "corpus",
+      "status": "executed-local"
+    },
+    {
+      "name": "corpus / dataset qualifiers are not silently stripped",
+      "file": "tests/corpus.test.cjs",
+      "layer": "corpus",
+      "status": "executed-local"
+    },
+    {
+      "name": "corpus / review-only candidate roundtrips but is never an asserted Unicode equivalence",
+      "file": "tests/corpus.test.cjs",
+      "layer": "corpus",
+      "status": "executed-local"
+    },
+    {
+      "name": "corpus / complex missing last or extra operand rejected",
+      "file": "tests/corpus.test.cjs",
+      "layer": "corpus",
+      "status": "executed-local"
+    },
+    {
+      "name": "corpus / astral scalar and synthetic IVS grapheme oracle, not host-editing proof",
+      "file": "tests/corpus.test.cjs",
+      "layer": "corpus",
+      "status": "executed-local"
+    },
+    {
+      "name": "corpus / nine assigned fixtures versus unassigned U+3134B, independent of renderer coverage",
+      "file": "tests/corpus.test.cjs",
+      "layer": "corpus",
+      "status": "executed-local"
+    },
+    {
+      "name": "corpus / 乃至 small-inline regression retained without claiming visual fix",
+      "file": "tests/corpus.test.cjs",
+      "layer": "corpus",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / nine audited Unicode labels and no unassigned block inference",
+      "file": "tests/editing.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / actual edit-boundary graphemes retain astral, IVS, combining and ZWJ",
+      "file": "tests/editing.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / actual forward and backward deletion retain whole synthetic IVS grapheme",
+      "file": "tests/editing.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / source mode overrides display preference without altering preference object",
+      "file": "tests/editing.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / read-only preview cannot create editing transaction",
+      "file": "tests/editing.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / edit normalization never bisects a surrogate or detaches IVS",
+      "file": "tests/editing.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "frozen-host-module / final 0.2 preview plan uses optical SVG and same exported component fragments",
+      "file": "tests/final-host.test.cjs",
+      "layer": "frozen-host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "frozen-host-module / unsupported optical layout remains explicit geometric fallback",
+      "file": "tests/final-host.test.cjs",
+      "layer": "frozen-host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "frozen-host-module / invalid raw user input cannot emit guessed SVG",
+      "file": "tests/final-host.test.cjs",
+      "layer": "frozen-host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "frozen-host-module / final edit boundary still deletes synthetic IVS atomically",
+      "file": "tests/final-host.test.cjs",
+      "layer": "frozen-host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "frozen-host-module / inline settings invalid mixed transaction is atomic",
+      "file": "tests/final-host.test.cjs",
+      "layer": "frozen-host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / settings mixed valid+invalid patch is atomic",
+      "file": "tests/host.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / settings valid change undo redo and frozen snapshot",
+      "file": "tests/host.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / settings prototype pollution and unknown keys cannot partially commit",
+      "file": "tests/host.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / eligibility distinguishes unsupported/missing from rejected unsafe source",
+      "file": "tests/host.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / host depth 31,32,33 is not optical limit 16",
+      "file": "tests/host.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / source UTF16 ranges never split an astral component",
+      "file": "tests/host.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / preview fragments come from exact export SVG, no second layout",
+      "file": "tests/host.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / cache normalized option identity, clear and bounded eviction",
+      "file": "tests/host.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "host-module / invalid setting cannot use permissive fallback",
+      "file": "tests/host.test.cjs",
+      "layer": "host-module",
+      "status": "executed-local"
+    },
+    {
+      "name": "visual / 你好后乃至字面与基线对齐",
+      "file": "tests/host.test.cjs",
+      "layer": "visual",
+      "status": "not-executed"
+    },
+    {
+      "name": "realbrowser / IME composition, caret, backspace, IVS and undo",
+      "file": "tests/host.test.cjs",
+      "layer": "realbrowser",
+      "status": "not-executed"
+    },
+    {
+      "name": "realbrowser / preview/export download and reduced-motion",
+      "file": "tests/host.test.cjs",
+      "layer": "realbrowser",
+      "status": "not-executed"
+    },
+    {
+      "name": "property / seeded settings history agrees with independent bounded boolean model",
+      "file": "tests/host.test.cjs",
+      "layer": "property",
+      "status": "executed-local"
+    },
+    {
+      "name": "property / seeded AST roundtrip and recursive arity",
+      "file": "tests/property.test.cjs",
+      "layer": "property",
+      "status": "executed-local"
+    },
+    {
+      "name": "property / seeded trailing leaf cannot silently disappear",
+      "file": "tests/property.test.cjs",
+      "layer": "property",
+      "status": "executed-local"
+    },
+    {
+      "name": "property / seeded incomplete operator extension never invents an operand",
+      "file": "tests/property.test.cjs",
+      "layer": "property",
+      "status": "executed-local"
+    },
+    {
+      "name": "property / deterministic finite local SVG and source retention on renderable generated structures",
+      "file": "tests/property.test.cjs",
+      "layer": "property",
+      "status": "executed-local"
+    },
+    {
+      "name": "metamorphic / size affects export dimensions, not vector geometry",
+      "file": "tests/property.test.cjs",
+      "layer": "metamorphic",
+      "status": "executed-local"
+    },
+    {
+      "name": "metamorphic / color only changes declared paint, not paths/transforms",
+      "file": "tests/property.test.cjs",
+      "layer": "metamorphic",
+      "status": "executed-local"
+    },
+    {
+      "name": "metamorphic / cache clear and returned result mutation preserve correct output",
+      "file": "tests/property.test.cjs",
+      "layer": "metamorphic",
+      "status": "executed-local"
+    },
+    {
+      "name": "metamorphic / explicit Unicode match is separate output policy",
+      "file": "tests/property.test.cjs",
+      "layer": "metamorphic",
+      "status": "executed-local"
+    },
+    {
+      "name": "metamorphic / matched Unicode title and warnings do not mislabel encoding or geometry",
+      "file": "tests/property.test.cjs",
+      "layer": "metamorphic",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / parser arity and exact AST serialization across all 17 operators",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / missing, trailing, punctuation, lone surrogate and markup reject without source loss",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / non-string input rejects without coercion",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / independent frozen document parser preserves trailing tokens and astral ranges",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / node count boundary 254,255,256",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / depth boundary 15,16,17 with root depth zero",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / source guard 1023,1024,1025 is distinct from grammar failure",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / numeric option limits include endpoints and reject neighbors/nonfinite",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / invalid options do not mutate defaults or poison following valid output",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / deterministic bounded shrinker retains failure and reduces witness",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / valid but pathologically deep geometry fails explicitly rather than emit zero scales",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    },
+    {
+      "name": "unit / injected paths and malformed ink masks are rejected before rendering",
+      "file": "tests/unit.test.cjs",
+      "layer": "unit",
+      "status": "executed-local"
+    }
+  ],
+  "releaseGates": [
+    "All previous corpus retained or separately versioned with migration rationale",
+    "No untriaged failure or target-hash change",
+    "Unit/property/corpus pass under recorded seeds",
+    "Real-browser capability matrix attached for any app release claim",
+    "External references and licenses isolated from generated code/assets",
+    "Professional researcher review for glyph/variant correctness before professional-grade claim"
+  ],
+  "futureTools": {
+    "node:test/assert": "used; built into Node v24.19.0; no installation",
+    "fast-check": "future optional; not installed or executed in this task",
+    "Playwright": "future optional browser automation; not installed or executed in this task; must not substitute mock DOM evidence"
+  }
+}

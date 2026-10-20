@@ -1,0 +1,7 @@
+{
+  "corpus/IDS-DATA-LICENSE.txt": "f1d89fe379529df4166f75142ff82c7cc302795ec992e2a64c189aa8733da419",
+  "corpus/UNICODE-DATA-LICENSE.txt": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+  "corpus/complex-boundary-fixtures.json": "06b1e7bc049a05b531e464efa6bf46ed8c02377b3cd7417f1cfffc8d590b47cc",
+  "corpus/unicode-identity-fixtures.json": "18043602367ed1f1d6b13b23c15133a9e3635fb3bb867da0cede7d89e965ff69",
+  "regressions/naizhi-inline.json": "f55d22777c6f46a8de97603f4d80fe3f16bc371dbd3e423e0a476f3423a49fba"
+}

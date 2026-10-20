@@ -1,0 +1,20 @@
+{
+  "tier": "cross-font descriptive only",
+  "distinctExternalStructures": 2,
+  "normalization": "300x300 white, no automatic alignment/crop",
+  "naizhi": {
+    "input": "⿰乃至",
+    "sourceURL": "https://zi.tools/?secondary=ids&seq=%E2%BF%B0%E4%B9%83%E8%87%B3",
+    "observedUTC": "2026-10-20T04:32:24Z",
+    "pngSha256": "fc8e9f4f0a0e6779aee759f918719cc9d5cc2a1a65eb036f567c031ebe6f6e39",
+    "status": "composition result; shape similarity list is not Unicode mapping"
+  },
+  "renzhong": {
+    "input": "⿱人中",
+    "sourceURL": "https://zi.tools/?secondary=ids&seq=%E2%BF%B1%E4%BA%BA%E4%B8%AD",
+    "observedUTC": "2026-10-20T03:45:49Z",
+    "pngSha256": "660f5d5f9a041b89ae365ef67ccfe8d7cac268a657eccd9ac5992b6b1569fc3a"
+  },
+  "referencePixelsBundled": false,
+  "thirdPartySvgRead": false
+}

@@ -1,0 +1,8 @@
+{
+  "id": "naizhi-coverage-migration-20261020",
+  "supersedesExpectationOnly": "Original test assumed 乃 missing based on a prior local check. Before the first locked run the independent asset set gained 乃, so the observed ready result is not a renderer failure.",
+  "priorEvidenceRetained": ["reports/initial-stale-coverage-expectation.json", "reports/initial-stale-coverage-expectation.tap", "regressions/naizhi-inline.json"],
+  "newAssertion": "Current locked independent module renders ⿰乃至 with original source retained and no guessed Unicode match. Missing-path coverage uses U+E000, not this now-supported character.",
+  "visualStatus": "Still open: SVG readiness does not establish actual inline size, baseline, font fallback or display quality.",
+  "baselineDeletion": false
+}

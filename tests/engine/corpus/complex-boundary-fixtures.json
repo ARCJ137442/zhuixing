@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "rawUserExpression": "⿺辶⿳穴⿲月⿱svg𮘎⿰svg𲈤长刂心",
+  "rawUserNotation": "𰻝（⿺辶⿳穴⿲月⿱svg𮘎⿰svg𲈤长刂心）",
+  "priority": "basic-composition > glyph-presentation >> animation",
+  "source": "https://github.com/yi-bai/ids/blob/267e3fb5d0a32de63128e67ef2f329277cc4013c/ids_lv0.txt",
+  "license": "../IDS-DATA-LICENSE.txt",
+  "sourceRows": [
+    "𰻝\t⿺辶.⿳穴.d⿲月.⿱𮘎y⿰𲈤长.刂心",
+    "𮘎\t⿱亠J⿴𢆶J⿱二.口.(.);⿴𢆶.言.(y)",
+    "𲈤\t⿰长.马."
+  ],
+  "svgMeaning": "unverified; absent from this source row; possible copy/render residue is hypothesis only",
+  "cases": [
+    {
+      "id": "user-expression-verbatim",
+      "input": "⿺辶⿳穴⿲月⿱svg𮘎⿰svg𲈤长刂心",
+      "metrics": {
+        "codePoints": 19,
+        "utf16CodeUnits": 21
+      },
+      "expected": {
+        "strictSubsetParse": "reject-unsupported-token",
+        "firstUnsupportedUtf16Offset": 7,
+        "unsupportedSpansUtf16": [
+          [
+            7,
+            10
+          ],
+          [
+            13,
+            16
+          ]
+        ],
+        "preserveInput": true,
+        "automaticRepair": false,
+        "unicodeAutoMatch": false,
+        "animation": "not-required"
+      },
+      "note": "svg has no verified token meaning here. Do not delete or interpret as an SVG resource."
+    },
+    {
+      "id": "bai-source-verbatim",
+      "input": "⿺辶.⿳穴.d⿲月.⿱𮘎y⿰𲈤长.刂心",
+      "expected": {
+        "strictSubsetParse": "reject-extension-syntax",
+        "preserveInput": true,
+        "automaticRepair": false
+      },
+      "note": "Valid source-dataset expression is not necessarily supported by the demo grammar."
+    },
+    {
+      "id": "review-only-plain-structure-candidate",
+      "input": "⿺辶⿳穴⿲月⿱𮘎⿰𲈤长刂心",
+      "metrics": {
+        "codePoints": 13,
+        "utf16CodeUnits": 15
+      },
+      "tree": {
+        "nodes": 13,
+        "leaves": [
+          "辶",
+          "穴",
+          "月",
+          "𮘎",
+          "𲈤",
+          "长",
+          "刂",
+          "心"
+        ],
+        "maxDepthEdges": 5,
+        "rootDepthConvention": 0
+      },
+      "candidateOnly": true,
+      "automaticAdoption": false,
+      "expected": {
+        "strictSubsetParse": "single-complete-tree",
+        "unicodeAutoMatch": false,
+        "missingOutlineHandling": "explicit-missing-component-fallback",
+        "animation": "optional-after-correct-static-render"
+      },
+      "note": "Manually suggested test-only structure omits svg AND Bai variant qualifiers. Not asserted glyph-equivalent to U+30EDD; source data explicitly uses 𮘎y."
+    },
+    {
+      "id": "astral-codepoint-integrity",
+      "input": "𰻝𮘎𲈤",
+      "metrics": {
+        "codePoints": 3,
+        "utf16CodeUnits": 6
+      },
+      "expected": {
+        "scalarCount": 3,
+        "utf16Boundaries": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "noSplitSurrogate": true,
+        "noFontCoverageClaim": true
+      }
+    },
+    {
+      "id": "synthetic-variation-selector-grapheme",
+      "input": "𰻝󠄀",
+      "metrics": {
+        "codePoints": 2,
+        "utf16CodeUnits": 4
+      },
+      "expected": {
+        "extendedGraphemeClusters": 1,
+        "utf16Boundaries": [
+          0,
+          4
+        ],
+        "editing": "do-not-split-surrogates-or-detach-variation-selector",
+        "unicodeAutoMatch": false
+      },
+      "note": "Synthetic editing boundary only, NOT a claim this is a registered or supported variation sequence."
+    },
+    {
+      "id": "missing-last-operand",
+      "input": "⿺辶⿳穴⿲月⿱𮘎⿰𲈤长刂",
+      "expected": {
+        "strictSubsetParse": "incomplete-tree",
+        "preserveInput": true,
+        "noInventedOperand": true
+      }
+    },
+    {
+      "id": "extra-operand",
+      "input": "⿺辶⿳穴⿲月⿱𮘎⿰𲈤长刂心木",
+      "expected": {
+        "strictSingleExpressionParse": "reject-trailing-token",
+        "documentForestParse": "may-accept-two-root-nodes",
+        "noSilentRootDiscard": true
+      }
+    },
+    {
+      "id": "literal-svg-markup-is-text",
+      "input": "⿱<svg onload=\"alert(1)\"></svg>心",
+      "expected": {
+        "strictSubsetParse": "reject-unsupported-token",
+        "preserveInput": true,
+        "executeMarkup": false,
+        "renderVia": "escaped-text-or-textContent"
+      }
+    },
+    {
+      "id": "depth-boundary",
+      "generator": {
+        "template": "⿱ repeated N times + 木 + 心 repeated N times",
+        "N": "configuredMaxDepth and configuredMaxDepth+1"
+      },
+      "expected": {
+        "atLimit": "accept-if-other-limits-allow",
+        "overLimit": "controlled-diagnostic-not-RangeError",
+        "preserveInput": true,
+        "animation": "disable-for-over-budget"
+      }
+    },
+    {
+      "id": "length-boundary",
+      "generator": {
+        "template": "木 repeated N times",
+        "N": "configuredMaxInputCodeUnits and configuredMaxInputCodeUnits+1"
+      },
+      "expected": {
+        "overLimit": "controlled-diagnostic-or-explicit-rejection-no-silent-truncation",
+        "preserveExistingStateOnRejectedTransaction": true,
+        "limitsMustBeDocumented": true
+      }
+    }
+  ]
+}

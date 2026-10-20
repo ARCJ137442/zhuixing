@@ -1,0 +1,11 @@
+{
+  "id": "user-naizhi-small-inline-20261020",
+  "input": "你好⿰乃至",
+  "isolatedStructure": "⿰乃至",
+  "source": "User screenshot image(20261020-042634).png, inspected manually",
+  "observed": "After 你好, the 乃至 presentation is much smaller. Screenshot is the user's app result, not zi.tools.",
+  "status": "open-visual-host-regression",
+  "expectedReview": ["source retains 你好⿰乃至 exactly", "font-dependent fallback clearly labeled", "component display em size and baseline judged in actual browser", "no arbitrary Unicode replacement", "preview and exported unsupported/font-dependent state agree"],
+  "automatedCurrentCoverage": "Independent optical adapter preserves source and explicitly reports missing outlines; not proof of final app visual fix.",
+  "referenceImageBundled": false
+}

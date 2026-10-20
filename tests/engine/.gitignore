@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+node_modules/
+# Keep checked-in historical failures, source corpora, and review reports.
+# Do not add external reference images or third-party SVG paths.

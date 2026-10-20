@@ -1,0 +1,85 @@
+{
+  "render": "ready",
+  "sourceIDS": "⿱人中",
+  "match": null,
+  "outputKind": "custom-composition-unconfirmed-match",
+  "warnings": [
+    "构形试验，编码映射尚未确认。",
+    "轮廓仿射压缩不等同于语义笔画粗细重建。"
+  ],
+  "metrics": {
+    "engine": "0.2.0",
+    "engineName": "optical-experimental",
+    "mode": "optical",
+    "provenance": {
+      "font": "Noto Serif CJK SC Regular",
+      "license": "OFL-1.1",
+      "fontSha256": "5d9c31a059600193c9d7968a998bde886ccdc77e934006ad243b41794c496a7d",
+      "source": "https://github.com/notofonts/noto-cjk",
+      "count": 179,
+      "assetsSha256": "de10eecc25e4600ceafaac2a1004236af61ec4e731346f9d76592ca3efe09f1c",
+      "mask": "100x100 nonzero winding at cell centers; curves subdivided 16 times",
+      "referenceContoursUsed": false
+    },
+    "componentBboxes": [
+      {
+        "index": 0,
+        "char": "人",
+        "bbox": [
+          9.47229,
+          7,
+          90.52771,
+          43.0185
+        ],
+        "bboxType": "sampled-ink-cell-centers-before-compensation",
+        "transform": [
+          0.90062,
+          0.4047,
+          4.5189,
+          4.36944
+        ],
+        "compensationStroke": 0.38545
+      },
+      {
+        "index": 1,
+        "char": "中",
+        "bbox": [
+          17.90205,
+          33.85215,
+          82.09795,
+          93
+        ],
+        "bboxType": "sampled-ink-cell-centers-before-compensation",
+        "transform": [
+          0.79254,
+          0.64998,
+          8.78782,
+          30.92726
+        ],
+        "compensationStroke": 0.12592
+      }
+    ],
+    "packing": [
+      {
+        "rule": "narrow-crown-hollow-base",
+        "axialRatio": 0.66,
+        "lowerCrossRatio": 0.88
+      },
+      {
+        "axis": "y",
+        "bboxSeparation": 40.2864,
+        "contourShift": 27.7192,
+        "nesting": 12.5672
+      }
+    ],
+    "bbox": [
+      9.47229,
+      7,
+      90.52771,
+      93
+    ],
+    "style": "single pinned Noto Serif CJK SC Regular",
+    "semanticStrokeConsistency": "not-computed",
+    "maskResolution": 100
+  }
+}

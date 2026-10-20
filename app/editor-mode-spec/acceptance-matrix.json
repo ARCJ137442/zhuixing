@@ -1,0 +1,1437 @@
+{
+  "kind": "structure-glyph.acceptance-matrix",
+  "specVersion": 1,
+  "targetAppVersion": "0.2.0",
+  "defaults": {
+    "editor.view": "live",
+    "editor.unit": "ids-grapheme",
+    "unicode.autoConvert": false
+  },
+  "status": "specification-only-not-executed",
+  "combinations": [
+    {
+      "id": "preview.display-glyph.leftRight",
+      "view": "preview",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": null,
+      "action": "leftRight",
+      "expected": "浏览器阅读/选择；无编辑插入点",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.display-glyph.shiftSelection",
+      "view": "preview",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": null,
+      "action": "shiftSelection",
+      "expected": "浏览器只读选择；映射源范围",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.display-glyph.backspace",
+      "view": "preview",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": null,
+      "action": "backspace",
+      "expected": "source 不变",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.display-glyph.delete",
+      "view": "preview",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": null,
+      "action": "delete",
+      "expected": "source 不变",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.display-glyph.ctrlModifiers",
+      "view": "preview",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": null,
+      "action": "ctrlModifiers",
+      "expected": "浏览器阅读约定；复制允许；应用正文撤销/剪切删除禁止",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.display-glyph.click",
+      "view": "preview",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": null,
+      "action": "click",
+      "expected": "只读选择，不进入编辑",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.display-glyph.tab",
+      "view": "preview",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": null,
+      "action": "tab",
+      "expected": "真实控件焦点导航，不逐字停靠",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.display-glyph.ime",
+      "view": "preview",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": null,
+      "action": "ime",
+      "expected": "不能修改 source",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.display-glyph.undo",
+      "view": "preview",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": null,
+      "action": "undo",
+      "expected": "正文 undo/redo 禁用；设置撤销独立",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.display-glyph.copy",
+      "view": "preview",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": null,
+      "action": "copy",
+      "expected": "选中呈现对象映射原始 source",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.display-glyph.selectionTransform",
+      "view": "preview",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": null,
+      "action": "selectionTransform",
+      "expected": "禁用并解释只读",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.ids-grapheme.leftRight",
+      "view": "preview",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": null,
+      "action": "leftRight",
+      "expected": "浏览器阅读/选择；无编辑插入点",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.ids-grapheme.shiftSelection",
+      "view": "preview",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": null,
+      "action": "shiftSelection",
+      "expected": "浏览器只读选择；映射源范围",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.ids-grapheme.backspace",
+      "view": "preview",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": null,
+      "action": "backspace",
+      "expected": "source 不变",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.ids-grapheme.delete",
+      "view": "preview",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": null,
+      "action": "delete",
+      "expected": "source 不变",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.ids-grapheme.ctrlModifiers",
+      "view": "preview",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": null,
+      "action": "ctrlModifiers",
+      "expected": "浏览器阅读约定；复制允许；应用正文撤销/剪切删除禁止",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.ids-grapheme.click",
+      "view": "preview",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": null,
+      "action": "click",
+      "expected": "只读选择，不进入编辑",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.ids-grapheme.tab",
+      "view": "preview",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": null,
+      "action": "tab",
+      "expected": "真实控件焦点导航，不逐字停靠",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.ids-grapheme.ime",
+      "view": "preview",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": null,
+      "action": "ime",
+      "expected": "不能修改 source",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.ids-grapheme.undo",
+      "view": "preview",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": null,
+      "action": "undo",
+      "expected": "正文 undo/redo 禁用；设置撤销独立",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.ids-grapheme.copy",
+      "view": "preview",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": null,
+      "action": "copy",
+      "expected": "选中呈现对象映射原始 source",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "preview.ids-grapheme.selectionTransform",
+      "view": "preview",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": null,
+      "action": "selectionTransform",
+      "expected": "禁用并解释只读",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.display-glyph.leftRight",
+      "view": "live",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "display-glyph",
+      "action": "leftRight",
+      "expected": "上一/下一完整呈现单位；非空选区先向方向收拢",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.display-glyph.shiftSelection",
+      "view": "live",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "display-glyph",
+      "action": "shiftSelection",
+      "expected": "固定 anchor，focus 按相同完整单位移动",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.display-glyph.backspace",
+      "view": "live",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "display-glyph",
+      "action": "backspace",
+      "expected": "前一完整呈现单位；有选区精确删除",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.display-glyph.delete",
+      "view": "live",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "display-glyph",
+      "action": "delete",
+      "expected": "后一完整呈现单位；有选区精确删除",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.display-glyph.ctrlModifiers",
+      "view": "live",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "display-glyph",
+      "action": "ctrlModifiers",
+      "expected": "平台词/行范围按方向对齐完整单位；不保留单独 Ctrl+Backspace 特例",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.display-glyph.click",
+      "view": "live",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "display-glyph",
+      "action": "click",
+      "expected": "字形左右半部定位前/后，不展开内部；新选择按完整单位吸附",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.display-glyph.tab",
+      "view": "live",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "display-glyph",
+      "action": "tab",
+      "expected": "编辑器一个焦点入口，控件正常遍历",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.display-glyph.ime",
+      "view": "live",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "display-glyph",
+      "action": "ime",
+      "expected": "单位边界开始；组合中不吸附/渲染，确认后仅 live 可按偏好自动真转",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.display-glyph.undo",
+      "view": "live",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "display-glyph",
+      "action": "undo",
+      "expected": "恢复 source 与 selection，内部历史选区走显式继承例外",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.display-glyph.copy",
+      "view": "live",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "display-glyph",
+      "action": "copy",
+      "expected": "精确 source，不复制 Unicode 替身",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.display-glyph.selectionTransform",
+      "view": "live",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "display-glyph",
+      "action": "selectionTransform",
+      "expected": "完整目标才转换；继承部分源选区不扩大",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.ids-grapheme.leftRight",
+      "view": "live",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "ids-grapheme",
+      "action": "leftRight",
+      "expected": "进入 IDS，按源 grapheme 移动并原位展开",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.ids-grapheme.shiftSelection",
+      "view": "live",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "ids-grapheme",
+      "action": "shiftSelection",
+      "expected": "固定 anchor，focus 逐源 grapheme；允许部分 IDS",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.ids-grapheme.backspace",
+      "view": "live",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "ids-grapheme",
+      "action": "backspace",
+      "expected": "前一源 grapheme，不删除末子树",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.ids-grapheme.delete",
+      "view": "live",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "ids-grapheme",
+      "action": "delete",
+      "expected": "后一源 grapheme，与 Backspace 对称",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.ids-grapheme.ctrlModifiers",
+      "view": "live",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "ids-grapheme",
+      "action": "ctrlModifiers",
+      "expected": "平台词/行范围，不切 grapheme；无独有整组特例",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.ids-grapheme.click",
+      "view": "live",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "ids-grapheme",
+      "action": "click",
+      "expected": "展开后真实源命中定位，不能伪造字形叶子映射",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.ids-grapheme.tab",
+      "view": "live",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "ids-grapheme",
+      "action": "tab",
+      "expected": "编辑器一个焦点入口，控件正常遍历",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.ids-grapheme.ime",
+      "view": "live",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "ids-grapheme",
+      "action": "ime",
+      "expected": "组合期间原生拥有，确认单次源事务；按偏好执行独立自动转换事务",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.ids-grapheme.undo",
+      "view": "live",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "ids-grapheme",
+      "action": "undo",
+      "expected": "恢复 source 与有方向 selection，不改配置",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.ids-grapheme.copy",
+      "view": "live",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "ids-grapheme",
+      "action": "copy",
+      "expected": "精确 source 子串",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "live.ids-grapheme.selectionTransform",
+      "view": "live",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "ids-grapheme",
+      "action": "selectionTransform",
+      "expected": "完整目标保守转换，部分 IDS 不猜不扩选",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.display-glyph.leftRight",
+      "view": "source",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "source-grapheme",
+      "action": "leftRight",
+      "expected": "上一/下一源 grapheme 边界",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.display-glyph.shiftSelection",
+      "view": "source",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "source-grapheme",
+      "action": "shiftSelection",
+      "expected": "固定 anchor，focus 逐源 grapheme 移动",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.display-glyph.backspace",
+      "view": "source",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "source-grapheme",
+      "action": "backspace",
+      "expected": "前一源 grapheme；有选区精确删除",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.display-glyph.delete",
+      "view": "source",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "source-grapheme",
+      "action": "delete",
+      "expected": "后一源 grapheme；有选区精确删除",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.display-glyph.ctrlModifiers",
+      "view": "source",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "source-grapheme",
+      "action": "ctrlModifiers",
+      "expected": "平台词/行操作，边界不得切 grapheme，编辑器作用域",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.display-glyph.click",
+      "view": "source",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "source-grapheme",
+      "action": "click",
+      "expected": "真实源文本命中边界",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.display-glyph.tab",
+      "view": "source",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "source-grapheme",
+      "action": "tab",
+      "expected": "焦点导航，不插 tab",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.display-glyph.ime",
+      "view": "source",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "source-grapheme",
+      "action": "ime",
+      "expected": "原生拥有组合期，确认单次源事务；autoConvert 暂停",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.display-glyph.undo",
+      "view": "source",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "source-grapheme",
+      "action": "undo",
+      "expected": "恢复 source 与有方向 selection，不改配置",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.display-glyph.copy",
+      "view": "source",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "source-grapheme",
+      "action": "copy",
+      "expected": "精确 source 子串",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.display-glyph.selectionTransform",
+      "view": "source",
+      "storedUnit": "display-glyph",
+      "effectiveUnit": "source-grapheme",
+      "action": "selectionTransform",
+      "expected": "显式完整选区保守转换，一次可撤销源事务",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.ids-grapheme.leftRight",
+      "view": "source",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "source-grapheme",
+      "action": "leftRight",
+      "expected": "上一/下一源 grapheme 边界",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.ids-grapheme.shiftSelection",
+      "view": "source",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "source-grapheme",
+      "action": "shiftSelection",
+      "expected": "固定 anchor，focus 逐源 grapheme 移动",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.ids-grapheme.backspace",
+      "view": "source",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "source-grapheme",
+      "action": "backspace",
+      "expected": "前一源 grapheme；有选区精确删除",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.ids-grapheme.delete",
+      "view": "source",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "source-grapheme",
+      "action": "delete",
+      "expected": "后一源 grapheme；有选区精确删除",
+      "status": "not-run",
+      "evidenceRequired": [
+        "model",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.ids-grapheme.ctrlModifiers",
+      "view": "source",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "source-grapheme",
+      "action": "ctrlModifiers",
+      "expected": "平台词/行操作，边界不得切 grapheme，编辑器作用域",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.ids-grapheme.click",
+      "view": "source",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "source-grapheme",
+      "action": "click",
+      "expected": "真实源文本命中边界",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.ids-grapheme.tab",
+      "view": "source",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "source-grapheme",
+      "action": "tab",
+      "expected": "焦点导航，不插 tab",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.ids-grapheme.ime",
+      "view": "source",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "source-grapheme",
+      "action": "ime",
+      "expected": "原生拥有组合期，确认单次源事务；autoConvert 暂停",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.ids-grapheme.undo",
+      "view": "source",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "source-grapheme",
+      "action": "undo",
+      "expected": "恢复 source 与有方向 selection，不改配置",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.ids-grapheme.copy",
+      "view": "source",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "source-grapheme",
+      "action": "copy",
+      "expected": "精确 source 子串",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    },
+    {
+      "id": "source.ids-grapheme.selectionTransform",
+      "view": "source",
+      "storedUnit": "ids-grapheme",
+      "effectiveUnit": "source-grapheme",
+      "action": "selectionTransform",
+      "expected": "显式完整选区保守转换，一次可撤销源事务",
+      "status": "not-run",
+      "evidenceRequired": [
+        "controlled-host",
+        "real-browser"
+      ]
+    }
+  ],
+  "regressions": [
+    {
+      "id": "B01",
+      "steps": [
+        "source=A⿰日月B; live/display; caret=4",
+        "ArrowLeft"
+      ],
+      "expected": {
+        "source": "A⿰日月B",
+        "selection": {
+          "anchor": 1,
+          "focus": 1
+        }
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B02",
+      "steps": [
+        "source=A⿰日月B; live/display; caret=4",
+        "Backspace"
+      ],
+      "expected": {
+        "source": "AB",
+        "selection": {
+          "anchor": 1,
+          "focus": 1
+        }
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B03",
+      "steps": [
+        "source=A⿰日月B; live/display; caret=1",
+        "Delete"
+      ],
+      "expected": {
+        "source": "AB",
+        "selection": {
+          "anchor": 1,
+          "focus": 1
+        }
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B04",
+      "steps": [
+        "source=A⿰日月B; live/ids; caret=4",
+        "Backspace"
+      ],
+      "expected": {
+        "source": "A⿰日B",
+        "selection": {
+          "anchor": 3,
+          "focus": 3
+        }
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B05",
+      "steps": [
+        "source=A⿰日月B; live/ids; caret=1",
+        "Delete"
+      ],
+      "expected": {
+        "source": "A日月B",
+        "selection": {
+          "anchor": 1,
+          "focus": 1
+        }
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B06",
+      "steps": [
+        "source=⿰⿱日月木; live/ids; caret=end",
+        "Backspace five times"
+      ],
+      "expected": {
+        "sources": [
+          "⿰⿱日月",
+          "⿰⿱日",
+          "⿰⿱",
+          "⿰",
+          ""
+        ]
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B07",
+      "steps": [
+        "source=A⿰日月B; live/display; caret=1",
+        "Shift+Right",
+        "Shift+Left"
+      ],
+      "expected": {
+        "selections": [
+          {
+            "anchor": 1,
+            "focus": 4
+          },
+          {
+            "anchor": 1,
+            "focus": 1
+          }
+        ],
+        "sourceUnchanged": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B08",
+      "steps": [
+        "source=A⿰日月B; source mode; reverse selection anchor=3,focus=2",
+        "switch live/display",
+        "Backspace"
+      ],
+      "expected": {
+        "source": "A⿰月B",
+        "note": "保留部分源选区，不扩删整个 IDS"
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B09",
+      "steps": [
+        "same complete IDS tested as Unicode, vector, font fallback",
+        "left/right/backspace/delete at all boundaries"
+      ],
+      "expected": {
+        "sameUnitRanges": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B10",
+      "steps": [
+        "source includes surrogate CJK, combining mark, VS, ZWJ sequence",
+        "move/select/delete each direction"
+      ],
+      "expected": {
+        "neverSplitGrapheme": true
+      },
+      "evidenceRequired": "model + real-browser",
+      "status": "not-run"
+    },
+    {
+      "id": "B11",
+      "steps": [
+        "incomplete/unsupported source-only IDS",
+        "live/display navigation"
+      ],
+      "expected": {
+        "sourceGraphemeUnits": true,
+        "noInvisibleAtom": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B12",
+      "steps": [
+        "copy visual 明 generated from ⿰日月",
+        "copy explicitly converted 明"
+      ],
+      "expected": {
+        "clipboard": [
+          "⿰日月",
+          "明"
+        ]
+      },
+      "evidenceRequired": "real-browser",
+      "status": "not-run"
+    },
+    {
+      "id": "B13",
+      "steps": [
+        "preview with recorded source/history",
+        "beforeinput inserts/deletes/history, buttons, paste, cut, drag, IME"
+      ],
+      "expected": {
+        "sourceAndHistoryUnchanged": true
+      },
+      "evidenceRequired": "controlled-host + real-browser",
+      "status": "not-run"
+    },
+    {
+      "id": "B14",
+      "steps": [
+        "compose Chinese",
+        "request source then live then cancel pending switch",
+        "compositionend; stale previous callback arrives"
+      ],
+      "expected": {
+        "noDuplicateCommit": true,
+        "noCancelledSwitch": true,
+        "oldCallbackNoEffect": true
+      },
+      "evidenceRequired": "controlled-host + native-IME",
+      "status": "not-run"
+    },
+    {
+      "id": "B15",
+      "steps": [
+        "live autoConvert=true; type complete known IDS",
+        "undo once",
+        "wait settle"
+      ],
+      "expected": {
+        "source": "original complete IDS",
+        "noAutomaticReconversion": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B16",
+      "steps": [
+        "source view; autoConvert=true",
+        "type known IDS",
+        "switch live"
+      ],
+      "expected": {
+        "sourceRemainsIDS": true,
+        "storedAutoConvert": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "B17",
+      "steps": [
+        "focus settings search / unrelated text input",
+        "Ctrl+Z, configured D/J, arrows, Backspace"
+      ],
+      "expected": {
+        "editorSourceUnchanged": true,
+        "browserShortcutsNotCaptured": true
+      },
+      "evidenceRequired": "real-browser",
+      "status": "not-run"
+    },
+    {
+      "id": "B18",
+      "steps": [
+        "editor focus; Tab/Shift+Tab cycle",
+        "touch choose unit and select/delete without modifiers"
+      ],
+      "expected": {
+        "noFocusTrap": true,
+        "touchEquivalent": true
+      },
+      "evidenceRequired": "real-browser + touch",
+      "status": "not-run"
+    },
+    {
+      "id": "S01",
+      "steps": [
+        "export defaults",
+        "import and apply exported settings"
+      ],
+      "expected": {
+        "settingsEqual": true,
+        "sourceSelectionHistoryUnchanged": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S02",
+      "steps": [
+        "import project JSON with source"
+      ],
+      "expected": {
+        "rejectAtomically": true,
+        "settingsSourceHistoryUnchanged": true,
+        "specificError": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S03",
+      "steps": [
+        "import schemaVersion=999"
+      ],
+      "expected": {
+        "rejectAtomically": true,
+        "settingsSourceHistoryUnchanged": true,
+        "specificError": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S04",
+      "steps": [
+        "import unknown settings key"
+      ],
+      "expected": {
+        "rejectAtomically": true,
+        "settingsSourceHistoryUnchanged": true,
+        "specificError": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S05",
+      "steps": [
+        "import motion.enabled=\"true\""
+      ],
+      "expected": {
+        "rejectAtomically": true,
+        "settingsSourceHistoryUnchanged": true,
+        "specificError": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S06",
+      "steps": [
+        "import motion.speed=0 or 2 or NaN-like invalid JSON"
+      ],
+      "expected": {
+        "rejectAtomically": true,
+        "settingsSourceHistoryUnchanged": true,
+        "specificError": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S07",
+      "steps": [
+        "import __proto__/constructor/prototype at root or settings"
+      ],
+      "expected": {
+        "rejectAtomically": true,
+        "settingsSourceHistoryUnchanged": true,
+        "specificError": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S08",
+      "steps": [
+        "import array/null/nonplain object/root wrong kind"
+      ],
+      "expected": {
+        "rejectAtomically": true,
+        "settingsSourceHistoryUnchanged": true,
+        "specificError": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S09",
+      "steps": [
+        "import file >64KiB UTF-8; test multibyte Chinese"
+      ],
+      "expected": {
+        "rejectAtomically": true,
+        "settingsSourceHistoryUnchanged": true,
+        "specificError": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S10",
+      "steps": [
+        "import duplicate known key or malformed JSON"
+      ],
+      "expected": {
+        "rejectAtomically": true,
+        "settingsSourceHistoryUnchanged": true,
+        "specificError": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S11",
+      "steps": [
+        "import missing known key"
+      ],
+      "expected": {
+        "defaultFilledInPreview": true,
+        "notSilentlyPreserveCurrentValue": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S12",
+      "steps": [
+        "import autoConvert=true over existing known IDS",
+        "apply and wait"
+      ],
+      "expected": {
+        "sourceUnchanged": true,
+        "futureLiveTypingOnly": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S13",
+      "steps": [
+        "start import A slow",
+        "start B fast and apply",
+        "A resolves"
+      ],
+      "expected": {
+        "onlyBApplied": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S14",
+      "steps": [
+        "import parsed preview",
+        "change settings elsewhere",
+        "apply old preview"
+      ],
+      "expected": {
+        "stalePreviewRejected": true,
+        "latestSettingsPreserved": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S15",
+      "steps": [
+        "import settings",
+        "undo settings",
+        "redo settings",
+        "reset all then undo settings"
+      ],
+      "expected": {
+        "wholeTransactions": true,
+        "sourceHistoryUnaffected": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S16",
+      "steps": [
+        "change motion setting via store",
+        "observe main app, inline, demo",
+        "simulate legacy initializer/subscribe callback"
+      ],
+      "expected": {
+        "singleValueEverywhere": true,
+        "noFeedbackLoop": true,
+        "noOldDefaultsOverwrite": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S17",
+      "steps": [
+        "localStorage write throws",
+        "reopen",
+        "receive other-tab storage change"
+      ],
+      "expected": {
+        "sessionSettingStillEffective": true,
+        "failureVisible": true,
+        "reopenLastSaved": true,
+        "externalNotAutoApplied": true
+      },
+      "evidenceRequired": "controlled-host + real-browser",
+      "status": "not-run"
+    },
+    {
+      "id": "S18",
+      "steps": [
+        "search 退格 / 粒度 / animation / 合字 / key",
+        "search no results",
+        "inspect persistent errors and readonly"
+      ],
+      "expected": {
+        "namesDescriptionsAliasesMatch": true,
+        "clearSearchAvailable": true,
+        "criticalStatesNeverFiltered": true
+      },
+      "evidenceRequired": "real-browser",
+      "status": "not-run"
+    },
+    {
+      "id": "S19",
+      "steps": [
+        "export full config with app state containing fake source/password/path/token"
+      ],
+      "expected": {
+        "onlySchemaWhitelistExported": true,
+        "noSecretOrDocumentData": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S20",
+      "steps": [
+        "future schema adds migration v1->v2",
+        "run fixtures default/explicit false/unknown/failure"
+      ],
+      "expected": {
+        "oldFileUnmodified": true,
+        "migrationPureAndDeterministic": true,
+        "invalidMigrationNoCommit": true,
+        "note": "版本1没有前代配置文件，后续迁移上线前必须实现此测试"
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S21",
+      "steps": [
+        "system reduced motion on; motion.enabled stored true",
+        "export and toggle system preference"
+      ],
+      "expected": {
+        "exportedPreferenceTrue": true,
+        "effectiveStaticWhileSystemReduced": true,
+        "sourceUnchanged": true
+      },
+      "evidenceRequired": "model",
+      "status": "not-run"
+    },
+    {
+      "id": "S22",
+      "steps": [
+        "settings at narrow viewport and keyboard/reader navigation"
+      ],
+      "expected": {
+        "importExportResetCloseReachable": true,
+        "inactiveReasonsAccessible": true
+      },
+      "evidenceRequired": "real-browser + screen-reader",
+      "status": "not-run"
+    }
+  ]
+}
