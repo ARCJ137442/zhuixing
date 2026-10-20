@@ -1,0 +1,8 @@
+{
+  "required": 3500,
+  "scanned": 3500,
+  "readyOracle": 3500,
+  "missingOracle": 0,
+  "candidatePairPresent": 0,
+  "missingCandidate": 3500
+}

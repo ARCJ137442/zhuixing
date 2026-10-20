@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "totalUniqueRequired": 20992,
+  "common3500Required": 3500,
+  "stageCounts": {
+    "identity": {
+      "pass": 20992
+    },
+    "rawInventory": {
+      "pass": 20992
+    },
+    "mappingSemantics": {
+      "blocked-policy": 19052,
+      "not-run": 1940
+    },
+    "fontCmap": {
+      "pass": 20992
+    },
+    "unicodeDisplay": {
+      "not-run": 20992
+    },
+    "pureOutlineExport": {
+      "missing-candidate": 3500,
+      "not-run": 17492
+    },
+    "sameFontSvg": {
+      "missing-candidate": 3500,
+      "not-run": 17492
+    },
+    "sameFontPixels": {
+      "missing-candidate": 3500,
+      "not-run": 17492
+    },
+    "crossFontReference": {
+      "missing-reference": 20992
+    },
+    "browser-Chromium": {
+      "not-run": 20992
+    },
+    "browser-Firefox": {
+      "not-run": 20992
+    },
+    "browser-WebKit": {
+      "not-run": 20992
+    }
+  },
+  "commonStageCounts": {
+    "identity": {
+      "pass": 3500
+    },
+    "rawInventory": {
+      "pass": 3500
+    },
+    "mappingSemantics": {
+      "blocked-policy": 3124,
+      "not-run": 376
+    },
+    "fontCmap": {
+      "pass": 3500
+    },
+    "unicodeDisplay": {
+      "not-run": 3500
+    },
+    "pureOutlineExport": {
+      "missing-candidate": 3500
+    },
+    "sameFontSvg": {
+      "missing-candidate": 3500
+    },
+    "sameFontPixels": {
+      "missing-candidate": 3500
+    },
+    "crossFontReference": {
+      "missing-reference": 3500
+    },
+    "browser-Chromium": {
+      "not-run": 3500
+    },
+    "browser-Firefox": {
+      "not-run": 3500
+    },
+    "browser-WebKit": {
+      "not-run": 3500
+    }
+  },
+  "fullyPassedCases": 0,
+  "blockedOrFailingCases": 20992,
+  "knownRegressionGate": "blocked",
+  "browserMatrixReady": false,
+  "browserScope": "Versioned browser/OS matrix must be attached; family labels alone do not prove all environments",
+  "crossFontPolicy": "Always descriptive; missing never reported as pass. Not an exact-equality gate.",
+  "releaseGate": "blocked",
+  "noMathematicalZeroDefectClaim": true
+}

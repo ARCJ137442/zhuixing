@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "scope": "Required browser families. Exact browser version, OS version and test artifact must be recorded before release; no claim to every browser ever made.",
+  "environments": [
+    {"family":"Chromium","browserVersion":null,"osVersion":null,"status":"not-run","testedCases":0,"reportPath":null,"reportSha256":null},
+    {"family":"Firefox","browserVersion":null,"osVersion":null,"status":"not-run","testedCases":0,"reportPath":null,"reportSha256":null},
+    {"family":"WebKit","browserVersion":null,"osVersion":null,"status":"not-run","testedCases":0,"reportPath":null,"reportSha256":null}
+  ]
+}

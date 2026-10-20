@@ -1,0 +1,464 @@
+{
+  "status": "envelope-only-not-semantic-projection",
+  "sourceSHA256": "5dd94c9e02f7eab0f5dacb1005fc1010f2281ac6f0b101aefb51b2d99a10c43f",
+  "records": 102033,
+  "entries": 166916,
+  "types": {
+    "opaque-annotation": 259519,
+    "opaque-reference": 214,
+    "unicode-token": 573971,
+    "parameter-group": 651
+  },
+  "errors": [],
+  "exactLineRoundTrip": true,
+  "projectionEnabled": false,
+  "examples": [
+    {
+      "lineNumber": 361,
+      "raw": "佨\t⿰亻包.(.);⿰亻包J(J)",
+      "character": "佨",
+      "columns": [
+        {
+          "role": "primary",
+          "raw": "⿰亻包.(.);⿰亻包J(J)",
+          "entries": [
+            {
+              "raw": "⿰亻包.(.)",
+              "expression": "⿰亻包.",
+              "variantGroups": [
+                {
+                  "raw": "(.)",
+                  "value": ".",
+                  "indicators": [
+                    "."
+                  ],
+                  "start": 4,
+                  "end": 7
+                }
+              ],
+              "annotations": [
+                {
+                  "kind": "unicode-token",
+                  "raw": "⿰",
+                  "start": 0,
+                  "end": 1
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "亻",
+                  "start": 1,
+                  "end": 2
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "包",
+                  "start": 2,
+                  "end": 3
+                },
+                {
+                  "kind": "opaque-annotation",
+                  "raw": ".",
+                  "start": 3,
+                  "end": 4
+                }
+              ],
+              "columnStart": 0,
+              "columnEnd": 7
+            },
+            {
+              "raw": "⿰亻包J(J)",
+              "expression": "⿰亻包J",
+              "variantGroups": [
+                {
+                  "raw": "(J)",
+                  "value": "J",
+                  "indicators": [
+                    "J"
+                  ],
+                  "start": 4,
+                  "end": 7
+                }
+              ],
+              "annotations": [
+                {
+                  "kind": "unicode-token",
+                  "raw": "⿰",
+                  "start": 0,
+                  "end": 1
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "亻",
+                  "start": 1,
+                  "end": 2
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "包",
+                  "start": 2,
+                  "end": 3
+                },
+                {
+                  "kind": "opaque-annotation",
+                  "raw": "J",
+                  "start": 3,
+                  "end": 4
+                }
+              ],
+              "columnStart": 8,
+              "columnEnd": 15
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "lineNumber": 1286,
+      "raw": "包\t⿻[l,l,.]勹巳.(.);⿻[l,l,.]勹己.(J);⿻[l,l,.]勹巳t(.t)",
+      "character": "包",
+      "columns": [
+        {
+          "role": "primary",
+          "raw": "⿻[l,l,.]勹巳.(.);⿻[l,l,.]勹己.(J);⿻[l,l,.]勹巳t(.t)",
+          "entries": [
+            {
+              "raw": "⿻[l,l,.]勹巳.(.)",
+              "expression": "⿻[l,l,.]勹巳.",
+              "variantGroups": [
+                {
+                  "raw": "(.)",
+                  "value": ".",
+                  "indicators": [
+                    "."
+                  ],
+                  "start": 11,
+                  "end": 14
+                }
+              ],
+              "annotations": [
+                {
+                  "kind": "unicode-token",
+                  "raw": "⿻",
+                  "start": 0,
+                  "end": 1
+                },
+                {
+                  "kind": "parameter-group",
+                  "raw": "[l,l,.]",
+                  "start": 1,
+                  "end": 8
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "勹",
+                  "start": 8,
+                  "end": 9
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "巳",
+                  "start": 9,
+                  "end": 10
+                },
+                {
+                  "kind": "opaque-annotation",
+                  "raw": ".",
+                  "start": 10,
+                  "end": 11
+                }
+              ],
+              "columnStart": 0,
+              "columnEnd": 14
+            },
+            {
+              "raw": "⿻[l,l,.]勹己.(J)",
+              "expression": "⿻[l,l,.]勹己.",
+              "variantGroups": [
+                {
+                  "raw": "(J)",
+                  "value": "J",
+                  "indicators": [
+                    "J"
+                  ],
+                  "start": 11,
+                  "end": 14
+                }
+              ],
+              "annotations": [
+                {
+                  "kind": "unicode-token",
+                  "raw": "⿻",
+                  "start": 0,
+                  "end": 1
+                },
+                {
+                  "kind": "parameter-group",
+                  "raw": "[l,l,.]",
+                  "start": 1,
+                  "end": 8
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "勹",
+                  "start": 8,
+                  "end": 9
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "己",
+                  "start": 9,
+                  "end": 10
+                },
+                {
+                  "kind": "opaque-annotation",
+                  "raw": ".",
+                  "start": 10,
+                  "end": 11
+                }
+              ],
+              "columnStart": 15,
+              "columnEnd": 29
+            },
+            {
+              "raw": "⿻[l,l,.]勹巳t(.t)",
+              "expression": "⿻[l,l,.]勹巳t",
+              "variantGroups": [
+                {
+                  "raw": "(.t)",
+                  "value": ".t",
+                  "indicators": [
+                    ".t"
+                  ],
+                  "start": 11,
+                  "end": 15
+                }
+              ],
+              "annotations": [
+                {
+                  "kind": "unicode-token",
+                  "raw": "⿻",
+                  "start": 0,
+                  "end": 1
+                },
+                {
+                  "kind": "parameter-group",
+                  "raw": "[l,l,.]",
+                  "start": 1,
+                  "end": 8
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "勹",
+                  "start": 8,
+                  "end": 9
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "巳",
+                  "start": 9,
+                  "end": 10
+                },
+                {
+                  "kind": "opaque-annotation",
+                  "raw": "t",
+                  "start": 10,
+                  "end": 11
+                }
+              ],
+              "columnStart": 30,
+              "columnEnd": 45
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "lineNumber": 5286,
+      "raw": "报\t⿰扌𠬝.\t⿸𰒸又.",
+      "character": "报",
+      "columns": [
+        {
+          "role": "primary",
+          "raw": "⿰扌𠬝.",
+          "entries": [
+            {
+              "raw": "⿰扌𠬝.",
+              "expression": "⿰扌𠬝.",
+              "variantGroups": [],
+              "annotations": [
+                {
+                  "kind": "unicode-token",
+                  "raw": "⿰",
+                  "start": 0,
+                  "end": 1
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "扌",
+                  "start": 1,
+                  "end": 2
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "𠬝",
+                  "start": 2,
+                  "end": 4
+                },
+                {
+                  "kind": "opaque-annotation",
+                  "raw": ".",
+                  "start": 4,
+                  "end": 5
+                }
+              ],
+              "columnStart": 0,
+              "columnEnd": 5
+            }
+          ]
+        },
+        {
+          "role": "alternative",
+          "raw": "⿸𰒸又.",
+          "entries": [
+            {
+              "raw": "⿸𰒸又.",
+              "expression": "⿸𰒸又.",
+              "variantGroups": [],
+              "annotations": [
+                {
+                  "kind": "unicode-token",
+                  "raw": "⿸",
+                  "start": 0,
+                  "end": 1
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "𰒸",
+                  "start": 1,
+                  "end": 3
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "又",
+                  "start": 3,
+                  "end": 4
+                },
+                {
+                  "kind": "opaque-annotation",
+                  "raw": ".",
+                  "start": 4,
+                  "end": 5
+                }
+              ],
+              "columnStart": 0,
+              "columnEnd": 5
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "lineNumber": 5298,
+      "raw": "抱\t⿰扌包.(.);⿰扌包J(J)",
+      "character": "抱",
+      "columns": [
+        {
+          "role": "primary",
+          "raw": "⿰扌包.(.);⿰扌包J(J)",
+          "entries": [
+            {
+              "raw": "⿰扌包.(.)",
+              "expression": "⿰扌包.",
+              "variantGroups": [
+                {
+                  "raw": "(.)",
+                  "value": ".",
+                  "indicators": [
+                    "."
+                  ],
+                  "start": 4,
+                  "end": 7
+                }
+              ],
+              "annotations": [
+                {
+                  "kind": "unicode-token",
+                  "raw": "⿰",
+                  "start": 0,
+                  "end": 1
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "扌",
+                  "start": 1,
+                  "end": 2
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "包",
+                  "start": 2,
+                  "end": 3
+                },
+                {
+                  "kind": "opaque-annotation",
+                  "raw": ".",
+                  "start": 3,
+                  "end": 4
+                }
+              ],
+              "columnStart": 0,
+              "columnEnd": 7
+            },
+            {
+              "raw": "⿰扌包J(J)",
+              "expression": "⿰扌包J",
+              "variantGroups": [
+                {
+                  "raw": "(J)",
+                  "value": "J",
+                  "indicators": [
+                    "J"
+                  ],
+                  "start": 4,
+                  "end": 7
+                }
+              ],
+              "annotations": [
+                {
+                  "kind": "unicode-token",
+                  "raw": "⿰",
+                  "start": 0,
+                  "end": 1
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "扌",
+                  "start": 1,
+                  "end": 2
+                },
+                {
+                  "kind": "unicode-token",
+                  "raw": "包",
+                  "start": 2,
+                  "end": 3
+                },
+                {
+                  "kind": "opaque-annotation",
+                  "raw": "J",
+                  "start": 3,
+                  "end": 4
+                }
+              ],
+              "columnStart": 8,
+              "columnEnd": 15
+            }
+          ]
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

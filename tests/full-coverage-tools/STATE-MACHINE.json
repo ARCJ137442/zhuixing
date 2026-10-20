@@ -1,0 +1,10 @@
+{
+ "schemaVersion":1,
+ "scope":{"coreVersion":"Unicode17.0.0","coreRange":[19968,40959],"coreAssignedCount":20992,"commonSource":"TGH2013-level1 via Unicode17 kTGH","commonCount":3500,"uniqueUnionCount":20992},
+ "states":["not-run","pass","fail","missing-reference","missing-candidate","missing-glyph","incompatible-oracle","blocked-policy","timeout","error","descriptive-complete"],
+ "passRequirements":{"identity":"pinned assignment and exact set membership","rawInventory":"all original rows/fields retained, not semantic equivalence","mappingSemantics":"reviewed lossless annotation/variant policy and actual exact lookup","fontCmap":"pinned local cmap hit only","unicodeDisplay":"actual target renderer/browser evidence","pureOutlineExport":"actual candidate self-contained vectors","sameFontSvg":"same contract and equal canonical vector structure","sameFontPixels":"same contract, rasterizer and locked tolerances","browsers":"actual versioned environment evidence for each required browser/platform"},
+ "nonPassRules":{"missing":"never pass","timeout":"never pass","not-run":"never pass","crossFontReference":"descriptive-complete is not equality pass","inventoryComplete":"not glyph/render/browser completion","queueExhausted":"not success"},
+ "resume":{"store":"cache/coverage.sqlite","checkpoints":["same-font-next","cross-font-next"],"maxBatchCases":100,"maxRequestedWallSeconds":120,"cacheInvalidation":"SVG hashes+engine hash+rasterizer+pixel size+tolerance version"},
+ "noRegression":"Prior pass becoming anything else or deleted case blocks; immutable expected-known anchors may not be weakened to pass",
+ "defaultReleaseGate":"blocked-until-all-required-stages-and-known-regressions-pass"
+}

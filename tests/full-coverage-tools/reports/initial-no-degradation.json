@@ -1,0 +1,7 @@
+{
+  "baselineCases": 20992,
+  "currentCases": 20992,
+  "regressions": [],
+  "gate": "no-degradation-detected",
+  "caveat": "No-degradation is necessary, not sufficient. Missing/unrun baseline work still blocks full release gate."
+}

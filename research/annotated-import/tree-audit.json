@@ -1,0 +1,6531 @@
+{
+  "semanticProjection": false,
+  "counts": {
+    "opaque-operand": 721,
+    "parsed-annotations-uninterpreted": 166101,
+    "missing-operand": 57,
+    "remaining-tokens": 37
+  },
+  "unresolved": [
+    {
+      "character": "一",
+      "line": 1,
+      "role": "primary",
+      "raw": "#(H)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "一",
+      "line": 1,
+      "role": "primary",
+      "raw": "{一}#(T)(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "丗",
+      "line": 24,
+      "role": "primary",
+      "raw": "{?0丗}⿻⿺𠃊.〢一.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "丗",
+      "line": 24,
+      "role": "primary",
+      "raw": "{丗}⿱卅s一.(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "丨",
+      "line": 41,
+      "role": "primary",
+      "raw": "#(S)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "丶",
+      "line": 55,
+      "role": "primary",
+      "raw": "#(D)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "丶",
+      "line": 55,
+      "role": "primary",
+      "raw": "{丶}#(S)(s)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "丿",
+      "line": 64,
+      "role": "primary",
+      "raw": "#(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "乀",
+      "line": 65,
+      "role": "primary",
+      "raw": "#(N)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "乀",
+      "line": 65,
+      "role": "primary",
+      "raw": "{乀}#(J)(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "乁",
+      "line": 66,
+      "role": "primary",
+      "raw": "#(HN)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "之",
+      "line": 76,
+      "role": "primary",
+      "raw": "⿱丶.#(㇇乀)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "之",
+      "line": 76,
+      "role": "primary",
+      "raw": "⿱丶s#(㇇乀)(J)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "乌",
+      "line": 77,
+      "role": "primary",
+      "raw": "⿱丿⿹#(-𠃌㇉)一.(.)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "乌",
+      "line": 77,
+      "role": "primary",
+      "raw": "⿱丿⿹#(-𠃌㇉)一t(t)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "乐",
+      "line": 81,
+      "role": "primary",
+      "raw": "⿻[1:]亅⿱#(丿𠃊)八d(.)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "乐",
+      "line": 81,
+      "role": "primary",
+      "raw": "⿻[1:]丨⿱#(丿𠃊)人.(P)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "乙",
+      "line": 90,
+      "role": "primary",
+      "raw": "#(HPHwg)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "乚",
+      "line": 91,
+      "role": "primary",
+      "raw": "#(SHwg)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "乚",
+      "line": 91,
+      "role": "primary",
+      "raw": "{乚}#(ST)(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "乚",
+      "line": 91,
+      "role": "primary",
+      "raw": "{乚}#(SHw)(w)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "乚",
+      "line": 91,
+      "role": "primary",
+      "raw": "{乚}#(SH)(z)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "乛",
+      "line": 92,
+      "role": "primary",
+      "raw": "#(Hg)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "亅",
+      "line": 134,
+      "role": "primary",
+      "raw": "#(Sg)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "了",
+      "line": 135,
+      "role": "primary",
+      "raw": "#(乛亅)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "了",
+      "line": 135,
+      "role": "primary",
+      "raw": "#(乛丨)(s)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "亇",
+      "line": 136,
+      "role": "primary",
+      "raw": "{亇}⿱𠂉丨(ys)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "亞",
+      "line": 159,
+      "role": "primary",
+      "raw": "⿳一.⿰#(丨-一𠃑)#(𠃑-一丨)一.(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "亞",
+      "line": 159,
+      "role": "primary",
+      "raw": "⿳一.⿰#(丨-一𠃑)#(𠃑-一丨)一t(t)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "亠",
+      "line": 161,
+      "role": "primary",
+      "raw": "{亠}⿱一.一.(jh)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "人",
+      "line": 187,
+      "role": "primary",
+      "raw": "#(-丿乀)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "人",
+      "line": 187,
+      "role": "primary",
+      "raw": "#(-丿丶)(d)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "兜",
+      "line": 861,
+      "role": "primary",
+      "raw": "⿱⿲#(丿𠄌)白コ儿.(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "兜",
+      "line": 861,
+      "role": "primary",
+      "raw": "⿱⿲#(丿𠃊)白コ儿.(H)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "冂",
+      "line": 899,
+      "role": "primary",
+      "raw": "#(-丨𠃌)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "冂",
+      "line": 899,
+      "role": "primary",
+      "raw": "#(-丨𠃍)(z)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "冃",
+      "line": 900,
+      "role": "primary",
+      "raw": "{冃}⿵冂.二.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "冃",
+      "line": 900,
+      "role": "primary",
+      "raw": "{冃}⿵冂z二.(z)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "冃",
+      "line": 900,
+      "role": "alternative",
+      "raw": "{冃}⿵𠔼一.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "冖",
+      "line": 919,
+      "role": "primary",
+      "raw": "#(-乛丶)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "几",
+      "line": 993,
+      "role": "primary",
+      "raw": "#(-丿㇈)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "几",
+      "line": 993,
+      "role": "primary",
+      "raw": "#(-丿乁)(n)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "几",
+      "line": 993,
+      "role": "primary",
+      "raw": "#(-丿㇊)(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "几",
+      "line": 993,
+      "role": "primary",
+      "raw": "#(-丿㇍)(w)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "几",
+      "line": 993,
+      "role": "primary",
+      "raw": "#(-丿⺄)(z)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "凫",
+      "line": 1004,
+      "role": "primary",
+      "raw": "⿳丿⿴#(-𠃌㇉)丶.几.",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "凵",
+      "line": 1014,
+      "role": "primary",
+      "raw": "#(丨-𠃊)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "凵",
+      "line": 1014,
+      "role": "primary",
+      "raw": "#(丨b一-丨)(y)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "凸",
+      "line": 1017,
+      "role": "primary",
+      "raw": "#(-丨一-丨㇎-一z)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "凸",
+      "line": 1017,
+      "role": "primary",
+      "raw": "#(-𠃊一-丨㇎z)(x)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "凹",
+      "line": 1018,
+      "role": "primary",
+      "raw": "#(-丨㇅-丨𠃍-一z)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "凹",
+      "line": 1018,
+      "role": "primary",
+      "raw": "#(-𠃊㇅-丨𠃍z)(x)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "凹",
+      "line": 1018,
+      "role": "primary",
+      "raw": "#(一-𠃍丨b一-𠃍丨b一)(q4382)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "匚",
+      "line": 1307,
+      "role": "primary",
+      "raw": "#(-一𠃊)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "匚",
+      "line": 1307,
+      "role": "primary",
+      "raw": "#(-一乚)(g)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "匚",
+      "line": 1307,
+      "role": "primary",
+      "raw": "#(-一𠄌)(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "匚",
+      "line": 1307,
+      "role": "primary",
+      "raw": "#(-一㇄)(w)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "卄",
+      "line": 1349,
+      "role": "primary",
+      "raw": "{卄}⿻〢一.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "卍",
+      "line": 1358,
+      "role": "primary",
+      "raw": "⿻㇅#(丨-一丨)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "卐",
+      "line": 1361,
+      "role": "primary",
+      "raw": "⿻#(一-丨一)𠃑.",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "卩",
+      "line": 1386,
+      "role": "primary",
+      "raw": "{卩}#(-丨𠃌)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "卬",
+      "line": 1389,
+      "role": "primary",
+      "raw": "⿰#(丿𠄌)卩",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "印",
+      "line": 1393,
+      "role": "primary",
+      "raw": "⿰⿷#(丿𠄌)一.卩(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "印",
+      "line": 1393,
+      "role": "primary",
+      "raw": "⿰⿷#(丿𠄌)一.卪(q298c2)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "厂",
+      "line": 1411,
+      "role": "primary",
+      "raw": "#(-一丿)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "厂",
+      "line": 1411,
+      "role": "primary",
+      "raw": "#(-一丨)(s)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "又",
+      "line": 1481,
+      "role": "primary",
+      "raw": "#(-乀x1㇇)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "又",
+      "line": 1481,
+      "role": "primary",
+      "raw": "#(-㇝x1㇇)(K)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "又",
+      "line": 1481,
+      "role": "primary",
+      "raw": "#(-丶x1㇇)(d)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "口",
+      "line": 1508,
+      "role": "primary",
+      "raw": "#(-丨𠃍-一z)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "口",
+      "line": 1508,
+      "role": "primary",
+      "raw": "#(-𠃊𠃍z)(y)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "叱",
+      "line": 1522,
+      "role": "primary",
+      "raw": "{?叱}⿰口.七.(V)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "喦",
+      "line": 1959,
+      "role": "primary",
+      "raw": "{?喦}⿱品山(V)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "喦",
+      "line": 1959,
+      "role": "alternative",
+      "raw": "{?喦}⿱口.𡷇(V)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "囗",
+      "line": 2264,
+      "role": "primary",
+      "raw": "{囗}#(-丨𠃍-一z)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "囗",
+      "line": 2264,
+      "role": "primary",
+      "raw": "{囗}#(-𠃊𠃍z)(y)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "壄",
+      "line": 2757,
+      "role": "primary",
+      "raw": "{壄}⿱㮊土.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "士",
+      "line": 2796,
+      "role": "primary",
+      "raw": "{士}⿱十.一.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "士",
+      "line": 2796,
+      "role": "primary",
+      "raw": "{士}⿱十.一t(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "士",
+      "line": 2796,
+      "role": "alternative",
+      "raw": "{士}⿻丄.一.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "士",
+      "line": 2796,
+      "role": "alternative",
+      "raw": "{士}⿻丄t一.(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "壺",
+      "line": 2811,
+      "role": "primary",
+      "raw": "⿳𡉅dy⿰#(丨-一𠃑)#(𠃑-一丨)一.(.)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "壺",
+      "line": 2811,
+      "role": "primary",
+      "raw": "⿳𡉅dy⿰#(丨-一𠃑)#(𠃑-一丨)一t(t)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "宂",
+      "line": 3459,
+      "role": "primary",
+      "raw": "{宂}⿱宀.儿.(H)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "宂",
+      "line": 3459,
+      "role": "primary",
+      "raw": "{宂}⿱宀J儿.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "宂",
+      "line": 3459,
+      "role": "primary",
+      "raw": "{宂}⿱宀.儿t(yt)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "寯",
+      "line": 3568,
+      "role": "alternative",
+      "raw": "⿱寉.#(-丨㇅-丨𠃌)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "寯",
+      "line": 3568,
+      "role": "alternative",
+      "raw": "⿱寉J#(-丨㇅-丨𠃌)(J)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "尒",
+      "line": 3603,
+      "role": "primary",
+      "raw": "{?0尒}⿱入H小.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "尵",
+      "line": 3638,
+      "role": "primary",
+      "raw": "{?0尵}⿺尣貴(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "尸",
+      "line": 3641,
+      "role": "primary",
+      "raw": "#(一-𠃍丿)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "尸",
+      "line": 3641,
+      "role": "primary",
+      "raw": "#(一-𠃍丨)(s)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "岛",
+      "line": 3740,
+      "role": "primary",
+      "raw": "⿱丿⿹⿴#(-𠃌㇉)丶.山",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "峀",
+      "line": 3777,
+      "role": "primary",
+      "raw": "{峀}⿱山田(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "島",
+      "line": 3831,
+      "role": "primary",
+      "raw": "⿱丿⿹⿷⿴#(一-𠃍丨b𠃌)一.一.山",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "嶲",
+      "line": 4019,
+      "role": "alternative",
+      "raw": "⿱崔.#(-丨㇅-丨𠃌)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "嶲",
+      "line": 4019,
+      "role": "alternative",
+      "raw": "⿱崔J#(-丨㇅-丨𠃌)(J)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "己",
+      "line": 4082,
+      "role": "primary",
+      "raw": "#(𠃍-一乚)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "己",
+      "line": 4082,
+      "role": "primary",
+      "raw": "#(𠃍-一𠄌)(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "己",
+      "line": 4082,
+      "role": "primary",
+      "raw": "#(𠃍-一㇄)(w)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "己",
+      "line": 4082,
+      "role": "primary",
+      "raw": "#(𠃍-一𠃊)(z)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "巳",
+      "line": 4084,
+      "role": "primary",
+      "raw": "#(一-𠃍乚)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "巳",
+      "line": 4084,
+      "role": "primary",
+      "raw": "#(一-𠃍𠄌)(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "巳",
+      "line": 4084,
+      "role": "primary",
+      "raw": "#(一-𠃍㇄)(w)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "巳",
+      "line": 4084,
+      "role": "primary",
+      "raw": "#(一-𠃍𠃊)(z)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "弓",
+      "line": 4372,
+      "role": "primary",
+      "raw": "#(𠃍-一㇉)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "弓",
+      "line": 4372,
+      "role": "primary",
+      "raw": "#(𠃍-一𠃑)(z)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "彐",
+      "line": 4433,
+      "role": "primary",
+      "raw": "{彐}⿼コ一.(G)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "径",
+      "line": 4485,
+      "role": "primary",
+      "raw": "{?0径}⿰彳圣(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "抇",
+      "line": 5256,
+      "role": "primary",
+      "raw": "{抇}⿰扌曰(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "斲",
+      "line": 6067,
+      "role": "primary",
+      "raw": "⿰⿱⿰⿸#(丿𠃊)#(丨-一𠃑)#(一-𠃍𠃑-一丨)一t斤(J)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "暅",
+      "line": 6278,
+      "role": "primary",
+      "raw": "{?0暅}⿰日恆(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "曚",
+      "line": 6363,
+      "role": "primary",
+      "raw": "{?0曚}⿰日𫎇(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "曰",
+      "line": 6385,
+      "role": "primary",
+      "raw": "{曰}⿴囗.一.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "朦",
+      "line": 6439,
+      "role": "primary",
+      "raw": "{?0朦}⿰月.蒙.(K)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "朩",
+      "line": 6442,
+      "role": "primary",
+      "raw": "{朩}⿻十.八.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "末",
+      "line": 6444,
+      "role": "primary",
+      "raw": "{末}⿻𰀁.人.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "末",
+      "line": 6444,
+      "role": "primary",
+      "raw": "{末}⿻𰀁.人d(d)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "末",
+      "line": 6444,
+      "role": "alternative",
+      "raw": "{末}⿻十.𠆣.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "末",
+      "line": 6444,
+      "role": "alternative",
+      "raw": "{末}⿻十.𠆣d(d)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "枭",
+      "line": 6574,
+      "role": "primary",
+      "raw": "⿳丿⿴#(-𠃌㇉)丶.木.",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "梟",
+      "line": 6816,
+      "role": "primary",
+      "raw": "⿱丿⿹⿷⿴#(一-𠃍丨b𠃌)一.一.木.(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "梟",
+      "line": 6816,
+      "role": "primary",
+      "raw": "⿳丿⿷⿴#(一-𠃍丨b𠃌)一.一.木.(J)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "梟",
+      "line": 6816,
+      "role": "primary",
+      "raw": "⿱丿⿹⿷⿴#(一-𠃍丨b𠃌)一.一.木d(T)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "欥",
+      "line": 7462,
+      "role": "primary",
+      "raw": "{欥}⿰日欠.(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "毋",
+      "line": 7628,
+      "role": "primary",
+      "raw": "⿻[1:]丿⿻#(-𠃌𠃊x0)一.(.)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "毋",
+      "line": 7628,
+      "role": "primary",
+      "raw": "⿻⿴#(-𠃌𠃊x0)丨一.(J)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "毋",
+      "line": 7628,
+      "role": "primary",
+      "raw": "⿻⿴#(-𠃌𠃊x0)丿一.(yp)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "母",
+      "line": 7630,
+      "role": "primary",
+      "raw": "⿻⿴#(-𠃌𠃊x0)⺀一.",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "氏",
+      "line": 7696,
+      "role": "primary",
+      "raw": "⿸#(丿𠄌)𫠠",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "湼",
+      "line": 8317,
+      "role": "primary",
+      "raw": "⿰氵.⿱⿴#(丿丨b一-𠃍)一.工.(P)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "瀬",
+      "line": 8749,
+      "role": "primary",
+      "raw": "{?0瀬}⿰氵.賴.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "烏",
+      "line": 8912,
+      "role": "primary",
+      "raw": "⿱丿⿹⿷#(一-𠃍丨b𠃌)一.灬",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "爲",
+      "line": 9267,
+      "role": "primary",
+      "raw": "⿱爫.⿸⿵#(-乛丿)灬⿱𠃍𠃌(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "爲",
+      "line": 9267,
+      "role": "primary",
+      "raw": "⿱爫J⿸⿵#(-乛丿)灬⿱𠃍𠃌(J)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "牜",
+      "line": 9309,
+      "role": "primary",
+      "raw": "{?2牜}⿻丨⿱𠂉一t",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "狊",
+      "line": 9419,
+      "role": "primary",
+      "raw": "{狊}⿱目大.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "獡",
+      "line": 9570,
+      "role": "primary",
+      "raw": "{?0獡}⿰犭舃(K)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "琢",
+      "line": 9763,
+      "role": "primary",
+      "raw": "{?0琢}⿰王t豕.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "瑤",
+      "line": 9829,
+      "role": "primary",
+      "raw": "{?0瑤}⿰王t䍃.(V)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "瑨",
+      "line": 9833,
+      "role": "primary",
+      "raw": "{?0瑨}⿰王t晋(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "畱",
+      "line": 10098,
+      "role": "primary",
+      "raw": "⿳一.⿻〢#(一-𠃍丨b一)田(V)",
+      "reason": "remaining-tokens",
+      "offset": 9
+    },
+    {
+      "character": "畱",
+      "line": 10098,
+      "role": "primary",
+      "raw": "⿳一.⿰#(丨-一𠃑)#(𠃑-一丨)田(qy)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "疉",
+      "line": 10122,
+      "role": "primary",
+      "raw": "{?0疉}⿳畾宀.彑.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "皮",
+      "line": 10415,
+      "role": "primary",
+      "raw": "⿸⿻丨#(-乛丿)又.(.)",
+      "reason": "remaining-tokens",
+      "offset": 7
+    },
+    {
+      "character": "皮",
+      "line": 10415,
+      "role": "primary",
+      "raw": "⿸⿻丨#(-乛丿)又d(d)",
+      "reason": "remaining-tokens",
+      "offset": 7
+    },
+    {
+      "character": "盏",
+      "line": 10448,
+      "role": "primary",
+      "raw": "{?0盏}⿱㦮皿.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "盏",
+      "line": 10448,
+      "role": "alternative",
+      "raw": "{?0盏}⿺𥁫T丶.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "眔",
+      "line": 10517,
+      "role": "primary",
+      "raw": "{?0眔}⿱罒氺.n(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "睂",
+      "line": 10563,
+      "role": "primary",
+      "raw": "⿸⿽#(丨-一丿)仌.d目(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "睂",
+      "line": 10563,
+      "role": "primary",
+      "raw": "⿸⿽#(丨-一丿)仌T目(n)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "稽",
+      "line": 11326,
+      "role": "primary",
+      "raw": "{?0稽}⿰禾d⿱尤.㫖(K)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "簆",
+      "line": 11783,
+      "role": "primary",
+      "raw": "{?0簆}⿱𥫗.𡨥.(H)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "罓",
+      "line": 12628,
+      "role": "primary",
+      "raw": "{?2罓}⿵冂z乂d",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "羀",
+      "line": 12673,
+      "role": "primary",
+      "raw": "{?0羀}⿱罒畱.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "耴",
+      "line": 12853,
+      "role": "primary",
+      "raw": "{?0耴}⿸耳jty乚.(H)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "肦",
+      "line": 12967,
+      "role": "primary",
+      "raw": "{?0肦}⿰月.分T(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "肭",
+      "line": 12974,
+      "role": "primary",
+      "raw": "{?0肭}⿰月.內H(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "胊",
+      "line": 13003,
+      "role": "primary",
+      "raw": "{?0胊}⿰月.句(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "胐",
+      "line": 13009,
+      "role": "primary",
+      "raw": "{?0胐}⿰月.出(K)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "胿",
+      "line": 13056,
+      "role": "primary",
+      "raw": "{?0胿}⿰月.圭.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "脁",
+      "line": 13058,
+      "role": "primary",
+      "raw": "{?0脁}⿰月.兆.(K)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "脕",
+      "line": 13078,
+      "role": "primary",
+      "raw": "{脕}⿰月.免.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "脧",
+      "line": 13096,
+      "role": "primary",
+      "raw": "{?0脧}⿰月.夋J(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "脼",
+      "line": 13117,
+      "role": "primary",
+      "raw": "{?0脼}⿰月.兩.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "脼",
+      "line": 13117,
+      "role": "primary",
+      "raw": "{?0脼}⿰月.兩H(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "腘",
+      "line": 13145,
+      "role": "primary",
+      "raw": "{腘}⿰月.囯(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "膧",
+      "line": 13224,
+      "role": "primary",
+      "raw": "{?0膧}⿰月.童J(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "臼",
+      "line": 13309,
+      "role": "primary",
+      "raw": "⿴#(丿丨b一-𠃍)⿰一.一.(.)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "臼",
+      "line": 13309,
+      "role": "primary",
+      "raw": "⿴#(丿丨b一-𠃍)一.(q1683)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "舀",
+      "line": 13313,
+      "role": "primary",
+      "raw": "{?0舀}⿱爪.臼.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "芲",
+      "line": 13491,
+      "role": "primary",
+      "raw": "{?0芲}⿱艹.仑(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "芲",
+      "line": 13491,
+      "role": "alternative",
+      "raw": "{?0芲}⿱𦫸.匕.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "虍",
+      "line": 14414,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)七.(.)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "虍",
+      "line": 14414,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)七T(H)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "虍",
+      "line": 14414,
+      "role": "primary",
+      "raw": "⿸⿻丅⿸#(-乛丿)一.一.(q4862.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "虍",
+      "line": 14414,
+      "role": "primary",
+      "raw": "⿱丅⿸#(-乛丿)土.(q4862y)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "虛",
+      "line": 14428,
+      "role": "primary",
+      "raw": "⿱丅⿸#(-乛丿)⿳土.丱zs一.(q3703)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "袅",
+      "line": 14982,
+      "role": "primary",
+      "raw": "⿳丿⿴#(-𠃌㇉)丶.衣.",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "裊",
+      "line": 15051,
+      "role": "primary",
+      "raw": "⿳丿⿷⿴#(一-𠃍丨b𠃌)一.一.衣.(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "裊",
+      "line": 15051,
+      "role": "primary",
+      "raw": "⿳丿⿷⿴#(一-𠃍丨b𠃌)一.一.衣J(J)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "裦",
+      "line": 15079,
+      "role": "primary",
+      "raw": "⿴衣.⿰⿷#(丿𠄌)一.矛(H)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "褁",
+      "line": 15106,
+      "role": "primary",
+      "raw": "{褁}⿱果d衣.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "褎",
+      "line": 15119,
+      "role": "primary",
+      "raw": "⿴衣.⿰⿷#(丿𠄌)一.禾d(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "襃",
+      "line": 15172,
+      "role": "primary",
+      "raw": "⿴衣.⿰⿷#(丿𠄌)一.呆T(H)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "訁",
+      "line": 15362,
+      "role": "primary",
+      "raw": "{?2訁}⿳亠.二.口.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "辶",
+      "line": 16823,
+      "role": "primary",
+      "raw": "⿱丶.#(𠃍乀)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "辶",
+      "line": 16823,
+      "role": "primary",
+      "raw": "⿱丶.#(㇋乀)(H)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "辶",
+      "line": 16823,
+      "role": "primary",
+      "raw": "⿱⺀#(𠃍乀)(J)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "釒",
+      "line": 17363,
+      "role": "primary",
+      "raw": "{?2釒}⿱人d⿻王.丷",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "阝",
+      "line": 18462,
+      "role": "primary",
+      "raw": "#(-丨㇌)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "隆",
+      "line": 18567,
+      "role": "primary",
+      "raw": "{?0𨺓}⿰阝⿱夂.生.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "隙",
+      "line": 18586,
+      "role": "primary",
+      "raw": "{?0隙}⿰阝𡭽.(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "雋",
+      "line": 18636,
+      "role": "primary",
+      "raw": "⿱隹.#(-丨㇅-丨𠃌)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "雋",
+      "line": 18636,
+      "role": "primary",
+      "raw": "⿱隹J#(-丨㇅-丨𠃌)(J)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "頙",
+      "line": 18970,
+      "role": "primary",
+      "raw": "{?0頙}⿰𤴔.頁.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "頚",
+      "line": 18971,
+      "role": "primary",
+      "raw": "{?0頚}⿰⿱又d工.頁.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "類",
+      "line": 19039,
+      "role": "primary",
+      "raw": "{?0類}⿰类H頁.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "馬",
+      "line": 19373,
+      "role": "primary",
+      "raw": "⿹⿷#(-一丨b𠃌)𰀁.灬",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "鬬",
+      "line": 19757,
+      "role": "primary",
+      "raw": "⿵鬥⿰⿱⿰#(丿𠃑-一𠃑)#(𠃍-一𠃑-一丨)一t斤(J)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "鬬",
+      "line": 19757,
+      "role": "primary",
+      "raw": "⿵鬥⿰⿱#(-丨一-𠃑一-𠃍𠃑-一𠃑)一t斤(T)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "鬭",
+      "line": 19758,
+      "role": "primary",
+      "raw": "⿵鬥⿰⿱⿰⿹#(-𠃍𠃊)匚.⿸尸sコ一t斤(H)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "鬭",
+      "line": 19758,
+      "role": "primary",
+      "raw": "⿵鬥⿰⿱⿻[1:]⿰#(丨-一𠃑)#(𠃑-一丨)#(一-𠃍丨b一)一t斤(J)",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "鬭",
+      "line": 19758,
+      "role": "primary",
+      "raw": "⿵鬥⿰⿱⿻[1:]〢⿱#(一-𠃍丨b一)⿰匚.コ一t斤(T)",
+      "reason": "opaque-operand",
+      "offset": 11
+    },
+    {
+      "character": "鳬",
+      "line": 20205,
+      "role": "primary",
+      "raw": "⿳丿⿷⿴#(一-𠃍丨b𠃌)一.一.几.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "鴄",
+      "line": 20229,
+      "role": "primary",
+      "raw": "⿰⿷#(丿𠃊)儿.鳥(P)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "黽",
+      "line": 20734,
+      "role": "primary",
+      "raw": "⿻[1:]⿺乚.丨⿱#(一-𠃍丨b一)𦥑h(.)",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "黽",
+      "line": 20734,
+      "role": "primary",
+      "raw": "⿹⿴⿻[1:]⿺乚.#(丨b一-𠃍)#(一-𠃍丨b一)一.𰀄.(H)",
+      "reason": "remaining-tokens",
+      "offset": 18
+    },
+    {
+      "character": "黽",
+      "line": 20734,
+      "role": "primary",
+      "raw": "⿻#(-丨一-𠃍丨b一b乚)𦥑.(jwa)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "黽",
+      "line": 20734,
+      "role": "primary",
+      "raw": "⿹⿴#(𠃍-𠃊一-𠃍𠃊乚)一.𰀄.(jwb)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "黽",
+      "line": 20734,
+      "role": "primary",
+      "raw": "⿻#(-丨一-𠃍丨b一b乚)𦥑h(jwc)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "黽",
+      "line": 20734,
+      "role": "primary",
+      "raw": "⿻[1:]⿺乚.丨⿱#(一-𠃍丨b一)𦥑.(jya)",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "鼎",
+      "line": 20751,
+      "role": "primary",
+      "raw": "⿶⿰⿹𠃑.丆⿸#(丨-一丨)𠃍目(.)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "鼎",
+      "line": 20751,
+      "role": "primary",
+      "raw": "⿶⿰⿹𠃑.丆⿸#(丨-一丨)丅目(J)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "鼎",
+      "line": 20751,
+      "role": "primary",
+      "raw": "⿶⿰⿹𠃑.厂.⿸#(丨-一丨)𠃍目(y)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "龍",
+      "line": 20878,
+      "role": "primary",
+      "raw": "⿰𦚏.⿷⿺#(𠃑-一乚)一.⿱一.丆(q0652)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "龜",
+      "line": 20893,
+      "role": "primary",
+      "raw": "⿱丿⿻#(-丨一-𠃍丨b一b乚)⿰⿱⺕⺕⿼コ乂d(.)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "龜",
+      "line": 20893,
+      "role": "primary",
+      "raw": "⿱⺈⿹⿴⿻[1:]⿺乚.#(丨b一-𠃍)#(一-𠃍丨b一)乂d⿱⺕⺕(H)",
+      "reason": "remaining-tokens",
+      "offset": 20
+    },
+    {
+      "character": "龜",
+      "line": 20893,
+      "role": "primary",
+      "raw": "⿱⺈⿴[4]⿻[.,.__,r,,bxx]⿹⿺乚.丨⿱ココ⿱#(一-𠃍丨b一)コ乂d(J)",
+      "reason": "opaque-operand",
+      "offset": 30
+    },
+    {
+      "character": "龜",
+      "line": 20893,
+      "role": "primary",
+      "raw": "⿱⺈⿻[1:]⿺乚.丨⿱#(一-𠃍丨b一)⿰⿱⺕⺕⿼コ乂d(K)",
+      "reason": "opaque-operand",
+      "offset": 12
+    },
+    {
+      "character": "龜",
+      "line": 20893,
+      "role": "primary",
+      "raw": "⿱⺈⿴[4]⿻[.,.__,r,,bx.]⿹⿺乚.丨⿱ココ⿱#(一-𠃍丨b一)コ乂d(T)",
+      "reason": "opaque-operand",
+      "offset": 30
+    },
+    {
+      "character": "龜",
+      "line": 20893,
+      "role": "primary",
+      "raw": "⿱⺈⿻#(-丨一-𠃍丨b一b乚)⿰⿱⺕⺕⿼コ乂d(V)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "龺",
+      "line": 20923,
+      "role": "primary",
+      "raw": "{?2龺}⿱十.早",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "龻",
+      "line": 20924,
+      "role": "primary",
+      "raw": "{?2龻}⿲糹.言.糹.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㐃",
+      "line": 20996,
+      "role": "primary",
+      "raw": "⿱#(-𠃋丶z)丨",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "㐅",
+      "line": 20998,
+      "role": "primary",
+      "raw": "{?1㐅}⿻丿丶.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㓁",
+      "line": 21186,
+      "role": "primary",
+      "raw": "{㓁}⿱冖儿.(H)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㓁",
+      "line": 21186,
+      "role": "primary",
+      "raw": "{㓁}⿱冖儿w(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㔾",
+      "line": 21311,
+      "role": "primary",
+      "raw": "#(-𠃌乚)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㔾",
+      "line": 21311,
+      "role": "primary",
+      "raw": "#(-𠃌𠄌)(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㔾",
+      "line": 21311,
+      "role": "primary",
+      "raw": "#(-𠃌㇄)(w)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㠯",
+      "line": 22064,
+      "role": "primary",
+      "raw": "#(一-𠃍丨b一-𠃍)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㠯",
+      "line": 22064,
+      "role": "primary",
+      "raw": "#(𠃍-一丨b一-𠃍)(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㠯",
+      "line": 22064,
+      "role": "primary",
+      "raw": "#(一-𠃍𠃊-𠃍)(x)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㠯",
+      "line": 22064,
+      "role": "primary",
+      "raw": "⿹コ#(丨b一-𠃍)(q1283)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "㦳",
+      "line": 22452,
+      "role": "primary",
+      "raw": "{?3㦳}⿹𢦏土t",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㬵",
+      "line": 22838,
+      "role": "primary",
+      "raw": "{?0㬵}⿰月.交.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㮣",
+      "line": 22948,
+      "role": "primary",
+      "raw": "{?0㮣}⿱既.木.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㮣",
+      "line": 22948,
+      "role": "primary",
+      "raw": "{?0㮣}⿱既.木d(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㱿",
+      "line": 23168,
+      "role": "primary",
+      "raw": "{㱿}⿰𡉉B殳.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㲊",
+      "line": 23179,
+      "role": "primary",
+      "raw": "⿰⿱⺊⿸#(-乛丿)⿳𬺢人d目殳.(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "䆋",
+      "line": 24460,
+      "role": "primary",
+      "raw": "{?0䆋}⿰禾d龜K(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "䆋",
+      "line": 24460,
+      "role": "primary",
+      "raw": "⿰禾.⿱⺈⿹⿴⿻[1:]⿺乚.#(丨b一-𠃍)#(一-𠃍丨b一)一.𢑑.(T)",
+      "reason": "remaining-tokens",
+      "offset": 23
+    },
+    {
+      "character": "䎛",
+      "line": 24988,
+      "role": "primary",
+      "raw": "{?3䎛}⿱老.口.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "䏓",
+      "line": 25044,
+      "role": "primary",
+      "raw": "{?0䏓}⿰月.元.(K)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "䏙",
+      "line": 25050,
+      "role": "primary",
+      "raw": "{?0䏙}⿰月.冘.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "䐋",
+      "line": 25100,
+      "role": "primary",
+      "raw": "{?0䐋}⿰月.忩T(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "䐠",
+      "line": 25121,
+      "role": "primary",
+      "raw": "{?0䐠}⿰月.荒.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "䐠",
+      "line": 25121,
+      "role": "primary",
+      "raw": "{?0䐠}⿰月.⿳艹H亡y𫶧.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "䑃",
+      "line": 25156,
+      "role": "primary",
+      "raw": "{?0䑃}⿰月.蒙H(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "䑃",
+      "line": 25156,
+      "role": "primary",
+      "raw": "{?0䑃}⿰月.蒙.(K)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "䰗",
+      "line": 27160,
+      "role": "primary",
+      "raw": "{?0䰗}⿵鬥亀(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "䶹",
+      "line": 27578,
+      "role": "primary",
+      "raw": "{?1䶹}⿻丿凵.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠀀",
+      "line": 27597,
+      "role": "primary",
+      "raw": "⿱一.#(丨-一𠃊)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠀀",
+      "line": 27597,
+      "role": "primary",
+      "raw": "⿱一.#(丨-一㇄)(T)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠀉",
+      "line": 27606,
+      "role": "primary",
+      "raw": "⿷#(丿𠃊)一.(x)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠀗",
+      "line": 27620,
+      "role": "primary",
+      "raw": "{?0𠀗}⿱艹.丆",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠀗",
+      "line": 27620,
+      "role": "alternative",
+      "raw": "{?0𠀗}⿱龷.丿",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠀟",
+      "line": 27628,
+      "role": "primary",
+      "raw": "⿻十.⿱#(-𠃍㇉)人.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠁁",
+      "line": 27662,
+      "role": "primary",
+      "raw": "⿱⿰#(-𠃊𠃍-一𠃑)#(一-𠃍𠃑-一丨)一.(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𠁁",
+      "line": 27662,
+      "role": "primary",
+      "raw": "⿱⿰#(-𠃊𠃍-一𠃑)#(一-𠃍𠃑-一丨)一t(t)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𠁁",
+      "line": 27662,
+      "role": "primary",
+      "raw": "⿱⿰⿸#(丿𠃊)#(丨-一𠃑)#(一-𠃍𠃑-一丨)一.(y2)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𠁁",
+      "line": 27662,
+      "role": "primary",
+      "raw": "⿱⿻[1:]〢⿱#(一-𠃍丨b一)⿰匚.コ一.(q1613)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𠁁",
+      "line": 27662,
+      "role": "primary",
+      "raw": "⿻[1:]⿰#(丨-一𠃑)#(𠃑-一丨)⿱#(一-𠃍丨b一)一.(q1614)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𠁅",
+      "line": 27666,
+      "role": "primary",
+      "raw": "⿸⿻丅⿸#(-乛丿)一.⿱一.匆x.(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠁧",
+      "line": 27700,
+      "role": "primary",
+      "raw": "⿻#(𠃑-一丨)口.",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠁮",
+      "line": 27707,
+      "role": "primary",
+      "raw": "⿱⿰人d从.⿻丨#(-一㇉)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠁮",
+      "line": 27707,
+      "role": "primary",
+      "raw": "⿱⿰人d从d⿻丨#(丿㇉)(Q)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠁮",
+      "line": 27707,
+      "role": "primary",
+      "raw": "⿱⿰人d从.⿻丨#(丿㇉)(T)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠁾",
+      "line": 27723,
+      "role": "primary",
+      "raw": "⿴#(-𠃍𠃊)丶.(.)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠁾",
+      "line": 27723,
+      "role": "primary",
+      "raw": "⿴#(-𠃍𠄌)丶.(T)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠂂",
+      "line": 27727,
+      "role": "primary",
+      "raw": "⿱丶.⿻[b]#(-丨一-𠃍𠃑)一.(.)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𠂂",
+      "line": 27727,
+      "role": "primary",
+      "raw": "⿱丶.⿻[b]#(-乀一-𠃍𠃑)一.(n)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𠂆",
+      "line": 27731,
+      "role": "primary",
+      "raw": "#(丿丿)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠂆",
+      "line": 27731,
+      "role": "primary",
+      "raw": "#(丿丨)(s)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠂎",
+      "line": 27739,
+      "role": "primary",
+      "raw": "⿸#(丿𠄌)丿",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠂔",
+      "line": 27745,
+      "role": "primary",
+      "raw": "⿹⿻丨#(丿㇉)丿",
+      "reason": "remaining-tokens",
+      "offset": 6
+    },
+    {
+      "character": "𠂶",
+      "line": 27779,
+      "role": "primary",
+      "raw": "⿱丿⿹⿷#(一-𠃍丨b𠃌)一.⿰一.丿(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠂶",
+      "line": 27779,
+      "role": "primary",
+      "raw": "⿱丿⿹⿷#(一-𠃍丨b𠃌)一.⿰一t丿(J)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠃉",
+      "line": 27798,
+      "role": "primary",
+      "raw": "#(丨乙)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃊",
+      "line": 27799,
+      "role": "primary",
+      "raw": "#(SH)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃊",
+      "line": 27799,
+      "role": "primary",
+      "raw": "{𠃊}#(ST)(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃊",
+      "line": 27799,
+      "role": "primary",
+      "raw": "{𠃊}#(SHw)(w)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃋",
+      "line": 27800,
+      "role": "primary",
+      "raw": "#(PH)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃋",
+      "line": 27800,
+      "role": "primary",
+      "raw": "{𠃋}#(PD)(d)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃌",
+      "line": 27801,
+      "role": "primary",
+      "raw": "#(HSg)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃍",
+      "line": 27802,
+      "role": "primary",
+      "raw": "#(HS)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃎",
+      "line": 27803,
+      "role": "primary",
+      "raw": "#(一-丨)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃑",
+      "line": 27806,
+      "role": "primary",
+      "raw": "#(SHS)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃑",
+      "line": 27806,
+      "role": "primary",
+      "raw": "#(SHP)(p)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃛",
+      "line": 27816,
+      "role": "primary",
+      "raw": "⿴#(-𠃌丨b一)一.(.)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠃛",
+      "line": 27816,
+      "role": "primary",
+      "raw": "⿴#(-𠃍丨b一)一.(s)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠃢",
+      "line": 27823,
+      "role": "primary",
+      "raw": "⿻[1:]⿰丿丨#(一-𠃍丨b一)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠃤",
+      "line": 27825,
+      "role": "primary",
+      "raw": "⿱⿷#(丿㇄)一.𫶧w(T)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𠄌",
+      "line": 27865,
+      "role": "primary",
+      "raw": "#(ST)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠄎",
+      "line": 27867,
+      "role": "primary",
+      "raw": "#(HSHSg)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠄞",
+      "line": 27883,
+      "role": "primary",
+      "raw": "{?3𠄞}⿱一.一.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠄟",
+      "line": 27884,
+      "role": "primary",
+      "raw": "{?0𠄟}⿱一.一.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠄠",
+      "line": 27885,
+      "role": "primary",
+      "raw": "{?0𠄠}⿱一.一.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠄢",
+      "line": 27887,
+      "role": "primary",
+      "raw": "⿳一.#(-𠃍𠃊-𠃍𠃊)一.(q1302)",
+      "reason": "remaining-tokens",
+      "offset": 8
+    },
+    {
+      "character": "𠄷",
+      "line": 27908,
+      "role": "primary",
+      "raw": "⿳#(-乀-丿乀丿z)⿲#(-乀-丿乀丿z)丨#(-乀-丿乀丿z)⿲丿二.丨(J)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠄷",
+      "line": 27908,
+      "role": "primary",
+      "raw": "⿱⿲#(-乀-丿乀丿z)#(-乀-丿乀丿z)#(-乀-丿乀丿z)⿲丿二.亅(T)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𠆢",
+      "line": 28015,
+      "role": "primary",
+      "raw": "{?2𠆢}#(-丿乀)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠆭",
+      "line": 28026,
+      "role": "primary",
+      "raw": "⿳人.二.#(丨x4◞◟◜◝◞◝◞◝)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠆭",
+      "line": 28026,
+      "role": "primary",
+      "raw": "⿱亼.#(㇇x2◟◜◝◞-◜-◟◝◞◝◞)(J)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠆭",
+      "line": 28026,
+      "role": "alternative",
+      "raw": "⿳亼.一.#(丨x4◞◟◜◝◞◝◞◝)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠇇",
+      "line": 28052,
+      "role": "primary",
+      "raw": "⿰亻⿺⿻#(丨x3◞◟◜)二.丶.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠈧",
+      "line": 28148,
+      "role": "primary",
+      "raw": "⿰亻⿱#(-丨㇅-丨𠃍)又.",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𠌆",
+      "line": 28371,
+      "role": "primary",
+      "raw": "⿱全.⿰#(-㇇𠃊)尸s",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠍋",
+      "line": 28440,
+      "role": "primary",
+      "raw": "⿲亻⿱丶.#(㇇◝x4◞◟◜)𧈧",
+      "reason": "remaining-tokens",
+      "offset": 8
+    },
+    {
+      "character": "𠎜",
+      "line": 28521,
+      "role": "primary",
+      "raw": "⿰⿴#(丨-一𠃊-𠃑)⿰二.二.令.",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𠑹",
+      "line": 28742,
+      "role": "primary",
+      "raw": "⿰#(丿𠃊)⿺儿.コ(J)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠑹",
+      "line": 28742,
+      "role": "primary",
+      "raw": "⿰#(丿𠄌)⿺儿.コ(P)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠑼",
+      "line": 28745,
+      "role": "primary",
+      "raw": "⿻[1:]⿸丿乚.⿰#(丿𠄌)コ",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "𠒂",
+      "line": 28751,
+      "role": "primary",
+      "raw": "⿱⿰#(丿𠃊)コ儿.",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𠒅",
+      "line": 28754,
+      "role": "primary",
+      "raw": "⿱#(一-𠃍𠃊-𠃍𠃊)儿.",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠒎",
+      "line": 28763,
+      "role": "primary",
+      "raw": "⿳丿⿷⿴#(一-𠃍丨b𠃌)一.一.儿.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠓳",
+      "line": 28864,
+      "role": "primary",
+      "raw": "⿱全H⿰#(-㇇𠃊)尸s",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠔇",
+      "line": 28884,
+      "role": "primary",
+      "raw": "⿱八d#(丿丨乀)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠔇",
+      "line": 28884,
+      "role": "primary",
+      "raw": "⿱八T#(丿丨乀)(Q)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠔉",
+      "line": 28886,
+      "role": "primary",
+      "raw": "{龹}⿻火.二.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠔔",
+      "line": 28897,
+      "role": "primary",
+      "raw": "⿱⿻[:-1]丄.⿴#(丿𠃊-𠃍)一.八d(J)",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "𠕄",
+      "line": 28945,
+      "role": "primary",
+      "raw": "#(-𠃊𠃍-㇅丨z)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠖁",
+      "line": 29006,
+      "role": "primary",
+      "raw": "⿱冖⿺#(𠃍乀)寸",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𠘧",
+      "line": 29172,
+      "role": "primary",
+      "raw": "{?1𠘧}#(-丿㇍)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠘨",
+      "line": 29173,
+      "role": "primary",
+      "raw": "{?1𠘨}#(-丿⺄)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠙖",
+      "line": 29219,
+      "role": "primary",
+      "raw": "⿱⿰冫⿷#(-一丨b𠃌)𰀁.几.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠙚",
+      "line": 29223,
+      "role": "primary",
+      "raw": "⿸⿻丅⿸#(-乛丿)一.⿱一.処(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠙚",
+      "line": 29223,
+      "role": "primary",
+      "raw": "⿸⿻丅⿸#(-乛丿)一.⿱一.⿺夂.几w(Q)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠙴",
+      "line": 29249,
+      "role": "primary",
+      "raw": "#(丨-𠃋)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠙿",
+      "line": 29260,
+      "role": "primary",
+      "raw": "⿱#(㇅-丨一)𠙵",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠚞",
+      "line": 29291,
+      "role": "primary",
+      "raw": "⿴#(一-𠃍𠃊-𠃍𠃊)𭶰(J)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠚞",
+      "line": 29291,
+      "role": "primary",
+      "raw": "⿴#(一-𠃍𠃊-𠃍𠃊)⿱爫.貝(T)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠝷",
+      "line": 29508,
+      "role": "primary",
+      "raw": "⿳丿⿷⿴#(一-𠃍丨b𠃌)一.一.分.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠟵",
+      "line": 29634,
+      "role": "primary",
+      "raw": "⿰⿸⿻丅⿸#(-乛丿)一.⿱二.𧰨d刂",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𠤛",
+      "line": 29928,
+      "role": "primary",
+      "raw": "⿱匕.⿴⿰#(丨-一𠃑)#(𠃑-一丨)一.(J)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𠤛",
+      "line": 29928,
+      "role": "primary",
+      "raw": "⿱匕T⿴⿰#(丨-一𠃑)#(𠃑-一丨)一.(T)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𠤞",
+      "line": 29931,
+      "role": "primary",
+      "raw": "⿳旨.丶.⿱⿴#(一-𠃍丨b一)一.丨(.)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𠤞",
+      "line": 29931,
+      "role": "primary",
+      "raw": "⿳旨H丶s⿱⿴#(一-𠃍丨b一)一.丨(T)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𠤬",
+      "line": 29945,
+      "role": "primary",
+      "raw": "#(-𠃊㇈)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠥓",
+      "line": 29984,
+      "role": "primary",
+      "raw": "⿴#(-𠃊𠃍-一𠃑z)⿰⿱乀.丆⿱丨丨",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𠧘",
+      "line": 30117,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)又.",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𠩳",
+      "line": 30272,
+      "role": "primary",
+      "raw": "⿸厂.⿱⺊⿸#(-乛丿)⿱一.巳.",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𠪳",
+      "line": 30336,
+      "role": "primary",
+      "raw": "⿸厂.⿱⿻[:-1]〢口.⿻#(-◝◟◜◝◞-◜)𦥑.(J)",
+      "reason": "opaque-operand",
+      "offset": 14
+    },
+    {
+      "character": "𠪳",
+      "line": 30336,
+      "role": "primary",
+      "raw": "⿸厂.⿱⿻[:-1]〢口.⿻#(◟◜◝◞x0)𦥑.(T)",
+      "reason": "opaque-operand",
+      "offset": 14
+    },
+    {
+      "character": "𠭗",
+      "line": 30500,
+      "role": "primary",
+      "raw": "⿰⿱⺊⿸#(-乛丿)⿱一.井又.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𠮁",
+      "line": 30542,
+      "role": "primary",
+      "raw": "⿰𣏂w⿱#(-丨㇅-丨𠃍)又.(Q)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𠮁",
+      "line": 30542,
+      "role": "primary",
+      "raw": "⿰𣏂T⿱#(-丨㇅-丨𠃍)又.(T)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𠮁",
+      "line": 30542,
+      "role": "primary",
+      "raw": "⿰⿱乂d⿺朩.丶.⿱#(-丨㇅-丨𠃍)又.(U)",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "𠮈",
+      "line": 30549,
+      "role": "primary",
+      "raw": "⿰⿱丶.⿸#(-乛丿)⿳七T八d⿱人d目又.",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𠰽",
+      "line": 30730,
+      "role": "primary",
+      "raw": "{?0𠰽}⿰口.穴jsg(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠱬",
+      "line": 30777,
+      "role": "primary",
+      "raw": "{?0𠱬}⿵⺆.⿱丰.口.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠱬",
+      "line": 30777,
+      "role": "primary",
+      "raw": "{?0𠱬}⿵⺆.⿱丰H口.(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𠾖",
+      "line": 31587,
+      "role": "primary",
+      "raw": "{?0𠾖}⿴㗊.大.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡀼",
+      "line": 31753,
+      "role": "primary",
+      "raw": "{?3𡀼}⿰口.嫈",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡆞",
+      "line": 32107,
+      "role": "primary",
+      "raw": "⿰口.⿵鬥⿰⿱⿰⿱#(丿𠄌)#(丨-一𠃑)⿹コ#(𠃑-一丨)一t斤(V)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𡆢",
+      "line": 32111,
+      "role": "primary",
+      "raw": "⿴囗.#(◞x3◟◜◝-◟)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡆤",
+      "line": 32113,
+      "role": "primary",
+      "raw": "{𡆤}⿴囗.二.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡉚",
+      "line": 32295,
+      "role": "primary",
+      "raw": "{𡉚}⿱屮.王.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡉚",
+      "line": 32295,
+      "role": "alternative",
+      "raw": "{𡉚}⿱㞢.土.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡉡",
+      "line": 32302,
+      "role": "primary",
+      "raw": "⿻丄.⿱⿰#(-𠃋丶z)人.一.",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𡊂",
+      "line": 32335,
+      "role": "primary",
+      "raw": "⿻丄.⿱⿰#(丿𠄌)刀一.(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𡊐",
+      "line": 32349,
+      "role": "primary",
+      "raw": "⿰土t#(-丨㇅-丨𠃌)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡊐",
+      "line": 32349,
+      "role": "primary",
+      "raw": "⿰土t#(-丨㇅-丨𠃍)(M)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡊹",
+      "line": 32390,
+      "role": "primary",
+      "raw": "{?0𡊹}⿱覀土.(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡐍",
+      "line": 32730,
+      "role": "primary",
+      "raw": "⿱⿰⿱⺊⿸#(-乛丿)石又.土.",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𡔝",
+      "line": 33002,
+      "role": "primary",
+      "raw": "⿱士.⿵#(𠃊-𠃍丿)𠃎",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𡔲",
+      "line": 33023,
+      "role": "primary",
+      "raw": "⿳士.⿻⿰#(丨-一𠃑)#(𠃑-一丨)口.一.(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𡔲",
+      "line": 33023,
+      "role": "primary",
+      "raw": "⿳士.⿻[1:]⿰#(丨-一𠃑)#(𠃑-一丨)口.一.(y)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𡔾",
+      "line": 33035,
+      "role": "primary",
+      "raw": "⿳𫯁⿰#(丨-一𠃑)#(𠃑-一丨)一.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𡘇",
+      "line": 33236,
+      "role": "primary",
+      "raw": "{𡘇}⿱大.王.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡘇",
+      "line": 33236,
+      "role": "alternative",
+      "raw": "{𡘇}⿱𡗓土.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡘇",
+      "line": 33236,
+      "role": "alternative",
+      "raw": "{𡘇}⿻𪩣一.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡘟",
+      "line": 33260,
+      "role": "primary",
+      "raw": "⿳𡗓#(-𠃍𠃊-𠃍𠃊)一.(T)",
+      "reason": "remaining-tokens",
+      "offset": 8
+    },
+    {
+      "character": "𡚇",
+      "line": 33364,
+      "role": "primary",
+      "raw": "⿱⿷⿽#(丨-一𠃊)罒罒大.(.)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𡚇",
+      "line": 33364,
+      "role": "primary",
+      "raw": "⿱⿷⿽#(丨-一𠃊)罒罒大d(T)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𡞉",
+      "line": 33622,
+      "role": "primary",
+      "raw": "⿰女⿱⿴#(丿丨b一-𠃍)一.女(Q)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𡟮",
+      "line": 33723,
+      "role": "primary",
+      "raw": "{?0𡟮}⿱巸.女(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡟽",
+      "line": 33738,
+      "role": "primary",
+      "raw": "⿰女⿳一.⿰#(丨-𠃊一)#(𠃍-𠃊)土.(Q)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𡤀",
+      "line": 33997,
+      "role": "primary",
+      "raw": "⿰女⿶⿰⿹𠃑.丆⿸#(丨-一丨)丅𱒒(J)",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "𡤞",
+      "line": 34027,
+      "role": "primary",
+      "raw": "⿰女⿱⺈⿻[1:]⿺乚.丨⿱#(一-𠃍丨b一)⿰⿱⺕⺕𬺹",
+      "reason": "opaque-operand",
+      "offset": 14
+    },
+    {
+      "character": "𡥋",
+      "line": 34072,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)子.(.)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𡦹",
+      "line": 34182,
+      "role": "primary",
+      "raw": "⿱丶.⿵几z#(◝x3◞◟◜◝x7◞◟◜)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡧊",
+      "line": 34199,
+      "role": "primary",
+      "raw": "{?3𡧊}⿱宀.万",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡧊",
+      "line": 34199,
+      "role": "alternative",
+      "raw": "{?3𡧊}⿱㝉勹",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡧑",
+      "line": 34206,
+      "role": "primary",
+      "raw": "⿳宀.#(◞x3◟◜◝-◟)大d",
+      "reason": "remaining-tokens",
+      "offset": 8
+    },
+    {
+      "character": "𡫕",
+      "line": 34466,
+      "role": "primary",
+      "raw": "⿳宀.尹⿹⿷⿴#(一-𠃍丨b𠃌)一.一.灬",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𡬶",
+      "line": 34563,
+      "role": "primary",
+      "raw": "{?3𡬶}⿳𫜹巩.寸(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡭔",
+      "line": 34593,
+      "role": "primary",
+      "raw": "{?2𡭔}⿰丿卜.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡭔",
+      "line": 34593,
+      "role": "alternative",
+      "raw": "{?2𡭔}⿻丨八d",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡭳",
+      "line": 34624,
+      "role": "primary",
+      "raw": "⿱⿷#(-一丨b𠃌)𰀁.小.",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𡮂",
+      "line": 34639,
+      "role": "primary",
+      "raw": "{𡮂J}⿱小.𤽄V(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡮂",
+      "line": 34639,
+      "role": "primary",
+      "raw": "{𡮂T}⿱小s𤽄V(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡮂",
+      "line": 34639,
+      "role": "alternative",
+      "raw": "{𡮂J}⿱少H𣌢V(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡮂",
+      "line": 34639,
+      "role": "alternative",
+      "raw": "{𡮂T}⿱少.𣌢V(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡯁",
+      "line": 34702,
+      "role": "primary",
+      "raw": "{𡯁}⿻⿸丿乚.一.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡰣",
+      "line": 34800,
+      "role": "primary",
+      "raw": "#(𠃍-一丿)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡰣",
+      "line": 34800,
+      "role": "primary",
+      "raw": "#(𠃍-一丨)(s)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡴈",
+      "line": 35029,
+      "role": "primary",
+      "raw": "⿷#(-一丨b𠃌)出(T)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𡴊",
+      "line": 35031,
+      "role": "primary",
+      "raw": "{?0𡴊}⿱㞢.𠔼(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𡶓",
+      "line": 35168,
+      "role": "primary",
+      "raw": "⿱#(-丨㇅-丨𠃍)山(.)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𡶓",
+      "line": 35168,
+      "role": "primary",
+      "raw": "⿱#(-丨㇅-丨𠃌)山(T)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𡷊",
+      "line": 35223,
+      "role": "primary",
+      "raw": "⿱丿⿹⿷⿴#(-𠃌㇉)丶.一.山",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𡸭",
+      "line": 35322,
+      "role": "primary",
+      "raw": "⿳#(-丨一-㇎丨-一𠃑)一.山",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𡿨",
+      "line": 35765,
+      "role": "primary",
+      "raw": "#(PD)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𢀓",
+      "line": 35808,
+      "role": "primary",
+      "raw": "⿻[r,r,l,l]工.#(◝◞-◜-◟)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𢀯",
+      "line": 35836,
+      "role": "primary",
+      "raw": "⿱一.⿵⿰#(丨-一丿)#(𠃊㇂)⿱䀠工.(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𢀯",
+      "line": 35836,
+      "role": "primary",
+      "raw": "⿱一.⿵⿰#(丨-一丿)#(𠃊乀)⿱䀠工.(Q)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𢀰",
+      "line": 35837,
+      "role": "primary",
+      "raw": "⿱一.⿵⿰#(丨-一丨)𠃑.⿱䀠㒰.(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𢀰",
+      "line": 35837,
+      "role": "primary",
+      "raw": "⿱一.⿵⿰#(丨-一丨)𠃑.⿱䀠仝(Q)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𢁤",
+      "line": 35889,
+      "role": "primary",
+      "raw": "⿰巾.⿸#(丿𠄌)㇂(J)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𢃵",
+      "line": 36034,
+      "role": "primary",
+      "raw": "⿳⿰⿻#(丿𠃊)一.⺕⺈巾.(J)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𢋄",
+      "line": 36497,
+      "role": "alternative",
+      "raw": "⿸㢈.#(-丨㇅-丨𠃌)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𢋄",
+      "line": 36497,
+      "role": "alternative",
+      "raw": "⿸㢈J#(-丨㇅-丨𠃌)(J)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𢌬",
+      "line": 36601,
+      "role": "primary",
+      "raw": "{?0𢌬}⿻八.一.(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𢍐",
+      "line": 36637,
+      "role": "primary",
+      "raw": "⿳一.⿰#(丨-一𠃑)#(𠃑-一丨)廾.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𢎗",
+      "line": 36708,
+      "role": "primary",
+      "raw": "{𢎗}#(𠃍-一㇉)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𢎜",
+      "line": 36713,
+      "role": "primary",
+      "raw": "⿽#(丨-一㇉)一.",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𢎧",
+      "line": 36724,
+      "role": "primary",
+      "raw": "#(𠃍-一𠃑-一㇉)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𢏻",
+      "line": 36808,
+      "role": "primary",
+      "raw": "⿰⿱⺈⿹#(一-𠃍丨b𠃌)一t⿹弓.𰀪",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𢏽",
+      "line": 36810,
+      "role": "primary",
+      "raw": "⿰⿸#(-一𠃑-一𠄌)⺀⿹弓.冫(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𢏽",
+      "line": 36810,
+      "role": "primary",
+      "raw": "⿰⿸⿺#(𠃑-一𠄌)一.⿱乀.乀.⿹弓.𰀪(T)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𢑚",
+      "line": 36903,
+      "role": "primary",
+      "raw": "⿸⿽#(丨-一丿)𰀄.𫜹(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𢑚",
+      "line": 36903,
+      "role": "primary",
+      "raw": "⿸⿽#(丨-一丨)𰀄.𫜹(s)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𢒅",
+      "line": 36946,
+      "role": "primary",
+      "raw": "{?3𢒅}⿷工.彡",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𢤏",
+      "line": 38108,
+      "role": "primary",
+      "raw": "⿳一.⿻#(丨x2-𠃊𠃍x3-𠃊)一.患(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𢤏",
+      "line": 38108,
+      "role": "primary",
+      "raw": "⿳一.⿻⿰#(丨-𠃊一)#(𠃍-𠃊)一.患(T)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𢥻",
+      "line": 38216,
+      "role": "primary",
+      "raw": "{?0𢥻}⿰忄覇.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𢥼",
+      "line": 38217,
+      "role": "primary",
+      "raw": "⿰忄⿱𥤧P⿻⿺#(-㇈丨b一)尸s𦥑h(J)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𢧝",
+      "line": 38314,
+      "role": "primary",
+      "raw": "⿰⿱⺊⿸#(-乛丿)㠯.戈",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𢧟",
+      "line": 38316,
+      "role": "primary",
+      "raw": "⿹戈⿴[2]⿴[1]⿴⿻[1:]丨#(𠃍-一𠃑-一丿)丶.丶.丶.",
+      "reason": "remaining-tokens",
+      "offset": 26
+    },
+    {
+      "character": "𢩺",
+      "line": 38471,
+      "role": "primary",
+      "raw": "⿰扌⿻#(丿乚)一.",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𢴶",
+      "line": 39171,
+      "role": "primary",
+      "raw": "⿰扌⿴衣.⿷#(-一丨b𠃌)𰀁.(.)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𢴶",
+      "line": 39171,
+      "role": "primary",
+      "raw": "⿰扌⿴衣J⿷#(-一丨b𠃌)𰀁.(J)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𢿌",
+      "line": 39833,
+      "role": "primary",
+      "raw": "{𢿌}⿳⺈⿵冂z儿.𥄎.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𣀴",
+      "line": 39937,
+      "role": "primary",
+      "raw": "⿳敞.冖⿰𰀄.⿺乚.⿴#(𠃍-𠃊)一.(Q)",
+      "reason": "opaque-operand",
+      "offset": 12
+    },
+    {
+      "character": "𣀴",
+      "line": 39937,
+      "role": "primary",
+      "raw": "⿳⿰尚⿱𠂉乂d冖⿰𰀄.⿺乚.⿴#(𠃍-𠃊)一.(T)",
+      "reason": "opaque-operand",
+      "offset": 17
+    },
+    {
+      "character": "𣁓",
+      "line": 39968,
+      "role": "primary",
+      "raw": "⿳丿⿷⿴#(一-𠃍丨b𠃌)一.一.文.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𣄟",
+      "line": 40172,
+      "role": "primary",
+      "raw": "⿰方.⿳𰀉冖⿱⿰#(丨-一𠃑)#(𠃑-一丨)一.(.)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𣄟",
+      "line": 40172,
+      "role": "primary",
+      "raw": "⿰方J⿳𰀉冖⿱⿰#(丨-一𠃑)#(𠃑-一丨)一.(J)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𣅞",
+      "line": 40235,
+      "role": "primary",
+      "raw": "⿱丿⿹⿻[_x]#(-𠃌丨b㇀)丿日(.)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𣅞",
+      "line": 40235,
+      "role": "primary",
+      "raw": "⿱丿⿹⿻[b]#(-𠃌丨b一)丿日(T)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𣆜",
+      "line": 40297,
+      "role": "primary",
+      "raw": "⿰日#(-丨一-㇎𠃊)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𣆜",
+      "line": 40297,
+      "role": "primary",
+      "raw": "⿰日#(-丨一-㇎丨)(T)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𣆼",
+      "line": 40329,
+      "role": "primary",
+      "raw": "⿱⿴⿰#(丿𠃊)コ日廾.(.)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𣆼",
+      "line": 40329,
+      "role": "primary",
+      "raw": "⿴⿻[b]⿰#(丿𠃑)𡰣s一.日(T)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𣆾",
+      "line": 40331,
+      "role": "primary",
+      "raw": "⿱⿰#(丿𠄌)欠.日",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𣇅",
+      "line": 40338,
+      "role": "primary",
+      "raw": "⿱旦.⿰#(丨-一𠃑)#(𠃑-一丨)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𣇓",
+      "line": 40352,
+      "role": "primary",
+      "raw": "⿶⿰⿹𠃑.厂.⿸#(丨-一丨)𠃍日(Q)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𣇓",
+      "line": 40352,
+      "role": "primary",
+      "raw": "⿶⿰⿹𠃑.丆⿸#(丨-一丨)𠃍日(T)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𣊜",
+      "line": 40553,
+      "role": "primary",
+      "raw": "⿳日⿻[b]⿰#(丿𠃑)#(𠃍-一乀)一.仌.d",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𣊫",
+      "line": 40568,
+      "role": "primary",
+      "raw": "{?3𣊫}⿰昌昌(Q)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𣌐",
+      "line": 40669,
+      "role": "primary",
+      "raw": "⿰日⿳士.⿵⿻⿰#(丨-一𠃑)#(𠃑-一丨)#(一-𠃍丨b一)𠮛一.",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𣐂",
+      "line": 40911,
+      "role": "primary",
+      "raw": "{?0𣐂}⿱𠫓d木.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𣐂",
+      "line": 40911,
+      "role": "alternative",
+      "raw": "{?0𣐂}⿱亠.𠫡(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𣐂",
+      "line": 40911,
+      "role": "alternative",
+      "raw": "{?0𣐂}⿱丶.𣏏K(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𣒘",
+      "line": 41061,
+      "role": "primary",
+      "raw": "⿰木d⿱一.⿰#(丨-一𠃑)#(𠃑-一乚)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𣚝",
+      "line": 41578,
+      "role": "primary",
+      "raw": "⿰木d⿱⿷#(-一丨b𠃌)𰀁.衣.(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𣚝",
+      "line": 41578,
+      "role": "primary",
+      "raw": "⿰木d⿹⿷#(-一丨b𠃌)𰀁.衣.(P)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𣝄",
+      "line": 41745,
+      "role": "primary",
+      "raw": "⿰木d⿳𰀉冖⿱⿰#(丨-一𠃑)#(𠃑-一丨)一.",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𣟬",
+      "line": 41913,
+      "role": "primary",
+      "raw": "{?0𣟬}⿰木d䦨.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𣢔",
+      "line": 42081,
+      "role": "primary",
+      "raw": "⿰⿷#(丿𠄌)一.欠.",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𣤝",
+      "line": 42218,
+      "role": "primary",
+      "raw": "⿰⿱⺊⿸#(-乛丿)⿳八d人d日欠.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𣤼",
+      "line": 42249,
+      "role": "primary",
+      "raw": "⿰⿳士.一.⿱⿰#(丨-一𠃑)#(𠃑-一丨)亞t欠.",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𣧷",
+      "line": 42436,
+      "role": "primary",
+      "raw": "{?0𣧷}⿰歹朶.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𣫬",
+      "line": 42681,
+      "role": "primary",
+      "raw": "⿻⿴#(-𠃌𠃊x0)〢一.(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𣫬",
+      "line": 42681,
+      "role": "primary",
+      "raw": "⿻⿴#(-𠃍𠃊x0)〢一.(z)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𣬃",
+      "line": 42704,
+      "role": "primary",
+      "raw": "⿱比.⿰#(丿𠄌)𠃌(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𣬃",
+      "line": 42704,
+      "role": "primary",
+      "raw": "⿱比H⿰#(丿𠄌)𠃌(T)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𣬇",
+      "line": 42708,
+      "role": "primary",
+      "raw": "⿱比.⿰#(丿𠄌)刀",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𣴁",
+      "line": 43214,
+      "role": "primary",
+      "raw": "⿰氵.⿱丿⿻[b]#(-㇄一-𠃍𠃑)一.(J)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𣴁",
+      "line": 43214,
+      "role": "primary",
+      "raw": "⿰氵.⿱丿⿻[b]#(-丨一-𠃍𠃑)一.(T)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𣴂",
+      "line": 43215,
+      "role": "primary",
+      "raw": "⿲氵.#(丿𠄌)殳.",
+      "reason": "remaining-tokens",
+      "offset": 6
+    },
+    {
+      "character": "𣷻",
+      "line": 43464,
+      "role": "primary",
+      "raw": "⿰氵.⿳一.#(-𠃍𠃊-𠃍𠃊)一.",
+      "reason": "remaining-tokens",
+      "offset": 11
+    },
+    {
+      "character": "𣹃",
+      "line": 43536,
+      "role": "primary",
+      "raw": "⿰氵.⿱⿰#(丿𠄌)刀皿.",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𣻴",
+      "line": 43713,
+      "role": "primary",
+      "raw": "⿰氵.⿱⿷#(-一丨b𠃌)𰀁.衣.",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𣾞",
+      "line": 43883,
+      "role": "primary",
+      "raw": "{?3𣾞}⿰氵.𦊽",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𣿼",
+      "line": 43977,
+      "role": "primary",
+      "raw": "⿰氵.⿱⺊⿸#(-乛丿)⿱八d𥃦",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𤀴",
+      "line": 44033,
+      "role": "primary",
+      "raw": "⿰氵.⿳丿⿷⿴#(一-𠃍丨b𠃌)一.一.豕.",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𤇟",
+      "line": 44460,
+      "role": "primary",
+      "raw": "⿹⿷#(-一丨b𠃌)亼d灬(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𤈎",
+      "line": 44507,
+      "role": "primary",
+      "raw": "{?3𤈎}⿰火d旬",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤋛",
+      "line": 44712,
+      "role": "primary",
+      "raw": "⿰火d⿱⺊⿸#(-乛丿)石",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𤌵",
+      "line": 44802,
+      "role": "primary",
+      "raw": "⿰火d⿱爫.⿴#(丿丨b一-𠃍)人d",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𤑔",
+      "line": 45089,
+      "role": "primary",
+      "raw": "{?0𤑔}⿱蓻.火.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤑔",
+      "line": 45089,
+      "role": "alternative",
+      "raw": "{?0𤑔}⿱艹.𭵴J(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤔘",
+      "line": 45285,
+      "role": "primary",
+      "raw": "⿱爫.⿴#(丿丨b一-𠃍)⿰二.二.(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𤔘",
+      "line": 45285,
+      "role": "primary",
+      "raw": "⿱爫J⿴#(丿丨b一-𠃍)⿰二.二.(J)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𤔼",
+      "line": 45321,
+      "role": "primary",
+      "raw": "⿶#(一-𠃍𠃊-𠃍𠃊)⿱爫.貝",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𤕈",
+      "line": 45333,
+      "role": "primary",
+      "raw": "⿱爫.⿲吕⿳#(-乀-丿乀丿z)#(-乀-丿乀丿z)丨吕(T)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𤕪",
+      "line": 45367,
+      "role": "primary",
+      "raw": "#(-一𠃊-𠃍𠃊)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤗕",
+      "line": 45474,
+      "role": "primary",
+      "raw": "⿰片.⿱丅⿸#(-乛丿)⿱七.几.",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𤜓",
+      "line": 45792,
+      "role": "primary",
+      "raw": "⿰牛t⿱巛⿻[1:]⿺乚.丨⿱#(一-𠃍丨b一)⿰⿱⺕⺕𬺹(.)",
+      "reason": "opaque-operand",
+      "offset": 15
+    },
+    {
+      "character": "𤜓",
+      "line": 45792,
+      "role": "primary",
+      "raw": "⿰牛t⿱巛⿹⿻[1:]⿺乚.⿴#(丨b一-𠃍)二.#(一-𠃍丨b一)⿱⺕⺕(J)",
+      "reason": "opaque-operand",
+      "offset": 15
+    },
+    {
+      "character": "𤡼",
+      "line": 46153,
+      "role": "primary",
+      "raw": "⿰犭⿳一.⿰#(丨-一𠃑)#(𠃑-一丨)田",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𤣩",
+      "line": 46262,
+      "role": "primary",
+      "raw": "{?2𤣩}⿱一.土t",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤣩",
+      "line": 46262,
+      "role": "alternative",
+      "raw": "{?2𤣩}⿱干.一t",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤣩",
+      "line": 46262,
+      "role": "alternative",
+      "raw": "{?2𤣩}⿻工t一.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤦡",
+      "line": 46446,
+      "role": "primary",
+      "raw": "⿻[b]玨h#(-乀一-𠃍𠃑)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤦡",
+      "line": 46446,
+      "role": "primary",
+      "raw": "⿻[b]玨h#(-丶一-𠃍𠃑)(J)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤧨",
+      "line": 46517,
+      "role": "primary",
+      "raw": "{?0𤧨}⿰王t郎.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤬣",
+      "line": 46832,
+      "role": "primary",
+      "raw": "⿱⿲⿷#(丿𠃊)二.囟𬺹瓠.(.)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𤬣",
+      "line": 46832,
+      "role": "primary",
+      "raw": "⿱⿲⿷#(丿𠃊)二.囟𬺹瓠J(J)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𤮷",
+      "line": 46980,
+      "role": "primary",
+      "raw": "⿰⿳雨jgh一.⿱⿰#(丨-一𠃑)#(𠃑-一丨)田瓦.(.)",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "𤰃",
+      "line": 47056,
+      "role": "primary",
+      "raw": "{?3𤰃}⿲丿⿺𰀁.一.丨(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤰒",
+      "line": 47071,
+      "role": "primary",
+      "raw": "{?0𤰒}⿱人.⿻丅⿶凵.丷(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤱚",
+      "line": 47143,
+      "role": "primary",
+      "raw": "⿱⿰#(丿𠄌)𫜹田",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𤱧",
+      "line": 47156,
+      "role": "primary",
+      "raw": "{?0𤱧}⿰田朶.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤱫",
+      "line": 47160,
+      "role": "primary",
+      "raw": "⿱由⿰⿷#(丿𠄌)一.人.(Q)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𤱮",
+      "line": 47163,
+      "role": "primary",
+      "raw": "{?0𤱮}⿱甶⿸丿𧘇.(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤺝",
+      "line": 47722,
+      "role": "primary",
+      "raw": "⿸疒.⿸虍.⿰⿷#(丿𠄌)一.几.(.)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𤺝",
+      "line": 47722,
+      "role": "primary",
+      "raw": "⿸疒.⿸虍H⿰⿷#(丿𠄌)一.几.(T)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𤺻",
+      "line": 47752,
+      "role": "alternative",
+      "raw": "⿸痽.#(-丨㇅-丨𠃌)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤺻",
+      "line": 47752,
+      "role": "alternative",
+      "raw": "⿸痽J#(-丨㇅-丨𠃌)(J)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𤻏",
+      "line": 47772,
+      "role": "primary",
+      "raw": "⿸疒J⿰⿱⿴#(丿丨b一-𠃍)一.工.殳J(V)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𤾤",
+      "line": 47985,
+      "role": "primary",
+      "raw": "⿺⿱𬐃#(㇇乀)帝.(.)",
+      "reason": "remaining-tokens",
+      "offset": 7
+    },
+    {
+      "character": "𤾤",
+      "line": 47985,
+      "role": "primary",
+      "raw": "⿺⿱𬐃#(㇇乀)帝J(J)",
+      "reason": "remaining-tokens",
+      "offset": 7
+    },
+    {
+      "character": "𥄤",
+      "line": 48369,
+      "role": "primary",
+      "raw": "⿰⿷#(丿𠄌)一.目",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𥅱",
+      "line": 48446,
+      "role": "primary",
+      "raw": "⿸⿽#(丨-一丿)屮J目(J)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𥅱",
+      "line": 48446,
+      "role": "primary",
+      "raw": "⿸⿽#(丨-一丿)屮.目(T)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𥆞",
+      "line": 48491,
+      "role": "primary",
+      "raw": "⿸⿽#(丨-一丿)罒罒",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𥇨",
+      "line": 48565,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)⿱火.目",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𥈠",
+      "line": 48621,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)⿱𬺢𥃦(.)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𥉢",
+      "line": 48687,
+      "role": "primary",
+      "raw": "⿰目⿳一.#(丨-一𠃑一-丨一-𠃑)土.(Q)",
+      "reason": "remaining-tokens",
+      "offset": 9
+    },
+    {
+      "character": "𥑉",
+      "line": 49174,
+      "role": "primary",
+      "raw": "{𥑉}⿰石厄p(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𥞛",
+      "line": 50024,
+      "role": "primary",
+      "raw": "{?0𥞛}⿰禾d朶.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𥟃",
+      "line": 50064,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)𠰓.",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𥟙",
+      "line": 50086,
+      "role": "primary",
+      "raw": "{?0𥟟}⿰⿱旦.彡禾.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𥟯",
+      "line": 50108,
+      "role": "primary",
+      "raw": "⿰禾d⿻#(丿乚)𪢴.(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𥣨",
+      "line": 50357,
+      "role": "primary",
+      "raw": "⿰⿳禾d⺕⺕⿴[5]⿻[,,,r]⿺乚.丨#(一-𠃑一-𠃍)又d",
+      "reason": "remaining-tokens",
+      "offset": 25
+    },
+    {
+      "character": "𥦪",
+      "line": 50551,
+      "role": "primary",
+      "raw": "⿱穴.d⿷匚.⿺𠃊.#(𠃑-一丨)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𥦪",
+      "line": 50551,
+      "role": "primary",
+      "raw": "⿱穴j.w⿷匚.⿺𠃊.#(𠃑-一丨)(T)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𥨣",
+      "line": 50672,
+      "role": "alternative",
+      "raw": "⿱𫁒T#(-丨㇅-丨𠃌)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𥭼",
+      "line": 51017,
+      "role": "primary",
+      "raw": "{?0𥭼}⿱𥫗.录.(V)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𥲻",
+      "line": 51336,
+      "role": "primary",
+      "raw": "{?0𥲻}⿱𮅕巳.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𥲻",
+      "line": 51336,
+      "role": "primary",
+      "raw": "{?0𥲻}⿱𮅕㔾.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𥳁",
+      "line": 51342,
+      "role": "primary",
+      "raw": "⿳𥫗.丶.⿸#(-乛丿)⿳七T丱zs一.(H)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𥳁",
+      "line": 51342,
+      "role": "primary",
+      "raw": "⿳𥫗.丶s⿸#(-乛丿)⿳七T丱zs一.(Q)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𥹐",
+      "line": 51741,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)釆d",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𦂷",
+      "line": 52356,
+      "role": "primary",
+      "raw": "⿰糹.⿹#(一-𠃍丨b𠃌)⿴囗.⿻⿰丿丿丶.(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𦄓",
+      "line": 52448,
+      "role": "primary",
+      "raw": "⿰糸J⿱⿲#(丿𠃊)白コ几.(J)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𦄖",
+      "line": 52451,
+      "role": "primary",
+      "raw": "⿰糹.⿳一.#(丨-一𠃊-𠃑)冭.(.)",
+      "reason": "remaining-tokens",
+      "offset": 10
+    },
+    {
+      "character": "𦄖",
+      "line": 52451,
+      "role": "primary",
+      "raw": "⿰糸J⿳一.#(丨-一𠃊-𠃑)冭T(J)",
+      "reason": "remaining-tokens",
+      "offset": 10
+    },
+    {
+      "character": "𦄖",
+      "line": 52451,
+      "role": "primary",
+      "raw": "⿰糹.⿳一.#(丨-一𠃊-𠃑)夳(T)",
+      "reason": "remaining-tokens",
+      "offset": 10
+    },
+    {
+      "character": "𦈾",
+      "line": 52747,
+      "role": "primary",
+      "raw": "⿰缶⿱⺊⿸#(-乛丿)手",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𦉭",
+      "line": 52794,
+      "role": "primary",
+      "raw": "⿻[1:]儿.#(一-𠃍丨b一)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦉭",
+      "line": 52794,
+      "role": "primary",
+      "raw": "⿻[1:]儿w#(一-𠃍丨b一)(T)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦍍",
+      "line": 53018,
+      "role": "primary",
+      "raw": "{?2𦍍}⿱丷干p",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦍍",
+      "line": 53018,
+      "role": "alternative",
+      "raw": "{?2𦍍}⿱䒑.𠂇.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦖂",
+      "line": 53583,
+      "role": "primary",
+      "raw": "⿰耳jty⿱一.⿰#(丨-一𠃑)#(𠃑-一丨)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𦛩",
+      "line": 53942,
+      "role": "primary",
+      "raw": "{𦛩}⿰月.吿(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦝠",
+      "line": 54061,
+      "role": "primary",
+      "raw": "{?0𦝠}⿱吂.䏎.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦝲",
+      "line": 54079,
+      "role": "primary",
+      "raw": "{?0𦝲}⿰月.曷.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦟾",
+      "line": 54219,
+      "role": "primary",
+      "raw": "{?0𦟾}⿰月.區.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦠅",
+      "line": 54226,
+      "role": "primary",
+      "raw": "{?0𦠅}⿰月.尋.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦠅",
+      "line": 54226,
+      "role": "primary",
+      "raw": "{?0𦠅}⿰月.尋H(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦠈",
+      "line": 54229,
+      "role": "primary",
+      "raw": "{?0𦠈}⿰月.矞J(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦡦",
+      "line": 54323,
+      "role": "primary",
+      "raw": "{?3𦡦}⿰月.董.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦢫",
+      "line": 54392,
+      "role": "primary",
+      "raw": "{?0𦢫}⿰月.龍J(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦣝",
+      "line": 54442,
+      "role": "primary",
+      "raw": "⿷匚.⿰丨#(𠃑-一丨)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦤀",
+      "line": 54477,
+      "role": "primary",
+      "raw": "{?0𦤀}⿱自大.(V)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦤀",
+      "line": 54477,
+      "role": "alternative",
+      "raw": "{?0𦤀}⿱丿𰥍.(V)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦤶",
+      "line": 54531,
+      "role": "primary",
+      "raw": "{?0𦤶}⿰至t夂.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦤶",
+      "line": 54531,
+      "role": "primary",
+      "raw": "{?0𦤶}⿰至t攵.(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦥑",
+      "line": 54558,
+      "role": "primary",
+      "raw": "⿰⿷#(丿𠄌)一.𫜹(t)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𦥓",
+      "line": 54560,
+      "role": "primary",
+      "raw": "⿴#(丿丨b一-𠃍)乂d",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𦥢",
+      "line": 54575,
+      "role": "primary",
+      "raw": "⿱勹⿴#(丿丨b一-𠃍)⿰二.二.",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𦥫",
+      "line": 54584,
+      "role": "primary",
+      "raw": "⿻[:-1]干.⿴#(丿丨b一-𠃍)⿰二.二.(J)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𦥫",
+      "line": 54584,
+      "role": "primary",
+      "raw": "⿻[:-1]千.⿴#(丿丨b一-𠃍)⿰二.二.(T)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𦥮",
+      "line": 54587,
+      "role": "primary",
+      "raw": "⿱⿰#(-一𠃑)𡰣s臼.(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𦥮",
+      "line": 54587,
+      "role": "primary",
+      "raw": "⿱⿰⿸#(丿𠃊)丨⿹コ丨𦥑.(J)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𦥮",
+      "line": 54587,
+      "role": "primary",
+      "raw": "⿱⿰#(丿𠃑)𡰣s𦥑.(Q)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𦥮",
+      "line": 54587,
+      "role": "primary",
+      "raw": "⿱⿷[1]#(-一𠃑-一𠃊)一.⿼[1]#(一-𠃑一-𠃍)一.(T)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𦥺",
+      "line": 54599,
+      "role": "primary",
+      "raw": "⿱丿⿻#(-丿一-𠃍𠃊乀x0)𦥑.(J)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𦥺",
+      "line": 54599,
+      "role": "primary",
+      "raw": "⿱丶.⿻#(-丿一-𠃍𠃊乀x0)𦥑.(T)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𦥼",
+      "line": 54601,
+      "role": "primary",
+      "raw": "⿱⿻[1:]〢⿱#(一-𠃍丨b一)𦥑h乂.(.)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𦥼",
+      "line": 54601,
+      "role": "primary",
+      "raw": "⿱⿻#(-丨一-𠃍𠃑)𦥑.乂.(T)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𦥾",
+      "line": 54603,
+      "role": "primary",
+      "raw": "⿳䒑.屮.⿴#(丿丨b一-𠃍)⿰二.二.(.)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𦥾",
+      "line": 54603,
+      "role": "primary",
+      "raw": "⿱屰.⿴#(丿丨b一-𠃍)⿰二.二.(T)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𦦊",
+      "line": 54615,
+      "role": "primary",
+      "raw": "⿰⿴#(丿丨b一-𠃍)⿰二.二.男",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𦦓",
+      "line": 54624,
+      "role": "primary",
+      "raw": "⿱⿻仐𠬞y.⿴#(丿丨b一-𠃍)⿰二.二.",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𦫉",
+      "line": 54934,
+      "role": "primary",
+      "raw": "⿰舟j..y⿱⺈⿻[1:]⿺乚.丨⿱#(一-𠃍丨b一)⿰⿱⺕⺕⿼コ𠂭",
+      "reason": "opaque-operand",
+      "offset": 18
+    },
+    {
+      "character": "𦫳",
+      "line": 54976,
+      "role": "primary",
+      "raw": "{?0𦫳}⿱艹.丨(Q)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦬝",
+      "line": 55018,
+      "role": "primary",
+      "raw": "⿻𰰜⿰#(丨-一丨)𠃑.(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𦬝",
+      "line": 55018,
+      "role": "primary",
+      "raw": "⿱艹H⿻十.⿰#(丨-一丨)𠃑.(T)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𦬠",
+      "line": 55021,
+      "role": "primary",
+      "raw": "{𦬠}⿱艹H廾.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦭠",
+      "line": 55085,
+      "role": "primary",
+      "raw": "{?0𦭠}⿱艸.仺(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦯵",
+      "line": 55234,
+      "role": "primary",
+      "raw": "⿳艹.⿴#(丿丨b一-𠃍)一.儿.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𦱼",
+      "line": 55369,
+      "role": "primary",
+      "raw": "⿱艹.⿸厂.⿰丿⿱#(𠃑-一丨)乙(.)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𦱼",
+      "line": 55369,
+      "role": "primary",
+      "raw": "⿱艹H⿸厂.⿰丿⿱#(𠃑-一丨)乙(T)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𦴱",
+      "line": 55550,
+      "role": "primary",
+      "raw": "⿱艹H⿸厂.⿰亻#(𠃑-一丨乙)(J)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦴱",
+      "line": 55550,
+      "role": "primary",
+      "raw": "⿱艹H⿸#(-乛丿)⿰亻⿱丶.#(𠃍-一丨乙)(Q)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𦴱",
+      "line": 55550,
+      "role": "primary",
+      "raw": "⿱艹H⿸厂.⿰亻⿱丶.#(𠃍-一丨乙)(T)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦷣",
+      "line": 55728,
+      "role": "primary",
+      "raw": "⿳䒤.丶.⿱⿴#(一-𠃍丨b一)一.亅(.)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𦷣",
+      "line": 55728,
+      "role": "primary",
+      "raw": "⿳䒤T丶.⿱⿴#(一-𠃍丨b一)一.亅(T)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𦹗",
+      "line": 55844,
+      "role": "primary",
+      "raw": "⿱艹H⿰⿱一.#(丨x4◞◟◜◝◞)頁.",
+      "reason": "remaining-tokens",
+      "offset": 12
+    },
+    {
+      "character": "𦼱",
+      "line": 56062,
+      "role": "alternative",
+      "raw": "⿱萑.#(-丨㇅-丨𠃌)(.)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦼱",
+      "line": 56062,
+      "role": "alternative",
+      "raw": "⿱萑K#(-丨㇅-丨𠃌)(J)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦼱",
+      "line": 56062,
+      "role": "alternative",
+      "raw": "⿱萑H#(-丨㇅-丨𠃌)(T)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𦽍",
+      "line": 56090,
+      "role": "primary",
+      "raw": "⿱艹.⿶⿰⿹𠃑.丆⿸#(丨-一丨)乁日(Q)",
+      "reason": "opaque-operand",
+      "offset": 11
+    },
+    {
+      "character": "𧀈",
+      "line": 56277,
+      "role": "primary",
+      "raw": "⿳艹.⿰⿶凵.#(丶-𠃋x0)⿶凵.#(丶-𠃋x0)日(.)",
+      "reason": "remaining-tokens",
+      "offset": 15
+    },
+    {
+      "character": "𧆧",
+      "line": 56692,
+      "role": "primary",
+      "raw": "⿸虍.⿰⿷#(丿𠄌)一.儿.(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𧆩",
+      "line": 56694,
+      "role": "primary",
+      "raw": "⿸虍.⿰⿷#(丿𠄌)一.人.(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𧆬",
+      "line": 56697,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)⿺⿱七.几.九.(.)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𧆬",
+      "line": 56697,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)⿺⿱七T儿.九.(T)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𧇩",
+      "line": 56758,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)⿳匕wh𬺢𥃦",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𧑺",
+      "line": 57415,
+      "role": "primary",
+      "raw": "⿲虫扌⿱⺊⿸#(-乛丿)𤴓",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𧒟",
+      "line": 57452,
+      "role": "primary",
+      "raw": "⿳丶s⿻[b]#(-乀一-𠃍𠃑)一.䖵(J)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𧓟",
+      "line": 57516,
+      "role": "primary",
+      "raw": "⿱⿰⿷#(丿𠄌)一.⿺乚.日䖵(.)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𧘇",
+      "line": 57812,
+      "role": "primary",
+      "raw": "⿸#(丿𠄌)⿺乀.丿(x.)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𧘇",
+      "line": 57812,
+      "role": "primary",
+      "raw": "⿸#(丿𠄌)⿺丶.丿(xd)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𧘇",
+      "line": 57812,
+      "role": "primary",
+      "raw": "⿰#(丿𠄌)⿺乀.丿(xl.)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𧘇",
+      "line": 57812,
+      "role": "primary",
+      "raw": "⿰#(丿𠄌)⿺丶.丿(xld)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𧠅",
+      "line": 58322,
+      "role": "primary",
+      "raw": "⿰⿳一.#(丨x2-𠃊𠃍x3-𠃊)⿰彳⿱𭥍夂d邑.(Q)",
+      "reason": "remaining-tokens",
+      "offset": 12
+    },
+    {
+      "character": "𧡸",
+      "line": 58437,
+      "role": "primary",
+      "raw": "⿰⿱⿰⿹#(-𠃍𠃊)匚.⿸尸sコ一t見.(P)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𧮸",
+      "line": 59269,
+      "role": "primary",
+      "raw": "⿰⿱⺊⿸#(-乛丿)⿱一.谷d又.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𧯕",
+      "line": 59298,
+      "role": "primary",
+      "raw": "{?0𧯕}⿰谷d𥈠.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𧰶",
+      "line": 59395,
+      "role": "primary",
+      "raw": "⿰豕d#(-丨㇅-丨𠃌)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𧱊",
+      "line": 59415,
+      "role": "primary",
+      "raw": "⿰豕d⿵#(-丨㇅-丨𠃌)又d",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𧳱",
+      "line": 59582,
+      "role": "primary",
+      "raw": "⿰𮙥d⿱⿶#(丿丨b一-𠃍)丨儿.",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𧵐",
+      "line": 59677,
+      "role": "primary",
+      "raw": "⿰貝⿱口.#(㇇乀)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𧺯",
+      "line": 60028,
+      "role": "primary",
+      "raw": "{?3𧺯}⿺走斗",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𨁳",
+      "line": 60480,
+      "role": "primary",
+      "raw": "⿰𧾷⿹#(一-𠃍丨b𠃌)方.(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𨁳",
+      "line": 60480,
+      "role": "primary",
+      "raw": "⿰𧾷⿹#(一-𠃍丨b𠃌)方J(J)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𨐋",
+      "line": 61400,
+      "role": "primary",
+      "raw": "{𨐋}⿱立.十.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𨐋",
+      "line": 61400,
+      "role": "alternative",
+      "raw": "{𨐋}⿱亠.𢆉.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𨐋",
+      "line": 61400,
+      "role": "alternative",
+      "raw": "{𨐋}⿻䇂.一.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𨕙",
+      "line": 61734,
+      "role": "primary",
+      "raw": "⿺辶.⿱丿⿹⿷⿴#(一-𠃍丨b𠃌)一.一.刀(U)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𨖂",
+      "line": 61775,
+      "role": "primary",
+      "raw": "⿺辶.⿱丿⿹⿷⿴#(一-𠃍丨b𠃌)一.一.口.",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𨖻",
+      "line": 61832,
+      "role": "primary",
+      "raw": "⿺辶.⿳一.⿰#(丨-一𠃑)#(𠃑-一丨)田(.)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𨙪",
+      "line": 62007,
+      "role": "primary",
+      "raw": "⿰#(丿𠄌)阝",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𨩁",
+      "line": 62990,
+      "role": "primary",
+      "raw": "⿱⿲#(丿𠄌)白コ金.",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𨫶",
+      "line": 63171,
+      "role": "primary",
+      "raw": "⿰金dt⿱⺊⿸#(-乛丿)⿱匕.目",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𨬀",
+      "line": 63181,
+      "role": "primary",
+      "raw": "⿰金dt⿱丅⿸#(-乛丿)⿱土.匆x.(Q)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𨭲",
+      "line": 63295,
+      "role": "primary",
+      "raw": "⿰金dt⿱⺊⿸#(-乛丿)星(T)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𨱘",
+      "line": 63525,
+      "role": "primary",
+      "raw": "⿳⿸厂s#(丿-丶)一.八.(J)",
+      "reason": "remaining-tokens",
+      "offset": 9
+    },
+    {
+      "character": "𨳇",
+      "line": 63636,
+      "role": "primary",
+      "raw": "⿰⿱一.尸s⿱一.#(-𠃌丨b一)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𩅎",
+      "line": 64795,
+      "role": "primary",
+      "raw": "⿱雷.⿰#(-㇇𠃊)尸s(.)",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𩆫",
+      "line": 64888,
+      "role": "primary",
+      "raw": "⿳雨jgh⿰⿴㇇丶.龴nr⿱田⿰#(-㇇𠃊)#(一-𠃍乀)(.)",
+      "reason": "opaque-operand",
+      "offset": 16
+    },
+    {
+      "character": "𩆫",
+      "line": 64888,
+      "role": "primary",
+      "raw": "⿳雨jgh癶.⿱田⿰#(-㇇𠃊)#(一-𠃍乀)(P)",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "𩆹",
+      "line": 64902,
+      "role": "primary",
+      "raw": "⿱雨jgh⿶⿰⿹𠃑.丆⿸#(丨-一丨)𠃍貟(.)",
+      "reason": "opaque-operand",
+      "offset": 13
+    },
+    {
+      "character": "𩆹",
+      "line": 64902,
+      "role": "primary",
+      "raw": "⿱雨jgt⿶⿰⿹𠃑.丆⿸#(丨-一丨)𠃍貟(T)",
+      "reason": "opaque-operand",
+      "offset": 13
+    },
+    {
+      "character": "𩇂",
+      "line": 64911,
+      "role": "primary",
+      "raw": "⿱雨jgh⿶⿰⿹𠃑.丆⿸#(丨-一丨)𠃍員(J)",
+      "reason": "opaque-operand",
+      "offset": 13
+    },
+    {
+      "character": "𩇂",
+      "line": 64911,
+      "role": "primary",
+      "raw": "⿱雨jgt⿶⿰⿹𠃑.丆⿸#(丨-一丨)𠃍員(T)",
+      "reason": "opaque-operand",
+      "offset": 13
+    },
+    {
+      "character": "𩇧",
+      "line": 64948,
+      "role": "primary",
+      "raw": "⿲⿳一.#(-一乀)一.丿⿰丨⿳一.㇇一.(.)",
+      "reason": "remaining-tokens",
+      "offset": 10
+    },
+    {
+      "character": "𩇧",
+      "line": 64948,
+      "role": "primary",
+      "raw": "⿲⿳一.#(-一乀)一.〢⿳一.㇇一.(Q)",
+      "reason": "remaining-tokens",
+      "offset": 10
+    },
+    {
+      "character": "𩇧",
+      "line": 64948,
+      "role": "primary",
+      "raw": "⿲⿳一.𡿨一.丿⿰丨⿳一.#(乀丿)一.(T)",
+      "reason": "remaining-tokens",
+      "offset": 17
+    },
+    {
+      "character": "𩍫",
+      "line": 65336,
+      "role": "primary",
+      "raw": "⿰革.⿳爫.⿲⿱⿰一.丨一t几t#(-𠃍㇄)又.(T)",
+      "reason": "remaining-tokens",
+      "offset": 21
+    },
+    {
+      "character": "𩎐",
+      "line": 65373,
+      "role": "primary",
+      "raw": "⿰革.⿳艹H丶s⿸#(-乛丿)⿳⿻[:-1]〢コ比.馬(Q)",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𩗠",
+      "line": 65965,
+      "role": "primary",
+      "raw": "⿺風.⿱一.⿰#(丨-一𠃑)#(𠃑-一丨)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𩡧",
+      "line": 66612,
+      "role": "primary",
+      "raw": "⿹⿷#(-一丨b𠃌)𰀁.卌.(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𩡧",
+      "line": 66612,
+      "role": "primary",
+      "raw": "⿹⿷#(-一丨b𠃌)𰀁.⿻灬一.(P)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𩤷",
+      "line": 66820,
+      "role": "primary",
+      "raw": "⿰馬⿱一.⿰#(丨-一𠃑)#(𠃑-一丨)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𩨔",
+      "line": 67041,
+      "role": "primary",
+      "raw": "{?0𩨔}⿺尢.骨H(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𩬻",
+      "line": 67336,
+      "role": "primary",
+      "raw": "{?0𩬻}⿱髟朶.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𩬻",
+      "line": 67336,
+      "role": "alternative",
+      "raw": "{?0𩬻}⿱䯮木.(P)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𩼻",
+      "line": 68360,
+      "role": "primary",
+      "raw": "{𩼻}⿱艹H⿰魚虘.(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𩿎",
+      "line": 68507,
+      "role": "primary",
+      "raw": "{?3𩿎}⿰予鳥",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𪀋",
+      "line": 68568,
+      "role": "primary",
+      "raw": "⿳丿⿷⿴#(一-𠃍丨b𠃌)一.一.甲",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𪂧",
+      "line": 68724,
+      "role": "primary",
+      "raw": "⿳丿⿷⿴#(一-𠃍丨b𠃌)一.一.宛.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𪆔",
+      "line": 68961,
+      "role": "primary",
+      "raw": "⿰焦.⿳丿⿷⿴#(一-𠃍丨b𠃌)一.一.火.(Q)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𪆔",
+      "line": 68961,
+      "role": "primary",
+      "raw": "⿰焦.⿱丿⿹⿷⿴#(一-𠃍丨b𠃌)一.一.火d(T)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𪓝",
+      "line": 69802,
+      "role": "primary",
+      "raw": "⿱丿⿻[1:]⿺乚.丨⿳#(一-𠃍丨b一)⿰𠂇.又d𦥑h(.)",
+      "reason": "opaque-operand",
+      "offset": 12
+    },
+    {
+      "character": "𪓝",
+      "line": 69802,
+      "role": "primary",
+      "raw": "⿱丿⿻[1:]⿺乚.⿴#(丨b一-𠃍)一.⿱#(一-𠃍丨b一)⿰⿱丆𰀄.又.(T)",
+      "reason": "opaque-operand",
+      "offset": 11
+    },
+    {
+      "character": "𪔂",
+      "line": 69839,
+      "role": "primary",
+      "raw": "⿶⿰#(𠃑-一丨)#(丨-一𠃑)目(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𪔂",
+      "line": 69839,
+      "role": "primary",
+      "raw": "⿶⿰#(𠃑-一丿)#(丨-一㇉)目(T)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𪚦",
+      "line": 70259,
+      "role": "primary",
+      "raw": "⿱一.⿻⿺#(丨-一𠃊乚)#(𠃑-一丨)⿰⿱⺕⺕⿼コ乂d(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𪚦",
+      "line": 70259,
+      "role": "primary",
+      "raw": "⿱一.⿴[1]⿻[xcc,xcc]⿹⿺#(丨-一𠃊乚)#(𠃑-一丨)⿱コココ乂.(J)",
+      "reason": "opaque-operand",
+      "offset": 19
+    },
+    {
+      "character": "𪚦",
+      "line": 70259,
+      "role": "primary",
+      "raw": "⿱一.⿴[1]⿻[xcc,xc.]⿹⿺#(丨-一𠃊乚)#(𠃑-一丨)⿱コココ乂.(T)",
+      "reason": "opaque-operand",
+      "offset": 19
+    },
+    {
+      "character": "𪚴",
+      "line": 70273,
+      "role": "primary",
+      "raw": "⿹⿴⿻[1:]#(一-𠃍丨b一)⿺乚.#(𠃍-𠃊)𠂭𢑑.",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𪚺",
+      "line": 70279,
+      "role": "primary",
+      "raw": "⿱⺈⿻[1:]⿺乚.丨⿱#(一-𠃍丨b一)⿰⿱⺕⺕丘.",
+      "reason": "opaque-operand",
+      "offset": 12
+    },
+    {
+      "character": "𪛀",
+      "line": 70285,
+      "role": "primary",
+      "raw": "⿳𠙇J⺈⿻[1:]⿺乚.丨⿱#(一-𠃍丨b一)⿰⿱⺕⺕百(J)",
+      "reason": "opaque-operand",
+      "offset": 15
+    },
+    {
+      "character": "𪛀",
+      "line": 70285,
+      "role": "primary",
+      "raw": "⿳𠙇.⺈⿻[1:]⿺乚.丨⿱#(一-𠃍丨b一)⿰⿱⺕⺕百(T)",
+      "reason": "opaque-operand",
+      "offset": 15
+    },
+    {
+      "character": "𪛆",
+      "line": 70291,
+      "role": "primary",
+      "raw": "⿳敞.⺈⿹⿴⿻[1:]⿺乚.#(𠃍-𠃊)#(一-𠃍丨b一)一.⿱⺕⺕",
+      "reason": "remaining-tokens",
+      "offset": 23
+    },
+    {
+      "character": "𪛗",
+      "line": 70308,
+      "role": "primary",
+      "raw": "⿱亼.#(-𠃍丨乛)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𪛘",
+      "line": 70309,
+      "role": "primary",
+      "raw": "⿴#(-𠃍丨乛)儿w",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𪛙",
+      "line": 70310,
+      "role": "primary",
+      "raw": "{𪛙}#(Hg)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𪛛",
+      "line": 70312,
+      "role": "primary",
+      "raw": "⿸尸.#(乀丿)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𪛝",
+      "line": 70314,
+      "role": "primary",
+      "raw": "⿵#(-丿㇍丿)丶.",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𪩽",
+      "line": 71210,
+      "role": "primary",
+      "raw": "⿰巾.⿱⺊⿸#(-乛丿)⿱匕.吳.(.)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𪭃",
+      "line": 71408,
+      "role": "primary",
+      "raw": "⿰忄⿸⿻丅⿸#(-乛丿)⿰二.二.𰤷",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𫜾",
+      "line": 74475,
+      "role": "primary",
+      "raw": "{𫜾}⿳冖一.月.(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𫞕",
+      "line": 74562,
+      "role": "alternative",
+      "raw": "⿸#(丿𠄌)弋",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𫠉",
+      "line": 74678,
+      "role": "primary",
+      "raw": "⿹⿷#(-一丨b𠃌)𰀁.一.",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𫠓",
+      "line": 74688,
+      "role": "primary",
+      "raw": "⿱丿⿹⿷⿴#(一-𠃍丨b𠃌)一.一.一.",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𫠕",
+      "line": 74690,
+      "role": "primary",
+      "raw": "⿸㢈J⿱丿⿹#(一-𠃍丨b𠃌)灬",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𫤗",
+      "line": 74947,
+      "role": "primary",
+      "raw": "⿱⿴#(𠃊-𠃍丨)一.儿.(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𫭂",
+      "line": 75502,
+      "role": "primary",
+      "raw": "{𫭂}⿴囗.十.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𬂛",
+      "line": 76871,
+      "role": "primary",
+      "raw": "{𬂛}⿻丨一.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𬅌",
+      "line": 77048,
+      "role": "primary",
+      "raw": "⿰象.d⿱⿰#(丿𠃊)コ木.",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𬋢",
+      "line": 77454,
+      "role": "primary",
+      "raw": "⿱⿰禾d⿱⺈⿹⿴⿻[1:]⿺乚.#(𠃍-𠃊)#(一-𠃍丨b一)𠂭𰀄.火.",
+      "reason": "remaining-tokens",
+      "offset": 26
+    },
+    {
+      "character": "𬟏",
+      "line": 78715,
+      "role": "primary",
+      "raw": "⿱艹.⿻[1:]⿺乚.丨⿱#(一-𠃍丨b一)⿰⿱⺕⺕⿼コ乂d",
+      "reason": "opaque-operand",
+      "offset": 13
+    },
+    {
+      "character": "𬵼",
+      "line": 80168,
+      "role": "primary",
+      "raw": "⿰⿱⿲#(丿𠄌)冈zコ卝p⿱吕魚",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𬹱",
+      "line": 80413,
+      "role": "primary",
+      "raw": "⿳亠.⿲刀了.⿸#(丿𠄌)⿻乀.一.⿲丿二.丨",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𬺱",
+      "line": 80475,
+      "role": "primary",
+      "raw": "{𬺱}⿹十.丿",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𬻆",
+      "line": 80496,
+      "role": "primary",
+      "raw": "⿸㇇⿱一.⿹⿷#(-一丨b𠃌)一.一.",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𬻒",
+      "line": 80508,
+      "role": "primary",
+      "raw": "⿹⿻𫠠⿱コ#(-乛丨)𠃌",
+      "reason": "remaining-tokens",
+      "offset": 10
+    },
+    {
+      "character": "𬻞",
+      "line": 80520,
+      "role": "primary",
+      "raw": "⿱#(-丨一-𠃑一-𠃍𠃑-一𠃑)一.",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𬼁",
+      "line": 80555,
+      "role": "primary",
+      "raw": "#(-丶𠄎)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𬼂",
+      "line": 80556,
+      "role": "primary",
+      "raw": "#(丿乀)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𬼂",
+      "line": 80556,
+      "role": "primary",
+      "raw": "#(丿◜◝-◟-◞)(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𬼄",
+      "line": 80558,
+      "role": "primary",
+      "raw": "#(-丶𠃍𠄎)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𬼆",
+      "line": 80560,
+      "role": "primary",
+      "raw": "{?1𬼆}⿱乂d乂d",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𬼖",
+      "line": 80576,
+      "role": "primary",
+      "raw": "{𬼖}⿷匚w一.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𬼗",
+      "line": 80577,
+      "role": "primary",
+      "raw": "⿸#(丿𠄌)乚.",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𬼺",
+      "line": 80612,
+      "role": "primary",
+      "raw": "⿳丷コ⿹⿻亅#(-乛丨)丿",
+      "reason": "remaining-tokens",
+      "offset": 10
+    },
+    {
+      "character": "𭁇",
+      "line": 80881,
+      "role": "primary",
+      "raw": "⿳⿰〢⿻#(丨x3◞◟◜)一.一.八.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𭂪",
+      "line": 80980,
+      "role": "primary",
+      "raw": "⿰#(丿𠄌)几.",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𭄧",
+      "line": 81105,
+      "role": "primary",
+      "raw": "⿹⿻𫠠⿱口.#(-乛丨)力",
+      "reason": "remaining-tokens",
+      "offset": 11
+    },
+    {
+      "character": "𭄩",
+      "line": 81107,
+      "role": "primary",
+      "raw": "⿱丿⿹⿷⿴#(一-𠃍丨b𠃌)一.一.力",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𭅫",
+      "line": 81173,
+      "role": "primary",
+      "raw": "⿻#(一-丨一)⿹⿺𠃑.吅吅",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𭇩",
+      "line": 81299,
+      "role": "primary",
+      "raw": "⿰口.⿱人d⿹⿷#(-一丨b𠃌)一.一.",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𭍻",
+      "line": 81701,
+      "role": "primary",
+      "raw": "⿱⿲丿丨#(丨◜◝◞)土.",
+      "reason": "remaining-tokens",
+      "offset": 7
+    },
+    {
+      "character": "𭓕",
+      "line": 82047,
+      "role": "primary",
+      "raw": "⿳⿲〢⿹⿺𠃑.丿丨⿹#(乀丨)二.冖子.",
+      "reason": "opaque-operand",
+      "offset": 11
+    },
+    {
+      "character": "𭖲",
+      "line": 82268,
+      "role": "primary",
+      "raw": "⿱⿲#(丨-𠃊一)丨#(𠃍-𠃊)仚",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𭚤",
+      "line": 82510,
+      "role": "primary",
+      "raw": "⿰⿱⿺⿻[b]#(一-𠃑)一.一.小.式",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𭛄",
+      "line": 82542,
+      "role": "primary",
+      "raw": "⿰弓.⿱⺊⿸#(-乛丿)⿱⿻[_b]又.丿⺝(.)",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𭜳",
+      "line": 82653,
+      "role": "primary",
+      "raw": "⿳一.⿺⿼#(一-𠃑)一.⺊心(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𭞬",
+      "line": 82774,
+      "role": "primary",
+      "raw": "⿰忄⿳一.⿰#(丨-一𠃑)#(𠃑-一丨)田",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𭟸",
+      "line": 82850,
+      "role": "primary",
+      "raw": "⿰⿱⿺⿻[b]#(一-𠃑)一.一.小.⿵戊人d",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𭥗",
+      "line": 83201,
+      "role": "primary",
+      "raw": "{𭥗}⿱日日",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𭥟",
+      "line": 83209,
+      "role": "primary",
+      "raw": "⿲#(㇇◝◞)𭥎#(◟◜◟◜-一)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𭦁",
+      "line": 83243,
+      "role": "primary",
+      "raw": "⿱日⿸#(-乛丿)⿱七.几.",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𭩩",
+      "line": 83475,
+      "role": "primary",
+      "raw": "⿰木.⿸#(丿𠄌)⿹⿻丨乛丿",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𭬍",
+      "line": 83639,
+      "role": "primary",
+      "raw": "⿰木d⿱⺊⿸#(-乛丿)⿱儿.言J",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𭱐",
+      "line": 83962,
+      "role": "primary",
+      "raw": "⿲氵.⿱⺊⿸#(-乛丿)廾.刂",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𭴚",
+      "line": 84164,
+      "role": "primary",
+      "raw": "⿸㇇⿱一.⿹⿷#(-一丨b𠃌)一.灬",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𭹅",
+      "line": 84463,
+      "role": "primary",
+      "raw": "⿰王t⿻[b]#(-丨㇅-丨𠃌)一.",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𮅏",
+      "line": 85241,
+      "role": "primary",
+      "raw": "⿹⿻[1:]𥫘⿱コ#(-乛丨)丿",
+      "reason": "remaining-tokens",
+      "offset": 14
+    },
+    {
+      "character": "𮆔",
+      "line": 85310,
+      "role": "primary",
+      "raw": "⿱𥫗.⿸⿻丅⿸#(-乛丿)一.⿱一.兵(.)",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𮆕",
+      "line": 85311,
+      "role": "primary",
+      "raw": "⿳𥫗.一.⿱⿻[:-1]〢#(𠃍-𠃊一)⿻甲一.",
+      "reason": "remaining-tokens",
+      "offset": 19
+    },
+    {
+      "character": "𮌋",
+      "line": 85685,
+      "role": "primary",
+      "raw": "{?0𮌋}⿰月.叉.(S)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𮍌",
+      "line": 85750,
+      "role": "primary",
+      "raw": "⿷#(𠃍-𠃊𠃍)𠃍",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𮎳",
+      "line": 85853,
+      "role": "primary",
+      "raw": "⿻⿰#(丨-一丨)㇉𠮛",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𮓗",
+      "line": 86145,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)土.",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𮓝",
+      "line": 86151,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)⿱匕.龰.(.)",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𮓟",
+      "line": 86153,
+      "role": "primary",
+      "raw": "⿺⿸⿻丅⿸#(-乛丿)一.⿱一.几.几.(.)",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𮓢",
+      "line": 86156,
+      "role": "primary",
+      "raw": "⿱⺊⿸#(-乛丿)䏌J",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𮓩",
+      "line": 86163,
+      "role": "primary",
+      "raw": "⿰⿸⿻丅⿸#(-乛丿)一.⿳一.丱zs一t𠔃",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𮕹",
+      "line": 86307,
+      "role": "primary",
+      "raw": "⿱⿷#(-一丨b𠃌)𰀁.衣J",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𮙢",
+      "line": 86540,
+      "role": "primary",
+      "raw": "⿹⿰冫⿷#(-一丨b𠃌)𰀁.豖H",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𮞽",
+      "line": 86887,
+      "role": "primary",
+      "raw": "⿺辶.⿱丿⿹⿷⿴#(一-𠃍丨b𠃌)一.一.方J",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𮩎",
+      "line": 87544,
+      "role": "primary",
+      "raw": "⿰飠H⿸⿻丅⿸#(-乛丿)一.⿱一.匆.",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𮩴",
+      "line": 87582,
+      "role": "primary",
+      "raw": "⿹⿷#(-一丨b𠃌)𰀁.廾.(.)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𮩴",
+      "line": 87582,
+      "role": "primary",
+      "raw": "⿹⿷#(-一丨b𠃌)𰀁.艹.(s)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𮩵",
+      "line": 87583,
+      "role": "primary",
+      "raw": "⿹⿷#(-一丨b𠃌)𰀁.巾.",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𮩸",
+      "line": 87586,
+      "role": "primary",
+      "raw": "⿹⿷#(-一丨b𠃌)𰀁.中",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𮮡",
+      "line": 87883,
+      "role": "primary",
+      "raw": "⿱⿻[:-1]#(-丨一-𠃍𠃑)⿴#(𠃍-𠃊一)⿰一.一.又.",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𰆄",
+      "line": 88335,
+      "role": "primary",
+      "raw": "⿽#(丨-一丿)𬺩",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𰚷",
+      "line": 89666,
+      "role": "primary",
+      "raw": "⿱⿸#(丿𠃊)㇇一.(q45308)",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𰟑",
+      "line": 89948,
+      "role": "primary",
+      "raw": "⿱共.⿹⿷#(-一丨b𠃌)二.灬",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𰨹",
+      "line": 90564,
+      "role": "primary",
+      "raw": "⿱稚J#(-丨㇅-丨𠃌)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𰺦",
+      "line": 91697,
+      "role": "primary",
+      "raw": "⿰⿱二.𢆉p⿸#(-乛丨)⿺乀.丿",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𱀭",
+      "line": 92088,
+      "role": "primary",
+      "raw": "⿰阝⿸⿻丅⿸#(-乛丿)一.⿱一.丘.",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𱍐",
+      "line": 92886,
+      "role": "primary",
+      "raw": "{?0𱍐}⿱二.川(U)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𱍐",
+      "line": 92886,
+      "role": "alternative",
+      "raw": "{?0𱍐}⿱一.𥘅s(U)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𱍫",
+      "line": 92913,
+      "role": "primary",
+      "raw": "#(-𠃊㇎z)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𱍸",
+      "line": 92926,
+      "role": "primary",
+      "raw": "⿸#(丿𠄌)乀.(.)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𱍸",
+      "line": 92926,
+      "role": "primary",
+      "raw": "⿸#(丿𠄌)丶.(d)",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𱣠",
+      "line": 94310,
+      "role": "primary",
+      "raw": "⿰木.⿱丿⿹⿷#(一-𠃍丨b𠃌)一.一.",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𱥽",
+      "line": 94467,
+      "role": "primary",
+      "raw": "⿻丁⿸#(-乛丿)⿱二.⿰㇇⿺乀.丿",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𱥾",
+      "line": 94468,
+      "role": "primary",
+      "raw": "⿰氵.⿱一.⿴#(𠃊-𠃍丨)一.(.)",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𱦍",
+      "line": 94483,
+      "role": "primary",
+      "raw": "⿰氵.⿱口.#(㇇乀)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𱧿",
+      "line": 94597,
+      "role": "primary",
+      "raw": "⿰氵.⿱冖⿹⿰丨⿷⿴#(一-𠃍丨b𠃌)一.一.一.",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "𱨪",
+      "line": 94640,
+      "role": "primary",
+      "raw": "⿰氵.⿸⿻丅⿸#(-乛丿)一.𱰥",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𱩦",
+      "line": 94700,
+      "role": "primary",
+      "raw": "⿰氵.⿱⺊⿸#(-乛丿)眘.",
+      "reason": "opaque-operand",
+      "offset": 6
+    },
+    {
+      "character": "𱩨",
+      "line": 94702,
+      "role": "primary",
+      "raw": "⿲氵.⿱上.禾d⿳乛亠.#(㇇乀)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𱪷",
+      "line": 94781,
+      "role": "primary",
+      "raw": "⿱人.⿹⿷#(-一丨b𠃌)一.灬",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𱪽",
+      "line": 94787,
+      "role": "primary",
+      "raw": "⿱万⿹⿷#(-一丨b𠃌)一.灬",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𱫇",
+      "line": 94797,
+      "role": "primary",
+      "raw": "⿱不⿹⿷#(-一丨b𠃌)一.灬",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𱬵",
+      "line": 94907,
+      "role": "primary",
+      "raw": "⿳丿⿲丶.丶.丶.⿸#(丿𠄌)㇂",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "𱯊",
+      "line": 95056,
+      "role": "primary",
+      "raw": "⿰王t⿸⿻丅⿸#(-乛丿)一.帀",
+      "reason": "opaque-operand",
+      "offset": 7
+    },
+    {
+      "character": "𱵚",
+      "line": 95456,
+      "role": "primary",
+      "raw": "⿰礻.⿱⿴#(𠃍-㇅)一.⿴𠤬一.",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𱶉",
+      "line": 95503,
+      "role": "primary",
+      "raw": "⿳丿⿴⿻[_x]#(-𠃍㇉)一.二.禾d",
+      "reason": "opaque-operand",
+      "offset": 8
+    },
+    {
+      "character": "𱶰",
+      "line": 95542,
+      "role": "primary",
+      "raw": "⿱穴.d#(㇇乀)",
+      "reason": "missing-operand",
+      "offset": 0
+    },
+    {
+      "character": "𱼋",
+      "line": 95889,
+      "role": "primary",
+      "raw": "{?0𱼋}⿰月.良.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𱽈",
+      "line": 95950,
+      "role": "primary",
+      "raw": "⿰⿷#(丿𠄌)一.艮.",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "𲆡",
+      "line": 96551,
+      "role": "primary",
+      "raw": "⿲⿱口.⿷#(一-𠃑一)丨⿱廿⿰𠂈xp又d⿱口.⿼己.丨",
+      "reason": "opaque-operand",
+      "offset": 5
+    },
+    {
+      "character": "𲉟",
+      "line": 96741,
+      "role": "primary",
+      "raw": "⿰阝⿱⿽#(丨-一丨)罒大.",
+      "reason": "opaque-operand",
+      "offset": 4
+    },
+    {
+      "character": "𲋻",
+      "line": 96897,
+      "role": "primary",
+      "raw": "⿲⿹⿷#(-一丨b𠃌)𰀁.一t月.⿸尸s⿺乀.丿",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𲍥",
+      "line": 97003,
+      "role": "primary",
+      "raw": "⿰皇t⿱𠂉⿹⿷⿴#(-𠃍㇉)三一.灬",
+      "reason": "opaque-operand",
+      "offset": 9
+    },
+    {
+      "character": "𮷠",
+      "line": 97574,
+      "role": "primary",
+      "raw": "{𮷠}⿺辶J圣(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𮹔",
+      "line": 97690,
+      "role": "primary",
+      "raw": "⿳丿⿴#(-𠃌㇉)丶.水.",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𲒇",
+      "line": 97915,
+      "role": "primary",
+      "raw": "{𲒇}⿱冖八.",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "𲚯",
+      "line": 98467,
+      "role": "primary",
+      "raw": "⿴#(-⺄𠃊)夂d",
+      "reason": "opaque-operand",
+      "offset": 1
+    },
+    {
+      "character": "𲰹",
+      "line": 99885,
+      "role": "primary",
+      "raw": "⿳丿⿴#(-𠃌㇉)丶.甲",
+      "reason": "opaque-operand",
+      "offset": 3
+    },
+    {
+      "character": "𳑓",
+      "line": 101959,
+      "role": "primary",
+      "raw": "⿰⿶⿰⿹𠃑.厂s⿸#(丨-一丨)𠃍目蒦J",
+      "reason": "opaque-operand",
+      "offset": 10
+    },
+    {
+      "character": "𳑳",
+      "line": 101991,
+      "role": "primary",
+      "raw": "⿷⿺#(𠃑-一乚)一.三",
+      "reason": "opaque-operand",
+      "offset": 2
+    },
+    {
+      "character": "◜",
+      "line": 101998,
+      "role": "primary",
+      "raw": "#(Qd)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "◝",
+      "line": 101999,
+      "role": "primary",
+      "raw": "#(Qa)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "◞",
+      "line": 102000,
+      "role": "primary",
+      "raw": "#(Qb)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "◟",
+      "line": 102001,
+      "role": "primary",
+      "raw": "#(Qc)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "⺄",
+      "line": 102003,
+      "role": "primary",
+      "raw": "#(HNg)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "⺆",
+      "line": 102004,
+      "role": "primary",
+      "raw": "#(-丿𠃌)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "⺆",
+      "line": 102004,
+      "role": "primary",
+      "raw": "#(-丿𠃍)(z)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "〇",
+      "line": 102011,
+      "role": "primary",
+      "raw": "#(◟◜◝◞z)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "コ",
+      "line": 102014,
+      "role": "primary",
+      "raw": "#(一-𠃍)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇀",
+      "line": 102018,
+      "role": "primary",
+      "raw": "#(T)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇁",
+      "line": 102019,
+      "role": "primary",
+      "raw": "#(Wg)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇂",
+      "line": 102020,
+      "role": "primary",
+      "raw": "#(Ng)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇄",
+      "line": 102021,
+      "role": "primary",
+      "raw": "#(SHw)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇅",
+      "line": 102022,
+      "role": "primary",
+      "raw": "#(HSH)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇇",
+      "line": 102023,
+      "role": "primary",
+      "raw": "#(HP)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇈",
+      "line": 102024,
+      "role": "primary",
+      "raw": "#(HSHwg)(.)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇈",
+      "line": 102024,
+      "role": "primary",
+      "raw": "{㇈}#(HNg)(n)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇈",
+      "line": 102024,
+      "role": "primary",
+      "raw": "{㇈}#(HST)(t)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇈",
+      "line": 102024,
+      "role": "primary",
+      "raw": "{㇈}#(HSHw)(w)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇉",
+      "line": 102025,
+      "role": "primary",
+      "raw": "#(SHSg)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇊",
+      "line": 102026,
+      "role": "primary",
+      "raw": "#(HST)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇋",
+      "line": 102027,
+      "role": "primary",
+      "raw": "#(HSHP)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇌",
+      "line": 102028,
+      "role": "primary",
+      "raw": "#(HPWg)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇍",
+      "line": 102029,
+      "role": "primary",
+      "raw": "#(HSHw)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇎",
+      "line": 102030,
+      "role": "primary",
+      "raw": "#(HSHS)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇘",
+      "line": 102031,
+      "role": "primary",
+      "raw": "#(SZ)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇝",
+      "line": 102032,
+      "role": "primary",
+      "raw": "#(J)",
+      "reason": "opaque-operand",
+      "offset": 0
+    },
+    {
+      "character": "㇢",
+      "line": 102033,
+      "role": "primary",
+      "raw": "#(Pg)",
+      "reason": "opaque-operand",
+      "offset": 0
+    }
+  ]
+}

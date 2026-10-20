@@ -1,0 +1,9 @@
+{
+  "core": 20992,
+  "common": 3500,
+  "unionUnique": 20992,
+  "commonOutsideCore": 0,
+  "missingCommon": 0,
+  "duplicateCommon": 0,
+  "policy": "One unique caseId in union; common3500 is an explicitly official superset of original >=3000 request, not a manufactured3000 frequency set."
+}

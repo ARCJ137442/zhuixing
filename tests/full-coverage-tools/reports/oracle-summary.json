@@ -1,0 +1,39 @@
+{
+  "casesRequired": 3500,
+  "newSvgOracles": 3500,
+  "cacheHits": 0,
+  "missingGlyphs": 0,
+  "errors": [],
+  "elapsedSeconds": 2.092,
+  "maxRssKiB": 176156,
+  "contract": {
+    "id": "native-unicode-noto-sc-100-y88-black-v1",
+    "outputIntent": "native-unicode-whole-glyph",
+    "fontSha256": "5d9c31a059600193c9d7968a998bde886ccdc77e934006ad243b41794c496a7d",
+    "postscriptName": "NotoSerifCJKsc-Regular",
+    "viewBox": [
+      0,
+      0,
+      100,
+      100
+    ],
+    "fontTransform": [
+      0.1,
+      0,
+      0,
+      -0.1,
+      0,
+      88
+    ],
+    "paint": "#000000",
+    "pixelSize": [
+      300,
+      300
+    ],
+    "background": "white",
+    "scope": "Full encoded glyph from independently extracted pinned OFL font, NOT oracle of arbitrary IDS layout or historical variant correctness"
+  },
+  "candidateComparison": "not-run",
+  "readyTotal": 3500,
+  "noSilentPass": true
+}
