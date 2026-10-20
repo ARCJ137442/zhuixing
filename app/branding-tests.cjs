@@ -1,0 +1,16 @@
+'use strict';
+const fs=require('node:fs'),assert=require('node:assert/strict'),path=require('node:path');
+const base=__dirname,h=fs.readFileSync(path.join(base,'index.html'),'utf8'),doc=fs.readFileSync(path.join(base,'document.md'),'utf8');
+assert.match(h,/<title>缀形成象 · 0\.3\.1<\/title>/);
+assert.match(h,/<span class="brand">缀形成象<\/span>/);
+assert.ok(!h.split('<!-- embedded-document:start -->')[0].includes('品六书之精髓'));
+assert.match(doc,/《缀形成象——品六书之精髓，析汉字之形趣》/);
+assert.match(doc,/不宣称是古已有之的成语/);
+assert.match(h,/KEY='structure-glyph-draft-v1'/);
+assert.match(h,/'缀形\.project\.json'/);
+assert.match(h,/'缀形-设置-v1\.json'/);
+assert.equal(JSON.parse(h.match(/<script type="application\/json" id="product-markdown">([\s\S]*?)<\/script>/)[1]),doc);
+const vm=require('node:vm'),C=vm.runInNewContext(h.match(/<script id="core">([\s\S]*?)<\/script>/)[1]+';Core;');
+const project=C.project('⿰亻呆');assert.equal(project.appVersion,'0.3.1');
+project.appVersion='0.2.0';assert.equal(C.readProject(JSON.stringify(project)).source,'⿰亻呆');
+console.log('Branding: 11 checks passed (not browser visual validation).');

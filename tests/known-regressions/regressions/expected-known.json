@@ -1,0 +1,19 @@
+{
+ "schemaVersion":1,
+ "policy":"Immutable known expectations from explicit user regressions plus individually identified source records; not permission to strip arbitrary dataset annotations.",
+ "lookups":[
+  {"id":"ren","input":"⿰亻二","expected":"仁","rawSource":"仁\t⿰亻二."},
+  {"id":"san","input":"⿰亻三","expected":"仨","rawSource":"仨\t⿰亻三"},
+  {"id":"liang","input":"⿰亻两","expected":"俩","rawSource":"俩\t⿰亻两"},
+  {"id":"bao-person","input":"⿰亻包","expected":"佨","rawSource":"佨\t⿰亻包.(.);⿰亻包J(J)"},
+  {"id":"bao-hand","input":"⿰扌包","expected":"抱","rawSource":"抱\t⿰扌包.(.);⿰扌包J(J)"},
+  {"id":"bao-compact","input":"⿰亻呆","expected":"保","rawSource":"保\t⿰亻呆.(.);⿰亻呆T(T)"},
+  {"id":"bao-expanded","input":"⿰亻⿱口木","expected":"保","rawSource":"保\t⿰亻呆.(.);⿰亻呆T(T)","secondaryRawSource":"呆\t⿱口.木.(.);⿱口.木d(T)"}
+ ],
+ "nonMappings":[{"id":"never-correct-bao-typo","input":"⿰亻报","forbidden":["保","抱","佨"],"reason":"User source is literal 报, not 呆 or 包; never silently repair it."}],
+ "fullStrings":[
+  {"id":"user-full-bao-string","source":"⿰亻报⿰亻包⿰扌包抱","command":"fold-all","expected":"⿰亻报佨抱抱"},
+  {"id":"user-full-san-liang-ren-string","source":"⿰亻三仨⿰亻两俩⿰亻二仁","command":"fold-all","expected":"仨仨俩俩仁仁"}
+ ],
+ "prohibitedGateWorkarounds":["delete failing cases","weaken exact expected matches","silently strip variant tags globally","replace source with a guessed character","count missing reference, missing glyph, timeout or not-run as pass"]
+}
