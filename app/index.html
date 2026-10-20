@@ -849,10 +849,11 @@ SOFTWARE.
 const FontFallback = (() => {
   const family='Noto Serif CJK SC, serif';
   function text(char,box){
-    const size=Math.min(box[2],box[3])*.9;
-    return `<text x="${box[0]+box[2]/2}" y="${box[1]+box[3]/2+size*.38}" text-anchor="middle" font-size="${size}" font-family="${family}" fill="currentColor">${Core.esc(char)}</text>`;
+    // Full local 100em, matching the Noto outline origin (0,88).
+    // Independent axes preserve the structural slot, rather than shrink height to its width.
+    return `<g transform="matrix(${box[2]/100} 0 0 ${box[3]/100} ${box[0]} ${box[1]})"><text x="0" y="88" font-size="100" font-family="${family}" fill="currentColor">${Core.esc(char)}</text></g>`;
   }
-  function leafSVG(char){return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">${text(char,[0,0,100,100])}</svg>`;}
+  function leafSVG(char){return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${text(char,[0,0,100,100])}</svg>`;}
   function svg(node,source){
     if(Core.previewKind(node)!=='font')throw Error('字体回退仅用于完整、可排布且缺少轮廓的结构。');
     const ids=source.slice(node.start,node.end);
