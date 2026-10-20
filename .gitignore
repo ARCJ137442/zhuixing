@@ -1,0 +1,11 @@
+# Default-deny private research, references, historic deliveries and credentials.
+/private-reference/
+/release/
+/node_modules/
+**/node_modules/
+**/.venv/
+**/__pycache__/
+**/.DS_Store
+.env
+.env.*
+*.log

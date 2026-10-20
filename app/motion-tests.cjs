@@ -1,0 +1,25 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const html=fs.readFileSync(__dirname+'/index.html','utf8');
+const extract=(text,id)=>text.match(new RegExp('<script id="'+id+'">([\\s\\S]*?)</script>'))[1];
+const {C,M}=vm.runInNewContext(extract(html,'core')+extract(html,'composition-motion')+';({C:Core,M:CompositionMotion})');
+const old=vm.runInNewContext(extract(fs.readFileSync(__dirname+'/releases/0.1.1/index.html','utf8'),'core')+';Core');
+let count=0;function test(name,f){f();count++;console.log('PASS '+name)}
+const root=s=>C.parse(s).find(n=>n.type==='operator');
+test('all 17 legacy paths unchanged',()=>{for(const [k,v] of Object.entries(old.STROKES))assert.equal(JSON.stringify(C.STROKES[k]),JSON.stringify(v));});
+test('155 font-derived paths are portable, finite SVG data',()=>{assert.equal(Object.keys(C.OUTLINES).length,155);for(const paths of Object.values(C.OUTLINES))for(const d of paths){assert.match(d,/^M/);assert.doesNotMatch(d,/NaN|Infinity|[<>"&]/);}});
+test('new user examples form one vector, never guessed Unicode',()=>{for(const s of ['⿰人呆','⿱人呆','⿰亻呆','⿰氵青','⿰⿱宀女木']){assert.equal(C.status(root(s)).render,'ready');assert.doesNotMatch(C.svg(root(s),s),/<text|foreignObject/);assert.equal(C.project(s).source,s);}});
+test('legacy unknown components import without losing source',()=>{for(const s of ['⿰人呆','⿰氵青','⿰龘青']){const p=old.project(s);assert.equal(C.readProject(JSON.stringify(p)).source,s);}});
+test('legacy known components roundtrip exactly',()=>{const p=old.project('⿰木水');assert.equal(C.readProject(JSON.stringify(p)).source,p.source);});
+test('current outline dependencies roundtrip and cannot be injected',()=>{const p=C.project('⿰氵青');assert.equal(C.readProject(JSON.stringify(p)).source,p.source);p.dependencies.青[0]+='M0 0';assert.throws(()=>C.readProject(JSON.stringify(p)));});
+test('unsupported component stays a real missing-data state',()=>assert.equal(C.status(root('⿰龘青')).render,'missing'));
+test('geometry derives final leaf boxes from same layout model',()=>{const leaves=M.leaves(root('⿰人呆'));assert.equal(JSON.stringify(leaves.map(l=>l.box)),JSON.stringify([[7,7,41.28,86],[51.72,7,41.28,86]]));});
+test('nested geometry and UTF16 leaf identity are retained',()=>{const leaves=M.leaves(root('记⿰⿱日月木'));assert.equal(leaves.length,3);assert.equal(leaves[0].node.start,3);assert.equal(leaves[0].depth,2);assert.ok(leaves[0].box[3]<leaves[2].box[3]);});
+test('new animation disposes old; late completion cannot clear replacement',()=>{const s=new M.Session(),closed=[];const a=s.begin(()=>closed.push('a')),b=s.begin(()=>closed.push('b'));assert.deepEqual(closed,['a']);s.finish(a);assert.deepEqual(closed,['a']);s.finish(b);assert.deepEqual(closed,['a','b']);s.cancel();assert.deepEqual(closed,['a','b']);});
+test('cancel is idempotent and old callback cannot cancel restarted session',()=>{const s=new M.Session(),closed=[];const a=s.begin(()=>closed.push('a'));s.cancel();const b=s.begin(()=>closed.push('b'));s.finish(a);assert.equal(s.current,b);s.cancel();assert.deepEqual(closed,['a','b']);});
+test('reduced motion, unavailable WAAPI and busy paste have explicit static paths',()=>{const script=extract(html,'composition-motion');assert.match(script,/!document.hidden && preferences.enabled && !reduced.matches/);assert.match(script,/maxLeaves/);assert.match(script,/visibilitychange/);});
+test('motion settings stay outside editable source',()=>{assert.ok(html.indexOf('id="motion-disabled"')>html.indexOf('id="more-panel"'));assert.match(html,/id="motion-guides" checked/);});
+test('undo redo restores stable presentation without stale DOM origins',()=>{const app=extract(html,'inline-app');const undo=app.slice(app.indexOf('function undoRedo('),app.indexOf('function findActive('));assert.match(undo,/render\(true,true,\{animate:false\}\)/);assert.match(app,/settled && animate \? motion.capture/);});
+test('all script modules compile',()=>{for(const m of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g))new vm.Script(m[1]);});
+test('embedded product document matches current maintained Markdown',()=>{const payload=html.match(/<script type="application\/json" id="product-markdown">([\s\S]*?)<\/script>/)[1];assert.equal(JSON.parse(payload),fs.readFileSync(__dirname+'/document.md','utf8'));assert.match(JSON.parse(payload),/14\.2 0\.1\.6/);});
+console.log('\n'+count+' composition checks passed. Host animation timing and real IME require browser evidence.');

@@ -1,0 +1,2082 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>结构组字 · 0.1.1</title>
+<style>
+
+:root {
+  --paper:#f7f7f3;
+  --ink:#252923;
+  --muted:#7a7d75;
+  --line:#e1e3dc;
+  --wash:#eeefe9;
+  --red:#64725a
+}
+* {
+  box-sizing:border-box
+}
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font:14px/1.6 system-ui,-apple-system,"Microsoft YaHei",sans-serif
+}
+button,input {
+  font:inherit
+}
+button {
+  border:1px solid var(--line);
+  background:transparent;
+  color:inherit;
+  border-radius:9px;
+  cursor:pointer;
+  padding:9px 13px;
+  min-height:44px;
+  touch-action:manipulation
+}
+button:hover {
+  background:var(--wash)
+}
+button:disabled {
+  opacity:.35;
+  cursor:default
+}
+button:focus-visible,a:focus-visible,summary:focus-visible,.atom:focus-visible {
+  outline:2px solid var(--red);
+  outline-offset:4px
+}
+header {
+  max-width:1100px;
+  padding:36px 38px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:12px
+}
+.brand {
+  font-size:15px;
+  font-weight:550;
+  letter-spacing:.1em
+}
+.version {
+  font-size:11px;
+  color:var(--muted)
+}
+main {
+  width:min(820px,calc(100% - 48px));
+  margin:clamp(75px,17vh,170px) auto 60px
+}
+.canvas {
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:21px;
+  background:#fff;
+  box-shadow:0 8px 35px #25292303
+}
+.canvas:focus-within {
+  border-color:#b9c2af;
+  box-shadow:0 0 0 3px #64725a08
+}
+#editor {
+  min-height:205px;
+  padding:32px 34px 20px;
+  font-size:38px;
+  line-height:1.8;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  outline:none;
+  caret-color:#56694d
+}
+#editor[data-empty="true"]:before {
+  content:attr(data-placeholder);
+  position:absolute;
+  color:#b1b6ab;
+  pointer-events:none
+}
+.canvas-tools {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 18px 16px
+}
+.icon {
+  width:44px;
+  padding:0;
+  border-color:transparent;
+  font-size:25px;
+  color:#73796d
+}
+.hint {
+  font-size:11px;
+  color:#989e92;
+  margin:13px 6px
+}
+.atom {
+  display:inline-flex;
+  width:1.5em;
+  height:1.5em;
+  vertical-align:-.35em;
+  align-items:center;
+  justify-content:center;
+  border-radius:6px;
+  cursor:pointer;
+  margin:0 .04em;
+  user-select:all
+}
+.atom:hover,.atom:focus {
+  background:#eef1e9
+}
+.atom svg {
+  width:100%;
+  height:100%;
+  pointer-events:none
+}
+.panel {
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:white;
+  padding:18px;
+  margin-top:12px;
+  box-shadow:0 10px 30px #25292305
+}
+.panel[hidden] {
+  display:none
+}
+.panel-title {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px
+}
+.panel-title strong {
+  font-size:13px;
+  font-weight:550
+}
+.panel p {
+  font-size:12px;
+  color:var(--muted)
+}
+.actions {
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap
+}
+.actions button {
+  font-size:12px
+}
+.operator-grid {
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:7px
+}
+.operator-grid button {
+  font-size:23px
+}
+.operator-grid small {
+  display:block;
+  font-size:10px;
+  color:var(--muted)
+}
+details {
+  margin-top:18px;
+  font-size:12px
+}
+summary {
+  cursor:pointer;
+  min-height:36px;
+  padding:8px 0
+}
+.tree button {
+  display:block;
+  width:100%;
+  text-align:left;
+  border:0;
+  border-radius:4px;
+  font-size:12px;
+  padding:5px 8px;
+  min-height:36px
+}
+.muted {
+  color:var(--muted)
+}
+.sr-only {
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0)
+}
+#notice {
+  position:fixed;
+  bottom:24px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--ink);
+  color:white;
+  padding:10px 18px;
+  border-radius:9px;
+  font-size:12px;
+  max-width:90%;
+  z-index:20
+}
+#notice:empty {
+  display:none
+}
+a {
+  color:inherit;
+  text-underline-offset:3px
+}
+@media(max-width:600px) {
+  header {
+  padding:23px 24px
+}
+main {
+  width:calc(100% - 32px);
+  margin-top:80px
+}
+#editor {
+  font-size:30px;
+  padding:25px 23px;
+  min-height:190px
+}
+.operator-grid {
+  grid-template-columns:repeat(4,minmax(0,1fr))
+}
+
+}
+@media(prefers-reduced-motion:no-preference) {
+  .atom {
+  animation:appear .16s ease-out
+}
+@keyframes appear {
+  from {
+  opacity:.65
+}
+to {
+  opacity:1
+}
+
+}
+
+}
+
+</style>
+</head>
+<body>
+<header>
+<span class="brand">结构组字</span>
+<span class="version">0.1.1</span>
+</header>
+<main>
+<section class="canvas" aria-label="结构组字输入画布">
+<div id="editor" contenteditable="true" role="textbox" aria-multiline="true" aria-label="输入文字或 IDS 结构" aria-describedby="inputhelp" spellcheck="false" data-placeholder="⿰木水" data-empty="true">
+</div>
+<div class="canvas-tools">
+<button id="tools-toggle" class="icon" aria-label="插入结构与示例" aria-controls="tools-panel" aria-expanded="false">＋</button>
+<button id="more-toggle" class="icon" aria-label="更多操作与说明" aria-controls="more-panel" aria-expanded="false">⋯</button>
+</div>
+</section>
+<p class="hint" id="inputhelp">结构示意 · 非规范字形</p>
+<section id="tools-panel" class="panel" hidden aria-label="插入结构">
+<div class="panel-title">
+<strong>插入结构</strong>
+<button class="icon" data-close="tools-panel" aria-label="关闭插入菜单">×</button>
+</div>
+<div class="operator-grid" id="operatorgrid">
+</div>
+<p>写入部件后，完整结构会在原位呈现。点字形或聚焦后按 Enter，展开原文修改。</p>
+<div class="actions">
+<button data-example="⿰木水">木 · 水</button>
+<button data-example="⿱日月">日 · 月</button>
+<button data-example="⿰⿱宀女木">嵌套结构</button>
+</div>
+</section>
+<section id="more-panel" class="panel" hidden aria-label="更多操作">
+<div class="panel-title">
+<strong>项目与工具</strong>
+<button class="icon" data-close="more-panel" aria-label="关闭更多菜单">×</button>
+</div>
+<div class="actions">
+<button id="undo">撤销</button>
+<button id="redo">重做</button>
+<button id="inspect">检查当前结构</button>
+<button id="saveproject">下载项目 JSON</button>
+<button id="importproject">导入项目</button>
+<button id="restore">恢复打开时的草稿</button>
+</div>
+<p id="saveinfo">保存状态待检查。</p>
+<p id="count">
+</p>
+<details>
+<summary>输入与编辑</summary>
+<p>原文是唯一权威数据，字形仅为同一区域的可逆呈现。停顿 300ms 后转换；输入法组合中和选区内部不转换。点击字形或 Tab 聚焦后按 Enter 展开。Backspace / Delete 在字形边界整字删除，可撤销。复制或剪切始终得到原始 IDS。支持 Ctrl / ⌘ Z 与 Shift Z。</p>
+</details>
+<details>
+<summary>部件与支持边界</summary>
+<p id="components">
+</p>
+<p>解析固定 17 个 IDC；12 种示意布局。自绘路径 demo-strokes-1，未接 KAGE，未经大陆规范审核。包围和叠加只是几何近似；未知部件和未支持运算保留原文。单 HTML 无外部运行依赖，不是完整 PWA。</p>
+<p>支持严格叶节点的有限范围；不支持实体引用、异体选择序列。源文本限制 4000 UTF-16 单位、嵌套 32 层。自动测试不替代真实设备与输入法验收。</p>
+</details>
+<details>
+<summary>产品文档</summary>
+<div class="actions">
+<button id="open-docs">阅读产品文档</button>
+<button id="download-docs">下载 Markdown</button>
+</div>
+</details>
+<input type="file" id="file" accept=".json,application/json" hidden>
+</section>
+<section id="context-panel" class="panel" hidden aria-label="当前结构">
+<div class="panel-title">
+<strong id="current-ids">
+</strong>
+<button class="icon" data-close="context-panel" aria-label="关闭当前结构详情">×</button>
+</div>
+<p id="diagnostic">
+</p>
+<div class="actions">
+<button id="editnode">展开原文</button>
+<button id="copyids">复制 IDS</button>
+<button id="exportsvg">导出 SVG</button>
+</div>
+<details>
+<summary>构形树与源范围</summary>
+<div id="tree" class="tree">
+</div>
+</details>
+</section>
+</main>
+<div id="notice" role="status" aria-live="polite">
+</div>
+<script id="core">
+'use strict';
+const Core=(()=>{
+const VERSION={format:1,app:'0.1.1',renderer:'schematic-1',data:'demo-strokes-1'};
+const OPS={'⿰':2,'⿱':2,'⿲':3,'⿳':3,'⿴':2,'⿵':2,'⿶':2,'⿷':2,'⿸':2,'⿹':2,'⿺':2,'⿻':2,'⿼':2,'⿽':2,'⿾':1,'⿿':1,'㇯':2};
+const NAMES={'⿰':'左右','⿱':'上下','⿲':'左中右','⿳':'上中下','⿴':'全包围','⿵':'上三包','⿶':'下三包','⿷':'左三包','⿸':'左上包','⿹':'右上包','⿺':'左下包','⿻':'叠加'};
+const STROKES={
+'木':['M12 36H88','M50 8V92','M48 39Q35 67 9 84','M52 39Q66 67 91 84'],
+'水':['M50 8V88Q50 96 37 89','M9 39H35Q30 66 9 80','M85 26L60 47','M58 43Q70 66 91 82'],
+'日':['M20 12H80V88H20Z','M21 49H79'],
+'月':['M25 10H78V90L61 86','M25 10V60Q25 81 12 93','M26 37H77','M26 63H77'],
+'女':['M47 8L26 57Q62 63 85 88','M10 41H91','M72 18Q68 76 15 91'],
+'宀':['M46 7L54 18','M15 27V45','M15 29H87L79 47'],
+'人':['M51 8Q47 57 12 90','M49 39Q65 75 90 90'],
+'口':['M15 15H85V85H15Z'],
+'囗':['M8 8H92V92H8Z'],
+'火':['M50 8Q52 65 12 91','M51 47Q68 79 89 91','M16 25L26 48','M85 23L68 48'],
+'土':['M17 39H83','M50 9V85','M8 86H92'],
+'山':['M50 9V87','M13 34V87H87V34'],
+'一':['M10 50H90'],
+'二':['M19 29H81','M10 76H90'],
+'十':['M10 40H90','M50 8V92'],
+'大':['M12 36H88','M50 8Q51 64 9 91','M51 40Q68 77 91 91'],
+'小':['M50 9V90L36 84','M27 38Q21 62 9 75','M73 38Q84 57 91 74']};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+function isLeaf(c){let p=c.codePointAt(0);return p===0x3007||p===0xff1f||(p>=0x31c0&&p<=0x31e5)||(p>=0xe000&&p<=0xf8ff)||(p>=0xf0000&&p<=0xffffd)||(p>=0x100000&&p<=0x10fffd)||(p>=0x2e80&&p<=0x2fdf)||(p>=0x3400&&p<=0x4dbf)||(p>=0x4e00&&p<=0x9fff)||(p>=0xf900&&p<=0xfaff)||(p>=0x20000&&p<=0x323af)}
+function parse(source){if(typeof source!=='string'||source.length>4000)throw Error('源文本最多 4000 个 UTF-16 单位。');let pos=0,serial=0,nodes=0;const tokens=[];function expr(depth){if(depth>32)throw Error('结构嵌套最多 32 层。');if(++nodes>4000)throw Error('节点数超过上限。');const start=pos;if(pos>=source.length||/\s/u.test(source[pos]))return {id:'n'+serial++,type:'missing',start,end:pos,status:'incomplete',children:[]};const char=String.fromCodePoint(source.codePointAt(pos));pos+=char.length;const node={id:'n'+serial++,type:OPS[char]?'operator':'leaf',char,start,end:pos,status:'complete',children:[]};if(OPS[char]){for(let i=0;i<OPS[char];i++)node.children.push(expr(depth+1));node.end=pos;if(node.children.some(n=>n.status==='syntaxerror'))node.status='syntaxerror';else if(node.children.some(n=>n.status==='incomplete'))node.status='incomplete';}else if(!isLeaf(char)){node.status='syntaxerror';node.type='invalid';}return node;}while(pos<source.length){if(OPS[String.fromCodePoint(source.codePointAt(pos))])tokens.push(expr(0));else{let start=pos;while(pos<source.length&&!OPS[String.fromCodePoint(source.codePointAt(pos))])pos+=String.fromCodePoint(source.codePointAt(pos)).length;tokens.push({type:'text',start,end:pos,text:source.slice(start,pos)});}}return tokens;}
+function walk(n,fn){fn(n);for(const c of n.children||[])walk(c,fn)}
+function status(n,data=STROKES){const missing=new Set(),unsupported=new Set();walk(n,x=>{if(x.type==='leaf'&&!Object.hasOwn(data,x.char))missing.add(x.char);if(x.type==='operator'&&!Object.hasOwn(NAMES,x.char))unsupported.add(x.char)});return {syntax:n.status,missing:[...missing],unsupported:[...unsupported],render:n.status!=='complete'?'not-ready':unsupported.size?'unsupported':missing.size?'missing':'ready'};}
+function boxes(op){switch(op){case'⿰':return [[0,0,48,100],[52,0,48,100]];case'⿱':return [[0,0,100,48],[0,52,100,48]];case'⿲':return [[0,0,30,100],[35,0,30,100],[70,0,30,100]];case'⿳':return [[0,0,100,30],[0,35,100,30],[0,70,100,30]];case'⿴':return [[0,0,100,100],[24,24,52,52]];case'⿵':return [[0,0,100,100],[23,35,54,56]];case'⿶':return [[0,0,100,100],[23,9,54,56]];case'⿷':return [[0,0,100,100],[35,23,56,54]];case'⿸':return [[0,0,100,100],[36,36,58,58]];case'⿹':return [[0,0,100,100],[8,36,58,58]];case'⿺':return [[0,0,100,100],[35,8,58,58]];case'⿻':return [[0,0,100,100],[0,0,100,100]];default:return []}}
+function glyph(n,data=STROKES,interactive=false){let out='',hits='';function draw(x,b){if(x.type==='leaf'){out+=`<g transform="translate(${b[0]} ${b[1]}) scale(${b[2]/100} ${b[3]/100})">`+data[x.char].map(d=>`<path d="${esc(d)}"/>`).join('')+'</g>';}else{const bs=boxes(x.char);x.children.forEach((c,i)=>{const a=bs[i];draw(c,[b[0]+a[0]*b[2]/100,b[1]+a[1]*b[3]/100,a[2]*b[2]/100,a[3]*b[3]/100])});}if(interactive)hits=`<rect class="node-hit" tabindex="0" role="button" aria-label="定位 ${esc(x.char)}，范围 ${x.start} 至 ${x.end}" data-node="${x.id}" x="${b[0]}" y="${b[1]}" width="${b[2]}" height="${b[3]}"/>`+hits;}draw(n,[7,7,86,86]);return `<g fill="none" stroke="#242820" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">${out}</g>${hits}`;}
+function svg(n,source,data=STROKES,interactive=false){if(status(n,data).render!=='ready')throw Error('当前结构尚不可渲染。');return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="600" height="600" role="img" aria-label="${esc(source.slice(n.start,n.end))} 结构示意，非规范字形"><title>${esc(source.slice(n.start,n.end))} · 结构示意（非规范字形）</title><metadata>${esc(JSON.stringify({ids:source.slice(n.start,n.end),renderer:VERSION.renderer,data:VERSION.data,quality:'schematic-not-standard'}))}</metadata>${glyph(n,data,interactive)}</svg>`;}
+function project(source,data=STROKES){const used={};for(const n of parse(source))walk(n,x=>{if(x.type==='leaf'&&Object.hasOwn(data,x.char))used[x.char]=data[x.char].slice()});return {kind:'structure-glyph-project',formatVersion:1,source,appVersion:VERSION.app,rendererVersion:VERSION.renderer,dataVersion:VERSION.data,quality:'schematic-not-standard',dependencies:used};}
+function readProject(raw){if(typeof raw!=='string'||raw.length>200000)throw Error('项目文件过大，最多 200 KB。');let p;try{p=JSON.parse(raw)}catch{throw Error('不是有效的 JSON 文件。')}if(!p||Array.isArray(p)||p.kind!=='structure-glyph-project'||p.formatVersion!==1)throw Error('不支持的项目格式或版本。');if(p.rendererVersion!==VERSION.renderer||p.dataVersion!==VERSION.data)throw Error('渲染器或数据版本不匹配，已保留当前项目。');parse(p.source);if(p.quality!=='schematic-not-standard')throw Error('项目缺少示意质量标记。');if(!p.dependencies||Array.isArray(p.dependencies)||typeof p.dependencies!=='object')throw Error('项目缺少部件依赖。');const keys=Object.keys(p.dependencies);if(keys.length>100)throw Error('部件依赖超过上限。');const data=Object.create(null);for(const key of keys){const paths=p.dependencies[key];if(!Object.hasOwn(STROKES,key)||!Array.isArray(paths)||JSON.stringify(paths)!==JSON.stringify(STROKES[key]))throw Error('部件路径不匹配；此版本不接受外部绘制代码。');data[key]=paths.slice();}const expected=project(p.source).dependencies;for(const key of Object.keys(expected))if(!Object.hasOwn(data,key))throw Error('项目遗漏了必要的内嵌部件：'+key);return {source:p.source,data:STROKES};}
+class History{constructor(source){this.items=[{source,start:0,end:0}];this.index=0;}record(source,start,end){if(this.items[this.index].source===source)return;this.items=this.items.slice(0,this.index+1);this.items.push({source,start,end});if(this.items.length>100)this.items.shift();this.index=this.items.length-1;}selection(start,end){Object.assign(this.items[this.index],{start,end})}undo(){if(this.index>0)return this.items[--this.index];return null}redo(){if(this.index<this.items.length-1)return this.items[++this.index];return null}}
+return {VERSION,OPS,NAMES,STROKES,esc,isLeaf,parse,walk,status,svg,project,readProject,History};})();
+</script>
+<script id="inline-model">
+// Pure UTF-16 source model. Rendering never changes source or adds history.
+const InlineModel=(()=>{
+  function range(selection,length){
+    return {
+      anchor:Math.max(0,Math.min(length,selection.anchor)),focus:Math.max(0,Math.min(length,selection.focus))
+    }
+  }
+  function bounds(s){
+    return [Math.min(s.anchor,s.focus),Math.max(s.anchor,s.focus)]
+  }
+  function parts(source,selection={
+    anchor:0,focus:0
+  }
+  ,expanded=null,composing=false){
+    const [a,b]=bounds(selection);
+    return Core.parse(source).map(n=>{
+      const interior=a===b?a>n.start&&a<n.end:a<n.end&&b>n.start;
+      return {
+        start:n.start,end:n.end,text:source.slice(n.start,n.end),node:n,atom:!composing&&n.type==='operator'&&Core.status(n).render==='ready'&&!interior&&!(expanded&&expanded.start===n.start)
+      }
+    }
+    )
+  }
+  function replace(source,selection,text){
+    const [a,b]=bounds(range(selection,source.length));
+    const next=source.slice(0,a)+text+source.slice(b);
+    Core.parse(next);
+    return {
+      source:next,selection:{
+        anchor:a+text.length,focus:a+text.length
+      }
+    }
+  }
+  function deletion(source,selection,direction,atoms=[]){
+    let [a,b]=bounds(selection);
+    if(a===b){
+      const atom=atoms.find(p=>direction<0?p.end===a:p.start===a);
+      if(atom){
+        a=atom.start;
+        b=atom.end
+      }
+      else if(direction<0){
+        a=previous(source,a)
+      }
+      else{
+        b=next(source,b)
+      }
+    }
+    return replace(source,{
+      anchor:a,focus:b
+    },'')
+  }
+  function previous(s,p){
+    if(!p)return 0;
+    const segments=typeof Intl.Segmenter==='function'?[...new Intl.Segmenter(undefined,{
+      granularity:'grapheme'
+    }
+    ).segment(s.slice(0,p))]:null;
+    return segments?segments.at(-1).index:p-(p>1&&/[\uDC00-\uDFFF]/.test(s[p-1])?2:1)
+  }
+  function next(s,p){
+    if(p>=s.length)return s.length;
+    const part=typeof Intl.Segmenter==='function'?new Intl.Segmenter(undefined,{
+      granularity:'grapheme'
+    }
+    ).segment(s.slice(p))[Symbol.iterator]().next().value.segment:String.fromCodePoint(s.codePointAt(p));
+    return p+part.length
+  }
+  // A delayed IME completion may only release the exact session it observed.
+  class CompositionOwner {
+    constructor() { this.current = null; }
+    begin(snapshot) { this.current = { ...snapshot }; return this.current; }
+    owns(session) { return session !== null && this.current === session; }
+    end(session) {
+      if (!this.owns(session)) return false;
+      this.current = null;
+      return true;
+    }
+  }
+  // A source edit invalidates every in-flight replacement; latest request wins.
+  class WriteClock {
+    constructor() {
+      this.revision = 0;
+      this.request = 0;
+    }
+    changed() {
+      this.revision++;
+    }
+    begin() {
+      return {
+        revision: this.revision, request: ++this.request
+      }
+      ;
+    }
+    accepts(ticket) {
+      return ticket.revision === this.revision && ticket.request === this.request;
+    }
+  }
+  return {
+    range,bounds,parts,replace,deletion,previous,next,WriteClock,CompositionOwner
+  };
+}
+)();
+</script>
+<script id="inline-dom">
+// DOM adapter: atoms are opaque; never read SVG title/metadata as user text.
+const InlineDOM=(()=>{
+  function snapshot(editor){
+    let text='',points=new Map();
+    const atoms = [];
+    function mark(node,offset,pos){
+      let map=points.get(node);
+      if(!map)points.set(node,map=new Map());
+      map.set(offset,pos)
+    }
+    function visit(node,index=0,siblings=[]){
+      if(node.nodeType===3){
+        for(let i=0;
+        i<=node.data.length;
+        i++)mark(node,i,text.length+i);
+        text+=node.data;
+        return
+      }
+      if(node.nodeType!==1)return;
+      if(node.dataset?.ids!==undefined){
+        atoms.push({node, start:text.length, end:text.length+node.dataset.ids.length});
+        mark(node,0,text.length);
+        text+=node.dataset.ids;
+        mark(node,node.childNodes.length,text.length);
+        return
+      }
+      if(node.tagName==='BR'){
+        const placeholder=index===siblings.length-1&&(siblings.length===1||siblings[index-1]?.tagName==='BR');
+        if(!placeholder)text+='\n';
+        return
+      }
+      const block=node!==editor&&/^(DIV|P)$/.test(node.tagName);
+      if(block&&index>0)text+='\n';
+      mark(node,0,text.length);
+      Array.from(node.childNodes).forEach((c,i)=>{
+        visit(c,i,node.childNodes);
+        mark(node,i+1,text.length)
+      }
+      )
+    }
+    visit(editor);
+    return {
+      source:text,atoms,offset(node,offset){
+        let atom=node.nodeType===1?node.closest?.('[data-ids]'):node.parentElement?.closest('[data-ids]');
+        if(atom&&editor.contains(atom)){
+          const values=points.get(atom);
+          // A Selection boundary on the atom itself may be before or after
+          // its SVG child. Its tail means the full IDS, never an empty selection.
+          if (node === atom && offset === atom.childNodes.length) {
+            return values?.get(atom.childNodes.length) ?? null;
+          }
+          return values?.get(0) ?? null
+        }
+        return points.get(node)?.get(offset)??null
+      }
+    }
+  }
+  return {
+    snapshot
+  };
+}
+)();
+</script>
+<script id="inline-app">
+(()=>{
+  'use strict';
+  const CONFIG = Object.freeze({
+    idleMs:300,noticeMs:4800,downloadReleaseMs:2000,maxProjectBytes:200000
+  });
+  const $=id=>document.getElementById(id),editor=$('editor'),KEY='structure-glyph-draft-v1';
+  const writeClock = new InlineModel.WriteClock();
+  const compositionOwner = new InlineModel.CompositionOwner();
+  let source = '';
+  let selection = { anchor: 0, focus: 0 };
+  let history=new Core.History(''),expanded=null,composing=false,compositionBase=null,timer,noticeTimer,viewParts=[],active=null,pendingDraft=null,storageBlocked=false,storageBlockReason='旧草稿异常，已保留而未覆盖。请下载 JSON 保存当前内容。',rendering=false;
+  function notify(s){
+    $('notice').textContent=s;
+    clearTimeout(noticeTimer);
+    noticeTimer=setTimeout(()=>$('notice').textContent='',CONFIG.noticeMs)
+  }
+  // Snapshot records source offsets for every DOM boundary, including native IME nodes.
+  function snapshot(){
+    return InlineDOM.snapshot(editor);
+  }
+  function capture(){
+    if(document.activeElement?.classList.contains('atom'))return selection;
+    const sel=getSelection();
+    if(!sel?.rangeCount||!editor.contains(sel.anchorNode)||!editor.contains(sel.focusNode))return selection;
+    const snap=snapshot(),a=snap.offset(sel.anchorNode,sel.anchorOffset),b=snap.offset(sel.focusNode,sel.focusOffset);
+    if(a!==null&&b!==null)selection=InlineModel.range({
+      anchor:a,focus:b
+    },snap.source.length);
+    return selection
+  }
+  function position(offset){
+    let consumed=0;
+    for(const node of editor.childNodes){
+      const size=node.nodeType===3?node.data.length:node.dataset?.ids?.length||0;
+      if(node.nodeType===3&&offset<=consumed+size)return [node,Math.max(0,offset-consumed)];
+      if(node.nodeType===1&&offset<=consumed+size){
+        const index=Array.prototype.indexOf.call(editor.childNodes,node);
+        return [editor,index+(offset>consumed?1:0)]
+      }
+      consumed+=size
+    }
+    return [editor,editor.childNodes.length]
+  }
+  function restoreSelection(focus=false){
+    if(focus)editor.focus({
+      preventScroll:true
+    });
+    const a=position(selection.anchor),b=position(selection.focus),sel=getSelection();
+    if(sel.setBaseAndExtent)sel.setBaseAndExtent(...a,...b);
+    else{
+      const range=document.createRange();
+      const [start,end]=InlineModel.bounds(selection);
+      range.setStart(...position(start));
+      range.setEnd(...position(end));
+      sel.removeAllRanges();
+      sel.addRange(range)
+    }
+  }
+  function render(focus=false,settled=true){
+    if(composing)return;
+    if(!focus&&document.activeElement?.classList.contains('atom'))return;
+    const owns=document.activeElement===editor||editor.contains(document.activeElement);
+    rendering=true;
+    const previousParts=viewParts;
+    viewParts=InlineModel.parts(source,selection,expanded);
+    if(!settled)viewParts.forEach(p=>{
+      p.atom=p.atom&&previousParts.some(q=>q.atom&&q.start===p.start&&q.end===p.end&&q.text===p.text)
+    });
+    const existingAtoms=new Map(Array.from(editor.querySelectorAll('.atom'),el=>[el.dataset.start+':'+el.dataset.ids,el]));
+    const fragment=document.createDocumentFragment();
+    fragment.append(document.createTextNode(''));
+    for(const p of viewParts){
+      if(p.atom){
+        const atom=existingAtoms.get(p.start+':'+p.text)||document.createElement('span');
+        atom.className='atom';
+        atom.contentEditable='false';
+        atom.tabIndex=0;
+        atom.setAttribute('role','button');
+        atom.setAttribute('aria-label',p.text+'，结构示意；按 Enter 展开编辑');
+        atom.dataset.ids=p.text;
+        atom.dataset.start=p.start;
+        if(!atom.childNodes.length)atom.innerHTML=Core.svg(p.node,source);
+        fragment.append(atom,document.createTextNode(''))
+      }
+      else fragment.append(document.createTextNode(p.text))
+    }
+    editor.replaceChildren(fragment);
+    editor.dataset.empty=String(!source);
+    if(owns||focus)restoreSelection(focus);
+    rendering=false;
+    updateStatus()
+  }
+  function schedule(){
+    clearTimeout(timer);
+    timer=setTimeout(()=>render(),CONFIG.idleMs)
+  }
+  function persist(){
+    if(storageBlocked){
+      $('saveinfo').textContent=storageBlockReason;
+      return
+    }
+    try{
+      localStorage.setItem(KEY,JSON.stringify(Core.project(source)));
+      $('saveinfo').textContent='已保存到此浏览器 · 文本不上传。跨设备请下载项目 JSON。'
+    }
+    catch{
+      $('saveinfo').textContent='本地保存不可用。请下载 JSON；当前内容仍在编辑器中。'
+    }
+  }
+  function updateStatus(){
+    $('count').textContent=source.length+' / 4000 UTF-16 单位';
+    $('undo').disabled=history.index===0;
+    $('redo').disabled=history.index===history.items.length-1;
+    if(!$('context-panel').hidden)showContext(false)
+  }
+  // Source transactions are the only normal writer of source/history.
+  // Timer renders are projections only, and do not persist or append history.
+  function apply(result,focus=true){
+    if(composing)return;
+    history.selection(selection.anchor,selection.focus);
+    writeClock.changed();
+    source=result.source;
+    selection=result.selection;
+    history.record(source,selection.anchor,selection.focus);
+    expanded=null;
+    render(focus,false);
+    persist();
+    schedule()
+  }
+  function insert(text){
+    if(composing)return;
+    try{
+      capture();
+      apply(InlineModel.replace(source,selection,text))
+    }
+    catch(e){
+      notify(e.message)
+    }
+  }
+  function undoRedo(redo){
+    if(composing)return;
+    capture();
+    history.selection(selection.anchor,selection.focus);
+    const state=redo?history.redo():history.undo();
+    if(!state)return;
+    writeClock.changed();
+    source=state.source;
+    selection={
+      anchor:state.start,focus:state.end
+    }
+    ;
+    expanded=null;
+    render(true);
+    persist();
+    schedule()
+  }
+  function findActive(){
+    const [a,b]=InlineModel.bounds(selection);
+    const roots=Core.parse(source).filter(n=>n.type==='operator');
+    return roots.find(n=>a>=n.start&&b<=n.end)||null
+  }
+  function openPanel(id){
+    $(id).hidden=false;
+    if(id==='context-panel')showContext(false)
+  }
+  function showContext(open=true){
+    active=findActive();
+    if(open)$('context-panel').hidden=false;
+    $('current-ids').textContent=active?source.slice(active.start,active.end):'当前没有选中结构';
+    $('tree').replaceChildren();
+    $('editnode').disabled=$('copyids').disabled=!active;
+    $('exportsvg').disabled=!active||Core.status(active).render!=='ready';
+    if(!active){
+      $('diagnostic').textContent='把光标放入 IDS，或点击一个字形后再检查。';
+      return
+    }
+    const st=Core.status(active);
+    $('diagnostic').textContent=st.syntax==='incomplete'?'结构尚未完成，继续输入部件。':st.syntax==='syntaxerror'?'含非法部件字符；原文已完整保留。':st.unsupported.length?'已识别但尚未支持绘制：'+st.unsupported.join('、'):st.missing.length?'缺少部件路径：'+st.missing.join('、'):'结构示意 · 非规范字形。修改原文后仍可重新呈现。';
+    function tree(n,depth){
+      const b=document.createElement('button');
+      b.textContent=(n.char||'待输入')+'  ['+n.start+', '+n.end+')';
+      b.style.paddingLeft=(depth*17+8)+'px';
+      b.onclick=()=>expand(active,{
+        anchor:n.start,focus:n.end
+      });
+      $('tree').append(b);
+      n.children.forEach(c=>tree(c,depth+1))
+    }
+    tree(active,0)
+  }
+  function expand(n,sel={
+    anchor:n.start,focus:n.end
+  }
+  ){
+    if(composing)return;
+    clearTimeout(timer);
+    expanded={
+      start:n.start
+    }
+    ;
+    selection=sel;
+    render(true);
+    showContext()
+  }
+  function atomNode(target){
+    return target instanceof Element?target.closest('.atom'):null
+  }
+  editor.addEventListener('focusin',e=>{
+    const atom=atomNode(e.target);
+    if(atom){
+      selection={
+        anchor:Number(atom.dataset.start),focus:Number(atom.dataset.start)+atom.dataset.ids.length
+      }
+      ;
+      clearTimeout(timer)
+    }
+  });
+  editor.addEventListener('click',e=>{
+    if(composing)return;
+    const el=atomNode(e.target);
+    if(el){
+      const n=Core.parse(source).find(n=>n.start===Number(el.dataset.start));
+      if(n)expand(n)
+    }
+  });
+  editor.addEventListener('keydown',e=>{
+    if(composing||e.isComposing||e.keyCode===229)return;
+    if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){
+      e.preventDefault();
+      undoRedo(e.shiftKey);
+      return
+    }
+    if(e.ctrlKey&&e.key.toLowerCase()==='y'){
+      e.preventDefault();
+      undoRedo(true);
+      return
+    }
+    const el=atomNode(e.target);
+    if(el&&(e.key==='Enter'||e.key===' ')){
+      e.preventDefault();
+      const n=Core.parse(source).find(n=>n.start===Number(el.dataset.start));
+      if(n)expand(n)
+    }
+    else if(el&&(e.key==='Backspace'||e.key==='Delete')){
+      e.preventDefault();
+      selection={
+        anchor:Number(el.dataset.start),focus:Number(el.dataset.start)+el.dataset.ids.length
+      }
+      ;
+      apply(InlineModel.replace(source,selection,''))
+    }
+    else if(e.key==='Escape'){
+      $('context-panel').hidden=true;
+      expanded=null;
+      capture();
+      render()
+    }
+  });
+  editor.addEventListener('beforeinput',e=>{
+    // Non-cancelable edits remain native; input synchronizes them once.
+    if(composing||e.isComposing)return;
+    capture();
+    history.selection(selection.anchor,selection.focus);
+    if(!e.cancelable)return;
+    const type=e.inputType;
+    if(type==='deleteByCut'){
+      e.preventDefault();
+      return
+    }
+    if(type==='historyUndo'||type==='historyRedo'){
+      e.preventDefault();
+      undoRedo(type==='historyRedo');
+      return
+    }
+    let result;
+    try{
+      // Native correction owns its explicit getTargetRanges() range, which
+      // need not equal Selection. Let the browser apply it, then serialize input.
+      if(type==='insertReplacementText') return;
+      if(type==='insertText'){
+        if(e.data===null)return;
+        result=InlineModel.replace(source,selection,e.data)
+      }
+      else if(type==='insertParagraph'||type==='insertLineBreak'){
+        result=InlineModel.replace(source,selection,'\n')
+      }
+      else if(type==='deleteContentBackward'||type==='deleteContentForward'){
+        result=InlineModel.deletion(source,selection,type.endsWith('Backward')?-1:1,snapshot().atoms)
+      }
+      else if(type.startsWith('format')){
+        e.preventDefault();
+        return
+      }
+      else return;
+      e.preventDefault();
+      apply(result)
+    }
+    catch(error){
+      e.preventDefault();
+      notify(error.message)
+    }
+  });
+  function readNative(){
+    const snap=snapshot();
+    const sel=capture();
+    try{
+      Core.parse(snap.source);
+      if(source!==snap.source)writeClock.changed();
+      source=snap.source;
+      // Native input can move existing atoms without waiting for our renderer.
+      // Refresh their source identity now; delayed viewParts are not authoritative.
+      viewParts = snap.atoms.map(item => {
+        item.node.dataset.start = String(item.start);
+        return {start:item.start,end:item.end,text:source.slice(item.start,item.end),atom:true};
+      });
+      selection=sel;
+      history.record(source,sel.anchor,sel.focus);
+      expanded=null;
+      editor.dataset.empty=String(!source);
+      persist();
+      schedule();
+      updateStatus()
+    }
+    catch(error){
+      notify(error.message);
+      render(true)
+    }
+  }
+  editor.addEventListener('input',()=>{
+    if(!composing)readNative()
+  });
+  // IME owns the live DOM until the next task after compositionend.
+  // No projection or selection restoration runs inside that ownership window.
+  editor.addEventListener('compositionstart',()=>{
+    capture();
+    history.selection(selection.anchor,selection.focus);
+    writeClock.changed();
+    compositionBase = compositionOwner.begin({source, selection: {...selection}});
+    composing=true;
+    clearTimeout(timer)
+  });
+  editor.addEventListener('compositionend',()=>{
+    const session = compositionBase;
+    setTimeout(()=>{
+      if (!compositionOwner.owns(session)) return;
+      composing=false;
+      const snap=snapshot();
+      try{
+        Core.parse(snap.source);
+        readNative()
+      }
+      catch(error){
+        source=session.source;
+        selection=session.selection;
+        render(true);
+        notify(error.message)
+      }
+      compositionOwner.end(session);
+      compositionBase=null;
+    },0)
+  });
+  editor.addEventListener('paste',e=>{
+    if(composing){
+      e.preventDefault();
+      return
+    }
+    e.preventDefault();
+    insert(e.clipboardData.getData('text/plain'))
+  });
+  editor.addEventListener('drop',e=>{
+    e.preventDefault();
+    notify('请用粘贴插入纯文本；拖放不改变当前内容。')
+  });
+  function clipboard(e,cut){
+    if(composing)return;
+    capture();
+    const [a,b]=InlineModel.bounds(selection);
+    if(a===b)return;
+    e.preventDefault();
+    e.clipboardData.setData('text/plain',source.slice(a,b));
+    if(cut)apply(InlineModel.replace(source,selection,''))
+  }
+  editor.addEventListener('copy',e=>clipboard(e,false));
+  editor.addEventListener('cut',e=>clipboard(e,true));
+  document.addEventListener('selectionchange',()=>{
+    if(rendering||composing||document.activeElement!==editor)return;
+    const previous={
+      ...selection
+    }
+    ;
+    capture();
+    if(previous.anchor===selection.anchor&&previous.focus===selection.focus)return;
+    if(expanded){
+      const n=Core.parse(source).find(n=>n.start===expanded.start);
+      const [a,b]=InlineModel.bounds(selection);
+      if(!n||a<n.start||b>n.end)expanded=null
+    }
+    schedule()
+  });
+  for(const id of ['tools','more'])$(id+'-toggle').onclick=()=>{
+    if(composing)return;
+    capture();
+    const panel=$(id+'-panel');
+    panel.hidden=!panel.hidden;
+    $(id+'-toggle').setAttribute('aria-expanded',String(!panel.hidden))
+  };
+  function closePanel(id, returnFocus = false) {
+    const panel = $(id);
+    const ownsFocus = panel.contains(document.activeElement);
+    panel.hidden = true;
+    const toggle = $(id.replace('-panel', '-toggle'));
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    if (returnFocus || ownsFocus) {
+      if (toggle) toggle.focus();
+      else restoreSelection(true);
+    }
+  }
+  document.querySelectorAll('[data-close]').forEach(button => {
+    button.onclick = () => closePanel(button.dataset.close, true);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || composing || $('product-document').open) return;
+    for (const id of ['tools-panel', 'more-panel', 'context-panel']) {
+      if (!$(id).hidden) closePanel(id);
+    }
+  });
+  for(const [op,name]of Object.entries(Core.NAMES)){
+    const b=document.createElement('button');
+    b.innerHTML=Core.esc(op)+'<small>'+name+'</small>';
+    b.setAttribute('aria-label','插入'+name+'结构符 '+op);
+    b.onclick=()=>insert(op);
+    $('operatorgrid').append(b)
+  }
+  document.querySelectorAll('[data-example]').forEach(b=>b.onclick=()=>insert(b.dataset.example));
+  $('undo').onclick=()=>undoRedo(false);
+  $('redo').onclick=()=>undoRedo(true);
+  $('inspect').onclick=()=>{
+    capture();
+    showContext()
+  };
+  $('editnode').onclick=()=>{
+    if(active)expand(active)
+  };
+  function download(content,name,type){
+    const url=URL.createObjectURL(new Blob([content],{
+      type
+    }
+    )),a=document.createElement('a');
+    a.href=url;
+    a.download=name;
+    document.body.append(a);
+    a.click();
+    a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),CONFIG.downloadReleaseMs)
+  }
+  $('exportsvg').onclick=()=>{
+    if(composing)return;
+    active=findActive();
+    if(!active||Core.status(active).render!=='ready'){
+      showContext();
+      return
+    }
+    download(Core.svg(active,source),'structure-glyph-schematic.svg','image/svg+xml');
+    notify('已导出结构示意 SVG，不是规范字形。')
+  };
+  $('copyids').onclick=async()=>{
+    if(composing)return;
+    active=findActive();
+    if(!active)return;
+    const n=active,copiedSource=source;
+    try{
+      await navigator.clipboard.writeText(source.slice(n.start,n.end));
+      notify('已复制原始 IDS。')
+    }
+    catch{
+      if(source===copiedSource&&!composing){
+        expand(n);
+        notify('剪贴板不可用，已选中原文，请按 Ctrl / ⌘ C。')
+      }
+      else notify('剪贴板不可用。当前内容已经变化，请重新选择并复制。')
+    }
+  };
+  $('saveproject').onclick=()=>{
+    if(composing){
+      notify('请先确认输入法候选词。');
+      return
+    }
+    download(JSON.stringify(Core.project(source),null,2),'structure-glyph.project.json','application/json')
+  };
+  $('importproject').onclick=()=>{
+    if(!composing)$('file').click()
+  };
+  $('file').onchange=async e=>{
+    const file=e.target.files[0];
+    e.target.value='';
+    if(!file)return;
+    const ticket=writeClock.begin();
+    try{
+      if(file.size>CONFIG.maxProjectBytes)throw Error('项目文件最多 200 KB。');
+      const project=Core.readProject(await file.text());
+      if(ticket.request!==writeClock.request)return;
+      if(!writeClock.accepts(ticket))throw Error('导入期间内容已改变，本次结果未覆盖当前编辑，请重新导入。');
+      if(composing)throw Error('请先确认输入法候选词后重新导入。');
+      apply({
+        source:project.source,selection:{
+          anchor:project.source.length,focus:project.source.length
+        }
+      });
+      notify('项目已导入，可撤销。')
+    }
+    catch(error){
+      if(ticket.request===writeClock.request)notify('导入失败：'+error.message)
+    }
+  };
+  $('restore').onclick=()=>{
+    if(composing)return;
+    try{
+      if(!pendingDraft)throw Error('没有打开时的本地草稿。');
+      const project=Core.readProject(pendingDraft);
+      apply({
+        source:project.source,selection:{
+          anchor:project.source.length,focus:project.source.length
+        }
+      }
+      )
+    }
+    catch(error){
+      notify(error.message)
+    }
+  };
+  // Cross-tab writes are not atomic; suspend this tab instead of silently overwriting.
+  window.addEventListener('storage', event => {
+    if (event.key !== KEY) return;
+    storageBlocked = true;
+    storageBlockReason = '另一页面更改了本地草稿，已停止此页自动覆盖。当前内容请下载 JSON 保存。';
+    persist();
+    notify(storageBlockReason);
+  });
+  $('components').textContent='当前自绘部件：'+Object.keys(Core.STROKES).join(' · ');
+  try{
+    pendingDraft=localStorage.getItem(KEY);
+    if(pendingDraft){
+      source=Core.readProject(pendingDraft).source;
+      selection={
+        anchor:source.length,focus:source.length
+      }
+      ;
+      history=new Core.History(source)
+    }
+  }
+  catch(error){
+    storageBlocked=true;
+    notify('旧草稿不可恢复，已保留原文件：'+error.message)
+  }
+  render();
+  persist();
+}
+)();
+</script>
+
+<!-- embedded-document:start -->
+<style>
+#product-document{width:min(1180px,calc(100% - 24px));max-height:90vh;padding:0;border:1px solid var(--line);background:var(--paper);color:var(--ink)}#product-document::backdrop{background:#18201799}.doc-toolbar{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);padding:14px 22px;display:flex;align-items:center;gap:12px;z-index:2}.doc-toolbar strong{flex:1}.doc-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:30px;padding:25px}.doc-toc{font-size:12px;align-self:start;display:grid;gap:8px}.doc-toc a{overflow-wrap:anywhere}.doc-body{min-width:0;overflow-wrap:anywhere;line-height:1.85}.doc-body h1{font-size:27px;font-weight:600;line-height:1.5}.doc-body h2{font-size:21px;font-weight:600;margin:34px 0 15px;padding-bottom:8px;border-bottom:1px solid var(--line);scroll-margin-top:85px}.doc-body h3{font-size:16px;margin-top:24px}.doc-body table{display:block;width:100%;overflow:auto;border-collapse:collapse;margin:20px 0;font-size:12px}.doc-body th,.doc-body td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;min-width:95px}.doc-body pre{overflow:auto;background:var(--wash);padding:14px}.doc-body code{font-size:.92em}.doc-body blockquote{border-left:3px solid var(--red);padding-left:16px;margin-left:0;color:#5e6256}.doc-body p{margin:12px 0}.doc-body li{margin:5px 0}@media(max-width:700px){.doc-layout{display:block;padding:16px}.doc-toc{margin-bottom:24px}.doc-toolbar{padding:10px;flex-wrap:wrap}.doc-toolbar strong{font-size:12px}.doc-body h1{font-size:22px}}
+</style>
+<dialog id="product-document" aria-labelledby="doc-title"><div class="doc-toolbar"><strong id="doc-title">产品定义与验证方案</strong><button id="doc-download-inline">下载 Markdown</button><form method="dialog"><button aria-label="关闭产品文档">关闭 ×</button></form></div><div class="doc-layout"><nav class="doc-toc" aria-label="产品文档目录"><a href="#doc-section-1">1 产品价值与范围</a><a href="#doc-section-5">2 不可混淆的产品原则</a><a href="#doc-section-9">3 编辑与呈现体验</a><a href="#doc-section-14">4 解析 架构与数据治理</a><a href="#doc-section-20">5 离线 保存与交换</a><a href="#doc-section-23">6 六个核心用户故事</a><a href="#doc-section-30">7 用户与市场假设</a><a href="#doc-section-34">8 竞品与差异化</a><a href="#doc-section-37">9 机会 路线与非目标</a><a href="#doc-section-42">10 研究 验收与风险</a><a href="#doc-section-48">11 商业方向与长期价值</a><a href="#doc-section-49">12 来源与待核事项</a><a href="#doc-section-55">13 对外简述</a><a href="#doc-section-56">14 Demo 版本与正式产品的边界</a></nav><article class="doc-body"><h1 id="doc-section-0">结构组字产品定义与验证方案</h1>
+<blockquote>
+<p>产品代号：结构组字（暂名）<br>
+定位：离线优先、以真实 IDS 文本为核心的极简汉字构形编辑器。<br>
+本文合并产品探索和竞品分析两轮材料；需求、设计建议、用户故事与市场假设分别表述。产品承诺是待实现和验收的目标，不代表本次演示已具备全部能力。公开项目能力和许可应以对应版本及来源核查为准。</p>
+</blockquote>
+<h2 id="doc-section-1">1 产品价值与范围</h2>
+<h3 id="doc-section-2">1.1 要解决的问题</h3>
+<p>古籍、族谱、地方志、姓名及特殊专业材料中，可能存在当前输入法或字体无法处理的字形。最初故事中的学者先查字典、再检索 Unicode、再试输入法，均未找到所需字，最终只能写“此处原字为某字形，暂以图片代替”。现实中应分别检查输入法找不到、字体缺字、地区字形不符和真正未编码，不能把这些原因合并判定。研究者常用图片代替，但图片难以按结构检索、复制后继续编辑，也容易丢失部件来源和构形过程。即使画出了字，后续修改、引用、交换和长期复现仍然困难。</p>
+<p>结构组字的目标不是单次“输入后生成 SVG”，而是让一个构形经历完整生命周期：<strong>书写结构 → 解析 → 呈现 → 展开 → 修改 → 撤销 → 导出 → 保存 → 未来恢复</strong>。对象同时保留源表达式、结构关系和具体数据生成的视觉结果。</p>
+<p>例如，研究者输入 <code>⿰木水</code>。这是演示性结构表达式，不保证对应规范汉字。数据充分时可获得预览、导出 SVG，并把原表达式交给同事；发现左侧部件有误时直接修改。若缺少绘制数据，则保留表达式、说明缺失，不能假装生成了正确字形。</p>
+<table>
+<thead>
+<tr>
+<th>能力</th>
+<th>普通文本工作流中的常见情况</th>
+<th>产品目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入已编码字符</td>
+<td>支持</td>
+<td>保持普通文本输入</td>
+</tr>
+<tr>
+<td>表达未编码字形结构</td>
+<td>说明文字、图片或专用工具</td>
+<td>直接书写 IDS</td>
+</tr>
+<tr>
+<td>将结构转为视觉结果</td>
+<td>通常需外部工具</td>
+<td>对支持的数据生成字形</td>
+</tr>
+<tr>
+<td>修改构成</td>
+<td>重做图片或寻找原设计文件</td>
+<td>展开源表达式，局部修改</td>
+</tr>
+<tr>
+<td>保存构形来源</td>
+<td>往往不完整</td>
+<td>保存来源、依赖、版本和修订</td>
+</tr>
+</tbody>
+</table>
+<h3 id="doc-section-3">1.2 正式产品定义</h3>
+<p>产品计划采用离线优先 PWA，以一个主要输入区域承载自然文本与 IDC 输入。解析器将源文本转为结构模型，数据适配层解析部件依赖，渲染器根据可用字形数据生成 SVG。可逆编辑不是从 SVG 猜测结构，而是恢复一直保留的原始 IDS。</p>
+<p>第一阶段不替代完整字体编辑器、不建设公共 Wiki 或云端协作平台，不承诺任意 IDS 都可生成规范汉字，也不承诺每份表达式对应唯一字符。首要目标是证明：文本驱动的构形及可逆编辑，能够降低真实任务成本。</p>
+<h3 id="doc-section-4">1.3 术语与责任边界</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>含义及边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IDC</td>
+<td>描述部件相对结构的真实 Unicode 字符；快捷键仅为输入方式</td>
+</tr>
+<tr>
+<td>IDS</td>
+<td>用 IDC 与描述成分形成的结构序列；并非完整字义、字源或唯一字形定义</td>
+</tr>
+<tr>
+<td>未编码字符</td>
+<td>没有对应标准 Unicode 编码的字符；不能仅由显示失败判定</td>
+</tr>
+<tr>
+<td>缺字</td>
+<td>当前字体或软件无法正确显示所需字符；可能已有编码</td>
+</tr>
+<tr>
+<td>异体字形</td>
+<td>同一字符在地区、规范或文献场景中的不同形式</td>
+</tr>
+<tr>
+<td>KAGE 数据及引擎</td>
+<td>具体笔画、几何及部件引用数据与绘制机制；不是 IDS 本身</td>
+</tr>
+<tr>
+<td>SVG</td>
+<td>一次渲染的视觉输出；不天然包含可恢复的完整构形语义</td>
+</tr>
+<tr>
+<td>项目文件</td>
+<td>保存构形、来源、版本、修订与必要依赖的可编辑资产</td>
+</tr>
+<tr>
+<td>私用区 PUA</td>
+<td>依赖使用者约定解释的码位；不保证跨系统语义一致，也不应作为对象唯一身份</td>
+</tr>
+</tbody>
+</table>
+<p>IDS 描述构件关系，不规定唯一绘制结果；相似结构不等于文字学上的同一个字。系统支持 IDC 不意味着规范要求它必须重建字形。相关 Unicode 规范版本与原文引用见第 12 节。2026-10-20 核查发现 Unicode 18 的章节可读，但版本页存在状态矛盾；不据此断言发布日期或完整实现最新标准。</p>
+<h2 id="doc-section-5">2 不可混淆的产品原则</h2>
+<h3 id="doc-section-6">2.1 真实文本优先</h3>
+<p>逐字输入、快捷键插入、复制粘贴，最终都产生相同的 IDC 字符序列。IDC 可选择、复制、粘贴、退格删除、中间修改、撤销和重做。</p>
+<p>不采用“快捷键创建隐藏左右节点，再把部件塞入节点”的独立命令系统。快捷键只产生普通字符插入事务，不改变表达式语义。相同有效 IDS，在同一解析器、渲染器、数据版本和配置下，应产生相同结构和构形结果。</p>
+<p>原提案的 <code>Ctrl+方向键</code> 只保留为待测试候选，不写死默认映射：它可能与按词移动光标、系统或输入法操作冲突。组合输入期间不触发构形快捷键；移动端基本操作不能依赖物理键盘。</p>
+<h3 id="doc-section-7">2.2 源文本与结构模型各有权威范围</h3>
+<p><strong>源文本是构形表达的权威输入；构形树是解析后的权威结构模型。</strong> 二者不能悄悄覆盖彼此，也不能把节点 ID、缓存或隐藏状态当作源文本的替代品。</p>
+<p><code>⿰⿱宀女木</code> 的外层是左右结构，左侧为 <code>⿱宀女</code>，右侧为 <code>木</code>：</p>
+<pre><code class="language-text">⿰
+├── ⿱
+│   ├── 宀
+│   └── 女
+└── 木
+</code></pre>
+<p>纯文本重新解析也能实现局部修改，不应声称“没有树就做不到”。结构模型的价值是清楚关联源范围、SVG、局部重绘、历史、光标和缓存。节点按需保存稳定 ID、类型、操作符、子节点、源文本范围、语法状态、渲染状态和版本/缓存标识。</p>
+<h3 id="doc-section-8">2.3 完整 可渲染 合格是不同状态</h3>
+<p><code>⿰氵青</code> 可以语法完整，却缺少 KAGE 定义、递归依赖或适合目标地区的部件。不能只用一个“成功”覆盖全部阶段。</p>
+<table>
+<thead>
+<tr>
+<th>独立维度</th>
+<th>状态示例</th>
+<th>需要回答的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语法</td>
+<td>未完成、完整、非法</td>
+<td>操作符和操作数关系是否成立</td>
+</tr>
+<tr>
+<td>数据</td>
+<td>齐全、缺失、版本异常、引用异常</td>
+<td>绘制所需依赖是否可用</td>
+</tr>
+<tr>
+<td>渲染</td>
+<td>未渲染、成功、失败</td>
+<td>是否实际生成视觉结果</td>
+</tr>
+<tr>
+<td>质量审查</td>
+<td>未审查、待确认、已审查、已知问题</td>
+<td>是否符合目标风格、规范和用途</td>
+</tr>
+</tbody>
+</table>
+<p>结构成功不等于渲染成功，渲染成功不等于规范合格；近似结果应标明近似之处。结构完整但数据缺失时，应显示例如“结构完整，但缺少一个部件的绘制数据”，并继续保存源文本。</p>
+<h2 id="doc-section-9">3 编辑与呈现体验</h2>
+<h3 id="doc-section-10">3.1 一个主输入区 必要时解释</h3>
+<p>默认打开即可输入，不设强制欢迎页、教程、模式切换或常驻候选栏。普通文字保持普通文本，不完整 IDS 保持可读。避免把部件选择、结构按钮、树面板、属性、候选与导出工具全部铺开，让用户为了写一个字操作复杂软件。</p>
+<p>极简不等于无反馈。用户需要知道为何未生成、缺什么、如何展开和导出。桌面悬停或光标定位时可显示原始 IDS、部件、数据状态及操作入口；触屏使用点击或等效操作。解释按需出现，而不是要求用户理解内部引擎。</p>
+<p>能力分三层：</p>
+<ol>
+<li>核心：输入、解析、呈现、局部修改、展开、撤销、SVG 导出。</li>
+<li>必要解释和恢复：原 IDS、部件、数据来源/状态、展开入口。</li>
+<li>后续高级流程：项目文件、数据修订、批量构形、多字形比较、字体生产、协作与长期版本。不全部放进常驻主界面。</li>
+</ol>
+<h3 id="doc-section-11">3.2 完整与提交分离</h3>
+<p>用户输入 <code>⿰</code>，状态为缺两个操作数；输入 <code>⿰人</code>，仍缺一个；输入 <code>⿰人木</code>，结构完整。未完成时可以用极细虚线、淡化提示或轻微占位说明等待，但不生成错误的残缺字形。</p>
+<p>“完整”由语法决定；“提交为字形呈现”由交互策略决定。用户可能马上改部件，因此不应一完整就强制替换为难编辑的 SVG。可等待短暂停顿、允许明确提交、保留文本、随时展开，并在继续输入时根据光标及结构重判。</p>
+<p>原材料提出约 <strong>300 毫秒</strong>提交延迟，作为实验起点而非最终标准；需测试输入速度、表达式长度和不同 IME。</p>
+<h3 id="doc-section-12">3.3 动画服务理解而非游戏化指标</h3>
+<p>建议从 <strong>150–200 毫秒</strong>局部转换试验：字符与部件向中心靠拢，文字淡出，SVG 从略小尺寸显现，光标仍在合理位置。可用于说明结构完成、内层完成、缺操作数或局部修改影响。</p>
+<p>动画必须短促、局部、可打断。连续输入更安静，不整页抖动、不强制完整播放，不增加音效、分数、连击、排行榜或奖励系统。动画不是数据更新的前提；被打断后直接进入稳定状态，不能遗留半透明节点或把新字符插错位置。</p>
+<h3 id="doc-section-13">3.4 输入法 光标 撤销先于动画</h3>
+<p>不能只监听 <code>keydown</code>。需结合 <code>beforeinput</code>、<code>input</code>、<code>compositionstart</code>、<code>compositionupdate</code>、<code>compositionend</code>、选区和组合状态。规范只是基础，不能替代真实浏览器、系统和中文输入法测试。</p>
+<p>主要风险：拼音候选未确认时，方向键被误当作 IDC 快捷键；中间编辑时渲染更新 DOM，把光标移到末尾。输入正确性优先于视觉效果。</p>
+<p>建议验证顺序：普通文本 → 中间移动光标 → 正确插入/删除 → IME → 粘贴/替换 → SVG 后逻辑选区恢复 → 撤销/重做 → 动画。</p>
+<p>撤销围绕用户理解的编辑事务，而非 DOM 或渲染步骤。已呈现字形应能恢复可编辑表达式，但自动视觉合并不一定单独占用一条撤销记录；输入、结构修改、展开与呈现的历史粒度仍需明确测试。不能完全依赖复杂 <code>contenteditable</code> 的浏览器默认历史。</p>
+<h2 id="doc-section-14">4 解析 架构与数据治理</h2>
+<h3 id="doc-section-15">4.1 增量输入模型</h3>
+<p>解析器必须处理嵌套、中间编辑、删除操作符、不完整粘贴和结构更换，而不是只解析已完成字符串。</p>
+<table>
+<thead>
+<tr>
+<th>输入</th>
+<th>预期解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>⿰</code></td>
+<td>缺两个操作数</td>
+</tr>
+<tr>
+<td><code>⿰木</code></td>
+<td>缺一个操作数，可继续输入</td>
+</tr>
+<tr>
+<td><code>⿰木水</code></td>
+<td>左右结构完整</td>
+</tr>
+<tr>
+<td><code>⿰⿱宀女木</code></td>
+<td>嵌套结构完整</td>
+</tr>
+<tr>
+<td>修改内层 <code>⿱</code> 为 <code>⿰</code></td>
+<td>更新受影响结构，保留外层与其他文字</td>
+</tr>
+</tbody>
+</table>
+<p>IDC 不只有左右、上下二元结构，也包括包围、三元和规范版本相关的一元形式。实现应明确采用的 IDS 语法与 IDC 集合，逐个定义元数，不把所有操作符当成等待两个操作数。只支持一部分时，应声明子集，而不是声称完整规范支持。</p>
+<p>推荐数据流：文本事务 → 确定变更范围 → 更新解析树 → 失效受影响缓存 → 解析部件依赖 → 局部渲染 → 恢复逻辑光标。稳定节点 ID、版本与缓存用于减少重算，不限制用户直接编辑文本。</p>
+<h3 id="doc-section-16">4.2 IDS KAGE SVG 分层</h3>
+<p>IDS 表达关系，KAGE 数据及绘制策略决定具体几何，SVG 记录结果。同一 IDS 可因数据、部件定义和风格不同产生不同字形。保持适配层与渲染接口稳定，有利于替换引擎和支持多风格，而不要求用户重新学习语法。</p>
+<p>SVG 中的 <code>data-ids</code> 等元数据只是附加信息；外部软件可能移除它，不能据此承诺任意 SVG 可恢复结构。</p>
+<h3 id="doc-section-17">4.3 三层数据治理</h3>
+<table>
+<thead>
+<tr>
+<th>层</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原始来源</td>
+<td>原记录、版本、来源标识和引用关系；不混入无记录人工修改</td>
+</tr>
+<tr>
+<td>目标字形</td>
+<td>按大陆或其他目标体系筛选、替换、修订，记录每次修改</td>
+</tr>
+<tr>
+<td>构形映射</td>
+<td>IDS 操作数到具体定义的映射；处理别名、缺失、引用链和版本差异</td>
+</tr>
+</tbody>
+</table>
+<p>解析器不负责来源选择，渲染器不负责规范审查。不能把 GlyphWiki 全部数据直接当作已审查大陆字形全集。不同体系的部件即使能画出，也可能比例、连接、穿插或风格不协调。</p>
+<p>正式支持的部件/结果应记录：来源、数据版本、目标字形体系、依赖关系、人工修订、审查状态、已知问题。不要没有定义测试集、标准和统计方法就宣称“准确率 97%”。</p>
+<p>可从 <strong>30 个有意挑选的高风险样本</strong>开始，而非只测容易成功的常用字：复杂笔画、位置变体、递归引用、跨源差异、缺失/版本异常、容易混淆日本与大陆字形的样本。目标是找出自动处理、人工修订及暂不支持的边界，不是做漂亮成功率。</p>
+<h3 id="doc-section-18">4.4 许可证独立核对</h3>
+<p>分别建立代码、IDS 结构数据、部件数据、字体和导出产物的许可清单。开源不等于任何组合与重新分发均被允许。</p>
+<p>2026-10-20 核查确认 <code>@kurgm/kage-engine</code> 仓库明确 GPL v3；采用时仍须核对具体版本及分发义务，不能因浏览器可运行就认定适用所有发布模式。CJKVI-IDS 不同文件可能有不同许可；GlyphWiki 数据、引用内容、KAGE 引擎与最终字体也需分别审核。核查结果以第 12 节及配套核查记录为准。</p>
+<h3 id="doc-section-19">4.5 保留精修出口而不提前复制字体软件</h3>
+<p>纯 IDS 无法表达所有轮廓和笔画细节。例如 <code>⿰女木</code> 的左部倾角不符合目标文献时，用户可能要改一条笔画。模型可预留部件定义、局部位置调整、轮廓修订和数据版本，但第一版不必实现完整画布、控制点或大量几何参数。</p>
+<h2 id="doc-section-20">5 离线 保存与交换</h2>
+<h3 id="doc-section-21">5.1 离线能力等级</h3>
+<table>
+<thead>
+<tr>
+<th>等级</th>
+<th>定义</th>
+<th>产品判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1</td>
+<td>已缓存界面、脚本等，页面可离线打开，部分数据缺失</td>
+<td>早期原型目标，不能代表完整离线</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>初始化后，解析器、渲染器、支持的字形及全部依赖本地可用；离线编辑、生成、导出</td>
+<td>第一版合理正式目标</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>项目独立保存、重开、跨设备导入，保留原 IDS 和版本及必要复现信息</td>
+<td>本地优先的进一步目标</td>
+</tr>
+</tbody>
+</table>
+<p>只缓存 HTML/JS 不够。断网验收必须实际完成编辑、修改、生成、导出和恢复支持范围内的项目。联网更新数据不能悄悄改变旧项目含义。</p>
+<h3 id="doc-section-22">5.2 三种输出不要混为一谈</h3>
+<ol>
+<li><strong>SVG</strong>：用于显示、嵌入、文档、排版和视觉讨论；应有明确几何边界和兼容性。它不是标准 Unicode 语义字符，不天然参与全部文本搜索或输入，各软件支持也不同。</li>
+<li><strong>结构化项目</strong>：继续编辑与长期复现。建议保存原 IDS、项目结构/稳定节点 ID、部件引用、来源和数据版本、应用及渲染器版本、可选几何修订、必要 SVG 快照、生成环境和格式版本。</li>
+<li><strong>字体或 PUA 输出</strong>：后续专业需求，需要字体生成、码位分配和互操作设计，不是 SVG 导出的免费附属能力。</li>
+</ol>
+<p>仅保存远程部件名称不足以保证几年后能重现；需定义依赖打包或可恢复的版本化引用策略，并遵守数据许可。项目对象保留稳定身份，不以 PUA 码位作为全球唯一标识。</p>
+<p>应用版本、渲染器版本、字形数据版本、项目格式版本应分别记录。恢复时优先复现原结果，缺旧数据时说明原因；改用新数据必须提示可能变化。第一版用本地项目文件验证价值，不需要云账号与复杂项目平台。</p>
+<h2 id="doc-section-23">6 六个核心用户故事</h2>
+<blockquote>
+<p>以下均为设计叙事，用于检验假设，不是已经完成的访谈或已证实的需求。</p>
+</blockquote>
+<h3 id="doc-section-24">6.1 林先生首次上手</h3>
+<p>林先生是构形爱好者，不懂字体设计，曾因部件面板与选项繁多放弃工具。他打开一个输入区，输入 <code>⿰木水</code>，停顿后看到字形；悬停查看 IDS，展开后把 <code>木</code> 改为 <code>人</code>，再次观察。验证首次成功时间、能否独立开始、是否理解仍可编辑，以及是否区分缺数据与未完成。</p>
+<h3 id="doc-section-25">6.2 陈女士局部纠错</h3>
+<p>陈女士为教学材料输入 <code>⿱宀女</code>，发现上方部件不对。她展开并替换 <code>宀</code>，其他文字与外层结构不变。验收目标是生成后的修改不比第一次输入复杂得多；展开依赖保存的源记录，而非图像识别。</p>
+<h3 id="doc-section-26">6.3 赵先生多路径输入</h3>
+<p>赵先生粘贴同事发送的嵌套 IDS，次日使用快捷键输入同一表达式。他期待解析、结构关系和视觉输出相同。固定引擎、数据与配置，比较逐字、快捷键和粘贴路径；不一致即缺陷，不能要求用户改变习惯。</p>
+<h3 id="doc-section-27">6.4 王先生遇到数据缺失</h3>
+<p>王先生输入未编码古文字形的完整 IDS，却无法预览。系统明确“结构完整，但缺少部件”，他可保留记录、稍后补数据或换已有定义。有近似输出时标注限制。验证用户能否定位问题，而不是反复删字猜测语法错误。</p>
+<h3 id="doc-section-28">6.5 李女士断网工作</h3>
+<p>李女士在家完成初始化后到图书馆整理材料。网络中断，她仍能编辑已支持构形、重开本地项目并导出 SVG。网络恢复可检查数据更新，但不能自动改旧项目。此故事验证的是完整任务，不只是页面启动。</p>
+<h3 id="doc-section-29">6.6 三年后的接收者</h3>
+<p>研究者保存 SVG、IDS 和版本，三年后交给另一人。接收者能了解原始表达式、所用数据、是否可复现及升级可能变化，并继续编辑。验证可交换构形记录的价值，但不据此提前建设协作平台。</p>
+<h2 id="doc-section-30">7 用户与市场假设</h2>
+<h3 id="doc-section-31">7.1 六类相关市场</h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>用户任务</th>
+<th>典型项目/替代方案</th>
+<th>产品关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>构形查询</td>
+<td>一个字由什么组成</td>
+<td>CJKVI-IDS、HanziCraft</td>
+<td>知识和入口参考</td>
+</tr>
+<tr>
+<td>IDS 检索</td>
+<td>哪些字有某种结构</td>
+<td>YAIST、IDS 数据库</td>
+<td>上游工具及相邻工作流</td>
+</tr>
+<tr>
+<td>字形绘制编辑</td>
+<td>调部件、笔画和轮廓</td>
+<td>KAGE Editor、GlyphWiki</td>
+<td>直接技术及任务竞品</td>
+</tr>
+<tr>
+<td>字体设计</td>
+<td>管理大量字形并生产字体</td>
+<td>FontForge、FontLab、FontCreator</td>
+<td>专业替代与下游</td>
+</tr>
+<tr>
+<td>学习研究</td>
+<td>理解、记忆和分析汉字</td>
+<td>HanziCraft、研究工具</td>
+<td>潜在用户来源</td>
+</tr>
+<tr>
+<td>未编码/特殊字形处理</td>
+<td>表达、显示、保存、分享</td>
+<td>自定义字体、PUA、图片/SVG</td>
+<td>核心机会假设</td>
+</tr>
+</tbody>
+</table>
+<p>公开工具生态存在，不等于证明独立付费市场存在；此分析不是对所有商业、封闭或中文互联网产品的穷尽审计。差异化应靠完成任务的成本验证，不能声称市场上无人覆盖类似环节。</p>
+<h3 id="doc-section-32">7.2 七类潜在用户</h3>
+<table>
+<thead>
+<tr>
+<th>用户</th>
+<th>主要可能价值</th>
+<th>必须验证的限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>汉字文化爱好者</td>
+<td>拆字、组合、即时反馈</td>
+<td>新鲜感之后是否持续创作</td>
+</tr>
+<tr>
+<td>古文字与文献研究者</td>
+<td>准确结构、来源、追溯、长期编辑、文档可用</td>
+<td>需求频率、准确性与付费意愿</td>
+</tr>
+<tr>
+<td>语言学和汉字研究人员</td>
+<td>部件分布、结构记录、批量导入/搜索/导出</td>
+<td>数据互通可能比动画重要</td>
+</tr>
+<tr>
+<td>教育工作者</td>
+<td>部件关系和 IDS 互动实验</td>
+<td>结构不是字源，练习符号不是规范字</td>
+</tr>
+<tr>
+<td>字体与文字设计师</td>
+<td>初始构形、减少重复操作、导入精修</td>
+<td>是否真节省时间、轮廓质量与来源</td>
+</tr>
+<tr>
+<td>非遗 地方文献 特殊字符整理人员</td>
+<td>姓名、地方用字和专业材料的稳定记录传递</td>
+<td>SVG 无法独自解决文献规范与字体兼容</td>
+</tr>
+<tr>
+<td>独立创作者</td>
+<td>小说、游戏、世界观和符号系统创作</td>
+<td>不一定追求大陆规范，更重速度和自由</td>
+</tr>
+</tbody>
+</table>
+<p>第一轮材料的目标人群概括为爱好者、研究教学、字体工作者；第二轮进一步细分为七类。建议验证优先级：①未编码字形创作者及特殊字符整理者；②研究者与文献工作者；③爱好者与教育工作者。这是任务验证顺序，不是市场规模排名或已选定付费客群。</p>
+<h3 id="doc-section-33">7.3 任务替代比功能名称更重要</h3>
+<p>用户可能只想让地方志中的字正常打印并被别人查看。若换一个覆盖更广的字体、输入法或字符检索就能解决，不应要求他学习构形工具。只有需自行构造且未来还要改的任务，才更可能体现产品价值。</p>
+<p>输入法、字符搜索、扩展字体、PUA 字库、插入图片和专业绘图都是任务替代。必须验证“字形如何进入真实文档，并在他人环境中继续可用”，而非只展示编辑器内效果。</p>
+<h2 id="doc-section-34">8 竞品与差异化</h2>
+<blockquote>
+<p>下表归纳原材料的公开资料判断，不是当前全部功能的完整审计。产品版本、功能和许可均须结合官方来源复核；不将“非核心”解释为“完全不支持”。</p>
+</blockquote>
+<h3 id="doc-section-35">8.1 逐项分析</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>已有定位及能力概述</th>
+<th>对结构组字的启示与边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CJKVI-IDS</td>
+<td>多来源汉字结构描述、编码约定及许可；例如 <code>明</code> 可分析为 <code>⿰日月</code></td>
+<td>是结构知识来源，不是绘图引擎；描述可多解、包含实体引用或源差异。查到 <code>⿰木某</code> 后，编辑器应能继续修改，而非止于数据库没有答案</td>
+</tr>
+<tr>
+<td>HanziCraft</td>
+<td>汉字层级分解、部件、拼音和释义等学习功能；如 <code>想</code> 的 <code>相</code> 与 <code>心</code></td>
+<td>借鉴逐层解释，但不做百科或常驻树面板。查询既有字与改结构生成可编辑对象不同；学习进度等具体功能待官方核查</td>
+</tr>
+<tr>
+<td>YAIST</td>
+<td>Yet Another IDS Search Tool，静态 Web IDS 查询；原材料描述结果可含 GlyphWiki SVG、码点、笔画、区块和异体信息</td>
+<td><code>⿰木子</code> 是在现有集合搜索；编辑器则可由 <code>⿰木水</code> 改 <code>水</code> 为 <code>火</code>、再改上下关系。搜索与构造的默认任务不同，但功能可能趋同，不能断言独占优势</td>
+</tr>
+<tr>
+<td>KAGE Editor</td>
+<td>图形字形编辑；原材料列出选择/移动笔画和部件、控制点、尺寸、拆分、搜索插入、撤销重做、手写、网格、风格及快捷键</td>
+<td>最直接竞品；图形精修已有基础，不能把“能编辑”当新发明。文本 <code>⿰人木</code> 改 <code>⿰女木</code> 或更省操作，但要用实测证明。Chrome/Firefox/Safari 测试声明和具体版本待核</td>
+</tr>
+<tr>
+<td>GlyphWiki</td>
+<td>Wiki 式字形数据生态，KAGE 编辑及 SVG/字体生产流程</td>
+<td>借鉴可追溯部件和维护资产，不急做账号、公共库、审核、分支与协作。先个人创建，再长期保存，最后多用户积累</td>
+</tr>
+<tr>
+<td>文津宋体</td>
+<td>大字符集宋体项目；原材料称结合思源宋体及衍生、GlyphWiki 和修改版 KAGE，并关注大陆字形</td>
+<td>可参考技术与数据工程，不能证明编辑器市场。核对实际版本、覆盖与许可；它是字体而非交互编辑器。生成能力、比例风格、规范审查仍需分开</td>
+</tr>
+<tr>
+<td>FontForge</td>
+<td>开源字体编辑、轮廓与编码管理</td>
+<td>适合完整字体流程；例如 <code>⿰某某</code> 这样的单个特殊字形构造任务可能不需要这么大工具，但专业需求不能被轻视</td>
+</tr>
+<tr>
+<td>FontLab</td>
+<td>专业字形设计、格式转换和 OpenType 能力</td>
+<td>完整字体生产的替代方案或下游精修；不能用极简工具宣称替代全部能力</td>
+</tr>
+<tr>
+<td>FontCreator</td>
+<td>字体创建、修改及多格式工作流</td>
+<td>同属专业替代；原材料中文域名的官方性待核，优先核对开发商来源</td>
+</tr>
+</tbody>
+</table>
+<h3 id="doc-section-36">8.2 竞争维度矩阵</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>结构查询</th>
+<th>图形编辑</th>
+<th>文本构形角色</th>
+<th>未编码字形潜力</th>
+<th>完整字体生产</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CJKVI-IDS</td>
+<td>强/数据</td>
+<td>非核心</td>
+<td>描述数据</td>
+<td>依赖其他工具</td>
+<td>否</td>
+</tr>
+<tr>
+<td>HanziCraft</td>
+<td>强/学习</td>
+<td>非核心</td>
+<td>非核心</td>
+<td>非核心</td>
+<td>否</td>
+</tr>
+<tr>
+<td>YAIST</td>
+<td>核心</td>
+<td>非核心</td>
+<td>IDS 查询条件</td>
+<td>受数据与功能限制</td>
+<td>否</td>
+</tr>
+<tr>
+<td>KAGE Editor</td>
+<td>部件相关操作</td>
+<td>核心</td>
+<td>以图形编辑为主</td>
+<td>自定义字形数据</td>
+<td>非主要定位</td>
+</tr>
+<tr>
+<td>GlyphWiki</td>
+<td>字形与部件生态</td>
+<td>支持相关流程</td>
+<td>依赖数据和工具</td>
+<td>相关基础设施</td>
+<td>可参与生产生态</td>
+</tr>
+<tr>
+<td>FontForge / FontLab</td>
+<td>非主要定位</td>
+<td>核心</td>
+<td>非核心</td>
+<td>字体制作可实现</td>
+<td>核心</td>
+</tr>
+<tr>
+<td>结构组字目标</td>
+<td>适度支持</td>
+<td>第一版有限</td>
+<td>核心编辑对象</td>
+<td>核心目标之一</td>
+<td>不作初期核心</td>
+</tr>
+</tbody>
+</table>
+<p>不必每项胜过竞品。关键差异待验证：输入到结果步骤、中间状态、局部修改、展开撤销、可靠保存和离线。结构组字摆脱的是对“已有字符目录”的完全依赖，不是对绘制数据的依赖。</p>
+<h2 id="doc-section-37">9 机会 路线与非目标</h2>
+<h3 id="doc-section-38">9.1 七项后续机会</h3>
+<ol>
+<li><strong>构形草稿纸/实验室</strong>：快速比较 <code>⿰木水</code> 与 <code>⿱木水</code>，降低试验成本。“十秒钟试验”是故事，不保证十秒生成规范字；比较多候选可先用历史快照/项目副本，而非立即增加候选栏。</li>
+<li><strong>可分享的构形对象</strong>：同事拿到 IDS、SVG、来源、版本、限制与依赖，能继续编辑，而不只是看图片。三小时制作的特殊字形，三个月后仍有修改价值。</li>
+<li><strong>教学实验</strong>：学生输入 <code>⿰日月</code> 再改上下结构，学习关系、语法和构形/字形区别；可研究教学练习文件，不开发首版课程、积分或学习管理系统。</li>
+<li><strong>可追溯实验记录</strong>：记录初始表达式、部件替换、导致最终结果的变更和参与数据；轻量撤销与长期版本是不同需求，可共用事务基础但不等于立即造版本控制平台。</li>
+<li><strong>结构化符号创作</strong>：小说/游戏作者组合汉字式部件、左右和包围结构，导出到地图、道具、界面。自定义符号不自动成为标准汉字或获得编码。</li>
+<li><strong>一组字的共享关系</strong>：研究共同部件、局部结构、影响范围、缺数据和多版本；先建立模型，等批量真实需求出现再考虑图谱界面。</li>
+<li><strong>数据质量维护工具</strong>：定位缺失引用、待审规范、旧部件和版本差异；普通用户看简洁状态，维护者用独立审核工具，不把后台全部放入主界面。</li>
+</ol>
+<h3 id="doc-section-39">9.2 首版闭环与实施次序</h3>
+<p>首版先验证一个字形的生命周期：输入 IDS → 解析 → 可用数据生成 SVG → 修改部件 → 撤销 → 展开再编辑 → 导出 SVG → 保存项目 → 离线重新打开。</p>
+<p>路线建议：</p>
+<ol>
+<li>证明真实文本驱动比现有工作流更直接。</li>
+<li>证明生成后仍可稳定修改和恢复。</li>
+<li>建立来源清楚、质量受控的部件数据。</li>
+<li>再依据真实需求进入研究、教学、特殊字符处理及字体生产。</li>
+</ol>
+<p>暂不追求覆盖所有汉字或自建完整数据库。拥有一万个可生成字形，不代表编辑和恢复可靠。</p>
+<h3 id="doc-section-40">9.3 原方案决策表</h3>
+<table>
+<thead>
+<tr>
+<th>原想法</th>
+<th>结论</th>
+<th>落地约束</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单输入框</td>
+<td>保留</td>
+<td>默认主界面，必要反馈不省略</td>
+</tr>
+<tr>
+<td>IDC 真实文本</td>
+<td>保留</td>
+<td>不可被隐藏命令取代</td>
+</tr>
+<tr>
+<td>快捷键输入</td>
+<td>修正后保留</td>
+<td>仅插入字符，避开 IME/光标冲突</td>
+</tr>
+<tr>
+<td>完整后自动 SVG</td>
+<td>修正后保留</td>
+<td>完整与视觉提交分离</td>
+</tr>
+<tr>
+<td>俄罗斯方块式动画</td>
+<td>克制保留</td>
+<td>理解优先，可打断，不抢编辑控制</td>
+</tr>
+<tr>
+<td>未完成保留文本</td>
+<td>保留</td>
+<td>轻量提示，不画错误残缺字形</td>
+</tr>
+<tr>
+<td>构形树</td>
+<td>精确定义后保留</td>
+<td>源输入与结构模型各自负责</td>
+</tr>
+<tr>
+<td>仅靠操作符栈</td>
+<td>不作核心架构</td>
+<td>明确解析完整/未完成/非法输入</td>
+</tr>
+<tr>
+<td>直接打包 GlyphWiki</td>
+<td>修正</td>
+<td>来源、许可、版本、依赖和规范审查</td>
+</tr>
+<tr>
+<td>只有 SVG 输出</td>
+<td>扩展</td>
+<td>本地可恢复项目也重要</td>
+</tr>
+<tr>
+<td>最后处理 IME/光标</td>
+<td>否决</td>
+<td>早于动画验证</td>
+</tr>
+<tr>
+<td>完整结构立即强制合并</td>
+<td>否决</td>
+<td>交互策略不等于语法规则</td>
+</tr>
+<tr>
+<td>同一套隐藏状态驱动全部</td>
+<td>否决</td>
+<td>文本事务与显式模型分层</td>
+</tr>
+<tr>
+<td>PWA 能打开即离线</td>
+<td>否决</td>
+<td>按真实离线任务验收</td>
+</tr>
+</tbody>
+</table>
+<h3 id="doc-section-41">9.4 明确不承诺</h3>
+<ul>
+<li>任意 IDS 都生成符合大陆规范的字形，或每份结构对应唯一汉字。</li>
+<li>任意外部 SVG 自动恢复原始 IDS，或所有软件保留 SVG 元数据。</li>
+<li>首版支持所有罕见部件、完整字体生产或复杂云协作。</li>
+<li>不同数据版本始终得到相同视觉结果。</li>
+<li>自动生成即经过规范审查；IDS 即字源、字义或权威识别结果。</li>
+<li>为动画牺牲输入、光标、恢复与错误解释。</li>
+</ul>
+<h2 id="doc-section-42">10 研究 验收与风险</h2>
+<h3 id="doc-section-43">10.1 三类访谈</h3>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>具体问题</th>
+<th>判断用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最近一年遇过缺字的人</td>
+<td>最近何时、当时任务、如何解决、耗时、是否交付、长期保存要求、字体不兼容或无法再编辑经历</td>
+<td>查真实频率和替代成本，不问空泛“喜不喜欢”</td>
+</tr>
+<tr>
+<td>研究者和文献整理者</td>
+<td>如何记录罕见字、保不保留结构、是否比较方案、论文/数据库用途、最耗时及最不满意环节</td>
+<td>区分质量规范与记录/快速导出的优先级</td>
+</tr>
+<tr>
+<td>字体设计师和文字创作者</td>
+<td>是否接受文本构形、哪些可自动组合、哪些必手调、轮廓能否作草稿、SVG/项目能否接工作流</td>
+<td>判断专业补充价值而非新颖程度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="doc-section-44">10.2 三种产品实验</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>设计</th>
+<th>观察</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A 文本驱动</td>
+<td>输入 IDS，即时解析和渲染</td>
+<td>理解表达式/字形关系，能否修改，需要何种提示</td>
+</tr>
+<tr>
+<td>B 增加自动合并反馈</td>
+<td>A 加短动画与未完成提示</td>
+<td>是否帮助理解、等待过长、妨碍连续输入、对 IDS 新手有无帮助</td>
+</tr>
+<tr>
+<td>C 优先可逆编辑</td>
+<td>A 加展开、局部修改和撤销</td>
+<td>纠错速度、生成后编辑、嵌套理解</td>
+</tr>
+</tbody>
+</table>
+<p>实验用于区分用户真正重视自动生成、动画还是可逆性。若可逆性更重要，不为动画延后编辑；若动画确实改善理解且无干扰，再保留。</p>
+<h3 id="doc-section-45">10.3 观察任务与六项指标</h3>
+<p>至少观察 <strong>五位不熟悉项目的人</strong>，不急于指导，让他们完成左右结构输入、改部件、撤销、展开、SVG 导出和断网重开项目。反复找不存在按钮意味着反馈缺失；不懂为何失败意味着状态解释不足；怕改坏意味着可逆性没传达；把快捷键当特殊命令意味着文本模型表达失败。</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>测量方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>首次成功时间</td>
+<td>从打开到首个受支持表达式的可用预览或成功导出，预先统一成功定义，不以页面加载计</td>
+</tr>
+<tr>
+<td>修改成本</td>
+<td>改一部件的步骤、耗时、错误；是否重输、丢光标、破坏外层</td>
+</tr>
+<tr>
+<td>结构可逆性与恢复</td>
+<td>展开、修改、重合并、撤销重做、保存重开</td>
+</tr>
+<tr>
+<td>失败可解释性</td>
+<td>用户能否自行区分未完成、非法、缺部件、引用异常、渲染失败</td>
+</tr>
+<tr>
+<td>离线完整性</td>
+<td>初始化后断网完成构形、修改、保存、重开、导出</td>
+</tr>
+<tr>
+<td>数据可信度</td>
+<td>来源、版本、依赖、修订和审查是否可读、可解释</td>
+</tr>
+</tbody>
+</table>
+<p>这些指标应与任务替代方案对照，而非只数功能。支持更多 IDC 但修改要重输，不一定胜过支持较少结构而编辑稳定的产品。</p>
+<h3 id="doc-section-46">10.4 需求验收清单</h3>
+<ul>
+<li>[ ] 真实 IDC 可直接输入、选择、删除、复制、粘贴和中间编辑。</li>
+<li>[ ] 同一最终 IDS 的逐字、快捷键、粘贴路径语义及固定条件输出一致。</li>
+<li>[ ] 操作符元数和支持语法明确；不完整/非法/完整分别识别。</li>
+<li>[ ] 缺数据、版本/引用异常、渲染失败、未审查不混为成功。</li>
+<li>[ ] 原 IDS 始终保存，呈现后可展开，无需从图像猜测。</li>
+<li>[ ] 局部修改尽量保持外层、其他文字和逻辑选区。</li>
+<li>[ ] IME 组合不被快捷键/动画破坏；连续输入不丢字、不跳光标。</li>
+<li>[ ] 撤销重做语义清楚，视觉转换不会制造不可理解的历史。</li>
+<li>[ ] 动画短促局部可打断；断后稳定，无半透明残留。</li>
+<li>[ ] SVG 边界正确、导出可用，项目保存与 SVG 明确分开。</li>
+<li>[ ] 项目记录版本及依赖，能恢复；无法复现时说明原因。</li>
+<li>[ ] 断网实测支持范围内全闭环，而非仅启动页面。</li>
+<li>[ ] 桌面与触屏可完成基本任务，必要解释有可达入口。</li>
+<li>[ ] 目标字形质量与许可按来源、版本分别审核。</li>
+</ul>
+<h3 id="doc-section-47">10.5 五类失败风险</h3>
+<table>
+<thead>
+<tr>
+<th>风险</th>
+<th>应对</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有趣但无持续需求</td>
+<td>测真实工作、频率和重复使用，不只看演示反应</td>
+</tr>
+<tr>
+<td>结构正确但字形差</td>
+<td>分离解析、渲染和质量；高风险样本、目标体系审查</td>
+</tr>
+<tr>
+<td>只生成不能编辑</td>
+<td>可逆性与恢复纳入首版核心验收</td>
+</tr>
+<tr>
+<td>极简导致不理解</td>
+<td>最少但明确的分层状态、解释和恢复入口</td>
+</tr>
+<tr>
+<td>数据来源许可不清</td>
+<td>分代码/结构/部件/字体建清单，逐版本审核</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc-section-48">11 商业方向与长期价值</h2>
+<p>以下都是待访谈和实际使用验证的假设，不能推导可靠市场规模、付费转化率或收入预测。</p>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>可能价值</th>
+<th>风险与前提</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>个人免费工具</td>
+<td>免费构形、预览、保存和 SVG，降低试用门槛、积累反馈</td>
+<td>缺字可能低频，持续使用不足</td>
+</tr>
+<tr>
+<td>专业研究工作流</td>
+<td>数据管理、项目归档、批处理，减少真实时间成本</td>
+<td>不靠人为限制基础构形收费，需验证付费点</td>
+</tr>
+<tr>
+<td>机构团队部署</td>
+<td>可控数据版本、项目管理、特定字形集</td>
+<td>需明确需求、维护能力及授权体系，不能凭想象认定成熟市场</td>
+</tr>
+<tr>
+<td>字体与数据服务</td>
+<td>整理部件、审核字形集、构形数据处理</td>
+<td>维护成本和质量责任更高</td>
+</tr>
+</tbody>
+</table>
+<p>先验证真实任务，再判断用户愿为编辑体验、专业数据、批量工作流还是机构维护付费，不急着锁定订阅。</p>
+<p>长期壁垒不应只是单输入框、快捷键、150–200 毫秒动画或 KAGE/SVG 集成。更值得积累的是：可靠的嵌套编辑和中间光标模型；可追溯的来源/版本/依赖；可移植项目格式；用户真实研究和创作资产；明确范围内经过审查的目标字形数据。大陆字形支持需要长期数据工作，不是换一个数据源即可完成。</p>
+<h2 id="doc-section-49">12 来源与待核事项</h2>
+<p>以下保留原材料的重要来源并移除跟踪参数。引用链接不是对当前状态的自动背书；正式采用前需核查具体版本、许可证和表述。配套的外部核查记录可补充或修正本节，不应静默把旧假设改成事实。</p>
+<h3 id="doc-section-50">12.1 标准与浏览器</h3>
+<ul>
+<li><a href="https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-18/">原材料引用的 Unicode 18.0 核心规范第 18 章</a>：<strong>页面可读，版本状态有矛盾</strong>：2026-10-20 核查时 latest 跳转 18.0.0，但版本主页同时残留 preliminary draft 提示。不能据此下发布日期定论，也不能把链接判成不存在。</li>
+<li><a href="https://www.unicode.org/L2/L2012/12081-ids.html">Unicode L2/12-081 IDS 文件</a>：历史讨论资料，不能不加区别地当成现行规范。</li>
+<li><a href="https://www.unicode.org/irg/pp/PPv18.html">Unicode IRG PPv18</a>：IRG 语法/流程相关资料，需核对与采用 Unicode 版本的关系。</li>
+<li><a href="https://www.w3.org/TR/input-events-2/">W3C Input Events Level 2</a>：输入事件参考；组合事件还需对应事件规范及设备实测。</li>
+<li>PUA：原材料提到 Unicode 与微软文档但未给具体地址；<strong>待补对应官方引用</strong>，不编造链接。</li>
+</ul>
+<h3 id="doc-section-51">12.2 引擎与结构数据</h3>
+<ul>
+<li><a href="https://github.com/kurgm/kage-engine">kurgm/kage-engine</a></li>
+<li><a href="https://www.npmjs.com/package/%40kurgm/kage-engine">@kurgm/kage-engine npm</a></li>
+<li><a href="https://github.com/cjkvi/cjkvi-ids">CJKVI-IDS</a></li>
+<li><a href="https://github.com/Transfusion/cjkvi-ids-unicode">Unicode-only CJKV IDS</a></li>
+</ul>
+<p>核查重点：引擎接口、真实渲染能力、GPL 版本、各数据文件许可、非 Unicode 实体引用、多种结构表达和再分发条件。</p>
+<h3 id="doc-section-52">12.3 竞品与生态</h3>
+<ul>
+<li><a href="https://hanzicraft.com/">HanziCraft</a></li>
+<li><a href="https://github.com/toyjack/yaist">YAIST</a></li>
+<li><a href="https://github.com/kurgm/kage-editor">KAGE Editor</a></li>
+<li><a href="https://github.com/kawabata/glyphwiki-afdko">GlyphWiki 字体生产工具 glyphwiki-afdko</a></li>
+<li><a href="https://github.com/takushun-wu/WenJinMincho/blob/main/README.md">文津宋体</a></li>
+<li><a href="https://fontforge.org/docs/">FontForge 官方文档</a></li>
+<li><a href="https://www.fontlab.com/font-editor/fontlab/">FontLab</a></li>
+<li><a href="https://fontcreator.com.cn/features.html">原材料的 FontCreator 中文页面</a>：<strong>官方归属待核</strong>，正式描述优先开发商官方站。</li>
+</ul>
+<h3 id="doc-section-53">12.4 2026-10-20 核查增补</h3>
+<p>本轮技术核查详见配套 <code>research.md</code>，范围是解析、编辑边界和部分许可，并未重做全部竞品或市场调查。</p>
+<ul>
+<li>Unicode 17 与本次可读的 Unicode 18 第 18 章，对以下 <strong>17 个 IDC</strong> 元数一致。Demo 固定使用此表，不宣传实现全部最新版字符属性。</li>
+<li>一元：<code>⿾</code>（水平镜像）、<code>⿿</code>（旋转）。三元：<code>⿲</code>、<code>⿳</code>。二元：<code>⿰ ⿱ ⿴ ⿵ ⿶ ⿷ ⿸ ⿹ ⿺ ⿻ ⿼ ⿽ ㇯</code>。</li>
+<li><code>⿼</code> 是右包围，<code>⿽</code> 是右下包围；<code>㇯</code> 以原部件及待移除部件为两个操作数，语法完整不代表可做出有意义的减法。不以覆盖白块或重叠冒充减笔。</li>
+<li>严格 IDS 叶节点范围需按规范处理表意字符、部首、CJK 笔画 U+31C0–U+31E5、私用字符、全角问号；不把 ASCII、emoji 和普通标点悄悄当严格部件。<code>〾</code> 是序列外近似指示符，不是另一种一元 IDC。支持自由创作扩展时需明确声明。</li>
+<li>五个操作符 <code>⿼ ⿽ ⿾ ⿿ ㇯</code> 的引入可参见 <a href="https://www.unicode.org/L2/L2022/22241.htm">UTC 173 决议 173-C18/C19</a>。另见 <a href="https://unicode.org/versions/Unicode17.0.0/core-spec/chapter-18/">Unicode 17 第 18 章</a>、<a href="https://www.unicode.org/versions/latest/">Unicode latest</a> 和 <a href="https://www.unicode.org/versions/Unicode18.0.0/">Unicode 18 版本页</a>。</li>
+<li>混排的 <code>⿰木木木</code> 应是一个完整 IDS 加普通 <code>木</code>。空格/换行可作为明确边界；不得删除不支持字符后伪造成功。源范围应与 textarea 的 UTF-16 偏移一致，词法按码点遍历；深度/长度上限是应用限制，不是 Unicode 规定。</li>
+<li>CJKVI-IDS 官方 README：<code>ids.txt</code> 来自 CHISE，遵其条款；<code>ids-ext-cde.txt</code> 非直接来自 CHISE，不受同一 GPLv2 限定，<strong>不等于公有领域</strong>；其他数据标 GPLv2。数据含 CDP 实体及地区后缀，不能整列当纯 Unicode IDS。</li>
+<li>GlyphWiki 当前官方许可页读取失败，<strong>许可未完成核实</strong>：<a href="https://glyphwiki.org/wiki/GlyphWiki:%E3%83%87%E3%83%BC%E3%82%BF%E3%83%BB%E8%A8%98%E4%BA%8B%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9">待核入口</a>。不能断言全部数据 CC0；本次 Demo 不内嵌该数据。</li>
+</ul>
+<h3 id="doc-section-54">12.5 尚未解决的决策</h3>
+<ul>
+<li>最终 IDC/IDS 支持范围和规范版本；混合普通文本的边界与解析恢复策略。</li>
+<li>默认快捷键、提交延迟、动画参数和撤销粒度。</li>
+<li>具体字形数据源、依赖打包大小、许可证和大陆规范审核方法。</li>
+<li>项目格式及旧版数据无法复现时的迁移流程。</li>
+<li>SVG 在目标文档/字体软件的真实导入行为。</li>
+<li>优先客群的重复使用需求、付费意愿和可持续商业模式。</li>
+</ul>
+<h2 id="doc-section-55">13 对外简述</h2>
+<p>结构组字让你直接写出一个字的构成。输入 IDC 和部件，系统理解它们之间的关系，在数据允许时生成字形。你可以展开、修改、重新生成、导出 SVG，并保存为未来还能继续编辑的构形记录。</p>
+<p>它的目标不是让用户更快得到一张汉字图片，而是让汉字结构成为可以直接书写、理解、反复修改、重新生成和长期保存的对象。是否能形成独立市场，仍需真实用户任务、竞品对照和持续使用数据证明。</p>
+<h2 id="doc-section-56">14 Demo 版本与正式产品的边界</h2>
+<h3 id="doc-section-57">14.1 版本记录</h3>
+<ul>
+<li><strong>0.1.0</strong>：2026-10-20 首次交付的双视图构形工作台。按维护者本轮指定，正式归入 0.1.0；最初导出项目中 appVersion 曾写为 1.0.0，0.1.1 仍兼容这些 formatVersion=1 的项目，不擅改已保存文件。</li>
+<li><strong>0.1.1</strong>：同日按维护者反馈迭代为极简首屏与真实行内编辑。输入与字形在同一 contenteditable 画布排版，不用透明文本层叠加预览冒充所见即所得。</li>
+</ul>
+<h3 id="doc-section-58">14.2 0.1.1 的实现与边界</h3>
+<table>
+<thead>
+<tr>
+<th>能力</th>
+<th>当前实现</th>
+<th>不可推导的承诺</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>首屏</td>
+<td>弱化品牌及版本、单编辑区域、插入与更多入口</td>
+<td>不声称复制了未经核对的 TouchAI 页面或品牌设计</td>
+</tr>
+<tr>
+<td>行内呈现</td>
+<td>完整且有数据的 IDS 在输入区原位呈现 SVG；点击或键盘展开源文修改</td>
+<td>未完成、缺件、未知布局继续保留文字，不假造结果</td>
+</tr>
+<tr>
+<td>源数据</td>
+<td>唯一权威 source，DOM 和字形为派生视图；源范围采用 UTF-16</td>
+<td>不是从任意外部 SVG 识别 IDS</td>
+</tr>
+<tr>
+<td>解析与绘制</td>
+<td>17 IDC 元数；12 常用布局；17 自绘简笔部件</td>
+<td>不是完整 Unicode 属性验证器、KAGE 集成或规范字体引擎</td>
+</tr>
+<tr>
+<td>编辑与选区</td>
+<td>原位展开、跨字形纯 IDS 复制/剪切、纯文本粘贴、撤销/重做</td>
+<td>真实浏览器及输入法矩阵仍需实测</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>收起字形按一个对象删除，可撤销；精细修改先展开</td>
+<td>不承诺所有设备原生删除事件完全一致</td>
+</tr>
+<tr>
+<td>IME</td>
+<td>组合期间保留原生 DOM 控制；旧会话回调不得结束新会话</td>
+<td>状态机测试不等于真实中文输入法验收</td>
+</tr>
+<tr>
+<td>保存与导入</td>
+<td>formatVersion=1 JSON 保持兼容；版本/依赖校验；过期导入结果不覆盖新输入</td>
+<td>无长期任意版本迁移或跨设备实时同步</td>
+</tr>
+<tr>
+<td>本地草稿</td>
+<td>保存失败提示；异常旧草稿保留；检测其他页面写入后暂停自动覆盖</td>
+<td>浏览器存储不是跨设备事务，也不是唯一备份</td>
+</tr>
+<tr>
+<td>交付与离线</td>
+<td>单 HTML，无运行网络依赖；文档内嵌并可下载</td>
+<td>不是可安装 PWA；实际断网重开仍列设备验收项</td>
+</tr>
+<tr>
+<td>质量</td>
+<td>明确结构示意、未规范审核；不引入未核许可的字形数据</td>
+<td>不作为出版成品或“大陆规范字形”</td>
+</tr>
+<tr>
+<td>信息披露</td>
+<td>树、诊断、项目、数据边界与文档按注意范围展开</td>
+<td>不把全量调试字段常驻首屏</td>
+</tr>
+</tbody>
+</table>
+<p>约束：源文本最多 4000 个 UTF-16 单位，嵌套最多 32 层，项目最大 200 KB；展开与收起不新增文本历史，约 300 ms 停顿后更新呈现。拖放暂禁用，以纯文本粘贴代替，防止 HTML 或 SVG 结构污染源文。</p>
+<h3 id="doc-section-59">14.3 设计与开发依据</h3>
+<p>本项目采用极简默认界面、按需披露、输入路径等价和真实状态原则；保持领域模型与 DOM 适配边界、单一变化源、异步归属与故障处理。</p>
+<p>源模型、DOM 偏移转换与浏览器事件分别组织；本轮未实质改变的旧 Core 解析和简笔绘制保留兼容边界。接管评估是 Agent 的代码审阅，不代表维护者已经完成审美审批或真实接管。</p>
+<p>最终检查继续区分纯核心测试、DOM 模拟与实际浏览器测试。本次运行环境未能启动浏览器，视觉、触屏、真实 IME、实际下载和断网重开不列为已验证。</p>
+</article></div></dialog>
+<script type="application/json" id="product-markdown">"# 结构组字产品定义与验证方案\n\n> 产品代号：结构组字（暂名）  \n> 定位：离线优先、以真实 IDS 文本为核心的极简汉字构形编辑器。  \n> 本文合并产品探索和竞品分析两轮材料；需求、设计建议、用户故事与市场假设分别表述。产品承诺是待实现和验收的目标，不代表本次演示已具备全部能力。公开项目能力和许可应以对应版本及来源核查为准。\n\n## 1 产品价值与范围\n\n### 1.1 要解决的问题\n\n古籍、族谱、地方志、姓名及特殊专业材料中，可能存在当前输入法或字体无法处理的字形。最初故事中的学者先查字典、再检索 Unicode、再试输入法，均未找到所需字，最终只能写“此处原字为某字形，暂以图片代替”。现实中应分别检查输入法找不到、字体缺字、地区字形不符和真正未编码，不能把这些原因合并判定。研究者常用图片代替，但图片难以按结构检索、复制后继续编辑，也容易丢失部件来源和构形过程。即使画出了字，后续修改、引用、交换和长期复现仍然困难。\n\n结构组字的目标不是单次“输入后生成 SVG”，而是让一个构形经历完整生命周期：**书写结构 → 解析 → 呈现 → 展开 → 修改 → 撤销 → 导出 → 保存 → 未来恢复**。对象同时保留源表达式、结构关系和具体数据生成的视觉结果。\n\n例如，研究者输入 `⿰木水`。这是演示性结构表达式，不保证对应规范汉字。数据充分时可获得预览、导出 SVG，并把原表达式交给同事；发现左侧部件有误时直接修改。若缺少绘制数据，则保留表达式、说明缺失，不能假装生成了正确字形。\n\n| 能力 | 普通文本工作流中的常见情况 | 产品目标 |\n| --- | --- | --- |\n| 输入已编码字符 | 支持 | 保持普通文本输入 |\n| 表达未编码字形结构 | 说明文字、图片或专用工具 | 直接书写 IDS |\n| 将结构转为视觉结果 | 通常需外部工具 | 对支持的数据生成字形 |\n| 修改构成 | 重做图片或寻找原设计文件 | 展开源表达式，局部修改 |\n| 保存构形来源 | 往往不完整 | 保存来源、依赖、版本和修订 |\n\n### 1.2 正式产品定义\n\n产品计划采用离线优先 PWA，以一个主要输入区域承载自然文本与 IDC 输入。解析器将源文本转为结构模型，数据适配层解析部件依赖，渲染器根据可用字形数据生成 SVG。可逆编辑不是从 SVG 猜测结构，而是恢复一直保留的原始 IDS。\n\n第一阶段不替代完整字体编辑器、不建设公共 Wiki 或云端协作平台，不承诺任意 IDS 都可生成规范汉字，也不承诺每份表达式对应唯一字符。首要目标是证明：文本驱动的构形及可逆编辑，能够降低真实任务成本。\n\n### 1.3 术语与责任边界\n\n| 概念 | 含义及边界 |\n| --- | --- |\n| IDC | 描述部件相对结构的真实 Unicode 字符；快捷键仅为输入方式 |\n| IDS | 用 IDC 与描述成分形成的结构序列；并非完整字义、字源或唯一字形定义 |\n| 未编码字符 | 没有对应标准 Unicode 编码的字符；不能仅由显示失败判定 |\n| 缺字 | 当前字体或软件无法正确显示所需字符；可能已有编码 |\n| 异体字形 | 同一字符在地区、规范或文献场景中的不同形式 |\n| KAGE 数据及引擎 | 具体笔画、几何及部件引用数据与绘制机制；不是 IDS 本身 |\n| SVG | 一次渲染的视觉输出；不天然包含可恢复的完整构形语义 |\n| 项目文件 | 保存构形、来源、版本、修订与必要依赖的可编辑资产 |\n| 私用区 PUA | 依赖使用者约定解释的码位；不保证跨系统语义一致，也不应作为对象唯一身份 |\n\nIDS 描述构件关系，不规定唯一绘制结果；相似结构不等于文字学上的同一个字。系统支持 IDC 不意味着规范要求它必须重建字形。相关 Unicode 规范版本与原文引用见第 12 节。2026-10-20 核查发现 Unicode 18 的章节可读，但版本页存在状态矛盾；不据此断言发布日期或完整实现最新标准。\n\n## 2 不可混淆的产品原则\n\n### 2.1 真实文本优先\n\n逐字输入、快捷键插入、复制粘贴，最终都产生相同的 IDC 字符序列。IDC 可选择、复制、粘贴、退格删除、中间修改、撤销和重做。\n\n不采用“快捷键创建隐藏左右节点，再把部件塞入节点”的独立命令系统。快捷键只产生普通字符插入事务，不改变表达式语义。相同有效 IDS，在同一解析器、渲染器、数据版本和配置下，应产生相同结构和构形结果。\n\n原提案的 `Ctrl+方向键` 只保留为待测试候选，不写死默认映射：它可能与按词移动光标、系统或输入法操作冲突。组合输入期间不触发构形快捷键；移动端基本操作不能依赖物理键盘。\n\n### 2.2 源文本与结构模型各有权威范围\n\n**源文本是构形表达的权威输入；构形树是解析后的权威结构模型。** 二者不能悄悄覆盖彼此，也不能把节点 ID、缓存或隐藏状态当作源文本的替代品。\n\n`⿰⿱宀女木` 的外层是左右结构，左侧为 `⿱宀女`，右侧为 `木`：\n\n```text\n⿰\n├── ⿱\n│   ├── 宀\n│   └── 女\n└── 木\n```\n\n纯文本重新解析也能实现局部修改，不应声称“没有树就做不到”。结构模型的价值是清楚关联源范围、SVG、局部重绘、历史、光标和缓存。节点按需保存稳定 ID、类型、操作符、子节点、源文本范围、语法状态、渲染状态和版本/缓存标识。\n\n### 2.3 完整 可渲染 合格是不同状态\n\n`⿰氵青` 可以语法完整，却缺少 KAGE 定义、递归依赖或适合目标地区的部件。不能只用一个“成功”覆盖全部阶段。\n\n| 独立维度 | 状态示例 | 需要回答的问题 |\n| --- | --- | --- |\n| 语法 | 未完成、完整、非法 | 操作符和操作数关系是否成立 |\n| 数据 | 齐全、缺失、版本异常、引用异常 | 绘制所需依赖是否可用 |\n| 渲染 | 未渲染、成功、失败 | 是否实际生成视觉结果 |\n| 质量审查 | 未审查、待确认、已审查、已知问题 | 是否符合目标风格、规范和用途 |\n\n结构成功不等于渲染成功，渲染成功不等于规范合格；近似结果应标明近似之处。结构完整但数据缺失时，应显示例如“结构完整，但缺少一个部件的绘制数据”，并继续保存源文本。\n\n## 3 编辑与呈现体验\n\n### 3.1 一个主输入区 必要时解释\n\n默认打开即可输入，不设强制欢迎页、教程、模式切换或常驻候选栏。普通文字保持普通文本，不完整 IDS 保持可读。避免把部件选择、结构按钮、树面板、属性、候选与导出工具全部铺开，让用户为了写一个字操作复杂软件。\n\n极简不等于无反馈。用户需要知道为何未生成、缺什么、如何展开和导出。桌面悬停或光标定位时可显示原始 IDS、部件、数据状态及操作入口；触屏使用点击或等效操作。解释按需出现，而不是要求用户理解内部引擎。\n\n能力分三层：\n\n1. 核心：输入、解析、呈现、局部修改、展开、撤销、SVG 导出。\n2. 必要解释和恢复：原 IDS、部件、数据来源/状态、展开入口。\n3. 后续高级流程：项目文件、数据修订、批量构形、多字形比较、字体生产、协作与长期版本。不全部放进常驻主界面。\n\n### 3.2 完整与提交分离\n\n用户输入 `⿰`，状态为缺两个操作数；输入 `⿰人`，仍缺一个；输入 `⿰人木`，结构完整。未完成时可以用极细虚线、淡化提示或轻微占位说明等待，但不生成错误的残缺字形。\n\n“完整”由语法决定；“提交为字形呈现”由交互策略决定。用户可能马上改部件，因此不应一完整就强制替换为难编辑的 SVG。可等待短暂停顿、允许明确提交、保留文本、随时展开，并在继续输入时根据光标及结构重判。\n\n原材料提出约 **300 毫秒**提交延迟，作为实验起点而非最终标准；需测试输入速度、表达式长度和不同 IME。\n\n### 3.3 动画服务理解而非游戏化指标\n\n建议从 **150–200 毫秒**局部转换试验：字符与部件向中心靠拢，文字淡出，SVG 从略小尺寸显现，光标仍在合理位置。可用于说明结构完成、内层完成、缺操作数或局部修改影响。\n\n动画必须短促、局部、可打断。连续输入更安静，不整页抖动、不强制完整播放，不增加音效、分数、连击、排行榜或奖励系统。动画不是数据更新的前提；被打断后直接进入稳定状态，不能遗留半透明节点或把新字符插错位置。\n\n### 3.4 输入法 光标 撤销先于动画\n\n不能只监听 `keydown`。需结合 `beforeinput`、`input`、`compositionstart`、`compositionupdate`、`compositionend`、选区和组合状态。规范只是基础，不能替代真实浏览器、系统和中文输入法测试。\n\n主要风险：拼音候选未确认时，方向键被误当作 IDC 快捷键；中间编辑时渲染更新 DOM，把光标移到末尾。输入正确性优先于视觉效果。\n\n建议验证顺序：普通文本 → 中间移动光标 → 正确插入/删除 → IME → 粘贴/替换 → SVG 后逻辑选区恢复 → 撤销/重做 → 动画。\n\n撤销围绕用户理解的编辑事务，而非 DOM 或渲染步骤。已呈现字形应能恢复可编辑表达式，但自动视觉合并不一定单独占用一条撤销记录；输入、结构修改、展开与呈现的历史粒度仍需明确测试。不能完全依赖复杂 `contenteditable` 的浏览器默认历史。\n\n## 4 解析 架构与数据治理\n\n### 4.1 增量输入模型\n\n解析器必须处理嵌套、中间编辑、删除操作符、不完整粘贴和结构更换，而不是只解析已完成字符串。\n\n| 输入 | 预期解释 |\n| --- | --- |\n| `⿰` | 缺两个操作数 |\n| `⿰木` | 缺一个操作数，可继续输入 |\n| `⿰木水` | 左右结构完整 |\n| `⿰⿱宀女木` | 嵌套结构完整 |\n| 修改内层 `⿱` 为 `⿰` | 更新受影响结构，保留外层与其他文字 |\n\nIDC 不只有左右、上下二元结构，也包括包围、三元和规范版本相关的一元形式。实现应明确采用的 IDS 语法与 IDC 集合，逐个定义元数，不把所有操作符当成等待两个操作数。只支持一部分时，应声明子集，而不是声称完整规范支持。\n\n推荐数据流：文本事务 → 确定变更范围 → 更新解析树 → 失效受影响缓存 → 解析部件依赖 → 局部渲染 → 恢复逻辑光标。稳定节点 ID、版本与缓存用于减少重算，不限制用户直接编辑文本。\n\n### 4.2 IDS KAGE SVG 分层\n\nIDS 表达关系，KAGE 数据及绘制策略决定具体几何，SVG 记录结果。同一 IDS 可因数据、部件定义和风格不同产生不同字形。保持适配层与渲染接口稳定，有利于替换引擎和支持多风格，而不要求用户重新学习语法。\n\nSVG 中的 `data-ids` 等元数据只是附加信息；外部软件可能移除它，不能据此承诺任意 SVG 可恢复结构。\n\n### 4.3 三层数据治理\n\n| 层 | 职责 |\n| --- | --- |\n| 原始来源 | 原记录、版本、来源标识和引用关系；不混入无记录人工修改 |\n| 目标字形 | 按大陆或其他目标体系筛选、替换、修订，记录每次修改 |\n| 构形映射 | IDS 操作数到具体定义的映射；处理别名、缺失、引用链和版本差异 |\n\n解析器不负责来源选择，渲染器不负责规范审查。不能把 GlyphWiki 全部数据直接当作已审查大陆字形全集。不同体系的部件即使能画出，也可能比例、连接、穿插或风格不协调。\n\n正式支持的部件/结果应记录：来源、数据版本、目标字形体系、依赖关系、人工修订、审查状态、已知问题。不要没有定义测试集、标准和统计方法就宣称“准确率 97%”。\n\n可从 **30 个有意挑选的高风险样本**开始，而非只测容易成功的常用字：复杂笔画、位置变体、递归引用、跨源差异、缺失/版本异常、容易混淆日本与大陆字形的样本。目标是找出自动处理、人工修订及暂不支持的边界，不是做漂亮成功率。\n\n### 4.4 许可证独立核对\n\n分别建立代码、IDS 结构数据、部件数据、字体和导出产物的许可清单。开源不等于任何组合与重新分发均被允许。\n\n2026-10-20 核查确认 `@kurgm/kage-engine` 仓库明确 GPL v3；采用时仍须核对具体版本及分发义务，不能因浏览器可运行就认定适用所有发布模式。CJKVI-IDS 不同文件可能有不同许可；GlyphWiki 数据、引用内容、KAGE 引擎与最终字体也需分别审核。核查结果以第 12 节及配套核查记录为准。\n\n### 4.5 保留精修出口而不提前复制字体软件\n\n纯 IDS 无法表达所有轮廓和笔画细节。例如 `⿰女木` 的左部倾角不符合目标文献时，用户可能要改一条笔画。模型可预留部件定义、局部位置调整、轮廓修订和数据版本，但第一版不必实现完整画布、控制点或大量几何参数。\n\n## 5 离线 保存与交换\n\n### 5.1 离线能力等级\n\n| 等级 | 定义 | 产品判断 |\n| --- | --- | --- |\n| L1 | 已缓存界面、脚本等，页面可离线打开，部分数据缺失 | 早期原型目标，不能代表完整离线 |\n| L2 | 初始化后，解析器、渲染器、支持的字形及全部依赖本地可用；离线编辑、生成、导出 | 第一版合理正式目标 |\n| L3 | 项目独立保存、重开、跨设备导入，保留原 IDS 和版本及必要复现信息 | 本地优先的进一步目标 |\n\n只缓存 HTML/JS 不够。断网验收必须实际完成编辑、修改、生成、导出和恢复支持范围内的项目。联网更新数据不能悄悄改变旧项目含义。\n\n### 5.2 三种输出不要混为一谈\n\n1. **SVG**：用于显示、嵌入、文档、排版和视觉讨论；应有明确几何边界和兼容性。它不是标准 Unicode 语义字符，不天然参与全部文本搜索或输入，各软件支持也不同。\n2. **结构化项目**：继续编辑与长期复现。建议保存原 IDS、项目结构/稳定节点 ID、部件引用、来源和数据版本、应用及渲染器版本、可选几何修订、必要 SVG 快照、生成环境和格式版本。\n3. **字体或 PUA 输出**：后续专业需求，需要字体生成、码位分配和互操作设计，不是 SVG 导出的免费附属能力。\n\n仅保存远程部件名称不足以保证几年后能重现；需定义依赖打包或可恢复的版本化引用策略，并遵守数据许可。项目对象保留稳定身份，不以 PUA 码位作为全球唯一标识。\n\n应用版本、渲染器版本、字形数据版本、项目格式版本应分别记录。恢复时优先复现原结果，缺旧数据时说明原因；改用新数据必须提示可能变化。第一版用本地项目文件验证价值，不需要云账号与复杂项目平台。\n\n## 6 六个核心用户故事\n\n> 以下均为设计叙事，用于检验假设，不是已经完成的访谈或已证实的需求。\n\n### 6.1 林先生首次上手\n\n林先生是构形爱好者，不懂字体设计，曾因部件面板与选项繁多放弃工具。他打开一个输入区，输入 `⿰木水`，停顿后看到字形；悬停查看 IDS，展开后把 `木` 改为 `人`，再次观察。验证首次成功时间、能否独立开始、是否理解仍可编辑，以及是否区分缺数据与未完成。\n\n### 6.2 陈女士局部纠错\n\n陈女士为教学材料输入 `⿱宀女`，发现上方部件不对。她展开并替换 `宀`，其他文字与外层结构不变。验收目标是生成后的修改不比第一次输入复杂得多；展开依赖保存的源记录，而非图像识别。\n\n### 6.3 赵先生多路径输入\n\n赵先生粘贴同事发送的嵌套 IDS，次日使用快捷键输入同一表达式。他期待解析、结构关系和视觉输出相同。固定引擎、数据与配置，比较逐字、快捷键和粘贴路径；不一致即缺陷，不能要求用户改变习惯。\n\n### 6.4 王先生遇到数据缺失\n\n王先生输入未编码古文字形的完整 IDS，却无法预览。系统明确“结构完整，但缺少部件”，他可保留记录、稍后补数据或换已有定义。有近似输出时标注限制。验证用户能否定位问题，而不是反复删字猜测语法错误。\n\n### 6.5 李女士断网工作\n\n李女士在家完成初始化后到图书馆整理材料。网络中断，她仍能编辑已支持构形、重开本地项目并导出 SVG。网络恢复可检查数据更新，但不能自动改旧项目。此故事验证的是完整任务，不只是页面启动。\n\n### 6.6 三年后的接收者\n\n研究者保存 SVG、IDS 和版本，三年后交给另一人。接收者能了解原始表达式、所用数据、是否可复现及升级可能变化，并继续编辑。验证可交换构形记录的价值，但不据此提前建设协作平台。\n\n## 7 用户与市场假设\n\n### 7.1 六类相关市场\n\n| 类别 | 用户任务 | 典型项目/替代方案 | 产品关系 |\n| --- | --- | --- | --- |\n| 构形查询 | 一个字由什么组成 | CJKVI-IDS、HanziCraft | 知识和入口参考 |\n| IDS 检索 | 哪些字有某种结构 | YAIST、IDS 数据库 | 上游工具及相邻工作流 |\n| 字形绘制编辑 | 调部件、笔画和轮廓 | KAGE Editor、GlyphWiki | 直接技术及任务竞品 |\n| 字体设计 | 管理大量字形并生产字体 | FontForge、FontLab、FontCreator | 专业替代与下游 |\n| 学习研究 | 理解、记忆和分析汉字 | HanziCraft、研究工具 | 潜在用户来源 |\n| 未编码/特殊字形处理 | 表达、显示、保存、分享 | 自定义字体、PUA、图片/SVG | 核心机会假设 |\n\n公开工具生态存在，不等于证明独立付费市场存在；此分析不是对所有商业、封闭或中文互联网产品的穷尽审计。差异化应靠完成任务的成本验证，不能声称市场上无人覆盖类似环节。\n\n### 7.2 七类潜在用户\n\n| 用户 | 主要可能价值 | 必须验证的限制 |\n| --- | --- | --- |\n| 汉字文化爱好者 | 拆字、组合、即时反馈 | 新鲜感之后是否持续创作 |\n| 古文字与文献研究者 | 准确结构、来源、追溯、长期编辑、文档可用 | 需求频率、准确性与付费意愿 |\n| 语言学和汉字研究人员 | 部件分布、结构记录、批量导入/搜索/导出 | 数据互通可能比动画重要 |\n| 教育工作者 | 部件关系和 IDS 互动实验 | 结构不是字源，练习符号不是规范字 |\n| 字体与文字设计师 | 初始构形、减少重复操作、导入精修 | 是否真节省时间、轮廓质量与来源 |\n| 非遗 地方文献 特殊字符整理人员 | 姓名、地方用字和专业材料的稳定记录传递 | SVG 无法独自解决文献规范与字体兼容 |\n| 独立创作者 | 小说、游戏、世界观和符号系统创作 | 不一定追求大陆规范，更重速度和自由 |\n\n第一轮材料的目标人群概括为爱好者、研究教学、字体工作者；第二轮进一步细分为七类。建议验证优先级：①未编码字形创作者及特殊字符整理者；②研究者与文献工作者；③爱好者与教育工作者。这是任务验证顺序，不是市场规模排名或已选定付费客群。\n\n### 7.3 任务替代比功能名称更重要\n\n用户可能只想让地方志中的字正常打印并被别人查看。若换一个覆盖更广的字体、输入法或字符检索就能解决，不应要求他学习构形工具。只有需自行构造且未来还要改的任务，才更可能体现产品价值。\n\n输入法、字符搜索、扩展字体、PUA 字库、插入图片和专业绘图都是任务替代。必须验证“字形如何进入真实文档，并在他人环境中继续可用”，而非只展示编辑器内效果。\n\n## 8 竞品与差异化\n\n> 下表归纳原材料的公开资料判断，不是当前全部功能的完整审计。产品版本、功能和许可均须结合官方来源复核；不将“非核心”解释为“完全不支持”。\n\n### 8.1 逐项分析\n\n| 项目 | 已有定位及能力概述 | 对结构组字的启示与边界 |\n| --- | --- | --- |\n| CJKVI-IDS | 多来源汉字结构描述、编码约定及许可；例如 `明` 可分析为 `⿰日月` | 是结构知识来源，不是绘图引擎；描述可多解、包含实体引用或源差异。查到 `⿰木某` 后，编辑器应能继续修改，而非止于数据库没有答案 |\n| HanziCraft | 汉字层级分解、部件、拼音和释义等学习功能；如 `想` 的 `相` 与 `心` | 借鉴逐层解释，但不做百科或常驻树面板。查询既有字与改结构生成可编辑对象不同；学习进度等具体功能待官方核查 |\n| YAIST | Yet Another IDS Search Tool，静态 Web IDS 查询；原材料描述结果可含 GlyphWiki SVG、码点、笔画、区块和异体信息 | `⿰木子` 是在现有集合搜索；编辑器则可由 `⿰木水` 改 `水` 为 `火`、再改上下关系。搜索与构造的默认任务不同，但功能可能趋同，不能断言独占优势 |\n| KAGE Editor | 图形字形编辑；原材料列出选择/移动笔画和部件、控制点、尺寸、拆分、搜索插入、撤销重做、手写、网格、风格及快捷键 | 最直接竞品；图形精修已有基础，不能把“能编辑”当新发明。文本 `⿰人木` 改 `⿰女木` 或更省操作，但要用实测证明。Chrome/Firefox/Safari 测试声明和具体版本待核 |\n| GlyphWiki | Wiki 式字形数据生态，KAGE 编辑及 SVG/字体生产流程 | 借鉴可追溯部件和维护资产，不急做账号、公共库、审核、分支与协作。先个人创建，再长期保存，最后多用户积累 |\n| 文津宋体 | 大字符集宋体项目；原材料称结合思源宋体及衍生、GlyphWiki 和修改版 KAGE，并关注大陆字形 | 可参考技术与数据工程，不能证明编辑器市场。核对实际版本、覆盖与许可；它是字体而非交互编辑器。生成能力、比例风格、规范审查仍需分开 |\n| FontForge | 开源字体编辑、轮廓与编码管理 | 适合完整字体流程；例如 `⿰某某` 这样的单个特殊字形构造任务可能不需要这么大工具，但专业需求不能被轻视 |\n| FontLab | 专业字形设计、格式转换和 OpenType 能力 | 完整字体生产的替代方案或下游精修；不能用极简工具宣称替代全部能力 |\n| FontCreator | 字体创建、修改及多格式工作流 | 同属专业替代；原材料中文域名的官方性待核，优先核对开发商来源 |\n\n### 8.2 竞争维度矩阵\n\n| 项目 | 结构查询 | 图形编辑 | 文本构形角色 | 未编码字形潜力 | 完整字体生产 |\n| --- | --- | --- | --- | --- | --- |\n| CJKVI-IDS | 强/数据 | 非核心 | 描述数据 | 依赖其他工具 | 否 |\n| HanziCraft | 强/学习 | 非核心 | 非核心 | 非核心 | 否 |\n| YAIST | 核心 | 非核心 | IDS 查询条件 | 受数据与功能限制 | 否 |\n| KAGE Editor | 部件相关操作 | 核心 | 以图形编辑为主 | 自定义字形数据 | 非主要定位 |\n| GlyphWiki | 字形与部件生态 | 支持相关流程 | 依赖数据和工具 | 相关基础设施 | 可参与生产生态 |\n| FontForge / FontLab | 非主要定位 | 核心 | 非核心 | 字体制作可实现 | 核心 |\n| 结构组字目标 | 适度支持 | 第一版有限 | 核心编辑对象 | 核心目标之一 | 不作初期核心 |\n\n不必每项胜过竞品。关键差异待验证：输入到结果步骤、中间状态、局部修改、展开撤销、可靠保存和离线。结构组字摆脱的是对“已有字符目录”的完全依赖，不是对绘制数据的依赖。\n\n## 9 机会 路线与非目标\n\n### 9.1 七项后续机会\n\n1. **构形草稿纸/实验室**：快速比较 `⿰木水` 与 `⿱木水`，降低试验成本。“十秒钟试验”是故事，不保证十秒生成规范字；比较多候选可先用历史快照/项目副本，而非立即增加候选栏。\n2. **可分享的构形对象**：同事拿到 IDS、SVG、来源、版本、限制与依赖，能继续编辑，而不只是看图片。三小时制作的特殊字形，三个月后仍有修改价值。\n3. **教学实验**：学生输入 `⿰日月` 再改上下结构，学习关系、语法和构形/字形区别；可研究教学练习文件，不开发首版课程、积分或学习管理系统。\n4. **可追溯实验记录**：记录初始表达式、部件替换、导致最终结果的变更和参与数据；轻量撤销与长期版本是不同需求，可共用事务基础但不等于立即造版本控制平台。\n5. **结构化符号创作**：小说/游戏作者组合汉字式部件、左右和包围结构，导出到地图、道具、界面。自定义符号不自动成为标准汉字或获得编码。\n6. **一组字的共享关系**：研究共同部件、局部结构、影响范围、缺数据和多版本；先建立模型，等批量真实需求出现再考虑图谱界面。\n7. **数据质量维护工具**：定位缺失引用、待审规范、旧部件和版本差异；普通用户看简洁状态，维护者用独立审核工具，不把后台全部放入主界面。\n\n### 9.2 首版闭环与实施次序\n\n首版先验证一个字形的生命周期：输入 IDS → 解析 → 可用数据生成 SVG → 修改部件 → 撤销 → 展开再编辑 → 导出 SVG → 保存项目 → 离线重新打开。\n\n路线建议：\n\n1. 证明真实文本驱动比现有工作流更直接。\n2. 证明生成后仍可稳定修改和恢复。\n3. 建立来源清楚、质量受控的部件数据。\n4. 再依据真实需求进入研究、教学、特殊字符处理及字体生产。\n\n暂不追求覆盖所有汉字或自建完整数据库。拥有一万个可生成字形，不代表编辑和恢复可靠。\n\n### 9.3 原方案决策表\n\n| 原想法 | 结论 | 落地约束 |\n| --- | --- | --- |\n| 单输入框 | 保留 | 默认主界面，必要反馈不省略 |\n| IDC 真实文本 | 保留 | 不可被隐藏命令取代 |\n| 快捷键输入 | 修正后保留 | 仅插入字符，避开 IME/光标冲突 |\n| 完整后自动 SVG | 修正后保留 | 完整与视觉提交分离 |\n| 俄罗斯方块式动画 | 克制保留 | 理解优先，可打断，不抢编辑控制 |\n| 未完成保留文本 | 保留 | 轻量提示，不画错误残缺字形 |\n| 构形树 | 精确定义后保留 | 源输入与结构模型各自负责 |\n| 仅靠操作符栈 | 不作核心架构 | 明确解析完整/未完成/非法输入 |\n| 直接打包 GlyphWiki | 修正 | 来源、许可、版本、依赖和规范审查 |\n| 只有 SVG 输出 | 扩展 | 本地可恢复项目也重要 |\n| 最后处理 IME/光标 | 否决 | 早于动画验证 |\n| 完整结构立即强制合并 | 否决 | 交互策略不等于语法规则 |\n| 同一套隐藏状态驱动全部 | 否决 | 文本事务与显式模型分层 |\n| PWA 能打开即离线 | 否决 | 按真实离线任务验收 |\n\n### 9.4 明确不承诺\n\n- 任意 IDS 都生成符合大陆规范的字形，或每份结构对应唯一汉字。\n- 任意外部 SVG 自动恢复原始 IDS，或所有软件保留 SVG 元数据。\n- 首版支持所有罕见部件、完整字体生产或复杂云协作。\n- 不同数据版本始终得到相同视觉结果。\n- 自动生成即经过规范审查；IDS 即字源、字义或权威识别结果。\n- 为动画牺牲输入、光标、恢复与错误解释。\n\n## 10 研究 验收与风险\n\n### 10.1 三类访谈\n\n| 对象 | 具体问题 | 判断用途 |\n| --- | --- | --- |\n| 最近一年遇过缺字的人 | 最近何时、当时任务、如何解决、耗时、是否交付、长期保存要求、字体不兼容或无法再编辑经历 | 查真实频率和替代成本，不问空泛“喜不喜欢” |\n| 研究者和文献整理者 | 如何记录罕见字、保不保留结构、是否比较方案、论文/数据库用途、最耗时及最不满意环节 | 区分质量规范与记录/快速导出的优先级 |\n| 字体设计师和文字创作者 | 是否接受文本构形、哪些可自动组合、哪些必手调、轮廓能否作草稿、SVG/项目能否接工作流 | 判断专业补充价值而非新颖程度 |\n\n### 10.2 三种产品实验\n\n| 实验 | 设计 | 观察 |\n| --- | --- | --- |\n| A 文本驱动 | 输入 IDS，即时解析和渲染 | 理解表达式/字形关系，能否修改，需要何种提示 |\n| B 增加自动合并反馈 | A 加短动画与未完成提示 | 是否帮助理解、等待过长、妨碍连续输入、对 IDS 新手有无帮助 |\n| C 优先可逆编辑 | A 加展开、局部修改和撤销 | 纠错速度、生成后编辑、嵌套理解 |\n\n实验用于区分用户真正重视自动生成、动画还是可逆性。若可逆性更重要，不为动画延后编辑；若动画确实改善理解且无干扰，再保留。\n\n### 10.3 观察任务与六项指标\n\n至少观察 **五位不熟悉项目的人**，不急于指导，让他们完成左右结构输入、改部件、撤销、展开、SVG 导出和断网重开项目。反复找不存在按钮意味着反馈缺失；不懂为何失败意味着状态解释不足；怕改坏意味着可逆性没传达；把快捷键当特殊命令意味着文本模型表达失败。\n\n| 指标 | 测量方式 |\n| --- | --- |\n| 首次成功时间 | 从打开到首个受支持表达式的可用预览或成功导出，预先统一成功定义，不以页面加载计 |\n| 修改成本 | 改一部件的步骤、耗时、错误；是否重输、丢光标、破坏外层 |\n| 结构可逆性与恢复 | 展开、修改、重合并、撤销重做、保存重开 |\n| 失败可解释性 | 用户能否自行区分未完成、非法、缺部件、引用异常、渲染失败 |\n| 离线完整性 | 初始化后断网完成构形、修改、保存、重开、导出 |\n| 数据可信度 | 来源、版本、依赖、修订和审查是否可读、可解释 |\n\n这些指标应与任务替代方案对照，而非只数功能。支持更多 IDC 但修改要重输，不一定胜过支持较少结构而编辑稳定的产品。\n\n### 10.4 需求验收清单\n\n- [ ] 真实 IDC 可直接输入、选择、删除、复制、粘贴和中间编辑。\n- [ ] 同一最终 IDS 的逐字、快捷键、粘贴路径语义及固定条件输出一致。\n- [ ] 操作符元数和支持语法明确；不完整/非法/完整分别识别。\n- [ ] 缺数据、版本/引用异常、渲染失败、未审查不混为成功。\n- [ ] 原 IDS 始终保存，呈现后可展开，无需从图像猜测。\n- [ ] 局部修改尽量保持外层、其他文字和逻辑选区。\n- [ ] IME 组合不被快捷键/动画破坏；连续输入不丢字、不跳光标。\n- [ ] 撤销重做语义清楚，视觉转换不会制造不可理解的历史。\n- [ ] 动画短促局部可打断；断后稳定，无半透明残留。\n- [ ] SVG 边界正确、导出可用，项目保存与 SVG 明确分开。\n- [ ] 项目记录版本及依赖，能恢复；无法复现时说明原因。\n- [ ] 断网实测支持范围内全闭环，而非仅启动页面。\n- [ ] 桌面与触屏可完成基本任务，必要解释有可达入口。\n- [ ] 目标字形质量与许可按来源、版本分别审核。\n\n### 10.5 五类失败风险\n\n| 风险 | 应对 |\n| --- | --- |\n| 有趣但无持续需求 | 测真实工作、频率和重复使用，不只看演示反应 |\n| 结构正确但字形差 | 分离解析、渲染和质量；高风险样本、目标体系审查 |\n| 只生成不能编辑 | 可逆性与恢复纳入首版核心验收 |\n| 极简导致不理解 | 最少但明确的分层状态、解释和恢复入口 |\n| 数据来源许可不清 | 分代码/结构/部件/字体建清单，逐版本审核 |\n\n## 11 商业方向与长期价值\n\n以下都是待访谈和实际使用验证的假设，不能推导可靠市场规模、付费转化率或收入预测。\n\n| 方向 | 可能价值 | 风险与前提 |\n| --- | --- | --- |\n| 个人免费工具 | 免费构形、预览、保存和 SVG，降低试用门槛、积累反馈 | 缺字可能低频，持续使用不足 |\n| 专业研究工作流 | 数据管理、项目归档、批处理，减少真实时间成本 | 不靠人为限制基础构形收费，需验证付费点 |\n| 机构团队部署 | 可控数据版本、项目管理、特定字形集 | 需明确需求、维护能力及授权体系，不能凭想象认定成熟市场 |\n| 字体与数据服务 | 整理部件、审核字形集、构形数据处理 | 维护成本和质量责任更高 |\n\n先验证真实任务，再判断用户愿为编辑体验、专业数据、批量工作流还是机构维护付费，不急着锁定订阅。\n\n长期壁垒不应只是单输入框、快捷键、150–200 毫秒动画或 KAGE/SVG 集成。更值得积累的是：可靠的嵌套编辑和中间光标模型；可追溯的来源/版本/依赖；可移植项目格式；用户真实研究和创作资产；明确范围内经过审查的目标字形数据。大陆字形支持需要长期数据工作，不是换一个数据源即可完成。\n\n## 12 来源与待核事项\n\n以下保留原材料的重要来源并移除跟踪参数。引用链接不是对当前状态的自动背书；正式采用前需核查具体版本、许可证和表述。配套的外部核查记录可补充或修正本节，不应静默把旧假设改成事实。\n\n### 12.1 标准与浏览器\n\n- [原材料引用的 Unicode 18.0 核心规范第 18 章](https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-18/)：**页面可读，版本状态有矛盾**：2026-10-20 核查时 latest 跳转 18.0.0，但版本主页同时残留 preliminary draft 提示。不能据此下发布日期定论，也不能把链接判成不存在。\n- [Unicode L2/12-081 IDS 文件](https://www.unicode.org/L2/L2012/12081-ids.html)：历史讨论资料，不能不加区别地当成现行规范。\n- [Unicode IRG PPv18](https://www.unicode.org/irg/pp/PPv18.html)：IRG 语法/流程相关资料，需核对与采用 Unicode 版本的关系。\n- [W3C Input Events Level 2](https://www.w3.org/TR/input-events-2/)：输入事件参考；组合事件还需对应事件规范及设备实测。\n- PUA：原材料提到 Unicode 与微软文档但未给具体地址；**待补对应官方引用**，不编造链接。\n\n### 12.2 引擎与结构数据\n\n- [kurgm/kage-engine](https://github.com/kurgm/kage-engine)\n- [@kurgm/kage-engine npm](https://www.npmjs.com/package/%40kurgm/kage-engine)\n- [CJKVI-IDS](https://github.com/cjkvi/cjkvi-ids)\n- [Unicode-only CJKV IDS](https://github.com/Transfusion/cjkvi-ids-unicode)\n\n核查重点：引擎接口、真实渲染能力、GPL 版本、各数据文件许可、非 Unicode 实体引用、多种结构表达和再分发条件。\n\n### 12.3 竞品与生态\n\n- [HanziCraft](https://hanzicraft.com/)\n- [YAIST](https://github.com/toyjack/yaist)\n- [KAGE Editor](https://github.com/kurgm/kage-editor)\n- [GlyphWiki 字体生产工具 glyphwiki-afdko](https://github.com/kawabata/glyphwiki-afdko)\n- [文津宋体](https://github.com/takushun-wu/WenJinMincho/blob/main/README.md)\n- [FontForge 官方文档](https://fontforge.org/docs/)\n- [FontLab](https://www.fontlab.com/font-editor/fontlab/)\n- [原材料的 FontCreator 中文页面](https://fontcreator.com.cn/features.html)：**官方归属待核**，正式描述优先开发商官方站。\n\n### 12.4 2026-10-20 核查增补\n\n本轮技术核查详见配套 `research.md`，范围是解析、编辑边界和部分许可，并未重做全部竞品或市场调查。\n\n- Unicode 17 与本次可读的 Unicode 18 第 18 章，对以下 **17 个 IDC** 元数一致。Demo 固定使用此表，不宣传实现全部最新版字符属性。\n- 一元：`⿾`（水平镜像）、`⿿`（旋转）。三元：`⿲`、`⿳`。二元：`⿰ ⿱ ⿴ ⿵ ⿶ ⿷ ⿸ ⿹ ⿺ ⿻ ⿼ ⿽ ㇯`。\n- `⿼` 是右包围，`⿽` 是右下包围；`㇯` 以原部件及待移除部件为两个操作数，语法完整不代表可做出有意义的减法。不以覆盖白块或重叠冒充减笔。\n- 严格 IDS 叶节点范围需按规范处理表意字符、部首、CJK 笔画 U+31C0–U+31E5、私用字符、全角问号；不把 ASCII、emoji 和普通标点悄悄当严格部件。`〾` 是序列外近似指示符，不是另一种一元 IDC。支持自由创作扩展时需明确声明。\n- 五个操作符 `⿼ ⿽ ⿾ ⿿ ㇯` 的引入可参见 [UTC 173 决议 173-C18/C19](https://www.unicode.org/L2/L2022/22241.htm)。另见 [Unicode 17 第 18 章](https://unicode.org/versions/Unicode17.0.0/core-spec/chapter-18/)、[Unicode latest](https://www.unicode.org/versions/latest/) 和 [Unicode 18 版本页](https://www.unicode.org/versions/Unicode18.0.0/)。\n- 混排的 `⿰木木木` 应是一个完整 IDS 加普通 `木`。空格/换行可作为明确边界；不得删除不支持字符后伪造成功。源范围应与 textarea 的 UTF-16 偏移一致，词法按码点遍历；深度/长度上限是应用限制，不是 Unicode 规定。\n- CJKVI-IDS 官方 README：`ids.txt` 来自 CHISE，遵其条款；`ids-ext-cde.txt` 非直接来自 CHISE，不受同一 GPLv2 限定，**不等于公有领域**；其他数据标 GPLv2。数据含 CDP 实体及地区后缀，不能整列当纯 Unicode IDS。\n- GlyphWiki 当前官方许可页读取失败，**许可未完成核实**：[待核入口](https://glyphwiki.org/wiki/GlyphWiki:データ・記事のライセンス)。不能断言全部数据 CC0；本次 Demo 不内嵌该数据。\n\n### 12.5 尚未解决的决策\n\n- 最终 IDC/IDS 支持范围和规范版本；混合普通文本的边界与解析恢复策略。\n- 默认快捷键、提交延迟、动画参数和撤销粒度。\n- 具体字形数据源、依赖打包大小、许可证和大陆规范审核方法。\n- 项目格式及旧版数据无法复现时的迁移流程。\n- SVG 在目标文档/字体软件的真实导入行为。\n- 优先客群的重复使用需求、付费意愿和可持续商业模式。\n\n## 13 对外简述\n\n结构组字让你直接写出一个字的构成。输入 IDC 和部件，系统理解它们之间的关系，在数据允许时生成字形。你可以展开、修改、重新生成、导出 SVG，并保存为未来还能继续编辑的构形记录。\n\n它的目标不是让用户更快得到一张汉字图片，而是让汉字结构成为可以直接书写、理解、反复修改、重新生成和长期保存的对象。是否能形成独立市场，仍需真实用户任务、竞品对照和持续使用数据证明。\n\n\n## 14 Demo 版本与正式产品的边界\n\n### 14.1 版本记录\n\n- **0.1.0**：2026-10-20 首次交付的双视图构形工作台。按维护者本轮指定，正式归入 0.1.0；最初导出项目中 appVersion 曾写为 1.0.0，0.1.1 仍兼容这些 formatVersion=1 的项目，不擅改已保存文件。\n- **0.1.1**：同日按维护者反馈迭代为极简首屏与真实行内编辑。输入与字形在同一 contenteditable 画布排版，不用透明文本层叠加预览冒充所见即所得。\n\n### 14.2 0.1.1 的实现与边界\n\n| 能力 | 当前实现 | 不可推导的承诺 |\n| --- | --- | --- |\n| 首屏 | 弱化品牌及版本、单编辑区域、插入与更多入口 | 不声称复制了未经核对的 TouchAI 页面或品牌设计 |\n| 行内呈现 | 完整且有数据的 IDS 在输入区原位呈现 SVG；点击或键盘展开源文修改 | 未完成、缺件、未知布局继续保留文字，不假造结果 |\n| 源数据 | 唯一权威 source，DOM 和字形为派生视图；源范围采用 UTF-16 | 不是从任意外部 SVG 识别 IDS |\n| 解析与绘制 | 17 IDC 元数；12 常用布局；17 自绘简笔部件 | 不是完整 Unicode 属性验证器、KAGE 集成或规范字体引擎 |\n| 编辑与选区 | 原位展开、跨字形纯 IDS 复制/剪切、纯文本粘贴、撤销/重做 | 真实浏览器及输入法矩阵仍需实测 |\n| 删除 | 收起字形按一个对象删除，可撤销；精细修改先展开 | 不承诺所有设备原生删除事件完全一致 |\n| IME | 组合期间保留原生 DOM 控制；旧会话回调不得结束新会话 | 状态机测试不等于真实中文输入法验收 |\n| 保存与导入 | formatVersion=1 JSON 保持兼容；版本/依赖校验；过期导入结果不覆盖新输入 | 无长期任意版本迁移或跨设备实时同步 |\n| 本地草稿 | 保存失败提示；异常旧草稿保留；检测其他页面写入后暂停自动覆盖 | 浏览器存储不是跨设备事务，也不是唯一备份 |\n| 交付与离线 | 单 HTML，无运行网络依赖；文档内嵌并可下载 | 不是可安装 PWA；实际断网重开仍列设备验收项 |\n| 质量 | 明确结构示意、未规范审核；不引入未核许可的字形数据 | 不作为出版成品或“大陆规范字形” |\n| 信息披露 | 树、诊断、项目、数据边界与文档按注意范围展开 | 不把全量调试字段常驻首屏 |\n\n约束：源文本最多 4000 个 UTF-16 单位，嵌套最多 32 层，项目最大 200 KB；展开与收起不新增文本历史，约 300 ms 停顿后更新呈现。拖放暂禁用，以纯文本粘贴代替，防止 HTML 或 SVG 结构污染源文。\n\n### 14.3 设计与开发依据\n\n本项目采用极简默认界面、按需披露、输入路径等价和真实状态原则；保持领域模型与 DOM 适配边界、单一变化源、异步归属与故障处理。\n\n源模型、DOM 偏移转换与浏览器事件分别组织；本轮未实质改变的旧 Core 解析和简笔绘制保留兼容边界。接管评估是 Agent 的代码审阅，不代表维护者已经完成审美审批或真实接管。\n\n最终检查继续区分纯核心测试、DOM 模拟与实际浏览器测试。本次运行环境未能启动浏览器，视觉、触屏、真实 IME、实际下载和断网重开不列为已验证。\n"</script>
+<script>
+(()=>{const dialog=document.getElementById('product-document');document.getElementById('open-docs').onclick=()=>dialog.showModal();function save(){const s=JSON.parse(document.getElementById('product-markdown').textContent),u=URL.createObjectURL(new Blob([s],{type:'text/markdown;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download='结构组字-产品定义与验证方案.md';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}document.getElementById('download-docs').onclick=save;document.getElementById('doc-download-inline').onclick=save;})();
+</script>
+<!-- embedded-document:end -->
+</body></html>

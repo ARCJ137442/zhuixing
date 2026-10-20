@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "dataset": "yi-bai/ids ids_lv0.txt",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2021 Yi Bai",
+  "retrieved": "2026-10-20",
+  "source": "https://github.com/yi-bai/ids",
+  "sourceFile": "https://github.com/yi-bai/ids/blob/267e3fb5d0a32de63128e67ef2f329277cc4013c/ids_lv0.txt",
+  "observedHead": "267e3fb5d0a32de63128e67ef2f329277cc4013c",
+  "downloadedFileSha256": "5dd94c9e02f7eab0f5dacb1005fc1010f2281ac6f0b101aefb51b2d99a10c43f",
+  "selection": "Six manually reviewed mappings. No global removal of variant/locale qualifiers. Not a complete reverse index.",
+  "entries": [
+    {
+      "ids": "⿰亻二",
+      "character": "仁",
+      "codePoint": "U+4EC1",
+      "rawSourceLine": "仁\t⿰亻二.",
+      "sourceColumn": "primary",
+      "matchPolicy": "explicit-reviewed-plain-IDS-alias",
+      "warning": "Character identification only; not a guarantee of regional glyph identity. Preserve the original IDS.",
+      "missingSchematicComponents": []
+    },
+    {
+      "ids": "⿰亻尔",
+      "character": "你",
+      "codePoint": "U+4F60",
+      "rawSourceLine": "你\t⿰亻尔",
+      "sourceColumn": "primary",
+      "matchPolicy": "explicit-reviewed-plain-IDS-alias",
+      "warning": "Character identification only; not a guarantee of regional glyph identity. Preserve the original IDS.",
+      "missingSchematicComponents": [
+        "尔"
+      ]
+    },
+    {
+      "ids": "⿰日月",
+      "character": "明",
+      "codePoint": "U+660E",
+      "rawSourceLine": "明\t⿰日月.",
+      "sourceColumn": "primary",
+      "matchPolicy": "explicit-reviewed-plain-IDS-alias",
+      "warning": "Character identification only; not a guarantee of regional glyph identity. Preserve the original IDS.",
+      "missingSchematicComponents": []
+    },
+    {
+      "ids": "⿰亻木",
+      "character": "休",
+      "codePoint": "U+4F11",
+      "rawSourceLine": "休\t⿰亻木.",
+      "sourceColumn": "primary",
+      "matchPolicy": "explicit-reviewed-plain-IDS-alias",
+      "warning": "Character identification only; not a guarantee of regional glyph identity. Preserve the original IDS.",
+      "missingSchematicComponents": []
+    },
+    {
+      "ids": "⿰女子",
+      "character": "好",
+      "codePoint": "U+597D",
+      "rawSourceLine": "好\t⿰女子.",
+      "sourceColumn": "primary",
+      "matchPolicy": "explicit-reviewed-plain-IDS-alias",
+      "warning": "Character identification only; not a guarantee of regional glyph identity. Preserve the original IDS.",
+      "missingSchematicComponents": []
+    },
+    {
+      "ids": "⿱田力",
+      "character": "男",
+      "codePoint": "U+7537",
+      "rawSourceLine": "男\t⿱田力",
+      "sourceColumn": "primary",
+      "matchPolicy": "explicit-reviewed-plain-IDS-alias",
+      "warning": "Character identification only; not a guarantee of regional glyph identity. Preserve the original IDS.",
+      "missingSchematicComponents": []
+    }
+  ]
+}

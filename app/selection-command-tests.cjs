@@ -1,0 +1,27 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const html=fs.readFileSync(__dirname+'/index.html','utf8'),script=id=>html.match(new RegExp('<script id="'+id+'">([\\s\\S]*?)</script>'))[1];
+const {C,M,S,U}=vm.runInNewContext(['core','unicode-matches','inline-model','selection-commands'].map(script).join('\n')+';({C:Core,M:InlineModel,S:SelectionCommands,U:UnicodeMatches})');
+let count=0;function test(name,f){f();count++;console.log('PASS '+name)}
+const range=s=>({anchor:0,focus:s.length}),caret=n=>({anchor:n,focus:n});
+test('all six audited characters have explicit reversible table relationships',()=>{for(const [ids,c]of Object.entries(U.records)){assert.equal(S.transform(ids,'join'),c);assert.equal(S.transform(c,'split'),ids);}});
+test('mixed whitespace punctuation and unknown characters survive batch commands',()=>{const s='甲 仁，\n好𠀀！';const r=S.transaction(s,range(s),'split');assert.equal(r.source,'甲 ⿰亻二，\n⿰女子𠀀！');assert.equal(S.transaction(r.source,range(r.source),'join').source,s);});
+test('joining requires explicit structure and never guesses layout',()=>{for(const s of ['亻二','⿰亻','⿾⿰亻二','⿰人二'])assert.equal(S.transaction(s,range(s),'join'),null);});
+test('unchanged or collapsed selection creates no transaction',()=>{assert.equal(S.transaction('仁',caret(1),'split'),null);assert.equal(S.transaction('未知',range('未知'),'split'),null);});
+test('reverse selection direction and outside content survive changed length',()=>{const r=S.transaction('前仁后',{anchor:2,focus:1},'split');assert.equal(r.source,'前⿰亻二后');assert.equal(r.selection.anchor,4);assert.equal(r.selection.focus,1);});
+test('partial structure selection is never silently expanded',()=>{const s='⿰⿱日月木';assert.equal(S.transaction(s,{anchor:1,focus:4},'join'),null);});
+test('complete nested exact child may transform within a whole selected object',()=>{const s='⿰⿰亻二木';assert.equal(S.transaction(s,range(s),'join').source,'⿰仁木');});
+test('ambiguous reverse table entries are conservatively unchanged',()=>assert.equal(S.transform('仁','split',{'⿰亻二':'仁','⿰二亻':'仁'}),'仁'));
+test('marks and variation selectors never migrate from leaf onto result',()=>{for(const mark of ['\uFE00','\u{E0100}','\u0301','\u200D']){const s='⿰亻二'+mark;assert.equal(S.transform(s,'join'),s);assert.equal(S.transaction('仁'+mark,{anchor:0,focus:1},'split'),null);assert.equal(S.automatic(s,caret(3),'⿰亻'),null);}});
+test('display also preserves marked source rather than matching bare prefix',()=>{const s='⿰亻二\uFE00';assert.equal(M.parts(s,caret(s.length),null,false,U.lookup)[0].atom,false);});
+test('a surrogate-pair boundary cannot be rewritten',()=>assert.equal(S.transaction('𠀀仁',{anchor:1,focus:3},'split'),null));
+test('automatic conversion handles only complete root ending at collapsed caret',()=>{assert.equal(S.automatic('⿰亻二',caret(3),'⿰亻').source,'仁');for(const [s,p]of [['⿰⿰亻二木',4],['⿰亻二后',4],['⿰亻',2]])assert.equal(S.automatic(s,caret(p),''),null);});
+test('automatic conversion never fires on unchanged source or a range',()=>{assert.equal(S.automatic('⿰亻二',caret(3),'⿰亻二'),null);assert.equal(S.automatic('⿰亻二',range('⿰亻二'),''),null);});
+test('input and conversion are separate undo checkpoints preserving IDS',()=>{const h=new C.History('⿰亻');h.record('⿰亻二',3,3);const r=S.automatic('⿰亻二',caret(3),'⿰亻');h.record(r.source,r.selection.anchor,r.selection.focus);assert.equal(h.undo().source,'⿰亻二');assert.equal(h.undo().source,'⿰亻');});
+test('source auto replacement and shortcut binding are both off by default',()=>{assert.match(html,/id="auto-unicode">/);assert.match(html,/value="off">不绑定（默认）/);});
+test('shortcut opt-in distinguishes mode and physical keys',()=>{assert.equal(S.shortcut({code:'KeyD',altKey:true,shiftKey:true},'alt-shift'),'split');assert.equal(S.shortcut({code:'KeyJ',altKey:true,ctrlKey:true},'ctrl-alt'),'join');assert.equal(S.shortcut({code:'KeyD',altKey:true,ctrlKey:true},'off'),null);});
+test('IME AltGraph repeat Meta and wrong modifiers cannot hijack shortcuts',()=>{const base={code:'KeyD',altKey:true,ctrlKey:true};for(const extra of [{isComposing:true},{repeat:true},{metaKey:true},{shiftKey:true},{getModifierState:()=>true}])assert.equal(S.shortcut({...base,...extra},'ctrl-alt'),null);});
+test('auto eligibility is restricted to actual insertion and post-IME ownership',()=>{const app=script('inline-app');assert.match(app,/autoEligible:type==='insertText'/);assert.match(app,/autoEligible:event.inputType==='insertText'/);assert.match(app,/units:\[\.\.\.\(event.data \|\| ''\)\]\.length,autoEligible:true/);assert.match(app,/if\(composing\|\|!\$\('auto-unicode'\)\.checked\)return/);assert.match(app,/if\(autoEligible\)autoConvert\(previousSource\)/);});
+test('oversized decomposition fails before any source transaction',()=>{const s='仁'.repeat(1400);assert.throws(()=>S.transaction(s,range(s),'split'),/4000/);assert.equal(s.length,1400);});
+test('split preserves incomplete and unsupported IDS objects',()=>{for(const s of ['⿰仁','⿾仁'])assert.equal(S.transaction(s,range(s),'split'),null);});
+console.log('\n'+count+' selection command checks passed. Host selection/IME still require native validation.');

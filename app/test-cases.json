@@ -1,0 +1,392 @@
+{
+  "status": "proposed-not-executed",
+  "unicodeProfile": "17 IDC arities verified against Unicode 17 and 18 chapter 18; strict operands or explicitly declared subset",
+  "offsetUnit": "UTF-16",
+  "parserCases": [
+    {
+      "id": "binary-0x2ff0",
+      "source": "⿰木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "binary-0x2ff1",
+      "source": "⿱木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "binary-0x2ff4",
+      "source": "⿴木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "binary-0x2ff5",
+      "source": "⿵木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "binary-0x2ff6",
+      "source": "⿶木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "binary-0x2ff7",
+      "source": "⿷木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "binary-0x2ff8",
+      "source": "⿸木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "binary-0x2ff9",
+      "source": "⿹木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "binary-0x2ffa",
+      "source": "⿺木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "binary-0x2ffb",
+      "source": "⿻木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "binary-0x2ffc",
+      "source": "⿼木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "binary-0x2ffd",
+      "source": "⿽木水",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "sourceRoundTrip": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "ternary-0x2ff2",
+      "source": "⿲木木木",
+      "expected": {
+        "syntax": "complete",
+        "arity": 3
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "ternary-0x2ff3",
+      "source": "⿳木木木",
+      "expected": {
+        "syntax": "complete",
+        "arity": 3
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "unary-0x2ffe",
+      "source": "⿾木",
+      "expected": {
+        "syntax": "complete",
+        "arity": 1
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "unary-0x2fff",
+      "source": "⿿木",
+      "expected": {
+        "syntax": "complete",
+        "arity": 1
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "subtraction",
+      "source": "㇯其㇒",
+      "expected": {
+        "syntax": "complete",
+        "arity": 2,
+        "render": "unsupported-not-fake-subtraction"
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "nested",
+      "source": "⿰⿱宀女木",
+      "expected": {
+        "syntax": "complete",
+        "tree": [
+          "⿰",
+          [
+            "⿱",
+            "宀",
+            "女"
+          ],
+          "木"
+        ],
+        "utf16Range": [
+          0,
+          5
+        ]
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "bare-operator",
+      "source": "⿰",
+      "expected": {
+        "syntax": "incomplete",
+        "missingOperands": 2
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "missing-one",
+      "source": "⿰木",
+      "expected": {
+        "syntax": "incomplete",
+        "missingOperands": 1
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "nested-missing",
+      "source": "⿰⿱宀女",
+      "expected": {
+        "syntax": "incomplete",
+        "missingOperands": 1
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "three-missing",
+      "source": "⿲木木",
+      "expected": {
+        "syntax": "incomplete",
+        "missingOperands": 1
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "mixed",
+      "source": "前：⿰木水。后",
+      "expected": {
+        "idsSource": "⿰木水",
+        "utf16Range": [
+          2,
+          5
+        ],
+        "preserveOrdinaryText": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "extra-leaf",
+      "source": "⿰木木木",
+      "expected": {
+        "idsSource": "⿰木木",
+        "trailingText": "木"
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "supplementary",
+      "source": "⿰𠮷木",
+      "expected": {
+        "syntax": "complete",
+        "leafCount": 2,
+        "utf16Range": [
+          0,
+          4
+        ]
+      },
+      "priority": "P1"
+    },
+    {
+      "id": "fullwidth-question",
+      "source": "⿰木？",
+      "expected": {
+        "syntax": "complete",
+        "renderNotGuaranteed": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "ascii-question",
+      "source": "⿰木?",
+      "expected": {
+        "strictSyntax": "invalid",
+        "sourcePreserved": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "emoji",
+      "source": "⿰木😀",
+      "expected": {
+        "strictSyntax": "invalid",
+        "sourcePreserved": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "boundary",
+      "source": "⿰木\n水",
+      "expected": {
+        "mustNotSilentlyConsumeAcrossNewline": true,
+        "sourcePreserved": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "ivi",
+      "source": "〾⿰木水",
+      "expected": {
+        "iviOutsideIds": true,
+        "idsSource": "⿰木水"
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "injection",
+      "source": "<img src=x onerror=alert(1)>⿰木水",
+      "expected": {
+        "noScriptExecution": true,
+        "sourcePreserved": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "private-use",
+      "source": "⿰木",
+      "expected": {
+        "syntax": "complete",
+        "renderNotGuaranteed": true
+      },
+      "priority": "P0"
+    },
+    {
+      "id": "variation-selector",
+      "source": "⿰葛󠄀木",
+      "expected": {
+        "sourcePreserved": true,
+        "noSilentSelectorDrop": true,
+        "documentProfileExtensionOrUnsupported": true
+      },
+      "priority": "P1"
+    }
+  ],
+  "interactionCases": [
+    {
+      "id": "same-input-paths",
+      "expected": "Type, paste and IDC-button insertion of identical source yield identical AST."
+    },
+    {
+      "id": "edit-undo-redo",
+      "expected": "Change nested ⿱ to ⿰, undo, redo; source and preview agree each time."
+    },
+    {
+      "id": "expand-collapse",
+      "expected": "Collapse and expand twice; source, selection and nested text are unchanged."
+    },
+    {
+      "id": "composition",
+      "expected": "During Chinese IME composition, preview does not steal focus or replace composing text; final source parsed once committed."
+    },
+    {
+      "id": "json-roundtrip",
+      "expected": "Export project JSON, edit source, reimport; exact original source and settings restored."
+    },
+    {
+      "id": "bad-import",
+      "expected": "Import malformed JSON, wrong schema or oversized source; report error without replacing current work."
+    },
+    {
+      "id": "storage-denied",
+      "expected": "With localStorage unavailable, editing and file export still work and UI does not claim saved."
+    },
+    {
+      "id": "svg-export",
+      "expected": "Exported SVG has escaped source metadata, viewBox and no executable external input; text-font dependence disclosed."
+    },
+    {
+      "id": "unsupported-export",
+      "expected": "When selection contains subtraction, never silently export a fake successful glyph."
+    },
+    {
+      "id": "offline",
+      "expected": "Open self-contained HTML offline, edit, save JSON, reopen and export SVG without network dependency."
+    },
+    {
+      "id": "reduced-motion",
+      "expected": "prefers-reduced-motion disables nonessential animation."
+    },
+    {
+      "id": "depth-limit",
+      "expected": "Adversarial nesting triggers documented safe implementation limit, not stack overflow or source loss."
+    },
+    {
+      "id": "keyboard-mobile",
+      "expected": "Core operations accessible by keyboard and touch, no hover-only controls; 375px view usable."
+    }
+  ]
+}

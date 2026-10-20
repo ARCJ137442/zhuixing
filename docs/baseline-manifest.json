@@ -1,0 +1,143 @@
+{
+  "source_zip_sha256": "3b31dcb278e324d4914b96c6af6ef744d104c98002f7e879cc256ff3bfdf0bce",
+  "files": [
+    {
+      "path": "app/FONT-LICENSE.txt",
+      "sha256": "e2aa5dae878a7e4721ad493e57b59e4b61afea7dbcd0a2cc6d32ab1f92dc2000",
+      "source_zip_path": "FONT-LICENSE.txt",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/IDS-DATA-LICENSE.txt",
+      "sha256": "f1d89fe379529df4166f75142ff82c7cc302795ec992e2a64c189aa8733da419",
+      "source_zip_path": "IDS-DATA-LICENSE.txt",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/app-tests.cjs",
+      "sha256": "023a482db2fdd9bd993b1900ccc421a983704f67ab5e8e928ddfe2fb2b4bc872",
+      "source_zip_path": "app-tests.cjs",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/components-provenance.json",
+      "sha256": "9e0dc43bd0e09e21676b99210e08d05665834983cc1bcd71e544bd6b7363f546",
+      "source_zip_path": "components-provenance.json",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/components.generated.json",
+      "sha256": "5481a305b793eb1c5e6a052190006388b6805417ed7da9fd6ae97aa36702db1c",
+      "source_zip_path": "components.generated.json",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/document.md",
+      "sha256": "3960d68e20a3a84b61fea892cf82722b879fc285c80325473d2e7dd7971b5580",
+      "source_zip_path": "document.md",
+      "changed_from_zip": true
+    },
+    {
+      "path": "app/font-fallback-tests.cjs",
+      "sha256": "09768912383415521868d812d190b1436d5e22f7979cd56a50b96fa84ecda0d0",
+      "source_zip_path": "font-fallback-tests.cjs",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/idc-subset.woff",
+      "sha256": "4fdc85c281a2ffc8b3818bec3c7f96c83b2b362b6e7e1dc634c921643888c784",
+      "source_zip_path": "idc-subset.woff",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/index.html",
+      "sha256": "360def624d7f924d906628679429933fd15d66db78c6e8da578874ee7d426794",
+      "source_zip_path": "index.html",
+      "changed_from_zip": true
+    },
+    {
+      "path": "app/inline-tests.cjs",
+      "sha256": "2803cc22ec59d5dfa9e0d9facdb38a433bd163ae414ef56d1898df92c45597dd",
+      "source_zip_path": "inline-tests.cjs",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/input-flow-host-tests.cjs",
+      "sha256": "cf46a18b1b7ae7285fc46ae1242b690a6f92669c1ad3f6a0ef91003c92d291c7",
+      "source_zip_path": "input-flow-host-tests.cjs",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/integrate-docs.cjs",
+      "sha256": "8449cbcc84f31173a5f19ec673cc855c174ed9adec83f18c0ad101cd0bf75206",
+      "source_zip_path": "integrate-docs.cjs",
+      "changed_from_zip": true
+    },
+    {
+      "path": "app/keyboard-host-tests.cjs",
+      "sha256": "2e67738b20b01bfdfbb86648c53a3fefec5bf8ceae28eebcfef5d8aefc413348",
+      "source_zip_path": "keyboard-host-tests.cjs",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/motion-host-tests.cjs",
+      "sha256": "f6b47cd43d12bc3489fe447f102c46c0e8263475a8ba0008e350a043259ef703",
+      "source_zip_path": "motion-host-tests.cjs",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/motion-tests.cjs",
+      "sha256": "d4e3295e8e0de2119d000add10bbb26d4b69fb6ea02c4f044b10f148ec24d426",
+      "source_zip_path": "motion-tests.cjs",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/pacing-tests.cjs",
+      "sha256": "c9913a29ca239a13ed36a7b565f3ea7a91bc53c9dc3812802f15a2565bd92c20",
+      "source_zip_path": "pacing-tests.cjs",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/releases/0.1.1/index.html",
+      "sha256": "b12df2880b2533747cadf38703da4e73aae2e2d96fbfc039ad23d9958777998e",
+      "source_zip_path": "releases/0.1.1/index.html",
+      "changed_from_zip": true
+    },
+    {
+      "path": "app/releases/0.1.4/index.html",
+      "sha256": "58f029df81b8a546209b390a139eb54fe58b9511b5d1d4d8dc59bee4af7fab07",
+      "source_zip_path": "releases/0.1.4/index.html",
+      "changed_from_zip": true
+    },
+    {
+      "path": "app/scripts/build_components.py",
+      "sha256": "63811ef706d762e7a688cf55d713886f5cf7c84ae5a6ae285c25ff36db3ac4dc",
+      "source_zip_path": "scripts/build_components.py",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/selection-command-tests.cjs",
+      "sha256": "4fb9ff4499f61266e146ec2466e8e59535b1ab73e6b5e4a9f4eb3408338ef381",
+      "source_zip_path": "selection-command-tests.cjs",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/test-cases.json",
+      "sha256": "73d194ac4f1f44f52b078abf0fb6fbaf3765beea1619909e13e979d43ba4a595",
+      "source_zip_path": "test-cases.json",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/unicode-edit-tests.cjs",
+      "sha256": "bea051f34dc64a0f8f27155990e90e0856e3ec9dc3b5f1c4fc1b9acfa6f9254e",
+      "source_zip_path": "unicode-edit-tests.cjs",
+      "changed_from_zip": false
+    },
+    {
+      "path": "app/unicode-matches.provenance.json",
+      "sha256": "1e2166cf99139320b5acefdf5854d9aab436a1cec0ff0aa53a6655b2d48c818e",
+      "source_zip_path": "unicode-matches.provenance.json",
+      "changed_from_zip": false
+    }
+  ]
+}

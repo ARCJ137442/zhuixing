@@ -1,0 +1,13 @@
+{
+  "family": "Noto Serif CJK SC",
+  "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
+  "postscriptName": "NotoSerifCJKsc-Regular",
+  "source": "https://github.com/notofonts/noto-cjk",
+  "fontSha256": "5d9c31a059600193c9d7968a998bde886ccdc77e934006ad243b41794c496a7d",
+  "license": "SIL Open Font License 1.1",
+  "characters": "呆亻氵青心忄言讠手扌足辶艹竹纟糸金钅石玉王田目耳力刀刂贝貝页頁鸟鳥马馬鱼魚虫雨衣衤食饣米禾门門阝又子了也白百千万上下来去天中不几九八七六三四五广厂尸户夕寸士止正可古立生牛羊犬犭攵攴欠殳舟车車辛酉见見爪爫瓜甘矢牙羽走里自至穴巾弓戈巴干用甫豆及冫疒疋皮皿网罒耂老申由甲电黾龙龍龟龜龠黑音骨高香黄黃麦麥麻鹿鼎鼠鼻齿齒",
+  "count": 155,
+  "idcSubset": "⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻",
+  "transform": "em square x=0.1*x, y=88-0.1*y; fixed placement, 0.001 rounding",
+  "quality": "Original glyph outlines; synthesized layout is schematic, not normative."
+}
