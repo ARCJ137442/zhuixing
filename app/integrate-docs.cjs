@@ -1,7 +1,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const MarkdownIt=require('markdown-it');
-const base=__dirname, md=fs.readFileSync(path.join(base,'document.md'),'utf8');
+const base=__dirname, md=fs.readFileSync(path.join(base,'document.md'),'utf8').replace(/\r\n?/g,'\n');
 const renderer=new MarkdownIt({html:false,linkify:false,typographer:false});
 const ts=renderer.parse(md,{}),toc=[];let index=0;
 for(let i=0;i<ts.length;i++)if(ts[i].type==='heading_open'){

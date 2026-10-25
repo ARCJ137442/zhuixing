@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('node:fs'),assert=require('node:assert/strict'),path=require('node:path');
-const base=__dirname,h=fs.readFileSync(path.join(base,'index.html'),'utf8'),doc=fs.readFileSync(path.join(base,'document.md'),'utf8');
+const normalizeNewlines=text=>text.replace(/\r\n?/g,'\n');
+const base=__dirname,h=fs.readFileSync(path.join(base,'index.html'),'utf8'),doc=normalizeNewlines(fs.readFileSync(path.join(base,'document.md'),'utf8'));
 assert.match(h,/<title>缀形成象 · 0\.4\.0<\/title>/);
 assert.match(h,/<span class="brand">缀形<\/span>/);
 const logo=fs.readFileSync(path.join(base,'branding','zhuixing-logo.svg'),'utf8');

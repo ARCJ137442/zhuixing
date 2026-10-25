@@ -16,8 +16,8 @@
       "sha256": "4f78cd4061b8ced0b752bd1c8650a2df1c000cdbffc7ac7c0271439840b8f732"
     },
     "appHtml": {
-      "bytes": 1417678,
-      "sha256": "a0a78089cf009c21b9fef76ebc8b25d056c29c18633c8bf6045aa5a0f7400b20"
+      "bytes": 1412210,
+      "sha256": "30fc6a16c97aa0f8627b1be728fc4e20213901e96d2888b59b7833a99a9ef6f2"
     }
   },
   "coverage": {
@@ -63,7 +63,7 @@
   "browserSmoke": {
     "status": "representative-ui-pass",
     "sourceMatchesCurrent": true,
-    "scope": "Current 0.4.0 page verified in the user-run local HTTP browser against exact worktree bytes. This run covers version identity, desktop/mobile layout, all 17 IDC menu/editor SVGs, empty-notice state, and console errors. Prior interaction evidence below was captured on the immediately preceding UI build; since then only app version identity, project metadata version, and static document copy changed, while the shortcut/selection implementation remained unchanged.",
+    "scope": "Current 0.4.0 page reloaded from the user-run local HTTP server after canonical-LF embedded Markdown normalization. Exact current bytes were verified; desktop/mobile layout, all 17 IDC menu/editor SVGs, hidden empty notice, and zero browser console errors were checked. Prior interaction evidence remains identified by its prior source hash; shortcut/selection handlers are unchanged.",
     "engineVersion": null,
     "report": "browser-review-latest.json"
   },

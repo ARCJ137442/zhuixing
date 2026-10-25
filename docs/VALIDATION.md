@@ -2,11 +2,11 @@
 
 ## 已通过
 
-- `node scripts/test.mjs`：19 个应用套件及 browser adapter suite 通过（0.4.0 版本与文档同步后）。
+- `node scripts/test.mjs`：规范 LF 验证工作树中 19 个应用套件及 browser adapter suite 全部通过。首轮 Linux CI 曾暴露嵌入 Markdown 的换行差异；生成器与断言现统一规范为 LF，PR 修复后的远端 CI 复跑待定。
 - `node tests/engine/run.cjs`：49 PASS、3 SKIP、0 FAIL。运行于规范 LF 验证工作树；因设置模块身份变化，已审阅并更新 target fingerprint，旧指纹归档。此引擎套件不代表全量字符覆盖。
 - 已有 `known_gate` 最新报告：10/10 PASS；expectation JSON 与 SHA 锁未修改。本轮未重复执行这项已通过自动化。
 - 定向测试：IDC/选区、Alt 方括号、Alt+Shift O 符、Shift+F、设置迁移、文档嵌入同步。
-- 本地 HTTP 页面与当前 `app/index.html` 字节一致：1,417,678 bytes，SHA-256 `a0a78089cf009c21b9fef76ebc8b25d056c29c18633c8bf6045aa5a0f7400b20`。桌面 1280px、手机 390px 均无横向溢出；菜单 17 个 IDC 各有 SVG，编辑区 SVG、5 项布局限制标记、空提示隐藏，控制台错误 0。
+- 本地 HTTP 页面与当前 `app/index.html` 字节一致：1,412,210 bytes，SHA-256 `30fc6a16c97aa0f8627b1be728fc4e20213901e96d2888b59b7833a99a9ef6f2`。桌面 1280px、手机 390px 均无横向溢出；菜单 17 个 IDC 各有 SVG，编辑区 SVG、5 项布局限制标记、空提示隐藏，控制台错误 0。
 - 代表性浏览器交互（`衫`拆合与撤销、罕见叶精确合字、多形式不猜、O 符确认）已记录在 [浏览器审阅报告](../tests/full-coverage-tools/reports/browser-review-latest.json)；本轮版本/静态文档同步后复核了完整当前页面的桌面与手机呈现。
 - `git diff --check` 通过。
 - `git diff --check` 通过。
