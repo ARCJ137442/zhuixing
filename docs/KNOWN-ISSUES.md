@@ -1,21 +1,31 @@
-# 建仓接续的已知问题
+# 已知问题与回归门禁
 
-## 阻断：10项已知回归门禁有3项失败
+## 已修复：佨/抱递归匹配缺失
 
-0.3.1仅品牌变更，没有修复0.3.0引擎/数据问题。当前应用adapter直接加载app/recursive-engine/engine.cjs与app/recursive-ids.rows.json，不用替代引擎掩盖问题。
+源码 0.3.1 基线缺少两条经过审阅的 IDS 定义，导致 `bao-person`、`bao-hand` 和整段输入门禁失败。本候选在数据表中单独补入 `佨 → ⿰亻包`、`抱 → ⿰扌包`，没有放宽导入过滤，也没有全局去除地区/字形标记。原始来源行与审阅边界见 `app/recursive-ids-provenance.json`。
 
-1. bao-person：⿰亻包必须匹配佨。
-2. bao-hand：⿰扌包必须匹配抱。
-3. user-full-bao-string：⿰亻报⿰亻包⿰扌包抱执行fold-all必须得到⿰亻报佨抱抱。
+- `⿰亻包` 匹配 `佨`。
+- `⿰扌包` 匹配 `抱`。
+- `⿰亻报⿰亻包⿰扌包抱` 执行 `fold-all` 得到 `⿰亻报佨抱抱`。
+- 负向控制保持：字面 `⿰亻报` 仍为 unmapped，不得被修成 `保`、`抱` 或 `佨`。
 
-当前三项失败，其他七项通过。⿰亻报仍必须字面保留，不得误修为保、抱或佨。所期待的来源行、严格比对与禁止变通项保存在tests/known-regressions/regressions/expected-known.json，SHA锁禁止静默弱化期望。
+另按固定 MIT IDS 来源单独审阅了 `衫 → ⿰衤彡`。一层拆字 `expand-one` 能唯一得到该 IDS；递归拆字 `expand-all` 因 `彡` 在数据中有多个展开定义而保留原字并返回 `needs-choice`，不会猜选其中一种。原始多形式记录与仅采纳第一形式基础结构的原因见 `app/recursive-ids-provenance.json`。
 
-运行node tests/known-regressions/tools/known_gate.cjs应返回1。reports/original-strict-pre-fix-known-regressions.json保留原始发现；reports/known-regression-latest.json是在本仓库当前应用重跑的结果。前者路径与锁为原快照来源证据，不是当前路径；当前依赖身份见current-target.json。
+固定 expectation JSON 与 SHA 锁未改。原始失败结果保存在 `tests/known-regressions/reports/original-strict-pre-fix-known-regressions.json`；当前候选结果以 `tests/known-regressions/reports/known-regression-latest.json` 为准。十项窄门禁全部通过只说明这些锚点，不代替全量3500/CJK、真实浏览器、中文 IME、原生选区/剪贴板、字体质量和辅助技术验收；不得据此宣称可以发布。
 
-基础18套330项属于更早版本门禁，品牌另11项，只能证明各自覆盖的行为，不取消新失败。完整修复需沿既有反例扩大验证，不能只让这10项通过就宣称完成。
+## 仍待验收
 
-## 未完成
+- 常用3500字与 CJK 全量覆盖、跨字体字形质量。
+- 真实浏览器、中文 IME、实体键盘、原生选区/剪贴板/下载、辅助技术与跨设备行为。
+- 软件许可仍待维护者选择；仓库为本地候选，未正式发布。
 
-常用3500字与CJK完整覆盖、全量SVG/跨字体质量、真实浏览器/中文IME/原生选区/剪贴板/下载、辅助技术和跨设备行为。没有把未测、缺数据、缺字体、超时或缺参考算通过。
+## 全量字符覆盖审计 · 2026-10-25
 
-软件许可仍待维护者选择。仓库当前仅供接续开发，不是正式发布包。
+本轮按固定 Unicode 17.0.0 输入集实际枚举了 U+4E00..U+9FFF 的 20,992 个字符，并从 Unihan `kTGH` 抽取 TGH 一级 1–3,500 常用字。集合 fixture 与来源 SHA 固定在 `tests/full-coverage-tools/sets/source-manifest.json`；逐字结果位于 `tests/full-coverage-tools/reports/full-coverage-cases.jsonl`，汇总位于 `full-coverage-latest.json`。这证明测试输入集完整，不代表产品映射完整。
+
+- 核心集：2,065 个严格唯一直接映射、60 个多 IDS 候选、18,867 个缺失或未解析。
+- TGH 一级 3,500：412 个严格唯一直接映射、17 个多 IDS 候选、3,071 个缺失或未解析。
+- 所有完整精确 IDS 形式（包括同一字的多个不同形式）都能按其直接唯一记录合字；唯一字可反向拆字，多形式汉字仍不自动选一种。未发现错误匹配、字体回退或唯一反拆结果。`衫 → ⿰衤彡` 的显示回退和一层拆字均通过。
+- 当前 IDS 数据表 11,336 行、11,008 个不同汉字；HTML 内嵌表与源表一致。该数量与 20,992/3,500 测试范围不是同一概念。
+
+因此之前若把“3500 常用字 + Unicode 核心字”说成产品已经具备的映射覆盖，结论是**不成立**；准确说法是测试目标范围确实定义过，但旧报告没有完整数据集或通过结果。本轮完整枚举后证明当前候选远未覆盖该范围。完整字体码位、逐字渲染、导出与跨浏览器全量矩阵仍未运行，`releaseGate` 继续 blocked。

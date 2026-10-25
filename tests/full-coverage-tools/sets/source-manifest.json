@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "unicodeVersion": "17.0.0",
+  "generatedAt": "2026-10-25",
+  "core": {
+    "source": "DerivedAge.txt",
+    "url": "https://www.unicode.org/Public/17.0.0/ucd/DerivedAge.txt",
+    "range": "U+4E00..U+9FFF",
+    "assigned": 20992,
+    "sourceSha256": "f8ecdf768bdc210f201abd271d9bc587825618a86a7046a8146cc816393f1998",
+    "fixture": "unicode17-core-u4e00-9fff.txt",
+    "fixtureSha256": "d38fa7ade757795625e600067f9bf1e2caa3e2975205224a488c18426e78d96c"
+  },
+  "common3500": {
+    "source": "Unihan kTGH 2013 ranks 1..3500",
+    "url": "https://www.unicode.org/Public/17.0.0/ucd/Unihan.zip",
+    "archiveEntry": "Unihan_OtherMappings.txt",
+    "count": 3500,
+    "sourceArchiveSha256": "f7a48b2b545acfaa77b2d607ae28747404ce02baefee16396c5d2d7a8ef34b5e",
+    "fixture": "unicode17-common3500-kTGH.txt",
+    "fixtureSha256": "79a6c710013cc86617d5db65871f59b2d67dee72415d380a2cc7145a51450fe4"
+  },
+  "checks": {
+    "sourceRanks": 3500,
+    "coreFixtureUnique": 20992,
+    "commonFixtureUnique": 3500,
+    "commonSetMatchesSource": true,
+    "commonSubsetOfCore": true
+  }
+}

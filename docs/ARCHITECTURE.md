@@ -3,8 +3,12 @@
 source 是唯一权威编辑文本。展示已有 Unicode、几何字形和动画不会自行改写 source；明确的拆合命令是独立编辑事务。
 
 - app/index.html：离线单 HTML 应用和内嵌产品文档，直接打开即可使用。
+- UI 本地候选：工作台左侧编辑真实 source，右侧只读观察区从已渲染 atom 生成副本；观察区不参与编辑、历史或持久化。正式品牌标志的权威资产为 app/branding/zhuixing-logo.svg（“纟＋彡”双色原图轮廓）；app/index.html 内嵌同一组 SVG 路径，保持离线单文件使用。
 - Core / InlineModel：解析、结构与源范围、历史及投影基础。
 - editor-boundary.js / editor-commands.js：编辑单位边界、上下文守卫与提示同源命令。
+- IDC 快速插入：`editor-commands.js` 与单文件内嵌副本共用全部17项 Alt 快捷候选映射；编辑器聚焦时按住 Alt 显示贴近光标的 SVG 候选层，按映射插入，keyup/失焦/Escape 后关闭。Shift 选区语义不变；手机与快捷键关闭时仍可从17个 SVG 按钮插入。插入仍调用原 `insert()` 文本事务，不改变源字符语义。
+- 偏旁快捷插入：独立设置与命令注册表提供实验性纯 `Shift+F` → `扌` 映射，仅在可编辑器焦点、无 IME 组合且无其他修饰时触发。`Ctrl+Shift+F` 和 Shift+方向键保持宿主职责；其它一对多 O 符家族不静默映射。
+- 渐进披露：构形观察默认折叠，用户明确展开后桌面并列/窄屏堆叠；IDC 插入面板、偏旁筛选、快捷提示和许可详情按需显示。
 - settings-module.js：独立设置事务与历史；不混入正文历史。
 - glyph-renderer.js / optical-browser.js：渲染路由与离线光学候选引擎。
 - optical-engine-source/：可复建的引擎、适配器、授权字体资产与来源。

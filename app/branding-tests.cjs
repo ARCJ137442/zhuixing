@@ -2,7 +2,19 @@
 const fs=require('node:fs'),assert=require('node:assert/strict'),path=require('node:path');
 const base=__dirname,h=fs.readFileSync(path.join(base,'index.html'),'utf8'),doc=fs.readFileSync(path.join(base,'document.md'),'utf8');
 assert.match(h,/<title>缀形成象 · 0\.3\.1<\/title>/);
-assert.match(h,/<span class="brand">缀形成象<\/span>/);
+assert.match(h,/<span class="brand">缀形<\/span>/);
+const logo=fs.readFileSync(path.join(base,'branding','zhuixing-logo.svg'),'utf8');
+const inlineLogo=h.match(/<svg class="brandmark"[^>]*>([\s\S]*?)<\/svg>/);
+assert.ok(inlineLogo,'the app embeds its brand logo for offline use');
+const coloredPaths=svg=>Array.from(svg.matchAll(/<path[^>]*fill="(#[0-9a-f]{6})"[^>]*d="([^"]+)"/gi),m=>({fill:m[1],d:m[2]}));
+assert.equal(coloredPaths(logo).length,2);
+assert.deepEqual(coloredPaths(inlineLogo[1]),coloredPaths(logo),'the app mark must match the official SVG paths and colors');
+assert.match(logo,/<title id="title">缀形正式品牌标志：纟与彡<\/title>/);
+assert.match(inlineLogo[0],/aria-labelledby="zhuixing-logo-title zhuixing-logo-desc"/);
+assert.doesNotMatch(h,/丝线结记/);
+assert.match(h,/<span class="brand-subtitle">汉字构形工作台<\/span>/);
+assert.match(h,/本地 UI 候选 · 源码 0\.3\.1/);
+assert.match(h,/class="legal-footer" aria-label="来源与许可"/);
 assert.ok(!h.split('<!-- embedded-document:start -->')[0].includes('品六书之精髓'));
 assert.match(doc,/《缀形成象——品六书之精髓，析汉字之形趣》/);
 assert.match(doc,/不宣称是古已有之的成语/);
@@ -13,4 +25,4 @@ assert.equal(JSON.parse(h.match(/<script type="application\/json" id="product-ma
 const vm=require('node:vm'),C=vm.runInNewContext(h.match(/<script id="core">([\s\S]*?)<\/script>/)[1]+';Core;');
 const project=C.project('⿰亻呆');assert.equal(project.appVersion,'0.3.1');
 project.appVersion='0.2.0';assert.equal(C.readProject(JSON.stringify(project)).source,'⿰亻呆');
-console.log('Branding: 11 checks passed (not browser visual validation).');
+console.log('Branding contracts passed (not browser visual validation).');

@@ -2,7 +2,7 @@
   "source": "https://github.com/yi-bai/ids/blob/267e3fb5d0a32de63128e67ef2f329277cc4013c/ids_lv0.txt",
   "license": "MIT",
   "rawStrictRows": 11325,
-  "normalization": "No global stripping of locale or variant markers. Strict unannotated rows plus six existing reviewed records and two separately reviewed definitions.",
+  "normalization": "No global stripping of locale or variant markers. Strict unannotated rows plus six existing reviewed records and five separately reviewed definitions.",
   "reviewedDefinitions": [
     {
       "character": "保",
@@ -13,6 +13,24 @@
       "character": "呆",
       "ids": "⿱口木",
       "raw": "⿱口.木.(.);⿱口.木d(T)"
+    },
+    {
+      "character": "佨",
+      "ids": "⿰亻包",
+      "raw": "⿰亻包.(.);⿰亻包J(J)",
+      "reviewNote": "Admitted as this exact IDS body from the immutable known-regression source row; annotations are not stripped from other rows."
+    },
+    {
+      "character": "抱",
+      "ids": "⿰扌包",
+      "raw": "⿰扌包.(.);⿰扌包J(J)",
+      "reviewNote": "Admitted as this exact IDS body from the immutable known-regression source row; annotations are not stripped from other rows."
+    },
+    {
+      "character": "衫",
+      "ids": "⿰衤彡",
+      "raw": "⿰衤.彡(.);⿰衤J彡(J);⿰衤jh彡(V)",
+      "reviewNote": "The pinned upstream row has three annotated forms. This individually reviewed mapping admits only the base structure of the first form; it does not strip annotations generally."
     }
   ],
   "limits": "Dataset-scoped candidates, not universal glyph or etymology equivalence; unsupported variants retained in frozen source."

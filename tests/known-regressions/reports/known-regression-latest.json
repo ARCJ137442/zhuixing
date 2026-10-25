@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
-  "adapterPath": "tools/current_app_adapter.cjs",
+  "adapterPath": "tools\\current_app_adapter.cjs",
   "adapterSha256": "48c2b5ea1a722d28895ffd13d79c3d3648db5fb347ebb450d52e052cf6df8893",
   "expectedSha256": "c22684a232de889faa369a7cfa51d6d64d58536f10971ec21744ba4c463a9321",
   "targetChanged": false,
   "dependencyMismatches": [],
   "dependencyHashes": {
     "../../app/recursive-engine/engine.cjs": "42c8dcfdbedfe086892887dced6e64792fb9b3a205cd50dfcfece9a55fc9370a",
-    "../../app/recursive-ids.rows.json": "6a2c6401d164de6e52be1e5a0b434a060cd6a54c7cb759499483dfc44fff4f4c"
+    "../../app/recursive-ids.rows.json": "4f78cd4061b8ced0b752bd1c8650a2df1c000cdbffc7ac7c0271439840b8f732"
   },
   "required": 10,
-  "passed": 7,
-  "failed": 3,
-  "releaseGate": "blocked",
+  "passed": 10,
+  "failed": 0,
+  "releaseGate": "known-regressions-pass-only",
   "rows": [
     {
       "id": "ren",
@@ -68,13 +68,15 @@
       "input": "⿰亻包",
       "expected": "佨",
       "actual": {
-        "kind": "unmapped",
-        "character": null,
-        "candidates": [],
-        "method": "recursive",
+        "kind": "matched",
+        "character": "佨",
+        "candidates": [
+          "佨"
+        ],
+        "method": "direct-and-recursive",
         "datasetScoped": true
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "id": "bao-hand",
@@ -82,13 +84,15 @@
       "input": "⿰扌包",
       "expected": "抱",
       "actual": {
-        "kind": "unmapped",
-        "character": null,
-        "candidates": [],
-        "method": "recursive",
+        "kind": "matched",
+        "character": "抱",
+        "candidates": [
+          "抱"
+        ],
+        "method": "direct-and-recursive",
         "datasetScoped": true
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "id": "bao-compact",
@@ -145,12 +149,12 @@
       "source": "⿰亻报⿰亻包⿰扌包抱",
       "expected": "⿰亻报佨抱抱",
       "actual": {
-        "source": "⿰亻报⿰亻包⿰扌包抱",
-        "changed": false,
+        "source": "⿰亻报佨抱抱",
+        "changed": true,
         "status": "stable",
-        "rounds": 0
+        "rounds": 1
       },
-      "status": "fail"
+      "status": "pass"
     },
     {
       "id": "user-full-san-liang-ren-string",

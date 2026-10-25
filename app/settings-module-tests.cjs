@@ -11,9 +11,9 @@ const memoryStorage = (initial = null) => ({
   setItem(key, value) { this.writes.push({ key, value }); this.value = value; },
 });
 
-test('schema is the nine-item, deeply frozen authority for defaults and metadata', () => {
-  assert.equal(Settings.schema.length, 9);
-  assert.equal(new Set(Settings.schema.map(row => row.key)).size, 9);
+test('schema is the twelve-item, deeply frozen authority for defaults and metadata', () => {
+  assert.equal(Settings.schema.length, 12);
+  assert.equal(new Set(Settings.schema.map(row => row.key)).size, 12);
   for (const row of Settings.schema) {
     for (const field of ['key', 'name', 'label', 'type', 'default', 'description', 'aliases', 'category', 'applicability', 'risk', 'introducedVersion']) assert.ok(Object.hasOwn(row, field), `${row.key}: ${field}`);
     assert.equal(Settings.defaults()[row.key], row.default);
@@ -265,12 +265,23 @@ test('deep invalid input is rejected cleanly without recursive stack exhaustion'
   rejects(envelope({ a: shared, b: shared }), 'UNKNOWN_KEY');
 });
 
-test('pre-release eight-setting files default the new optical preference', () => {
+test('pre-release eight-setting files default later optical and shortcut preferences', () => {
   const oldSnapshot = { ...Settings.defaults() };
   delete oldSnapshot['render.opticalEnabled'];
+  delete oldSnapshot['shortcuts.idcInsert'];
+  delete oldSnapshot['shortcuts.componentInsert'];
+  delete oldSnapshot['shortcuts.obInput'];
   assert.equal(Object.keys(oldSnapshot).length, 8);
   const restored = Settings.decode(envelope(oldSnapshot));
   assert.equal(restored['render.opticalEnabled'], true);
+  assert.equal(restored['shortcuts.idcInsert'], 'alt-palette');
+  assert.equal(restored['shortcuts.componentInsert'], 'shift-keys');
+  assert.equal(restored['shortcuts.obInput'], 'alt-shift-map');
+  const legacyShortcuts = { ...Settings.defaults(), 'shortcuts.idcInsert': 'alt-arrows', 'shortcuts.selectionTransform': 'ctrl-alt' };
+  const migrated = Settings.decode(envelope(legacyShortcuts));
+  assert.equal(migrated['shortcuts.idcInsert'], 'alt-palette');
+  assert.equal(migrated['shortcuts.selectionTransform'], 'off');
+  assert.equal(Settings.decode(envelope({ ...Settings.defaults(), 'shortcuts.idcInsert': 'shift-mode' }))['shortcuts.idcInsert'], 'alt-palette');
   assert.equal(Settings.decode(json({ 'render.opticalEnabled': false }))['render.opticalEnabled'], false);
   assert.equal(Settings.SCHEMA_VERSION, 1);
 });

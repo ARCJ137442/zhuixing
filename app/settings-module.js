@@ -23,7 +23,10 @@ const Settings = (() => {
     { key: 'motion.enabled', name: '构型动效', label: '关闭构型动效', inverted: true, type: 'boolean', default: true, description: '显示构型合成与拆分动效。', aliases: ['动画', '动效', 'motion', 'animation'], category: '动效', applicability: '非源码视图；系统减少动态效果时保留偏好并静态显示', risk: '', introducedVersion: 1 },
     { key: 'motion.speed', name: '动效速度', label: '动效速度', optionLabels: { '0.6': '慢看', '1': '自然', '1.65': '利落' }, type: 'number', enum: [0.6, 1, 1.65], default: 1, description: '慢看、自然、利落三档速度。', aliases: ['速度', '慢看', '自然', '利落', 'speed'], category: '动效', applicability: '动效实际启用时', risk: '', introducedVersion: 1 },
     { key: 'motion.guides', name: '构型辅助线', label: '关闭构型辅助线', inverted: true, type: 'boolean', default: true, description: '在构型动效中显示布局辅助线。', aliases: ['辅助线', '引导', 'guides'], category: '动效', applicability: '动效实际启用时', risk: '', introducedVersion: 1 },
-    { key: 'shortcuts.selectionTransform', name: '选区拆合快捷键', label: '选区拆合快捷键', optionLabels: { off: '关闭', 'alt-shift': 'Alt + Shift', 'ctrl-alt': 'Ctrl + Alt' }, type: 'string', enum: ['off', 'alt-shift', 'ctrl-alt'], default: 'off', description: '仅在编辑器上下文启用选区拆合组合键；关闭仍可用键盘操作按钮。', aliases: ['快捷键', '选区', '拆分', '合成', 'keyboard', 'shortcut'], category: '键盘', applicability: '编辑视图且焦点在编辑器；输入法组合期间暂停', risk: '系统或浏览器占用的组合键可能无法接收。', introducedVersion: 1 },
+    { key: 'shortcuts.idcInsert', name: 'IDC 快捷插入', label: 'IDC 快捷插入', optionLabels: { 'alt-palette': '按住 Alt 显示候选', off: '关闭' }, type: 'string', enum: ['alt-palette', 'off'], default: 'alt-palette', description: '编辑器聚焦时按住 Alt，在光标旁显示全部 IDC SVG 候选；使用候选显示的方向键或字母键直接插入，松开 Alt 即收起。浏览器提供键盘布局映射时，候选键帽随布局显示；不可用时使用标准键位提示。', aliases: ['IDC', '快捷键', '插入', '候选', 'Alt', 'keyboard', 'shortcut'], category: '键盘', applicability: '编辑视图且焦点在编辑器；输入法组合、AltGraph 与只读预览期间暂停', risk: '浏览器或系统可能先截走 Alt 组合键；Alt+方向在部分浏览器会用于页面导航，仍须真人设备验收。', introducedVersion: 1 },
+    { key: 'shortcuts.componentInsert', name: '偏旁快捷插入', label: '偏旁快捷插入', optionLabels: { 'shift-keys': '启用 Shift 字母快捷键', off: '关闭' }, type: 'string', enum: ['shift-keys', 'off'], default: 'shift-keys', description: '编辑器聚焦且没有 IME 组合时，纯 Shift+F 插入扌；Ctrl+Shift+F、Shift+方向键和 IME 组合交还宿主。', aliases: ['部件', '偏旁', '扌', '快捷键', 'Shift', 'keyboard', 'shortcut'], category: '键盘', applicability: '编辑视图且焦点在编辑器；手机使用常见偏旁面板', risk: 'Shift+字母可能输入大写字母；Flypy schema 也允许大写码。组合中的字母交给 IME，应用只在空闲编辑状态消费，且可在此关闭。', introducedVersion: 1 },
+    { key: 'shortcuts.obInput', name: 'O 符偏旁键位图', label: 'O 符偏旁键位图', optionLabels: { 'alt-shift-map': '按住 Alt+Shift 显示键位图', off: '关闭' }, type: 'string', enum: ['alt-shift-map', 'off'], default: 'alt-shift-map', description: '编辑器聚焦时按住 Alt+Shift 打开 A–Z 键位图；按字母选择 ob+字母组，单个 Unicode 部件直插，多候选显示图形候选并用数字、空格或 Enter 选择。Escape 取消；手机仍用按钮面板。', aliases: ['O符', '小鹤', 'ob', '偏旁', '部件', 'Alt', 'Shift', '快捷键', 'keyboard'], category: '键盘', applicability: '仅可编辑视图与编辑器焦点；IME 组合、AltGraph 和只读视图期间暂停', risk: '快捷键数据是用户提供的私人码表摘取，仅用于本机候选，不随产品发布；不同宿主的 Alt+Shift 事件仍需实体按键验收。', introducedVersion: 1 },
+    { key: 'shortcuts.selectionTransform', name: '拆字/合字快捷键', label: '拆字/合字快捷键', optionLabels: { off: '关闭', 'alt-brackets': 'Alt+[ 拆字 / Alt+] 合字' }, type: 'string', enum: ['off', 'alt-brackets'], default: 'alt-brackets', description: 'Alt+[ 对当前选区拆字，Alt+] 对完整 IDS 合字；选区必须有唯一映射，按钮始终可用，结果一次撤销。', aliases: ['快捷键', '选区', '拆字', '合字', 'Alt+[', 'Alt+]', 'keyboard', 'shortcut'], category: '键盘', applicability: '编辑视图且焦点在编辑器；输入法组合期间暂停', risk: '部分键盘布局或宿主可能截获 Alt+括号；画布按钮提供相同操作。', introducedVersion: 1 },
   ]);
   const byKey = new Map(schema.map(entry => [entry.key, entry]));
   class SettingsError extends Error {
@@ -117,7 +120,12 @@ const Settings = (() => {
     if (!Object.hasOwn(envelope, 'kind') || envelope.kind !== KIND) fail('KIND', '这不是结构组字设置文件；项目正文不能作为设置导入。');
     if (!Object.hasOwn(envelope, 'schemaVersion') || envelope.schemaVersion !== SCHEMA_VERSION) fail('VERSION', `不支持设置版本：${String(envelope.schemaVersion)}`);
     if (!Object.hasOwn(envelope, 'settings')) fail('OBJECT', '设置文件缺少 settings。');
-    const snapshot = validateSettings(envelope.settings);
+    if (!plain(envelope.settings)) fail('OBJECT', '设置必须使用普通对象。');
+    const migratedSettings = Object.assign({}, envelope.settings);
+    if (['alt-arrows', 'shift-mode'].includes(migratedSettings['shortcuts.idcInsert'])) migratedSettings['shortcuts.idcInsert'] = 'alt-palette';
+    if (migratedSettings['shortcuts.selectionTransform'] === 'ctrl-alt') migratedSettings['shortcuts.selectionTransform'] = 'off';
+    if (migratedSettings['shortcuts.selectionTransform'] === 'alt-shift') migratedSettings['shortcuts.selectionTransform'] = 'alt-brackets';
+    const snapshot = validateSettings(migratedSettings);
     // Object inputs have no original encoding; enforce the same limit on their JSON representation.
     if (typeof input !== 'string') checkSize(JSON.stringify({ kind: KIND, schemaVersion: SCHEMA_VERSION, settings: snapshot }));
     return snapshot;

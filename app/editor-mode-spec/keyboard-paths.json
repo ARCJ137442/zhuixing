@@ -23,6 +23,24 @@
       "status": "not-run"
     },
     {
+      "id": "insert-all-alt-palette-idc",
+      "feature": "17项IDC按住Alt快捷候选",
+      "entry": "编辑器聚焦且可编辑，按住Alt",
+      "operation": "按住Alt时在光标旁显示17项SVG和名称；按方向/助记键插入对应IDC。对应关系见docs/KEYBOARD.md；设置可关闭，插入面板按钮始终可用",
+      "cancelAndFocus": "松开Alt、Escape、失焦或切入只读视图即收起；Shift扩选、Ctrl/Cmd编辑、IME及AltGraph保持原行为；热键冲突时按钮仍可用",
+      "evidenceRequired": "registry-unit-tests; real-browser-keyboard; physical-keyboard-and-OS-shortcut-conflict; native-IME",
+      "status": "not-run"
+    },
+    {
+      "id": "insert-shift-radical-pilot",
+      "feature": "Shift字母偏旁快捷插入试验",
+      "entry": "编辑器聚焦且可编辑，无IME组合",
+      "operation": "纯Shift+F插入一个扌；该快捷键是应用的明确映射，不把小鹤obf多候选压成单一官方输出；用户可在设置关闭",
+      "cancelAndFocus": "Ctrl+Shift+F、Shift+方向、IME/229、AltGraph和额外修饰保持宿主行为；按钮选择仍可用，正文撤销恢复原文",
+      "evidenceRequired": "registry-unit-tests; controlled-browser-keyboard; native-Rime-and-physical-keyboard",
+      "status": "not-run"
+    },
+    {
       "id": "insert-example",
       "feature": "所有示例",
       "entry": "插入菜单 → Tab 到示例 → Enter/Space",
@@ -105,7 +123,7 @@
     },
     {
       "id": "settings-values",
-      "feature": "全部 8 项设置",
+      "feature": "全部 11 项设置",
       "entry": "搜索/Tab 到任一设置",
       "operation": "select 原生箭头；checkbox Space；不拦输入键",
       "cancelAndFocus": "单项默认/设置 undo 可达；不改正文",

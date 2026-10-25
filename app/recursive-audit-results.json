@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-10-20T06:28:05.063Z",
-  "sourceSHA256": "42c8dcfdbedfe086892887dced6e64792fb9b3a205cd50dfcfece9a55fc9370a",
-  "candidateSHA256": "95e43060d3b004d36ddbc260503f2402403d474a65eb3bf3dbfec0d0b42ddf2e",
+  "timestamp": "2026-10-25T09:49:51.832Z",
+  "sourceSHA256": "bbb26b460fb10dd5b1c0323135a8fab2deb699d1437e8ef3827a7fba54779486",
+  "candidateSHA256": "580228a282a6467e04feeeb998924d6cb3616d2e1acdcf587eebd62f5c1a2b7e",
   "checks": [
     {
       "name": "embedded module exactly matches maintained source module",
