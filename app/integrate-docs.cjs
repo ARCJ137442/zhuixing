@@ -1,7 +1,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const MarkdownIt=require('markdown-it');
-const base=__dirname, md=fs.readFileSync(path.join(base,'document.md'),'utf8');
+const base=__dirname, md=fs.readFileSync(path.join(base,'document.md'),'utf8').replace(/\r\n?/g,'\n');
 const renderer=new MarkdownIt({html:false,linkify:false,typographer:false});
 const ts=renderer.parse(md,{}),toc=[];let index=0;
 for(let i=0;i<ts.length;i++)if(ts[i].type==='heading_open'){
@@ -18,7 +18,7 @@ const fragment=`<!-- embedded-document:start -->
 <dialog id="product-document" aria-labelledby="doc-title"><div class="doc-toolbar"><strong id="doc-title">产品定义与验证方案</strong><button id="doc-download-inline">下载 Markdown</button><form method="dialog"><button aria-label="关闭产品文档">关闭 ×</button></form></div><div class="doc-layout"><nav class="doc-toc" aria-label="产品文档目录">${toc.map(t=>`<a href="#${t.id}">${safe(t.title)}</a>`).join('')}</nav><article class="doc-body">${body}</article></div></dialog>
 <script type="application/json" id="product-markdown">${payload}</script>
 <script>
-(()=>{const dialog=document.getElementById('product-document');document.getElementById('open-docs').onclick=()=>dialog.showModal();function save(){const s=JSON.parse(document.getElementById('product-markdown').textContent),u=URL.createObjectURL(new Blob([s],{type:'text/markdown;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download='结构组字-产品定义与验证方案.md';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}document.getElementById('download-docs').onclick=save;document.getElementById('doc-download-inline').onclick=save;})();
+(()=>{const dialog=document.getElementById('product-document');document.getElementById('open-docs').onclick=()=>dialog.showModal();function save(){const s=JSON.parse(document.getElementById('product-markdown').textContent),u=URL.createObjectURL(new Blob([s],{type:'text/markdown;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download='缀形成象-产品定义与验证方案.md';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}document.getElementById('download-docs').onclick=save;document.getElementById('doc-download-inline').onclick=save;})();
 </script>
 <!-- embedded-document:end -->`;
 let html=fs.readFileSync(path.join(base,'index.html'),'utf8');

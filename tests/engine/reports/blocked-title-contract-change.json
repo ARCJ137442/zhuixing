@@ -1,0 +1,7 @@
+{
+  "status": "blocked-target-changed",
+  "mismatches": [
+    "optical-glyph-prototype/optical.cjs"
+  ],
+  "startedAt": "2026-10-20T04:36:44.781Z"
+}

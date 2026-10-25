@@ -1,0 +1,276 @@
+TAP version 13
+# Subtest: corpus / raw user source including literal svg is not repaired or executed
+ok 1 - corpus / raw user source including literal svg is not repaired or executed
+  ---
+  duration_ms: 5.174624
+  type: 'test'
+  ...
+# Subtest: corpus / dataset qualifiers are not silently stripped
+ok 2 - corpus / dataset qualifiers are not silently stripped
+  ---
+  duration_ms: 0.15591
+  type: 'test'
+  ...
+# Subtest: corpus / review-only candidate roundtrips but is never an asserted Unicode equivalence
+ok 3 - corpus / review-only candidate roundtrips but is never an asserted Unicode equivalence
+  ---
+  duration_ms: 1.643979
+  type: 'test'
+  ...
+# Subtest: corpus / complex missing last or extra operand rejected
+ok 4 - corpus / complex missing last or extra operand rejected
+  ---
+  duration_ms: 0.263278
+  type: 'test'
+  ...
+# Subtest: corpus / astral scalar and synthetic IVS grapheme oracle, not host-editing proof
+ok 5 - corpus / astral scalar and synthetic IVS grapheme oracle, not host-editing proof
+  ---
+  duration_ms: 8.65092
+  type: 'test'
+  ...
+# Subtest: corpus / nine assigned fixtures versus unassigned U+3134B, independent of renderer coverage
+ok 6 - corpus / nine assigned fixtures versus unassigned U+3134B, independent of renderer coverage
+  ---
+  duration_ms: 0.264068
+  type: 'test'
+  ...
+# Subtest: corpus / 乃至 small-inline regression retained without claiming visual fix
+not ok 7 - corpus / 乃至 small-inline regression retained without claiming visual fix
+  ---
+  duration_ms: 8.953266
+  type: 'test'
+  location: '[workspace]/glyph-engine-test-system/tests/corpus.test.cjs:10:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'ready'
+    - 'not-applicable'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'not-applicable'
+  actual: 'ready'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> ([workspace]/glyph-engine-test-system/tests/corpus.test.cjs:10:151)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: host-module / settings mixed valid+invalid patch is atomic
+ok 8 - host-module / settings mixed valid+invalid patch is atomic
+  ---
+  duration_ms: 3.32985
+  type: 'test'
+  ...
+# Subtest: host-module / settings valid change undo redo and frozen snapshot
+ok 9 - host-module / settings valid change undo redo and frozen snapshot
+  ---
+  duration_ms: 0.61169
+  type: 'test'
+  ...
+# Subtest: host-module / settings prototype pollution and unknown keys cannot partially commit
+ok 10 - host-module / settings prototype pollution and unknown keys cannot partially commit
+  ---
+  duration_ms: 0.284628
+  type: 'test'
+  ...
+# Subtest: host-module / eligibility distinguishes unsupported/missing from rejected unsafe source
+not ok 11 - host-module / eligibility distinguishes unsupported/missing from rejected unsafe source
+  ---
+  duration_ms: 13.329826
+  type: 'test'
+  location: '[workspace]/glyph-engine-test-system/tests/host.test.cjs:7:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 'ready'
+    - 'not-applicable'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'not-applicable'
+  actual: 'ready'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> ([workspace]/glyph-engine-test-system/tests/host.test.cjs:7:175)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: host-module / host depth 31,32,33 is not optical limit 16
+ok 12 - host-module / host depth 31,32,33 is not optical limit 16
+  ---
+  duration_ms: 1.606945
+  type: 'test'
+  ...
+# Subtest: host-module / source UTF16 ranges never split an astral component
+ok 13 - host-module / source UTF16 ranges never split an astral component
+  ---
+  duration_ms: 0.96476
+  type: 'test'
+  ...
+# Subtest: host-module / preview fragments come from exact export SVG, no second layout
+ok 14 - host-module / preview fragments come from exact export SVG, no second layout
+  ---
+  duration_ms: 9.18698
+  type: 'test'
+  ...
+# Subtest: host-module / cache normalized option identity, clear and bounded eviction
+ok 15 - host-module / cache normalized option identity, clear and bounded eviction
+  ---
+  duration_ms: 106.93741
+  type: 'test'
+  ...
+# Subtest: host-module / invalid setting cannot use permissive fallback
+ok 16 - host-module / invalid setting cannot use permissive fallback
+  ---
+  duration_ms: 1.426158
+  type: 'test'
+  ...
+# Subtest: visual / 你好后乃至字面与基线对齐
+ok 17 - visual / 你好后乃至字面与基线对齐 # SKIP User screenshot is a retained visual regression; actual integrated font fallback and browser layout must be inspected after final app freeze.
+  ---
+  duration_ms: 0.260934
+  type: 'test'
+  ...
+# Subtest: realbrowser / IME composition, caret, backspace, IVS and undo
+ok 18 - realbrowser / IME composition, caret, backspace, IVS and undo # SKIP No real browser execution in this suite. Intl grapheme oracle and pure modules do not prove browser editing.
+  ---
+  duration_ms: 0.123742
+  type: 'test'
+  ...
+# Subtest: realbrowser / preview/export download and reduced-motion
+ok 19 - realbrowser / preview/export download and reduced-motion # SKIP Requires final app in a real browser, actual downloads and OS preference checks.
+  ---
+  duration_ms: 0.050184
+  type: 'test'
+  ...
+# Subtest: property / seeded AST roundtrip and recursive arity
+ok 20 - property / seeded AST roundtrip and recursive arity
+  ---
+  duration_ms: 4.215123
+  type: 'test'
+  ...
+# Subtest: property / seeded trailing leaf cannot silently disappear
+ok 21 - property / seeded trailing leaf cannot silently disappear
+  ---
+  duration_ms: 1.878945
+  type: 'test'
+  ...
+# Subtest: property / seeded incomplete operator extension never invents an operand
+ok 22 - property / seeded incomplete operator extension never invents an operand
+  ---
+  duration_ms: 1.29106
+  type: 'test'
+  ...
+# Subtest: property / deterministic finite local SVG and source retention on renderable generated structures
+ok 23 - property / deterministic finite local SVG and source retention on renderable generated structures
+  ---
+  duration_ms: 69.887135
+  type: 'test'
+  ...
+# Subtest: metamorphic / size affects export dimensions, not vector geometry
+ok 24 - metamorphic / size affects export dimensions, not vector geometry
+  ---
+  duration_ms: 1.391127
+  type: 'test'
+  ...
+# Subtest: metamorphic / color only changes declared paint, not paths/transforms
+ok 25 - metamorphic / color only changes declared paint, not paths/transforms
+  ---
+  duration_ms: 1.275517
+  type: 'test'
+  ...
+# Subtest: metamorphic / cache clear and returned result mutation preserve correct output
+ok 26 - metamorphic / cache clear and returned result mutation preserve correct output
+  ---
+  duration_ms: 0.927444
+  type: 'test'
+  ...
+# Subtest: metamorphic / explicit Unicode match is separate output policy
+ok 27 - metamorphic / explicit Unicode match is separate output policy
+  ---
+  duration_ms: 2.702888
+  type: 'test'
+  ...
+# Subtest: unit / parser arity and exact AST serialization across all 17 operators
+ok 28 - unit / parser arity and exact AST serialization across all 17 operators
+  ---
+  duration_ms: 3.170145
+  type: 'test'
+  ...
+# Subtest: unit / missing, trailing, punctuation, lone surrogate and markup reject without source loss
+ok 29 - unit / missing, trailing, punctuation, lone surrogate and markup reject without source loss
+  ---
+  duration_ms: 0.752467
+  type: 'test'
+  ...
+# Subtest: unit / non-string input rejects without coercion
+ok 30 - unit / non-string input rejects without coercion
+  ---
+  duration_ms: 0.182338
+  type: 'test'
+  ...
+# Subtest: unit / independent frozen document parser preserves trailing tokens and astral ranges
+ok 31 - unit / independent frozen document parser preserves trailing tokens and astral ranges
+  ---
+  duration_ms: 3.54692
+  type: 'test'
+  ...
+# Subtest: unit / node count boundary 254,255,256
+ok 32 - unit / node count boundary 254,255,256
+  ---
+  duration_ms: 1.014603
+  type: 'test'
+  ...
+# Subtest: unit / depth boundary 15,16,17 with root depth zero
+ok 33 - unit / depth boundary 15,16,17 with root depth zero
+  ---
+  duration_ms: 0.284719
+  type: 'test'
+  ...
+# Subtest: unit / source guard 1023,1024,1025 is distinct from grammar failure
+ok 34 - unit / source guard 1023,1024,1025 is distinct from grammar failure
+  ---
+  duration_ms: 0.226503
+  type: 'test'
+  ...
+# Subtest: unit / numeric option limits include endpoints and reject neighbors/nonfinite
+ok 35 - unit / numeric option limits include endpoints and reject neighbors/nonfinite
+  ---
+  duration_ms: 23.150549
+  type: 'test'
+  ...
+# Subtest: unit / invalid options do not mutate defaults or poison following valid output
+ok 36 - unit / invalid options do not mutate defaults or poison following valid output
+  ---
+  duration_ms: 1.041323
+  type: 'test'
+  ...
+# Subtest: unit / deterministic bounded shrinker retains failure and reduces witness
+ok 37 - unit / deterministic bounded shrinker retains failure and reduces witness
+  ---
+  duration_ms: 0.537702
+  type: 'test'
+  ...
+1..37
+# tests 37
+# suites 0
+# pass 32
+# fail 2
+# cancelled 0
+# skipped 3
+# todo 0
+# duration_ms 740.407627

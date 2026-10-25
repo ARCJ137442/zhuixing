@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'..');
+const read=f=>fs.readFileSync(path.join(root,f),'utf8').replace(/\r\n/g,'\n');
+const assets=JSON.parse(read('assets.json')),provenance=JSON.parse(read('provenance.json')),mapping=JSON.parse(read('unicode-matches.provenance.json'));
+let source=read('optical.cjs').replace("const bundled=require('./assets.json');",'const bundled='+JSON.stringify(assets)+';').replace("const provenance=require('./provenance.json');",'const provenance='+JSON.stringify(provenance)+';').replace("require('./unicode-matches.provenance.json')",JSON.stringify(mapping)).replace('module.exports={VERSION,ENGINE_NAME,DEFAULTS,parse,createRenderer,render:instance.render,clearCache:instance.clearCache};','return {VERSION,ENGINE_NAME,DEFAULTS,render:instance.render,clearCache:instance.clearCache};');
+if(/\brequire\s*\(|\bmodule\.exports\b/.test(source))throw Error('Unconverted Node module reference');
+const adapter=read('browser/browser-adapter.js');
+const bundle=`/* Offline browser SVG engine. OFL Noto outlines and MIT IDS mappings: see bundled licenses. */\n(function(root){\n'use strict';\nconst engine=(()=>{\n${source}\n})();\n${adapter}\nconst api=createOpticalGlyph(engine,${JSON.stringify(Object.keys(assets).join(''))},${JSON.stringify(Object.fromEntries(mapping.entries.map(e=>[e.ids,e.character])))});\nObject.defineProperty(root,'OpticalGlyph',{value:api,writable:false,configurable:false});\n})(globalThis);\n`;
+if(/<\/script/i.test(bundle))throw Error('Unsafe inline script terminator');
+fs.writeFileSync(path.join(__dirname,'optical-browser.js'),bundle);
+const meta={engineVersion:'0.2.0',engineName:'optical-experimental',bundleSha256:crypto.createHash('sha256').update(bundle).digest('hex'),bundleBytes:Buffer.byteLength(bundle),assetsSha256:provenance.assetsSha256,api:'OpticalGlyph.render / eligibility / capabilities',network:false,nodeRuntimeDependencies:false,assetValidation:'once on module initialization'};
+fs.writeFileSync(path.join(__dirname,'bundle-provenance.json'),JSON.stringify(meta,null,2)+'\n');console.log(JSON.stringify(meta));

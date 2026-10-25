@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "startedAt": "2026-10-20T04:32:19.104Z",
+  "finishedAt": "2026-10-20T04:32:19.905Z",
+  "elapsedMs": 798,
+  "seed": 20261020,
+  "iterations": 64,
+  "bounds": {
+    "timeoutMs": 120000,
+    "maxIterations": 128,
+    "maxRenderProperties": 24,
+    "maxShrinkAttempts": 80,
+    "maxCacheCases": 129,
+    "noNetwork": true
+  },
+  "summary": {
+    "tests": 37,
+    "suites": 0,
+    "pass": 32,
+    "fail": 2,
+    "cancelled": 0,
+    "skipped": 3,
+    "todo": 0
+  },
+  "exitCode": 1,
+  "runnerError": null,
+  "changedDuringRun": [],
+  "targets": {
+    "glyph-benchmark/frozen-v014.html": "8ca096e0123f787e9042c4825e3a1963dfb551f34418064e1bf66c3e76faa031",
+    "optical-glyph-prototype/optical.cjs": "9f9e4e18f8c1f60ebd1cc6960ea2c30a614ac44dab606a5e3864a19148f820e7",
+    "optical-glyph-prototype/assets.json": "de10eecc25e4600ceafaac2a1004236af61ec4e731346f9d76592ca3efe09f1c",
+    "optical-glyph-prototype/provenance.json": "5f9a92196f5f5cca556325c1fdc516bab9a50138517e308fd9ed842d1ddc37bf",
+    "optical-glyph-prototype/unicode-matches.provenance.json": "1e2166cf99139320b5acefdf5854d9aab436a1cec0ff0aa53a6655b2d48c818e",
+    "optical-glyph-prototype/browser/browser-adapter.js": "d6b88f9bfe9f0ea0f66e4e11b483e5271fdf5720ed8ff199be1efb603c7b1f7d",
+    "structure-glyph-demo/settings-module.js": "3975eb9fd57e7e12ae5518e9f93bf563e6797df6ddb80375ce8cfc48c3e890e1"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "v8": "13.6.233.17-node.51",
+    "icu": "78.3",
+    "unicode": "17.0",
+    "platform": "linux",
+    "release": "6.18.55",
+    "arch": "x64"
+  },
+  "coverage": {
+    "unit": "executed",
+    "property": "executed bounded custom generator, not fast-check",
+    "corpus": "executed checked-in corpus; not all Unicode",
+    "visual": "not-executed",
+    "host": "pure settings and adapter only; no integrated DOM",
+    "realbrowser": "not-executed"
+  },
+  "warnings": [
+    "Pass counts are not proof of professional or exhaustive coverage.",
+    "No app index was frozen or modified.",
+    "Original corpus is immutable; failures must be preserved and reviewed."
+  ]
+}

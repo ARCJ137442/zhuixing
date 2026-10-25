@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-10-25T12:02:01.596Z",
+  "sourceSHA256": "bbb26b460fb10dd5b1c0323135a8fab2deb699d1437e8ef3827a7fba54779486",
+  "candidateSHA256": "a0a78089cf009c21b9fef76ebc8b25d056c29c18633c8bf6045aa5a0f7400b20",
+  "checks": [
+    {
+      "name": "embedded module exactly matches maintained source module",
+      "passed": true
+    },
+    {
+      "name": "every retained dataset definition remains parseable and indexed",
+      "passed": true
+    },
+    {
+      "name": "standalone and embedded engines agree on genuine corpus transforms",
+      "passed": true
+    },
+    {
+      "name": "user example normalizes all three presentations to 保 without source mutation",
+      "passed": true
+    },
+    {
+      "name": "ordinary two-level fold-one advances exactly one available leaf layer",
+      "passed": true
+    },
+    {
+      "name": "fold-one does not bypass an unmapped inner operator",
+      "passed": true
+    },
+    {
+      "name": "fold-one does not bypass an ambiguous inner operator",
+      "passed": true
+    },
+    {
+      "name": "genuine nested mappings do not skip levels in fold-one",
+      "passed": true
+    },
+    {
+      "name": "fold-all may still collapse a known full structure without mapped intermediate glyph",
+      "passed": true
+    },
+    {
+      "name": "genuine full nested 畾 and 罚 mappings still fold completely",
+      "passed": true
+    },
+    {
+      "name": "direct evidence cannot hide a conflicting recursive candidate",
+      "passed": true
+    },
+    {
+      "name": "full recursive fold is one actual-app undo/redo transaction",
+      "passed": true
+    },
+    {
+      "name": "fold-all retains mixed content and marked clusters",
+      "passed": true
+    },
+    {
+      "name": "fold-all preserves a leaf-attached ZWJ rather than migrating it onto mapped result",
+      "passed": true
+    },
+    {
+      "name": "expand-one preserves a ZWJ-bound glyph cluster",
+      "passed": true
+    },
+    {
+      "name": "actual app join handler preserves a leaf-attached ZWJ",
+      "passed": true
+    },
+    {
+      "name": "variation selectors and combining marks never migrate",
+      "passed": true
+    },
+    {
+      "name": "late ambiguous expansion rolls the whole command back to original source",
+      "passed": true
+    },
+    {
+      "name": "ambiguous exact match is not guessed",
+      "passed": true
+    },
+    {
+      "name": "recursive expansion and size budgets retain original source",
+      "passed": true
+    },
+    {
+      "name": "normalization depth budget is independent of dataset row order",
+      "passed": true
+    },
+    {
+      "name": "successful transformations remain valid under the engine own tree limits",
+      "passed": true
+    },
+    {
+      "name": "actual app split preserves incomplete and invalid structures",
+      "passed": true
+    },
+    {
+      "name": "incomplete and unsupported source remains untouched",
+      "passed": true
+    }
+  ],
+  "observations": {
+    "invalidRows": [],
+    "actualCorpusNestedSingleStepCollapses": {
+      "count": 0,
+      "examples": []
+    },
+    "stats": {
+      "characters": 11008,
+      "directExpressions": 11334,
+      "normalForms": 11988,
+      "blockedCharacters": 1,
+      "ambiguousDirect": 0
+    },
+    "scope": "No source or data edits, network, installation, deployment, or real browser visual certification."
+  },
+  "passed": 24,
+  "failed": 0
+}

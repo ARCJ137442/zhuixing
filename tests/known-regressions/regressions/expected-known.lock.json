@@ -1,0 +1,4 @@
+{
+  "sha256": "c22684a232de889faa369a7cfa51d6d64d58536f10971ec21744ba4c463a9321",
+  "reason": "Initial immutable explicit known-user-regression gate; fixes must change candidate, not weaken these expectations."
+}

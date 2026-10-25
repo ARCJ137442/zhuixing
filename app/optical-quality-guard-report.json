@@ -1,0 +1,418 @@
+{
+  "engine": "0.2.0",
+  "fixtureCount": 13,
+  "caveat": "Occupancy non-regression check, not a subjective quality score or exact painted-bbox proof.",
+  "cases": [
+    {
+      "sourceIDS": "⿱人中",
+      "render": "ready",
+      "layoutMode": "optical",
+      "outputKind": "optical-outline",
+      "reason": null,
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        9.47229,
+        7,
+        90.52771,
+        93
+      ],
+      "qualityGuard": null,
+      "svgSha256": "c40b3975ecdc2b858b3371a35c6bf65f468d2abf9d1b6b8b88fe6e3e9987a051"
+    },
+    {
+      "sourceIDS": "⿰亻二",
+      "render": "ready",
+      "layoutMode": "optical",
+      "outputKind": "optical-outline",
+      "reason": null,
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        9.97849,
+        7,
+        90.02151,
+        93
+      ],
+      "qualityGuard": {
+        "evaluated": true,
+        "applied": false,
+        "axis": "y",
+        "candidateBBox": [
+          9.97849,
+          7,
+          90.02151,
+          93
+        ],
+        "controlBBox": [
+          8.8576,
+          11.73,
+          90.7296,
+          89.13
+        ],
+        "candidateSpan": 86,
+        "controlSpan": 77.39999999999999,
+        "selectedSpan": 86,
+        "minimumRatio": 0.9,
+        "minimumControlSpan": 45,
+        "absoluteLossThreshold": 5,
+        "reason": "no-material-loss"
+      },
+      "svgSha256": "9ba7c12a9ded26ce587118eada3a64e2f57df83956894ec802b8bcd1a756d969"
+    },
+    {
+      "sourceIDS": "⿰日月",
+      "render": "ready",
+      "layoutMode": "optical",
+      "outputKind": "optical-outline",
+      "reason": null,
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        7,
+        10.47943,
+        93,
+        89.52057
+      ],
+      "qualityGuard": {
+        "evaluated": true,
+        "applied": false,
+        "axis": "y",
+        "candidateBBox": [
+          7,
+          10.47943,
+          93,
+          89.52057
+        ],
+        "controlBBox": [
+          15.4624,
+          14.31,
+          84.9504,
+          89.13
+        ],
+        "candidateSpan": 79.04114000000001,
+        "controlSpan": 74.82,
+        "selectedSpan": 79.04114000000001,
+        "minimumRatio": 0.9,
+        "minimumControlSpan": 45,
+        "absoluteLossThreshold": 5,
+        "reason": "no-material-loss"
+      },
+      "svgSha256": "32b581f5ff517488805fd7d182689631ae17845d8cf62514a677aac04289321a"
+    },
+    {
+      "sourceIDS": "⿱⿰日月心",
+      "render": "ready",
+      "layoutMode": "optical",
+      "outputKind": "optical-outline",
+      "reason": null,
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        16.02573,
+        7,
+        83.97427,
+        93
+      ],
+      "qualityGuard": null,
+      "svgSha256": "097e4e1cc90a479423b05442f297d1e188ab30982b8d104d1601cde8a11b341c"
+    },
+    {
+      "sourceIDS": "⿰⿱人中月",
+      "render": "ready",
+      "layoutMode": "optical",
+      "outputKind": "optical-outline",
+      "reason": null,
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        7,
+        11.59954,
+        93,
+        88.40046
+      ],
+      "qualityGuard": {
+        "evaluated": true,
+        "applied": false,
+        "axis": "y",
+        "candidateBBox": [
+          7,
+          11.59954,
+          93,
+          88.40046
+        ],
+        "controlBBox": [
+          9.2704,
+          9.6832,
+          84.9504,
+          91.1424
+        ],
+        "candidateSpan": 76.80091999999999,
+        "controlSpan": 81.4592,
+        "selectedSpan": 76.80091999999999,
+        "minimumRatio": 0.9,
+        "minimumControlSpan": 45,
+        "absoluteLossThreshold": 5,
+        "reason": "no-material-loss"
+      },
+      "svgSha256": "47123438665e809ff330b90cb63f950e55b2ec03bb8a7b367b70d8dfa87d1169"
+    },
+    {
+      "sourceIDS": "⿱一一",
+      "render": "ready",
+      "layoutMode": "optical",
+      "outputKind": "optical-outline",
+      "reason": null,
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        7,
+        41.20686,
+        93,
+        58.79314
+      ],
+      "qualityGuard": null,
+      "svgSha256": "6e8243ca962d6d93f7698516a38dfe64e56fe979919e1d9f49a2759343643a27"
+    },
+    {
+      "sourceIDS": "⿰一一",
+      "render": "ready",
+      "layoutMode": "optical",
+      "outputKind": "optical-outline",
+      "reason": null,
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        7,
+        46.62322,
+        93,
+        53.37678
+      ],
+      "qualityGuard": {
+        "evaluated": true,
+        "applied": false,
+        "axis": "y",
+        "candidateBBox": [
+          7,
+          46.62322,
+          93,
+          53.37678
+        ],
+        "controlBBox": [
+          9.2704,
+          39.25,
+          91.1424,
+          47.85
+        ],
+        "candidateSpan": 6.753559999999993,
+        "controlSpan": 8.600000000000001,
+        "selectedSpan": 6.753559999999993,
+        "minimumRatio": 0.9,
+        "minimumControlSpan": 45,
+        "absoluteLossThreshold": 5,
+        "reason": "sparse-cross-axis"
+      },
+      "svgSha256": "51404abbf079ad1f7559d35b8c0d4d265435a8935d1602512777b95b5e49d276"
+    },
+    {
+      "sourceIDS": "⿱人一",
+      "render": "ready",
+      "layoutMode": "optical",
+      "outputKind": "optical-outline",
+      "reason": null,
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        7,
+        26.23025,
+        93,
+        73.76975
+      ],
+      "qualityGuard": null,
+      "svgSha256": "d5c54f3f2a65fdebaa02147c9590655d13a40ed03e133fa57bea23f3bbe9feea"
+    },
+    {
+      "sourceIDS": "⿱天中",
+      "render": "ready",
+      "layoutMode": "optical",
+      "outputKind": "optical-outline",
+      "reason": null,
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        15.00433,
+        7,
+        84.99567,
+        93
+      ],
+      "qualityGuard": null,
+      "svgSha256": "8b681587e399e65e6bd57d5b8e3dfcca3799f5a8865f7bace8d7feced051474b"
+    },
+    {
+      "sourceIDS": "⿱八口",
+      "render": "ready",
+      "layoutMode": "optical",
+      "outputKind": "optical-outline",
+      "reason": null,
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        7,
+        7.42708,
+        93,
+        92.57292
+      ],
+      "qualityGuard": null,
+      "svgSha256": "7bbf8477148fc014c3eb7022d9914d85dd8d7a5e8de0fabd5f1fb9702b1ee00c"
+    },
+    {
+      "sourceIDS": "⿲木木木",
+      "render": "ready",
+      "layoutMode": "same-font-geometric-fallback",
+      "outputKind": "same-font-geometric-outline",
+      "reason": "cross-axis-occupancy-loss",
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        8.161,
+        10.87,
+        91.839,
+        89.13
+      ],
+      "qualityGuard": {
+        "evaluated": true,
+        "applied": true,
+        "axis": "y",
+        "candidateBBox": [
+          7,
+          24.32931,
+          93,
+          75.67069
+        ],
+        "controlBBox": [
+          8.161,
+          10.87,
+          91.839,
+          89.13
+        ],
+        "candidateSpan": 51.341379999999994,
+        "controlSpan": 78.25999999999999,
+        "selectedSpan": 78.25999999999999,
+        "minimumRatio": 0.9,
+        "minimumControlSpan": 45,
+        "absoluteLossThreshold": 5,
+        "reason": "cross-axis-occupancy-loss"
+      },
+      "svgSha256": "02e40a961edea764a00f92bf75e947bc8b6a45c3968766b145f83d2323437554"
+    },
+    {
+      "sourceIDS": "⿳一口一",
+      "render": "ready",
+      "layoutMode": "optical",
+      "outputKind": "optical-outline",
+      "reason": null,
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        7,
+        22.33606,
+        93,
+        77.66394
+      ],
+      "qualityGuard": null,
+      "svgSha256": "62c2477754d1ac86d80501db6c298906f171526a152e99c275b4a00962bcc6f7"
+    },
+    {
+      "sourceIDS": "⿰乃至",
+      "render": "ready",
+      "layoutMode": "same-font-geometric-fallback",
+      "outputKind": "same-font-geometric-outline",
+      "reason": "cross-axis-occupancy-loss",
+      "viewBox": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "bbox": [
+        8.8576,
+        12.59,
+        91.1424,
+        89.13
+      ],
+      "qualityGuard": {
+        "evaluated": true,
+        "applied": true,
+        "axis": "y",
+        "candidateBBox": [
+          7,
+          19.83058,
+          93,
+          80.16942
+        ],
+        "controlBBox": [
+          8.8576,
+          12.59,
+          91.1424,
+          89.13
+        ],
+        "candidateSpan": 60.338840000000005,
+        "controlSpan": 76.53999999999999,
+        "selectedSpan": 76.53999999999999,
+        "minimumRatio": 0.9,
+        "minimumControlSpan": 45,
+        "absoluteLossThreshold": 5,
+        "reason": "cross-axis-occupancy-loss"
+      },
+      "svgSha256": "133d838791eee151ee426d29235c60781276d2a2cd69230e5d1b7b2bd24bc9b0"
+    }
+  ]
+}

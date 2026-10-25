@@ -15,7 +15,7 @@ function test(name, run) { run(); count++; console.log('PASS ' + name); }
 const caret = n => ({anchor:n, focus:n});
 const atoms = s => M.parts(s, caret(s.length)).filter(p => p.atom);
 test('new version preserves format and renderer', () => {
-  assert.equal(C.VERSION.app, '0.1.6'); assert.equal(C.VERSION.format, 1);
+  assert.equal(C.VERSION.app, '0.4.0'); assert.equal(C.VERSION.format, 1);
   const project = C.project('⿰木水'); project.appVersion = '1.0.0';
   assert.equal(C.readProject(JSON.stringify(project)).source, '⿰木水');
 });

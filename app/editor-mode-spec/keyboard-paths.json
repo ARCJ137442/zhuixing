@@ -1,0 +1,286 @@
+{
+  "kind": "structure-glyph.keyboard-paths",
+  "targetAppVersion": "0.2.0",
+  "principle": "全部功能纯键盘可完成；可选快捷键关闭不影响可达性",
+  "status": "specification-only-not-executed",
+  "paths": [
+    {
+      "id": "open-tools",
+      "feature": "插入菜单",
+      "entry": "Tab 到插入按钮 → Enter/Space",
+      "operation": "Tab/Shift+Tab 浏览 IDC 与示例",
+      "cancelAndFocus": "Escape 关闭，回插入按钮",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "insert-operator",
+      "feature": "每个 IDC 插入",
+      "entry": "插入菜单 → Tab 到目标 IDC → Enter/Space",
+      "operation": "把目标 IDC 写入保留的源选区，回编辑器",
+      "cancelAndFocus": "一次正文 undo 可撤销",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "insert-all-alt-palette-idc",
+      "feature": "17项IDC按住Alt快捷候选",
+      "entry": "编辑器聚焦且可编辑，按住Alt",
+      "operation": "按住Alt时在光标旁显示17项SVG和名称；按方向/助记键插入对应IDC。对应关系见docs/KEYBOARD.md；设置可关闭，插入面板按钮始终可用",
+      "cancelAndFocus": "松开Alt、Escape、失焦或切入只读视图即收起；Shift扩选、Ctrl/Cmd编辑、IME及AltGraph保持原行为；热键冲突时按钮仍可用",
+      "evidenceRequired": "registry-unit-tests; real-browser-keyboard; physical-keyboard-and-OS-shortcut-conflict; native-IME",
+      "status": "not-run"
+    },
+    {
+      "id": "insert-shift-radical-pilot",
+      "feature": "Shift字母偏旁快捷插入试验",
+      "entry": "编辑器聚焦且可编辑，无IME组合",
+      "operation": "纯Shift+F插入一个扌；该快捷键是应用的明确映射，不把小鹤obf多候选压成单一官方输出；用户可在设置关闭",
+      "cancelAndFocus": "Ctrl+Shift+F、Shift+方向、IME/229、AltGraph和额外修饰保持宿主行为；按钮选择仍可用，正文撤销恢复原文",
+      "evidenceRequired": "registry-unit-tests; controlled-browser-keyboard; native-Rime-and-physical-keyboard",
+      "status": "not-run"
+    },
+    {
+      "id": "insert-example",
+      "feature": "所有示例",
+      "entry": "插入菜单 → Tab 到示例 → Enter/Space",
+      "operation": "按现有明确插入语义操作，不偷换正文",
+      "cancelAndFocus": "一次正文 undo",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "editor-navigation",
+      "feature": "正文所有编辑与选择",
+      "entry": "Tab 到编辑器",
+      "operation": "左右/Shift/词与行导航按视图和单位；Enter 换行，Tab 离开",
+      "cancelAndFocus": "Escape 收起上下文，不丢正文",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "clipboard",
+      "feature": "复制/剪切/粘贴",
+      "entry": "编辑器有效选区",
+      "operation": "平台 Ctrl/Cmd+C/X/V；preview 仅复制，不删",
+      "cancelAndFocus": "失败保留源内容，成功不伪报",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "history",
+      "feature": "撤销与重做",
+      "entry": "编辑器 Ctrl/Cmd+Z/Shift+Z 或更多按钮",
+      "operation": "Tab 到撤销/重做 → Enter/Space；只读禁用",
+      "cancelAndFocus": "恢复 source selection，不改偏好",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "selection-transform",
+      "feature": "选区拆合",
+      "entry": "保留编辑器选区 → 更多 → Tab 到拆/合",
+      "operation": "Enter/Space；可选局部快捷键；默认 off 仍可达",
+      "cancelAndFocus": "失败保持范围；一次正文 undo",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "view",
+      "feature": "三种视图",
+      "entry": "Tab 到视图控件",
+      "operation": "原生箭头选择/确认，所有模式可达",
+      "cancelAndFocus": "保留源范围；预览返回恢复",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "unit",
+      "feature": "两种编辑单位",
+      "entry": "Tab 到单位控件或设置中搜索 光标",
+      "operation": "原生箭头选择；不适用视图可改保存值并解释",
+      "cancelAndFocus": "source 不变",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "open-settings",
+      "feature": "设置面板",
+      "entry": "更多 → 设置 → Enter/Space",
+      "operation": "焦点进入搜索；Tab 遍历结果和固定操作",
+      "cancelAndFocus": "Escape 先清搜索再关闭，回启动按钮",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "settings-search",
+      "feature": "名称/说明/别名搜索",
+      "entry": "设置搜索输入",
+      "operation": "直接键入；Tab 到结果，Enter 激活对应控件",
+      "cancelAndFocus": "Escape 清查询；无结果可 Tab 清除",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "settings-values",
+      "feature": "全部 11 项设置",
+      "entry": "搜索/Tab 到任一设置",
+      "operation": "select 原生箭头；checkbox Space；不拦输入键",
+      "cancelAndFocus": "单项默认/设置 undo 可达；不改正文",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "settings-import",
+      "feature": "设置导入原生文件对话框",
+      "entry": "设置 → Tab 到导入设置 → Enter/Space",
+      "operation": "真实系统 picker 键盘选文件并确认 → 差异列表 → 应用",
+      "cancelAndFocus": "系统 Escape 取消回按钮；preview Escape 取消不提交",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "settings-export",
+      "feature": "设置 JSON 导出",
+      "entry": "设置 → Tab 到导出设置 → Enter/Space",
+      "operation": "真实浏览器下载/保存对话框键盘完成",
+      "cancelAndFocus": "取消不影响配置，回触发按钮",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "settings-reset",
+      "feature": "单项/全部默认及配置撤销重做",
+      "entry": "设置 → Tab 到目标动作",
+      "operation": "Enter/Space；全量重置先差异再应用",
+      "cancelAndFocus": "取消零变化；配置撤销与正文历史隔离",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "project-import",
+      "feature": "项目导入原生文件对话框",
+      "entry": "更多 → 导入项目 → Enter/Space",
+      "operation": "真实系统 picker 键盘选择、确认；遵守现有源覆盖保护",
+      "cancelAndFocus": "系统 Escape 返回按钮，原项目不变",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "project-export",
+      "feature": "项目 JSON 下载",
+      "entry": "更多 → 下载项目 JSON → Enter/Space",
+      "operation": "真实浏览器下载 UI 键盘完成",
+      "cancelAndFocus": "取消不改变 source",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "restore-draft",
+      "feature": "恢复打开时草稿",
+      "entry": "更多 → 恢复草稿 → Enter/Space",
+      "operation": "沿既有确认/恢复契约，源事务可撤销",
+      "cancelAndFocus": "无草稿/失败原因可读；取消保留正文",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "inspect",
+      "feature": "检查当前结构",
+      "entry": "编辑器选区 → 更多 → 检查当前结构 → Enter/Space",
+      "operation": "Tab 读上下文控件与可展开构形树",
+      "cancelAndFocus": "Escape 关闭并回启动控件，选择保留",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "tree-locate",
+      "feature": "构形树全部节点与源码范围",
+      "entry": "上下文 → 构形树 summary → Enter/Space",
+      "operation": "Tab 到节点按钮 → Enter/Space 定位；不用未实现 ARIA tree 箭头",
+      "cancelAndFocus": "明确进入源码编辑才能改内部，返回保持范围",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "edit-source",
+      "feature": "当前结构展开/源码编辑",
+      "entry": "当前结构 → 展开原文/源码编辑 → Enter/Space",
+      "operation": "display 模式显式切 source；ids 模式可局部展开",
+      "cancelAndFocus": "不能隐式更改偏好；可切回 live",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "copy-ids",
+      "feature": "复制当前 IDS",
+      "entry": "上下文 → 复制 IDS → Enter/Space",
+      "operation": "剪贴板成功才反馈",
+      "cancelAndFocus": "失败提示且保留 source",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "svg-export",
+      "feature": "纯轮廓与字体依赖 SVG 两种导出",
+      "entry": "上下文 → Tab 到相应导出 → Enter/Space",
+      "operation": "不支持的导出有原因；真实下载 UI 可键盘完成",
+      "cancelAndFocus": "source 不变；不能伪称无字体依赖",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "motion-diagnostic",
+      "feature": "动效状态",
+      "entry": "更多/设置 → 动效状态与演示 → Enter/Space",
+      "operation": "Tab 到查看状态 → Enter/Space；状态可被读屏读取",
+      "cancelAndFocus": "不改 source，不常驻堆诊断",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "motion-demo",
+      "feature": "独立动效演示",
+      "entry": "Tab 到演示一次合成 → Enter/Space",
+      "operation": "遵循关闭/减少动态效果；演示非阻塞",
+      "cancelAndFocus": "新输入/视图切换取消；焦点仍在按钮",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "help-read",
+      "feature": "产品文档阅读与导航",
+      "entry": "更多 → 产品文档 → 阅读文档 → Enter/Space",
+      "operation": "Tab 目录/链接；Enter 跳章节；标准滚动键",
+      "cancelAndFocus": "Escape 关真实模态并回阅读按钮",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "help-download",
+      "feature": "产品文档下载",
+      "entry": "产品文档 → 下载 Markdown → Enter/Space",
+      "operation": "真实浏览器下载 UI 键盘完成",
+      "cancelAndFocus": "取消不改正文",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    },
+    {
+      "id": "panel-close",
+      "feature": "全部菜单/详情/帮助关闭",
+      "entry": "任一面板内",
+      "operation": "Tab 到关闭按钮 → Enter/Space，或约定 Escape",
+      "cancelAndFocus": "回启动控件；不把焦点丢到 body",
+      "evidenceRequired": "real-browser-keyboard; native-picker/download additionally OS integration where applicable",
+      "status": "not-run"
+    }
+  ],
+  "globalAcceptance": [
+    "Tab 与 Shift+Tab 顺序合理，无非模态焦点陷阱",
+    "可见焦点与可访问名称，禁用原因可获得",
+    "不以 setInputFiles 代替原生 picker 键盘验收",
+    "所有支持平台分别记录浏览器/OS/IME 与结果",
+    "不全局截获系统、浏览器、IME 或无关输入域快捷键",
+    "每轮 CHANGELOG/产品文档/规格/验收证据同步"
+  ]
+}

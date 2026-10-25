@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');const C=vm.runInNewContext(fs.readFileSync(__dirname+'/command-system.js','utf8')+';CommandSystem');let count=0;function test(n,f){f();count++;console.log('PASS '+n)}
+const context={view:'live',selection:{anchor:0,focus:3},composing:false};let calls=0;const handlers=Object.fromEntries(C.catalogue.map(x=>[x.id,()=>{calls++;return true}]));const commands=C.create({context:()=>context,handlers});
+test('stable catalogue IDs and buttons unique',()=>{assert.equal(new Set(C.catalogue.map(x=>x.id)).size,C.catalogue.length);const buttons=C.catalogue.map(x=>x.button).filter(Boolean);assert.equal(new Set(buttons).size,buttons.length)});
+test('query is pure and supports aliases titles IDs categories',()=>{const before=calls;for(const q of ['fold','切换','配置','文件'])assert.ok(commands.query(q).length);assert.equal(calls,before)});
+test('no unknown or injected executable parameters',()=>{for(const id of ['constructor','__proto__','eval','(()=>1)()'])assert.equal(commands.execute(id).status,'unavailable');assert.equal(commands.execute('view.live',{view:'source'}).status,'unavailable');assert.equal(calls,0)});
+test('each permitted execution runs precisely one mapped handler',()=>{assert.equal(commands.execute('selection.foldAll').status,'completed');assert.equal(calls,1)});
+test('preview disallows source operations while allowing navigation',()=>{context.view='preview';assert.equal(commands.execute('selection.foldAll').status,'unavailable');assert.equal(commands.execute('edit.undo').status,'unavailable');assert.equal(commands.execute('project.open').status,'awaiting-input');context.view='live'});
+test('collapsed selection fails without transaction',()=>{context.selection={anchor:0,focus:0};assert.equal(commands.execute('selection.expandOne').status,'unavailable');context.selection={anchor:0,focus:1}});
+test('IME owns source and view boundary',()=>{context.composing=true;assert.equal(commands.execute('selection.foldOne').status,'unavailable');assert.equal(commands.execute('view.source').status,'unavailable');context.composing=false});
+test('handler errors and no-op are truthful results',()=>{const c=C.create({context:()=>context,handlers:{'edit.undo':()=>false,'edit.redo':()=>{throw Error('blocked')}}});assert.equal(c.execute('edit.undo').status,'unchanged');assert.equal(c.execute('edit.redo').status,'failed')});
+console.log('\n'+count+' command dispatch checks passed; native keyboard and activation require browser verification.');

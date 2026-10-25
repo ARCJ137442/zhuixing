@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "adapterPath": "tools\\current_app_adapter.cjs",
+  "adapterSha256": "48c2b5ea1a722d28895ffd13d79c3d3648db5fb347ebb450d52e052cf6df8893",
+  "expectedSha256": "c22684a232de889faa369a7cfa51d6d64d58536f10971ec21744ba4c463a9321",
+  "targetChanged": false,
+  "dependencyMismatches": [],
+  "dependencyHashes": {
+    "../../app/recursive-engine/engine.cjs": "42c8dcfdbedfe086892887dced6e64792fb9b3a205cd50dfcfece9a55fc9370a",
+    "../../app/recursive-ids.rows.json": "4f78cd4061b8ced0b752bd1c8650a2df1c000cdbffc7ac7c0271439840b8f732"
+  },
+  "required": 10,
+  "passed": 10,
+  "failed": 0,
+  "releaseGate": "known-regressions-pass-only",
+  "rows": [
+    {
+      "id": "ren",
+      "stage": "known-match",
+      "input": "⿰亻二",
+      "expected": "仁",
+      "actual": {
+        "kind": "matched",
+        "character": "仁",
+        "candidates": [
+          "仁"
+        ],
+        "method": "direct-and-recursive",
+        "datasetScoped": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "san",
+      "stage": "known-match",
+      "input": "⿰亻三",
+      "expected": "仨",
+      "actual": {
+        "kind": "matched",
+        "character": "仨",
+        "candidates": [
+          "仨"
+        ],
+        "method": "direct-and-recursive",
+        "datasetScoped": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "liang",
+      "stage": "known-match",
+      "input": "⿰亻两",
+      "expected": "俩",
+      "actual": {
+        "kind": "matched",
+        "character": "俩",
+        "candidates": [
+          "俩"
+        ],
+        "method": "direct-and-recursive",
+        "datasetScoped": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "bao-person",
+      "stage": "known-match",
+      "input": "⿰亻包",
+      "expected": "佨",
+      "actual": {
+        "kind": "matched",
+        "character": "佨",
+        "candidates": [
+          "佨"
+        ],
+        "method": "direct-and-recursive",
+        "datasetScoped": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "bao-hand",
+      "stage": "known-match",
+      "input": "⿰扌包",
+      "expected": "抱",
+      "actual": {
+        "kind": "matched",
+        "character": "抱",
+        "candidates": [
+          "抱"
+        ],
+        "method": "direct-and-recursive",
+        "datasetScoped": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "bao-compact",
+      "stage": "known-match",
+      "input": "⿰亻呆",
+      "expected": "保",
+      "actual": {
+        "kind": "matched",
+        "character": "保",
+        "candidates": [
+          "保"
+        ],
+        "method": "direct-and-recursive",
+        "datasetScoped": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "bao-expanded",
+      "stage": "known-match",
+      "input": "⿰亻⿱口木",
+      "expected": "保",
+      "actual": {
+        "kind": "matched",
+        "character": "保",
+        "candidates": [
+          "保"
+        ],
+        "method": "recursive",
+        "datasetScoped": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "never-correct-bao-typo",
+      "input": "⿰亻报",
+      "expectedForbidden": [
+        "保",
+        "抱",
+        "佨"
+      ],
+      "actual": {
+        "kind": "unmapped",
+        "character": null,
+        "candidates": [],
+        "method": "recursive",
+        "datasetScoped": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "user-full-bao-string",
+      "stage": "whole-source-transform",
+      "source": "⿰亻报⿰亻包⿰扌包抱",
+      "expected": "⿰亻报佨抱抱",
+      "actual": {
+        "source": "⿰亻报佨抱抱",
+        "changed": true,
+        "status": "stable",
+        "rounds": 1
+      },
+      "status": "pass"
+    },
+    {
+      "id": "user-full-san-liang-ren-string",
+      "stage": "whole-source-transform",
+      "source": "⿰亻三仨⿰亻两俩⿰亻二仁",
+      "expected": "仨仨俩俩仁仁",
+      "actual": {
+        "source": "仨仨俩俩仁仁",
+        "changed": true,
+        "status": "stable",
+        "rounds": 1
+      },
+      "status": "pass"
+    }
+  ],
+  "caveat": "Passing these anchors cannot substitute for full3500/core/browser gates; adapter must expose complete dependency provenance."
+}

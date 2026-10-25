@@ -1,0 +1,17 @@
+{
+  "recordedAt": "2026-10-20T04:37:54.622Z",
+  "reason": "Add final 0.2.0 host fixture only after exact author-provided SHA c1b17ae verification; pure modules, no DOM claim",
+  "files": {
+    "glyph-benchmark/frozen-v014.html": "8ca096e0123f787e9042c4825e3a1963dfb551f34418064e1bf66c3e76faa031",
+    "optical-glyph-prototype/optical.cjs": "f80175975911c263d77726a3f4d8ea0aa083a316f4f2bf7fc9856e3612d6fa96",
+    "optical-glyph-prototype/assets.json": "de10eecc25e4600ceafaac2a1004236af61ec4e731346f9d76592ca3efe09f1c",
+    "optical-glyph-prototype/provenance.json": "5f9a92196f5f5cca556325c1fdc516bab9a50138517e308fd9ed842d1ddc37bf",
+    "optical-glyph-prototype/unicode-matches.provenance.json": "1e2166cf99139320b5acefdf5854d9aab436a1cec0ff0aa53a6655b2d48c818e",
+    "optical-glyph-prototype/browser/browser-adapter.js": "de65b8fc4ce6563ea06c47b21f003106b6d4c97697610fb13c7937ed076dd359",
+    "structure-glyph-demo/settings-module.js": "3975eb9fd57e7e12ae5518e9f93bf563e6797df6ddb80375ce8cfc48c3e890e1",
+    "structure-glyph-demo/editor-boundary.js": "7fb71340e5699f3c072e4be256b2ca6698d0d4391424122213314a21627359c4",
+    "structure-glyph-demo/glyph-identity.js": "99488cb305ecf90c593da387fe4c2b0bb005704f58ce12f9c1025b86a0920644",
+    "structure-glyph-demo/releases/0.1.6/index.html": "f66f8dfb45456cb74c994f3f817e4f936f9c8f3fdb99362460eb15185e969e3f",
+    "glyph-engine-test-system/fixtures/host-v020.html": "c1b17ae549656fe6edccc9e797913dd2e936fbca478b42c131c3c4be9a7543ab"
+  }
+}

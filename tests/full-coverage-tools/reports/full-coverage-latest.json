@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-25",
+  "sources": {
+    "unicodeVersion": "17.0.0",
+    "coreSet": {
+      "count": 20992,
+      "sha256": "d38fa7ade757795625e600067f9bf1e2caa3e2975205224a488c18426e78d96c"
+    },
+    "common3500": {
+      "count": 3500,
+      "sha256": "79a6c710013cc86617d5db65871f59b2d67dee72415d380a2cc7145a51450fe4"
+    },
+    "recursiveRows": {
+      "count": 11336,
+      "sha256": "4f78cd4061b8ced0b752bd1c8650a2df1c000cdbffc7ac7c0271439840b8f732"
+    },
+    "appHtml": {
+      "bytes": 1412210,
+      "sha256": "30fc6a16c97aa0f8627b1be728fc4e20213901e96d2888b59b7833a99a9ef6f2"
+    }
+  },
+  "coverage": {
+    "core": {
+      "expected": 20992,
+      "uniqueDirect": 2065,
+      "ambiguous": 60,
+      "missingOrUnresolved": 18867,
+      "fallbackCorrect": 2125,
+      "joinCorrect": 2065,
+      "ambiguousJoinCorrect": 60,
+      "reverseSplitCorrect": 2065,
+      "ambiguousSplitSafe": 60,
+      "directLookupCorrect": 2125
+    },
+    "common3500": {
+      "expected": 3500,
+      "uniqueDirect": 412,
+      "ambiguous": 17,
+      "missingOrUnresolved": 3071,
+      "fallbackCorrect": 429,
+      "joinCorrect": 429,
+      "ambiguousJoinCorrect": 17,
+      "reverseSplitCorrect": 412,
+      "ambiguousSplitSafe": 17,
+      "directLookupCorrect": 429
+    }
+  },
+  "integrity": {
+    "embeddedRowsMatchSource": true,
+    "badDirect": 0,
+    "badFallback": 0,
+    "badJoin": 0,
+    "badUniqueReverseSplit": 0,
+    "badAmbiguousSplit": 0,
+    "shanFallback": "衫",
+    "shanSplit": "⿰衤彡",
+    "uniqueExactIdsJoinRecords": 11334,
+    "priorCasesCompared": 20992,
+    "noDegradation": true,
+    "regressions": []
+  },
+  "browserSmoke": {
+    "status": "representative-ui-pass",
+    "sourceMatchesCurrent": true,
+    "scope": "Current 0.4.0 page reloaded from the user-run local HTTP server after canonical-LF embedded Markdown normalization. Exact current bytes were verified; desktop/mobile layout, all 17 IDC menu/editor SVGs, hidden empty notice, and zero browser console errors were checked. Prior interaction evidence remains identified by its prior source hash; shortcut/selection handlers are unchanged.",
+    "engineVersion": null,
+    "report": "browser-review-latest.json"
+  },
+  "additionalStages": {
+    "fontCmap": "not-run",
+    "fallbackRender": "not-run",
+    "outlineExport": "not-run",
+    "sameFontSvg": "not-run",
+    "sameFontPixels": "not-run",
+    "crossFontReference": "not-run",
+    "browserChromium": "not-run",
+    "browserFirefox": "not-run",
+    "browserWebkit": "not-run",
+    "nativeIme": "not-run"
+  },
+  "dataCoverageComplete": false,
+  "releaseGate": "blocked-until-data-render-export-and-browser-stages-complete",
+  "limitations": [
+    "The exact 20,992 and 3,500 case sets are executed; missing/ambiguous candidate cases remain blockers.",
+    "Raw annotated IDS semantics are not globally projected.",
+    "A unique IDS is dataset-scoped, not proof of universal glyph or etymology equivalence."
+  ]
+}

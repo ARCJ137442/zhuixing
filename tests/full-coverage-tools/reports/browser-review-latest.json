@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-25T12:24:07.588Z",
+  "status": "representative-ui-pass",
+  "scope": "Current 0.4.0 page reloaded from the user-run local HTTP server after canonical-LF embedded Markdown normalization. Exact current bytes were verified; desktop/mobile layout, all 17 IDC menu/editor SVGs, hidden empty notice, and zero browser console errors were checked. Prior interaction evidence remains identified by its prior source hash; shortcut/selection handlers are unchanged.",
+  "source": {
+    "branch": "feature/0.4.0-ui-20261025",
+    "head": "4dc93fdb1e3d5200127df7eb1ac7921e2c87cedf",
+    "appHtmlBytes": 1412210,
+    "appHtmlSha256": "30fc6a16c97aa0f8627b1be728fc4e20213901e96d2888b59b7833a99a9ef6f2",
+    "rows": 11336,
+    "rowsSha256": "4f78cd4061b8ced0b752bd1c8650a2df1c000cdbffc7ac7c0271439840b8f732",
+    "appVersion": "0.4.0",
+    "worktreeState": "reviewed exact committed 0.4.0 HTML bytes from the local HTTP server",
+    "releasePrepCommit": "4dc93fdb1e3d5200127df7eb1ac7921e2c87cedf"
+  },
+  "server": {
+    "url": "http://127.0.0.1:8765/app/index.html",
+    "status": 200,
+    "bytesEqualToWorktree": true,
+    "sha256": "30fc6a16c97aa0f8627b1be728fc4e20213901e96d2888b59b7833a99a9ef6f2",
+    "bytes": 1412210
+  },
+  "browser": {
+    "surface": "Codex in-app browser (IAB)",
+    "engineVersion": null,
+    "engineVersionNote": "Not exposed by the browser inspection API; no cross-browser claim."
+  },
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 900,
+      "pageScrollWidth": 1280,
+      "bodyScrollWidth": 1265,
+      "observationDefault": "collapsed",
+      "editorSvgCount": 1,
+      "idcButtons": 17,
+      "idcButtonSvgs": 17,
+      "unsupportedLayoutBadges": 5
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "pageScrollWidth": 375,
+      "bodyScrollWidth": 375,
+      "editorWidth": 343,
+      "idcGridColumns": 4,
+      "observationDefault": "collapsed",
+      "observationExpanded": "stacked-below-editor (previous same-layout check)"
+    },
+    {
+      "width": 466,
+      "height": 1012,
+      "pageScrollWidth": 466,
+      "observationFinal": "collapsed",
+      "viewportOverrideReset": true
+    }
+  ],
+  "checks": {
+    "embeddedRows": 11336,
+    "idcInsertButtons": 17,
+    "idcInsertButtonSvgs": 17,
+    "idcUnsupportedLayoutBadges": 5,
+    "emptyNoticeHidden": true,
+    "consoleErrors": 0,
+    "shanSplitJoin": {
+      "input": "衫",
+      "splitShortcut": "Alt+BracketLeft",
+      "splitOutput": "⿰衤彡",
+      "fullOutputSelected": true,
+      "joinShortcut": "Alt+BracketRight",
+      "joinOutput": "衫",
+      "undoRestoresIds": true
+    },
+    "exactRareLeafRoundTrip": {
+      "ids": "⿱𲎰𠮛",
+      "unicode": "吾",
+      "joinPassed": true,
+      "splitBackPassed": true,
+      "wholeIdsSelected": true
+    },
+    "multipleDirectForms": {
+      "unicode": "侧",
+      "forms": [
+        "⿰亻则",
+        "⿰𱎡刂"
+      ],
+      "eachExactFormJoins": true,
+      "automaticSplitEnabled": false,
+      "behavior": "no-form-guessed"
+    },
+    "oSymbolMap": {
+      "trigger": "Alt+Shift+F",
+      "group": "obf",
+      "singleUnicodeCandidates": 3,
+      "multiCharacterHints": 2,
+      "defaultHighlighted": "扌",
+      "confirmation": "Space",
+      "result": "⿰亻扌"
+    },
+    "uiSourceRestored": "⿰纟彡",
+    "editorOperatorSvgs": 17,
+    "editorOperatorNote": "All 17 IDC code points were placed directly in the editor; each produced one accessible SVG image.",
+    "currentVersionVisualSmoke": {
+      "title": "缀形成象 · 0.4.0",
+      "versionBadge": "0.4.0",
+      "reloadedAfterMarkdownLfNormalization": true,
+      "desktop": {
+        "width": 1280,
+        "pageScrollWidth": 1280,
+        "bodyScrollWidth": 1265
+      },
+      "mobile": {
+        "width": 390,
+        "pageScrollWidth": 375,
+        "bodyScrollWidth": 375,
+        "editorWidth": 343,
+        "gridColumns": 4
+      },
+      "defaultAfterReload": {
+        "width": 466,
+        "height": 1012,
+        "pageScrollWidth": 466,
+        "observationCollapsed": true,
+        "insertPanelCollapsed": true,
+        "editorSource": "⿰纟彡"
+      },
+      "menuSvgs": 17,
+      "editorSvgs": 1,
+      "unsupportedLayoutBadges": 5,
+      "emptyNotice": {
+        "hidden": true,
+        "display": "none"
+      },
+      "consoleErrors": 0,
+      "htmlBytes": 1412210,
+      "htmlSha256": "30fc6a16c97aa0f8627b1be728fc4e20213901e96d2888b59b7833a99a9ef6f2"
+    },
+    "interactionEvidencePreviousSourceSha256": "0f8463b58230be99b80a536a7c5e6eabc5e91fe7ea13fdb3c16dcd930412d845",
+    "interactionEvidenceNote": "Alt split/join, exact IDS selection, rare-leaf round trip, multiple-form no-guess behavior, and O-symbol confirmation were checked on the prior UI build. Since then only release identity/static documentation payload and line-ending normalization changed; command/selection handlers remained unchanged. Current exact 0.4.0 page was reloaded and visual state rechecked.",
+    "crossPlatformMarkdown": {
+      "embeddedMarkdownLineEndings": "LF",
+      "normalizesWindowsAndMacLineEndings": true,
+      "embeddedPayloadMatchesMaintainedMarkdown": true
+    }
+  },
+  "notRun": {
+    "fullSetBrowserRender": "20,992 core + 3,500 common case-by-case render matrix",
+    "fontCmap": "not-run",
+    "outlineExport": "not-run",
+    "crossBrowser": "not-run",
+    "nativeIme": "not-run",
+    "physicalKeyboard": "not-run",
+    "systemShortcutConflicts": "not-run",
+    "screenReader": "not-run"
+  },
+  "cleanup": {
+    "editorSourceRestored": "⿰纟彡",
+    "insertPanelCollapsed": true,
+    "observationCollapsed": true,
+    "viewportOverrideReset": true
+  }
+}

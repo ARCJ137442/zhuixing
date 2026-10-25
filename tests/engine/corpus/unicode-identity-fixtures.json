@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "ucdVersion": "17.0.0",
+  "purpose": "Unicode identity independent of mapping-table membership, renderer coverage or glyph quality",
+  "sources": {
+    "Blocks": {
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/Blocks.txt",
+      "sha256": "c0edefaf1a19771e830a82735472716af6bf3c3975f6c2a23ffbe2580fbbcb15"
+    },
+    "UnicodeData": {
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt",
+      "sha256": "2e1efc1dcb59c575eedf5ccae60f95229f706ee6d031835247d843c11d96470c"
+    },
+    "DerivedAge": {
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/DerivedAge.txt",
+      "sha256": "f8ecdf768bdc210f201abd271d9bc587825618a86a7046a8146cc816393f1998"
+    },
+    "PropList": {
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/PropList.txt",
+      "sha256": "130dcddcaadaf071008bdfce1e7743e04fdfbc910886f017d9f9ac931d8c64dd"
+    }
+  },
+  "licenseUrl": "https://www.unicode.org/license.txt",
+  "entries": [
+    {
+      "character": "你",
+      "codePoint": "U+4F60",
+      "block": "CJK Unified Ideographs",
+      "assigned": true,
+      "generalCategory": "Lo",
+      "age": "1.1",
+      "unifiedIdeograph": true,
+      "fontCoverage": "unknown-not-inferred",
+      "normativeGlyphStatus": "not-inferred-from-encoding",
+      "evidence": {
+        "Blocks": "4E00..9FFF; CJK Unified Ideographs",
+        "UnicodeData": [
+          "4E00;<CJK Ideograph, First>;Lo;0;L;;;;;N;;;;;",
+          "9FFF;<CJK Ideograph, Last>;Lo;0;L;;;;;N;;;;;"
+        ],
+        "DerivedAge": "4E00..9FA5    ; 1.1 # [20902] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FA5",
+        "PropList": "4E00..9FFF    ; Unified_Ideograph # Lo [20992] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FFF"
+      }
+    },
+    {
+      "character": "𰻝",
+      "codePoint": "U+30EDD",
+      "block": "CJK Unified Ideographs Extension G",
+      "assigned": true,
+      "generalCategory": "Lo",
+      "age": "13.0",
+      "unifiedIdeograph": true,
+      "fontCoverage": "unknown-not-inferred",
+      "normativeGlyphStatus": "not-inferred-from-encoding",
+      "evidence": {
+        "Blocks": "30000..3134F; CJK Unified Ideographs Extension G",
+        "UnicodeData": [
+          "30000;<CJK Ideograph Extension G, First>;Lo;0;L;;;;;N;;;;;",
+          "3134A;<CJK Ideograph Extension G, Last>;Lo;0;L;;;;;N;;;;;"
+        ],
+        "DerivedAge": "30000..3134A  ; 13.0 # [4939] CJK UNIFIED IDEOGRAPH-30000..CJK UNIFIED IDEOGRAPH-3134A",
+        "PropList": "30000..3134A  ; Unified_Ideograph # Lo [4939] CJK UNIFIED IDEOGRAPH-30000..CJK UNIFIED IDEOGRAPH-3134A"
+      }
+    },
+    {
+      "character": "𮘎",
+      "codePoint": "U+2E60E",
+      "block": "CJK Unified Ideographs Extension F",
+      "assigned": true,
+      "generalCategory": "Lo",
+      "age": "10.0",
+      "unifiedIdeograph": true,
+      "fontCoverage": "unknown-not-inferred",
+      "normativeGlyphStatus": "not-inferred-from-encoding",
+      "evidence": {
+        "Blocks": "2CEB0..2EBEF; CJK Unified Ideographs Extension F",
+        "UnicodeData": [
+          "2CEB0;<CJK Ideograph Extension F, First>;Lo;0;L;;;;;N;;;;;",
+          "2EBE0;<CJK Ideograph Extension F, Last>;Lo;0;L;;;;;N;;;;;"
+        ],
+        "DerivedAge": "2CEB0..2EBE0  ; 10.0 # [7473] CJK UNIFIED IDEOGRAPH-2CEB0..CJK UNIFIED IDEOGRAPH-2EBE0",
+        "PropList": "2CEB0..2EBE0  ; Unified_Ideograph # Lo [7473] CJK UNIFIED IDEOGRAPH-2CEB0..CJK UNIFIED IDEOGRAPH-2EBE0"
+      }
+    },
+    {
+      "character": "𲈤",
+      "codePoint": "U+32224",
+      "block": "CJK Unified Ideographs Extension H",
+      "assigned": true,
+      "generalCategory": "Lo",
+      "age": "15.0",
+      "unifiedIdeograph": true,
+      "fontCoverage": "unknown-not-inferred",
+      "normativeGlyphStatus": "not-inferred-from-encoding",
+      "evidence": {
+        "Blocks": "31350..323AF; CJK Unified Ideographs Extension H",
+        "UnicodeData": [
+          "31350;<CJK Ideograph Extension H, First>;Lo;0;L;;;;;N;;;;;",
+          "323AF;<CJK Ideograph Extension H, Last>;Lo;0;L;;;;;N;;;;;"
+        ],
+        "DerivedAge": "31350..323AF  ; 15.0 # [4192] CJK UNIFIED IDEOGRAPH-31350..CJK UNIFIED IDEOGRAPH-323AF",
+        "PropList": "31350..33479  ; Unified_Ideograph # Lo [8490] CJK UNIFIED IDEOGRAPH-31350..CJK UNIFIED IDEOGRAPH-33479"
+      }
+    },
+    {
+      "character": "仁",
+      "codePoint": "U+4EC1",
+      "block": "CJK Unified Ideographs",
+      "assigned": true,
+      "generalCategory": "Lo",
+      "age": "1.1",
+      "unifiedIdeograph": true,
+      "fontCoverage": "unknown-not-inferred",
+      "normativeGlyphStatus": "not-inferred-from-encoding",
+      "evidence": {
+        "Blocks": "4E00..9FFF; CJK Unified Ideographs",
+        "UnicodeData": [
+          "4E00;<CJK Ideograph, First>;Lo;0;L;;;;;N;;;;;",
+          "9FFF;<CJK Ideograph, Last>;Lo;0;L;;;;;N;;;;;"
+        ],
+        "DerivedAge": "4E00..9FA5    ; 1.1 # [20902] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FA5",
+        "PropList": "4E00..9FFF    ; Unified_Ideograph # Lo [20992] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FFF"
+      }
+    },
+    {
+      "character": "明",
+      "codePoint": "U+660E",
+      "block": "CJK Unified Ideographs",
+      "assigned": true,
+      "generalCategory": "Lo",
+      "age": "1.1",
+      "unifiedIdeograph": true,
+      "fontCoverage": "unknown-not-inferred",
+      "normativeGlyphStatus": "not-inferred-from-encoding",
+      "evidence": {
+        "Blocks": "4E00..9FFF; CJK Unified Ideographs",
+        "UnicodeData": [
+          "4E00;<CJK Ideograph, First>;Lo;0;L;;;;;N;;;;;",
+          "9FFF;<CJK Ideograph, Last>;Lo;0;L;;;;;N;;;;;"
+        ],
+        "DerivedAge": "4E00..9FA5    ; 1.1 # [20902] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FA5",
+        "PropList": "4E00..9FFF    ; Unified_Ideograph # Lo [20992] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FFF"
+      }
+    },
+    {
+      "character": "休",
+      "codePoint": "U+4F11",
+      "block": "CJK Unified Ideographs",
+      "assigned": true,
+      "generalCategory": "Lo",
+      "age": "1.1",
+      "unifiedIdeograph": true,
+      "fontCoverage": "unknown-not-inferred",
+      "normativeGlyphStatus": "not-inferred-from-encoding",
+      "evidence": {
+        "Blocks": "4E00..9FFF; CJK Unified Ideographs",
+        "UnicodeData": [
+          "4E00;<CJK Ideograph, First>;Lo;0;L;;;;;N;;;;;",
+          "9FFF;<CJK Ideograph, Last>;Lo;0;L;;;;;N;;;;;"
+        ],
+        "DerivedAge": "4E00..9FA5    ; 1.1 # [20902] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FA5",
+        "PropList": "4E00..9FFF    ; Unified_Ideograph # Lo [20992] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FFF"
+      }
+    },
+    {
+      "character": "好",
+      "codePoint": "U+597D",
+      "block": "CJK Unified Ideographs",
+      "assigned": true,
+      "generalCategory": "Lo",
+      "age": "1.1",
+      "unifiedIdeograph": true,
+      "fontCoverage": "unknown-not-inferred",
+      "normativeGlyphStatus": "not-inferred-from-encoding",
+      "evidence": {
+        "Blocks": "4E00..9FFF; CJK Unified Ideographs",
+        "UnicodeData": [
+          "4E00;<CJK Ideograph, First>;Lo;0;L;;;;;N;;;;;",
+          "9FFF;<CJK Ideograph, Last>;Lo;0;L;;;;;N;;;;;"
+        ],
+        "DerivedAge": "4E00..9FA5    ; 1.1 # [20902] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FA5",
+        "PropList": "4E00..9FFF    ; Unified_Ideograph # Lo [20992] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FFF"
+      }
+    },
+    {
+      "character": "男",
+      "codePoint": "U+7537",
+      "block": "CJK Unified Ideographs",
+      "assigned": true,
+      "generalCategory": "Lo",
+      "age": "1.1",
+      "unifiedIdeograph": true,
+      "fontCoverage": "unknown-not-inferred",
+      "normativeGlyphStatus": "not-inferred-from-encoding",
+      "evidence": {
+        "Blocks": "4E00..9FFF; CJK Unified Ideographs",
+        "UnicodeData": [
+          "4E00;<CJK Ideograph, First>;Lo;0;L;;;;;N;;;;;",
+          "9FFF;<CJK Ideograph, Last>;Lo;0;L;;;;;N;;;;;"
+        ],
+        "DerivedAge": "4E00..9FA5    ; 1.1 # [20902] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FA5",
+        "PropList": "4E00..9FFF    ; Unified_Ideograph # Lo [20992] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FFF"
+      }
+    }
+  ],
+  "negativeCases": [
+    {
+      "character": "𱍋",
+      "codePoint": "U+3134B",
+      "block": "CJK Unified Ideographs Extension G",
+      "assigned": false,
+      "generalCategory": "Cn",
+      "age": null,
+      "unifiedIdeograph": false,
+      "fontCoverage": "unknown-not-inferred",
+      "normativeGlyphStatus": "not-inferred-from-encoding",
+      "evidence": {
+        "Blocks": "30000..3134F; CJK Unified Ideographs Extension G",
+        "UnicodeData": [],
+        "DerivedAge": null,
+        "PropList": null
+      }
+    }
+  ],
+  "displayAdvice": {
+    "knownAssigned": "已编码 · U+4F60 · CJK Unified Ideographs（基本区）",
+    "missingOutline": "当前渲染器缺少轮廓",
+    "notInSmallFixture": "Unicode身份未核验（当前内嵌表未覆盖）",
+    "neverInfer": "Do not label encoded text non-standard because no outline or IDS lookup exists; block membership alone is not assignment."
+  }
+}

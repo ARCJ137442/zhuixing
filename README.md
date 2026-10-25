@@ -1,30 +1,34 @@
-# Structure Glyph Workbench
+# 缀形 · 0.4.0
 
-暂用工作目录名，产品命名尚未决定。该目录已建立本地版本跟踪基线，尚未发布到 GitHub。
+《缀形成象——品六书之精髓，析汉字之形趣》
 
-## 产品方向
+0.4.0 是私有 GitHub 仓库中的离线 UI/输入功能版本，源码基于 0.3.1 并吸收已审阅的 Logo、IDC SVG、Alt/Shift 输入与一等拆字/合字功能。冻结 HTML `0.4.0-rc.9` 是另一份构建产物，不是本版本源码快照。
 
-以 IDS 为权威源文本，支持普通文字与结构字混排编辑。所有功能必须有完整纯键盘路径；动效与字形轮廓只是呈现层，不得决定编辑功能是否成立。
+功能清单、验证结果与保留限制见 [0.4.0 Release Notes](docs/RELEASE-0.4.0.md)。
 
-每次迭代同时维护产品文档、键盘说明、验收状态及版本记录。模型检查、受控 DOM 检查与真实浏览器/输入法验收必须分开标注。
+本版本发布范围经过明确限定：Unicode 17 核心区与 TGH 一级常用字的输入集已完整枚举，但当前数据并未覆盖全集。0.4.0 不宣称完成 20,992 核心字或 3,500 常用字覆盖，也不宣称全字体、跨浏览器或真人输入法验收。逐字结果见[全量覆盖报告](tests/full-coverage-tools/reports/full-coverage-latest.json)和[已知边界](docs/KNOWN-ISSUES.md)。
 
-## 目录合同
+## 本地运行
 
-- app/：来自冻结 0.1.6 ZIP 的脱敏基线及现有测试。
-- docs/：现役产品定义、架构、操作、验证与迭代合同。
-- research/：经过来源、隐私与许可审查的研究摘要。
-- experiments/：与主产品隔离的候选算法及实验。
-- private-reference/：未审查原始资料、用户截图、第三方技能及版本快照，不进入 Git。
-- release/：本地交付打包产物，不进入 Git。
+直接打开 `app/index.html`，无需构建或联网。IDS 是权威源文本；显示匹配不自动改写原文，拆字/合字等明确事务可撤销。
 
-## 当前状态
+## 验证
 
-0.1.6 冻结 ZIP 已做私有备份；app 是明确标记的脱敏基线，不是字节等同的官方发布包。0.2.x 未发布改动在独立整合分支接收，不从活跃源码抢先复制。
+```sh
+node scripts/test.mjs
+node tests/engine/run.cjs
+node tests/known-regressions/tools/known_gate.cjs
+node tests/full-coverage-tools/tools/audit-current.cjs
+```
 
-## 运行与验证
+已知回归门禁为 10/10 PASS。全量审计准确枚举核心集 20,992 字与 TGH 一级 3,500 字；严格唯一 IDS 分别为 2,065 和 412，另外有歧义字及大量缺失候选，因此审计以“覆盖不完整”退出，不是全量通过。浏览器代表性 UI 验收记录见 `tests/full-coverage-tools/reports/browser-review-latest.json`；实体键盘、IME、字体码位、全量渲染/导出和跨浏览器矩阵仍未验收。
 
-直接打开 app/index.html。自动检查：node scripts/test.mjs。10 个测试套件无需 npm 安装；文档再生成脚本单独需要 markdown-it，构建字体资产需要指定 Noto 字体和 fontTools，详见相应脚本。基线来源和修改见 docs/BASELINE.md。
+本版本由维护者明确选择按 UI/输入功能范围发布；全量覆盖门禁仍保持 blocked，不修改期望、不降低门槛，也不把该门禁描述为通过。
 
-## 许可
+## 仓库与许可
 
-软件开源许可尚未选定。本暂存区不授予公开开源许可。字体、数据和其他第三方材料保留各自许可，详见 LICENSE-DECISION.md。
+- `app/`：单文件离线应用、IDS 数据、来源及许可。
+- `docs/`：架构、键盘、产品约定和验收边界。
+- `tests/`：应用、引擎、已知回归和全量覆盖审计。
+
+GitHub 仓库为私有。软件许可证仍待维护者决定；此私有版本没有授予开源许可。第三方 IDS、Unicode 数据和字体许可证分别保留，见 [LICENSE-DECISION.md](LICENSE-DECISION.md)。

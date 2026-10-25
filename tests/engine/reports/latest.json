@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "status": "completed",
+  "startedAt": "2026-10-25T12:12:23.212Z",
+  "finishedAt": "2026-10-25T12:12:24.267Z",
+  "elapsedMs": 1050,
+  "seed": 20261020,
+  "iterations": 64,
+  "bounds": {
+    "timeoutMs": 120000,
+    "maxIterations": 128,
+    "maxRenderProperties": 24,
+    "maxShrinkAttempts": 80,
+    "maxCacheCases": 129,
+    "noNetwork": true
+  },
+  "summary": {
+    "tests": 52,
+    "suites": 0,
+    "pass": 49,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 3,
+    "todo": 0
+  },
+  "exitCode": 0,
+  "runnerError": null,
+  "changedDuringRun": [],
+  "targets": {
+    "tests/engine/fixtures/frozen-v014.html": "c03a70159584556c6ec3f6dfd5629d4f3c2104238297e1c497ca191a57454abd",
+    "app/optical-engine-source/optical.cjs": "f80175975911c263d77726a3f4d8ea0aa083a316f4f2bf7fc9856e3612d6fa96",
+    "app/optical-engine-source/assets.json": "de10eecc25e4600ceafaac2a1004236af61ec4e731346f9d76592ca3efe09f1c",
+    "app/optical-engine-source/provenance.json": "5f9a92196f5f5cca556325c1fdc516bab9a50138517e308fd9ed842d1ddc37bf",
+    "app/optical-engine-source/unicode-matches.provenance.json": "1e2166cf99139320b5acefdf5854d9aab436a1cec0ff0aa53a6655b2d48c818e",
+    "app/optical-engine-source/browser/browser-adapter.js": "fdcb853adcc619187ac9ba874151cfa0b4c113528f0aeeb280d6c0691ff9e6be",
+    "app/settings-module.js": "c18e04993bf4b451f2839ba6cb276d2a772e48b2351ca52834aaff05343e3011",
+    "app/editor-boundary.js": "7fb71340e5699f3c072e4be256b2ca6698d0d4391424122213314a21627359c4",
+    "app/glyph-identity.js": "e91b8de70225028b5cb3063c50226a37d4e57721a4f5307ad919a1bb98839b92",
+    "app/releases/0.1.6/index.html": "360def624d7f924d906628679429933fd15d66db78c6e8da578874ee7d426794",
+    "tests/engine/fixtures/host-v020.html": "a6c56ed2b288a1c6d0c236804f867b1c63dc3d0729cadac35543d7e2ee96736d"
+  },
+  "suiteHashes": {
+    "tests\\engine\\tests\\corpus.test.cjs": "6b2de65ed49955b45fe6856d28ca0b27b2225bd4c8183f1d90369829a3890f41",
+    "tests\\engine\\tests\\editing.test.cjs": "35a77d852f1dfa0745f1ed25eb7b508cf9b51be53b877514cd9615fe4beb2baa",
+    "tests\\engine\\tests\\final-host.test.cjs": "1a2798e0cc7a07cdcb5607836a53332d9a75a2481d6bb6050d8069c1dea4de58",
+    "tests\\engine\\tests\\host.test.cjs": "d2457ad35ebb84efc714e94f8d3fcc41d956919da107a7b3d7ae6f0d4a711e34",
+    "tests\\engine\\tests\\property.test.cjs": "fa3a1ea6a0795f09b2ab209e668ef3e2fa49b7094e95e8247fb6a54cc657bbc1",
+    "tests\\engine\\tests\\unit.test.cjs": "7d067396e1249c7e107cff0f2402b7a1b943ada28f4249ace7a2f7e11e5f2860",
+    "tests\\engine\\lib\\property.cjs": "7d4128b27a082ff3a8a09933bc1be24fc045523d4e4a2bcc88919b51c2613854",
+    "tests\\engine\\lib\\targets.cjs": "860d184a60d1c08802454da7eded44b09ab0f302186f716828651c054c25c486",
+    "tests\\engine\\run.cjs": "584bd4719ff460b1eec08f3c0ca29e08db2e8fe30ea98fe8ddd18d8a4de37845"
+  },
+  "environment": {
+    "node": "v22.23.4",
+    "v8": "12.4.254.21-node.57",
+    "icu": "78.3",
+    "unicode": "17.0",
+    "platform": "win32",
+    "release": "10.0.22000",
+    "arch": "x64"
+  },
+  "coverage": {
+    "unit": "executed",
+    "property": "executed bounded custom generator, not fast-check",
+    "corpus": "executed checked-in corpus; not all Unicode",
+    "visual": "not-executed",
+    "host": "pure settings/adapter plus hash-pinned final 0.2 host modules; no integrated DOM",
+    "realbrowser": "not-executed"
+  },
+  "warnings": [
+    "Pass counts are not proof of professional or exhaustive coverage.",
+    "No mutable or unverified app index was copied; final host fixture is author-SHA verified.",
+    "Original corpus is immutable; failures must be preserved and reviewed."
+  ]
+}

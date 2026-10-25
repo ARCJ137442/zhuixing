@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "status": "completed",
+  "startedAt": "2026-10-20T04:38:32.742Z",
+  "finishedAt": "2026-10-20T04:38:33.941Z",
+  "elapsedMs": 1195,
+  "seed": 4294967295,
+  "iterations": 64,
+  "bounds": {
+    "timeoutMs": 120000,
+    "maxIterations": 128,
+    "maxRenderProperties": 24,
+    "maxShrinkAttempts": 80,
+    "maxCacheCases": 129,
+    "noNetwork": true
+  },
+  "summary": {
+    "tests": 52,
+    "suites": 0,
+    "pass": 49,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 3,
+    "todo": 0
+  },
+  "exitCode": 0,
+  "runnerError": null,
+  "changedDuringRun": [],
+  "targets": {
+    "glyph-benchmark/frozen-v014.html": "8ca096e0123f787e9042c4825e3a1963dfb551f34418064e1bf66c3e76faa031",
+    "optical-glyph-prototype/optical.cjs": "f80175975911c263d77726a3f4d8ea0aa083a316f4f2bf7fc9856e3612d6fa96",
+    "optical-glyph-prototype/assets.json": "de10eecc25e4600ceafaac2a1004236af61ec4e731346f9d76592ca3efe09f1c",
+    "optical-glyph-prototype/provenance.json": "5f9a92196f5f5cca556325c1fdc516bab9a50138517e308fd9ed842d1ddc37bf",
+    "optical-glyph-prototype/unicode-matches.provenance.json": "1e2166cf99139320b5acefdf5854d9aab436a1cec0ff0aa53a6655b2d48c818e",
+    "optical-glyph-prototype/browser/browser-adapter.js": "de65b8fc4ce6563ea06c47b21f003106b6d4c97697610fb13c7937ed076dd359",
+    "structure-glyph-demo/settings-module.js": "3975eb9fd57e7e12ae5518e9f93bf563e6797df6ddb80375ce8cfc48c3e890e1",
+    "structure-glyph-demo/editor-boundary.js": "7fb71340e5699f3c072e4be256b2ca6698d0d4391424122213314a21627359c4",
+    "structure-glyph-demo/glyph-identity.js": "99488cb305ecf90c593da387fe4c2b0bb005704f58ce12f9c1025b86a0920644",
+    "structure-glyph-demo/releases/0.1.6/index.html": "f66f8dfb45456cb74c994f3f817e4f936f9c8f3fdb99362460eb15185e969e3f",
+    "glyph-engine-test-system/fixtures/host-v020.html": "c1b17ae549656fe6edccc9e797913dd2e936fbca478b42c131c3c4be9a7543ab"
+  },
+  "suiteHashes": {
+    "glyph-engine-test-system/tests/corpus.test.cjs": "6b2de65ed49955b45fe6856d28ca0b27b2225bd4c8183f1d90369829a3890f41",
+    "glyph-engine-test-system/tests/editing.test.cjs": "35a77d852f1dfa0745f1ed25eb7b508cf9b51be53b877514cd9615fe4beb2baa",
+    "glyph-engine-test-system/tests/final-host.test.cjs": "89578014a787ce131625f9aa5f3a9359921d9452c93394e93e131d0451719e0d",
+    "glyph-engine-test-system/tests/host.test.cjs": "9cb067e8b26358b511af84922a06f53a7df433eb21cabd793c4eb2cbae280270",
+    "glyph-engine-test-system/tests/property.test.cjs": "fa3a1ea6a0795f09b2ab209e668ef3e2fa49b7094e95e8247fb6a54cc657bbc1",
+    "glyph-engine-test-system/tests/unit.test.cjs": "7d067396e1249c7e107cff0f2402b7a1b943ada28f4249ace7a2f7e11e5f2860",
+    "glyph-engine-test-system/lib/property.cjs": "7d4128b27a082ff3a8a09933bc1be24fc045523d4e4a2bcc88919b51c2613854",
+    "glyph-engine-test-system/lib/targets.cjs": "02d4600a11168b4b7c13510369e48f4a0e44340a042776f0d54f4fb37f40c288",
+    "glyph-engine-test-system/run.cjs": "e1d39c2b25f3468ada89cc21f4e64dfdbbee9d056e178303da55d74ba751c9cf"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "v8": "13.6.233.17-node.51",
+    "icu": "78.3",
+    "unicode": "17.0",
+    "platform": "linux",
+    "release": "6.18.55",
+    "arch": "x64"
+  },
+  "coverage": {
+    "unit": "executed",
+    "property": "executed bounded custom generator, not fast-check",
+    "corpus": "executed checked-in corpus; not all Unicode",
+    "visual": "not-executed",
+    "host": "pure settings/adapter plus hash-pinned final 0.2 host modules; no integrated DOM",
+    "realbrowser": "not-executed"
+  },
+  "warnings": [
+    "Pass counts are not proof of professional or exhaustive coverage.",
+    "No mutable or unverified app index was copied; final host fixture is author-SHA verified.",
+    "Original corpus is immutable; failures must be preserved and reviewed."
+  ]
+}

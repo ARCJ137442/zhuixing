@@ -7,3 +7,5 @@
 第三方许可分别保存：Noto 字体为 OFL 1.1；现有精确 IDS/Unicode 匹配数据按其 MIT 来源保留声明；neat-freak 为 MIT，但仅在私有整理工具目录保存。第三方许可不会自动决定本项目软件许可。
 
 发布前检查：逐份核对来源与版权声明；区分自绘路径、字体提取路径、外部观测数据及截图；不将用户截图、私有技能、来源不明参考数据一起发布。
+
+Unicode 身份测试所附 Unicode 数据许可保留在 app/glyph-complex-cases/UNICODE-DATA-LICENSE.txt 及测试语料目录。

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "unicodeVersion": "17.0.0",
+    "coreRange": [19968, 40959],
+    "coreAssignedCount": 20992,
+    "commonSet": "Unicode 17.0.0 Unihan kTGH value 2013:1..3500",
+    "commonCount": 3500,
+    "commonIsSubsetOfCore": true
+  },
+  "stages": ["identity-set", "raw-inventory", "direct-match", "fallback-render", "reverse-split", "roundtrip-join", "font-cmap", "outline-export", "same-font-svg", "same-font-pixels", "cross-font-reference", "browser-chromium", "browser-firefox", "browser-webkit", "native-ime"],
+  "statuses": ["pass", "fail", "missing-candidate", "ambiguous", "missing-glyph", "missing-reference", "blocked-policy", "timeout", "not-run", "error", "descriptive-only"],
+  "nonPassRules": {"missing-candidate": true, "ambiguous": true, "missing-glyph": true, "missing-reference": true, "timeout": true, "not-run": true, "blocked-policy": true},
+  "passRequirements": {
+    "identity-set": "pinned exact fixture hash and exact set membership",
+    "raw-inventory": "source record is preserved with original annotations and provenance",
+    "direct-match": "all candidates are parsed under a reviewed annotation policy; no stripping by guess",
+    "fallback-render": "actual target browser render evidence with source unchanged",
+    "reverse-split": "one unique IDS or explicit candidate picker; selection is preserved and undoable",
+    "roundtrip-join": "exact source transaction, output identity and undo/redo evidence",
+    "font-cmap": "pinned local font cmap and coverage evidence",
+    "outline-export": "actual generated file opens and passes SVG structural checks",
+    "same-font-pixels": "pinned font, renderer, pixel size and comparison tolerances",
+    "browsers": "browser/OS versions, exact full-case matrix and visual artifacts"
+  },
+  "noDegradation": "A previously unique direct mapping that becomes missing/ambiguous/failing blocks the audit.",
+  "releaseGate": "blocked until all required data stages and native/browser stages are complete"
+}

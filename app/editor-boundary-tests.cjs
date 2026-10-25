@@ -1,0 +1,23 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),html=fs.readFileSync(__dirname+'/index.html','utf8');
+const get=id=>html.match(new RegExp('<script id="'+id+'">([\\s\\S]*?)</script>'))[1];
+const B=vm.runInNewContext(['core','unicode-matches','inline-model'].map(get).join('\n')+fs.readFileSync(__dirname+'/editor-boundary.js','utf8')+';EditBoundary');
+const config=(view='live',unit='ids-grapheme')=>({'editor.view':view,'editor.unit':unit,'unicode.presentation':true});const caret=p=>({anchor:p,focus:p});
+let count=0;function test(name,f){f();count++;console.log('PASS '+name)}
+test('all six modes derive effective unit without changing saved preference',()=>{for(const view of ['live','source','preview'])for(const unit of ['display-glyph','ids-grapheme']){const c=config(view,unit);assert.equal(B.effective(c),view==='preview'?null:view==='source'?'ids-grapheme':unit);assert.equal(c['editor.unit'],unit);}});
+test('graphemes preserve surrogate pair marks VS and ZWJ',()=>{assert.equal(JSON.stringify(B.graphemes('𠀀仁\uFE00e\u0301👩‍💻')),JSON.stringify([0,2,4,6,11]));});
+test('display boundaries derive from source, including missing-outline font results',()=>{assert.equal(JSON.stringify(B.boundaries('甲⿰木尔乙',config('live','display-glyph'))),JSON.stringify([0,1,4,5]));});
+test('unsupported incomplete and marked structures retain source boundaries',()=>{for(const s of ['⿾木','⿰木','⿰木尔\uFE00'])assert.equal(JSON.stringify(B.boundaries(s,config('live','display-glyph'))),JSON.stringify(B.graphemes(s)));});
+test('source units delete nested IDS last grapheme rather than subtree',()=>{let s='⿰⿱日月木';for(const expected of ['⿰⿱日月','⿰⿱日','⿰⿱','⿰','']){s=B.deletion(s,caret(s.length),-1,config()).source;assert.equal(s,expected);}});
+test('forward and backward deletion use identical final-glyph boundaries',()=>{const s='甲⿰木尔乙',c=config('live','display-glyph');assert.equal(B.deletion(s,caret(1),1,c).source,'甲乙');assert.equal(B.deletion(s,caret(4),-1,c).source,'甲乙');});
+test('source mode never uses saved glyph unit for deletion or projection',()=>{const s='⿰木尔',c=config('source','display-glyph');assert.equal(B.deletion(s,caret(0),1,c).source,'木尔');assert.equal(B.project(s,caret(3),null,c)[0].atom,false);});
+test('preview cannot create source edit or synthetic caret movement',()=>{assert.equal(B.deletion('⿰木尔',caret(3),-1,config('preview')),null);assert.equal(B.move('⿰木尔',caret(3),-1,config('preview')),null);});
+test('nonempty selection collapses to directional boundary without extra step',()=>{const s='甲⿰木尔乙',c=config('live','display-glyph');assert.equal(B.move(s,{anchor:4,focus:1},1,c).focus,4);assert.equal(B.move(s,{anchor:4,focus:1},-1,c).focus,1);});
+test('Shift movement keeps original anchor including inherited partial exception',()=>{const r=B.move('甲⿰木尔乙',{anchor:2,focus:3},1,config('live','display-glyph'),{extend:true});assert.equal(r.anchor,2);assert.equal(r.focus,4);});
+test('switching collapsed caret snaps nearest boundary, ties toward end',()=>{const c=config('live','display-glyph');assert.equal(B.normalize('⿰木尔',caret(1),c).focus,0);assert.equal(B.normalize('⿰木尔',caret(2),c).focus,3);});
+test('switching inherited range preserves precise direction and temporary source',()=>{const s='⿰木尔',sel={anchor:2,focus:1},c=config('live','display-glyph');assert.equal(JSON.stringify(B.normalize(s,sel,c)),JSON.stringify(sel));assert.equal(B.project(s,sel,null,c)[0].atom,false);assert.equal(B.deletion(s,sel,-1,c).source,'⿰尔');});
+test('new pointer selection uses displayed boundaries rather than hidden interiors',()=>{const r=B.normalize('⿰木尔',{anchor:1,focus:2},config('live','display-glyph'),{pointer:true});assert.equal(r.anchor,0);assert.equal(r.focus,3);});
+test('word movement/deletion cannot stop inside a displayed glyph',()=>{const s='甲⿰木尔乙',c=config('live','display-glyph');for(const d of [-1,1]){const r=B.move(s,caret(d<0?4:1),d,c,{word:true});assert.ok(B.boundaries(s,c).includes(r.focus));}});
+test('boundary deletion has no transaction and selection deletion stays exact',()=>{assert.equal(B.deletion('仁',caret(0),-1,config()),null);assert.equal(B.deletion('仁',caret(1),1,config()),null);assert.equal(B.deletion('⿰木尔',{anchor:2,focus:3},-1,config('live','display-glyph')).source,'⿰木');});
+test('preview projection does not unfold active selection and live source unit does',()=>{const s='⿰木尔',sel=caret(1);assert.equal(B.project(s,sel,null,config('preview'))[0].atom,true);assert.equal(B.project(s,sel,null,config())[0].atom,false);});
+console.log('\n'+count+' boundary policy checks passed; native pointer, word/line navigation and IME remain unverified.');

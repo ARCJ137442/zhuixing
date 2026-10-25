@@ -1,0 +1,12 @@
+{
+  "id": "quality-guard-final-020",
+  "oldHostSha256": "c1b17ae549656fe6edccc9e797913dd2e936fbca478b42c131c3c4be9a7543ab",
+  "finalHostSha256": "aae434037124a10c829cc7db472c6466dc0c4dd507d41b17a0c69d7859b64558",
+  "change": "Author-approved final same-font cross-axis occupancy guard changes 乃至 default plan from optical to same-font-geometric-fallback. Test asserts explicit fallback and selectedSpan >= candidateSpan, not external-font equality or aesthetic success.",
+  "preserved": [
+    "fixtures/host-v020-initial-c1b17.html",
+    "reports/pre-quality-guard-final.json",
+    "reports/pre-quality-guard-final.tap"
+  ],
+  "visualBrowserStatus": "not established by module tests"
+}
