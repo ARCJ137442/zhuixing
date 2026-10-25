@@ -2,7 +2,7 @@
 
 ## 已通过
 
-- `node scripts/test.mjs`：规范 LF 验证工作树中 19 个应用套件及 browser adapter suite 全部通过。首轮 Linux CI 曾暴露嵌入 Markdown 的换行差异；生成器与断言现统一规范为 LF，PR 修复后的远端 CI 复跑待定。
+- `node scripts/test.mjs`：规范 LF 验证工作树中 19 个应用套件及 browser adapter suite 全部通过。首轮 Linux CI 曾暴露嵌入 Markdown 的换行差异；生成器与断言现统一规范为 LF。修复提交 `4dc93fd` 的 push 与 PR 两个 GitHub Actions 运行均通过。
 - `node tests/engine/run.cjs`：49 PASS、3 SKIP、0 FAIL。运行于规范 LF 验证工作树；因设置模块身份变化，已审阅并更新 target fingerprint，旧指纹归档。此引擎套件不代表全量字符覆盖。
 - 已有 `known_gate` 最新报告：10/10 PASS；expectation JSON 与 SHA 锁未修改。本轮未重复执行这项已通过自动化。
 - 定向测试：IDC/选区、Alt 方括号、Alt+Shift O 符、Shift+F、设置迁移、文档嵌入同步。

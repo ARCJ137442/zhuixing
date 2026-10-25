@@ -1,17 +1,18 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-25T12:21:39.794Z",
+  "generatedAt": "2026-10-25T12:24:07.588Z",
   "status": "representative-ui-pass",
   "scope": "Current 0.4.0 page reloaded from the user-run local HTTP server after canonical-LF embedded Markdown normalization. Exact current bytes were verified; desktop/mobile layout, all 17 IDC menu/editor SVGs, hidden empty notice, and zero browser console errors were checked. Prior interaction evidence remains identified by its prior source hash; shortcut/selection handlers are unchanged.",
   "source": {
     "branch": "feature/0.4.0-ui-20261025",
-    "head": "753a9ea",
+    "head": "4dc93fdb1e3d5200127df7eb1ac7921e2c87cedf",
     "appHtmlBytes": 1412210,
     "appHtmlSha256": "30fc6a16c97aa0f8627b1be728fc4e20213901e96d2888b59b7833a99a9ef6f2",
     "rows": 11336,
     "rowsSha256": "4f78cd4061b8ced0b752bd1c8650a2df1c000cdbffc7ac7c0271439840b8f732",
     "appVersion": "0.4.0",
-    "worktreeState": "canonical LF Markdown fix; release-prep changes pending commit"
+    "worktreeState": "reviewed exact committed 0.4.0 HTML bytes from the local HTTP server",
+    "releasePrepCommit": "4dc93fdb1e3d5200127df7eb1ac7921e2c87cedf"
   },
   "server": {
     "url": "http://127.0.0.1:8765/app/index.html",

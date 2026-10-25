@@ -21,6 +21,7 @@
 ## 验证摘要
 
 - 规范 LF 验证工作树中的应用与 browser adapter：19 个套件通过；引擎：49 PASS、3 SKIP、0 FAIL；窄范围 `known_gate` 最新报告为 10/10 PASS，固定期望和 SHA 锁未改。
+- 修复跨平台 Markdown 换行差异后，提交 `4dc93fd` 的 GitHub Actions push 与 pull-request 两个验证任务均通过。
 - 全量 Unicode 17 审计运行了完整输入集，数据覆盖不足时按约定以状态码 2 结束；没有将这个状态改写成通过。
 - 当前单文件 HTML 为 1,412,210 bytes，SHA-256 `30fc6a16c97aa0f8627b1be728fc4e20213901e96d2888b59b7833a99a9ef6f2`。本地 HTTP 页面与工作树字节一致；1280px 桌面与 390px 手机呈现均无横向溢出。嵌入 Markdown 使用规范 LF，避免 Windows 检出与 Linux CI 的字节差异。
 - 真人中文 IME、实体键盘、系统快捷键冲突、完整字体码位、全量渲染/导出与读屏仍未验收。
