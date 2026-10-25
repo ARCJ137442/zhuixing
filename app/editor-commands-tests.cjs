@@ -23,6 +23,13 @@ test('all 17 IDC operators have Alt-hold candidate mappings and matching hints',
  assert.equal(R.hints({...settings,'shortcuts.idcInsert':'off'}).filter(h=>h.id.startsWith('insert:')).length,0);
  assert.equal(R.hints({...settings,'editor.view':'preview'}).filter(h=>h.id.startsWith('insert:')).length,0);
 });
+test('IDC, O-symbol and component hotkeys are live-editor only',()=>{
+ const source={...settings,'editor.view':'source'},editor={id:'editor'};
+ assert.equal(R.resolve({key:'Q',code:'KeyQ',currentTarget:editor,altKey:true},source),null);
+ assert.equal(R.resolve({key:'F',code:'KeyF',currentTarget:editor,altKey:true,shiftKey:true},source),null);
+ assert.equal(R.resolve({key:'F',code:'KeyF',currentTarget:editor,shiftKey:true},source),null);
+ for(const hint of R.hints(source))assert.ok(!hint.id.startsWith('insert:')&&!hint.id.startsWith('insert-component:')&&hint.id!=='ob-map');
+});
 test('Alt insert rejects extra modifiers and protected contexts; Shift remains native selection',()=>{
  const base={key:'ArrowLeft',code:'ArrowLeft',currentTarget:{id:'editor'},altKey:true};
  for(const event of [
