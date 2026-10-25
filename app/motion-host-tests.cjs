@@ -31,7 +31,8 @@ const document = {
   createElement: () => new Element(), body: new Element()
 };
 const window = {
-  matchMedia: () => ({matches: false, addEventListener() {}}),
+  // Simulate an OS reduce-motion request; the app default intentionally remains full motion.
+  matchMedia: () => ({matches: true, addEventListener() {}}),
   addEventListener: (name, handler) => windowEvents.set(name, handler)
 };
 const {motion, core} = vm.runInNewContext(extract('core') + extract('composition-motion') + ';({motion:CompositionMotion,core:Core})', {

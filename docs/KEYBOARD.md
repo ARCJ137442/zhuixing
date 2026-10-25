@@ -11,6 +11,8 @@
 - 模式、操作单位、映射、动画、呈现偏好、项目存取与说明由可聚焦按钮及设置面板到达。具体候选矩阵见 app/editor-mode-spec/keyboard-paths.json。
 - IME 组合期、AltGraph 和不适用上下文不得误触快捷命令。
 
+IDC、O 符和偏旁快捷键仅在**行内编辑（live）**生效。源码视图和只读预览保留其原有按键语义；需要插入时可从按钮面板通过 Tab/Shift+Tab 导航，再按 Enter/Space。
+
 ## 本地候选：IDC 快速插入
 
 普通输入时不常驻快捷键模式。编辑器聚焦且可编辑时按住 `Alt`，17 项 SVG 候选在光标旁即时出现；按住期间可直接按候选键插入，松开 `Alt`、Escape、失焦或切到只读视图即收起。插入仍是原文里的普通 IDC 字符事务，光标选区和撤销语义继续由现有编辑器管理。手机没有按住键盘路径时，插入面板里的图形按钮仍是直接入口。
@@ -37,13 +39,13 @@
 | `⿿` | 旋转 | `G` |
 | `㇯` | 减去笔画 | `−` |
 
-设置可关闭这组快捷输入；17 个 SVG 按钮始终可用。Shift+方向键始终保留系统扩选，不要求用户切换编辑模式。受控代码过滤 IME、229、AltGraph、重复按键、额外修饰、只读视图和非编辑器焦点。浏览器/系统可能截走 Alt 组合，尤其 Alt+方向键可能用于页面导航；真人 IME、实体键盘、平台布局和冲突仍待实机验收。不要将受控事件测试视为真实按键通过。
+设置可关闭这组快捷输入；17 个 SVG 按钮始终可用。Shift+方向键始终保留扩选，不要求用户切换编辑模式。受控代码过滤 IME、229、AltGraph、重复按键、额外修饰、非 live 视图和非编辑器焦点。浏览器/系统可能截走 Alt 组合，尤其 Alt+←/→ 可能用于页面导航；真人 IME、实体键盘、平台布局和冲突仍待实机验收。不要将受控事件测试视为真实按键通过。
 
 字母键以物理 `code` 匹配；若浏览器提供 Keyboard Layout Map，HUD 键帽和快捷提示按当前布局显示，未提供时使用标准键位标签。W3C 区分随布局变化的 `key` 与表示物理位置的 `code`，MDN 说明 `code` 不能直接当作所有布局的可见键帽。[W3C UI Events](https://www.w3.org/TR/uievents/) [MDN KeyboardEvent.code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code) [Keyboard API](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard_API)。Microsoft 的 Edge 快捷键表将 `Alt+←/→` 用作后退/前进，因此四个方向映射是待实机确认的候选，而非跨浏览器无冲突承诺。[Microsoft Edge shortcuts](https://support.microsoft.com/en-us/edge/keyboard-shortcuts-in-microsoft-edge)
 
 ## 本地候选：Shift 偏旁输入
 
-第一项试验映射是纯 `Shift+F` → `扌`（提手旁）。只在编辑器聚焦、可编辑且没有 IME 组合时拦截；`Ctrl+Shift+F` 不会被拦截，Shift+方向仍扩选。该功能可在设置关闭，移动端继续使用常见偏旁按钮。它是应用自己的快捷键映射，不是小鹤码表的唯一输出。
+第一项试验映射是纯 `Shift+F` → `扌`（提手旁）。只在 live 编辑器聚焦且没有 IME 组合时拦截；`Ctrl+Shift+F` 不会被拦截，Shift+方向仍扩选。该功能可在设置关闭，源码/只读视图和移动端继续使用按钮面板。它是应用自己的快捷键映射，不是小鹤码表的唯一输出。
 
 对用户提供的 `flypy.txt` 只做了只读核对，没有修改文件或把码表整表复制进应用。文件的 `#5 符号`区中，`ob*` 有26个字母组、94条候选；`obf` 本身有五个候选，其中不止 `扌` 一个部件。`ofpp` 是41项部件候选，当前61项选择器已有24项重合、尚有17项未收录；`ofjg` 包含12个IDC，`ofjt` 包含14个箭头/方向符号。小鹤官方更新日志把“符号组之外的 o 符”作为可有重码的候选组维护，因此不能把每个 `obX` 默认压成一个唯一偏旁。[小鹤音形官方更新日志](https://flypy.cc/win_record.html)
 
@@ -51,7 +53,7 @@
 
 因此本轮只实现并试测一个精确映射 `Shift+F → 扌`。下一步应按实际使用频率逐项增加一对一映射；若某个 O 符编码对应多个部件，则保留候选选择，不静默替用户挑一个。真人中文 IME、不同键盘布局、左右 Shift 和物理按键仍待设备验收。
 
-定义来源：`app/editor-commands.js` 与当前 `app/index.html`。IDC Alt HUD 的页面视觉已通过本地 HTTP 复核；按住期间的瞬时浮层截图、真人输入法和硬件键仍待验收。
+定义来源：`app/editor-commands.js` 与当前 `app/index.html`。按键冲突与替代路径见 [0.4.0 本地候选键盘验收矩阵](KEYBOARD-ACCEPTANCE-20261025.md)。IDC Alt HUD 的浏览器自动化截图和合成事件检查已完成；真人输入法和实体键仍待验收。
 
 ## 0.3.0 递归与命令
 

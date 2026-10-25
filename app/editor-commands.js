@@ -38,15 +38,15 @@ const EditorCommands=(()=>{
  function resolve(event,settings,mac=false){
   if(event.isComposing||event.keyCode===229||event.getModifierState?.('AltGraph'))return null;
   const editor=event.currentTarget?.id==='editor';
-  if(settings['editor.view']!=='preview'&&(settings['shortcuts.idcInsert']??'alt-palette')==='alt-palette'&&editor&&event.repeat!==true&&event.altKey&&!event.shiftKey&&!event.ctrlKey&&!event.metaKey){
+  if(settings['editor.view']==='live'&&(settings['shortcuts.idcInsert']??'alt-palette')==='alt-palette'&&editor&&event.repeat!==true&&event.altKey&&!event.shiftKey&&!event.ctrlKey&&!event.metaKey){
    const binding=insertBindings.find(item=>item.code===event.code);
    if(binding)return 'insert:'+binding.operator;
   }
-  if(settings['editor.view']!=='preview'&&(settings['shortcuts.obInput']??'alt-shift-map')==='alt-shift-map'&&editor&&event.repeat!==true&&event.altKey&&event.shiftKey&&!event.ctrlKey&&!event.metaKey&&/^Key[A-Z]$/.test(event.code||'')){
+  if(settings['editor.view']==='live'&&(settings['shortcuts.obInput']??'alt-shift-map')==='alt-shift-map'&&editor&&event.repeat!==true&&event.altKey&&event.shiftKey&&!event.ctrlKey&&!event.metaKey&&/^Key[A-Z]$/.test(event.code||'')){
    const letter=event.code.slice(3).toLowerCase();
    if(OBSymbols.groups[letter])return 'ob-group:'+letter;
   }
-  if(settings['editor.view']!=='preview'&&(settings['shortcuts.componentInsert']??'shift-keys')==='shift-keys'&&editor&&event.repeat!==true&&event.shiftKey&&!event.altKey&&!event.ctrlKey&&!event.metaKey){
+  if(settings['editor.view']==='live'&&(settings['shortcuts.componentInsert']??'shift-keys')==='shift-keys'&&editor&&event.repeat!==true&&event.shiftKey&&!event.altKey&&!event.ctrlKey&&!event.metaKey){
    const binding=componentBindings.find(item=>item.code===event.code);
    if(binding)return 'insert-component:'+binding.operator;
   }
@@ -67,8 +67,8 @@ const EditorCommands=(()=>{
   const unit=settings['editor.view']==='source'||settings['editor.unit']==='ids-grapheme'?'原字符簇':'完整呈现字';
   const commandId={split:'selection.expandOne',join:'selection.foldAll',undo:'edit.undo',redo:'edit.redo'}[r.id];const title=typeof CommandSystem!=='undefined'&&CommandSystem.catalogue.find(c=>c.id===commandId)?.title||r.label;
   return {...r,keys,label:title+(['left','right','backspace','delete'].includes(r.id)?' · '+unit:'')};
- }).concat(settings['editor.view']==='preview'||settings['shortcuts.idcInsert']==='off'?[]:insertBindings.map(binding=>({id:'insert:'+binding.operator,icon:binding.operator,label:'按住 Alt 显示候选并插入 '+binding.operator+' · '+binding.label,keys:['Alt',binding.key]})))
- .concat(settings['editor.view']==='preview'||(settings['shortcuts.componentInsert']??'shift-keys')==='off'?[]:componentBindings.map(binding=>({id:'insert-component:'+binding.operator,icon:binding.operator,label:'插入部件 · '+binding.label,keys:['Shift',binding.key]})))
- .concat(settings['editor.view']==='preview'||(settings['shortcuts.obInput']??'alt-shift-map')==='off'?[]:[{id:'ob-map',icon:'部',label:'按住 Alt+Shift 显示 O 符键位图；多候选需再选',keys:['Alt','Shift']}]);}
+ }).concat(settings['editor.view']!=='live'||settings['shortcuts.idcInsert']==='off'?[]:insertBindings.map(binding=>({id:'insert:'+binding.operator,icon:binding.operator,label:'按住 Alt 显示候选并插入 '+binding.operator+' · '+binding.label,keys:['Alt',binding.key]})))
+ .concat(settings['editor.view']!=='live'||(settings['shortcuts.componentInsert']??'shift-keys')==='off'?[]:componentBindings.map(binding=>({id:'insert-component:'+binding.operator,icon:binding.operator,label:'插入部件 · '+binding.label,keys:['Shift',binding.key]})))
+ .concat(settings['editor.view']!=='live'||(settings['shortcuts.obInput']??'alt-shift-map')==='off'?[]:[{id:'ob-map',icon:'部',label:'按住 Alt+Shift 显示 O 符键位图；多候选需再选',keys:['Alt','Shift']}]);}
  return {resolve,hints,insertBindings,componentBindings,selectionBindings};
 })();
