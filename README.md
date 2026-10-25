@@ -2,6 +2,8 @@
 
 《缀形成象——品六书之精髓，析汉字之形趣》
 
+在线体验：[缀形 · 汉字构形编辑器](https://arcj137442.github.io/zhuixing/)（GitHub 源码仓库保持私有）。
+
 0.4.0 是私有 GitHub 仓库中的离线 UI/输入功能版本，源码基于 0.3.1 并吸收已审阅的 Logo、IDC SVG、Alt/Shift 输入与一等拆字/合字功能。冻结 HTML `0.4.0-rc.9` 是另一份构建产物，不是本版本源码快照。
 
 功能清单、验证结果与保留限制见 [0.4.0 Release Notes](docs/RELEASE-0.4.0.md)。
