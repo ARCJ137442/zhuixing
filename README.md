@@ -2,7 +2,14 @@
 
 《缀形成象——品六书之精髓，析汉字之形趣》
 
-0.4.0 是私有 GitHub 仓库中的离线 UI/输入功能版本，源码基于 0.3.1 并吸收已审阅的 Logo、IDC SVG、Alt/Shift 输入与一等拆字/合字功能。冻结 HTML `0.4.0-rc.9` 是另一份构建产物，不是本版本源码快照。
+在线体验：[缀形 · 汉字构形编辑器](https://arcj137442.github.io/zhuixing/)。
+
+## 项目背景与协作
+
+- 协作：ARCJ137442（人类本人）与 GPT-6 Luna（AI 协作者）。
+- TODO（待维护者补充）：说明本项目与语言学、文字学、语言文字学相关的背景，以及它与《汉字构型学导论》的关系。
+
+0.4.0 是 GitHub 仓库中的离线 UI/输入功能版本，源码基于 0.3.1 并吸收已审阅的 Logo、IDC SVG、Alt/Shift 输入与一等拆字/合字功能。冻结 HTML `0.4.0-rc.9` 是另一份构建产物，不是本版本源码快照。
 
 功能清单、验证结果与保留限制见 [0.4.0 Release Notes](docs/RELEASE-0.4.0.md)。
 
@@ -31,4 +38,4 @@ node tests/full-coverage-tools/tools/audit-current.cjs
 - `docs/`：架构、键盘、产品约定和验收边界。
 - `tests/`：应用、引擎、已知回归和全量覆盖审计。
 
-GitHub 仓库为私有。软件许可证仍待维护者决定；此私有版本没有授予开源许可。第三方 IDS、Unicode 数据和字体许可证分别保留，见 [LICENSE-DECISION.md](LICENSE-DECISION.md)。
+GitHub 仓库对外公开；软件许可证仍待维护者决定，本项目尚未授予开源许可。第三方 IDS、Unicode 数据和字体许可证分别保留，见 [LICENSE-DECISION.md](LICENSE-DECISION.md)。
