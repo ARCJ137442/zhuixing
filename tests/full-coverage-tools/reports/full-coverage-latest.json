@@ -16,8 +16,8 @@
       "sha256": "4f78cd4061b8ced0b752bd1c8650a2df1c000cdbffc7ac7c0271439840b8f732"
     },
     "appHtml": {
-      "bytes": 1417721,
-      "sha256": "0f8463b58230be99b80a536a7c5e6eabc5e91fe7ea13fdb3c16dcd930412d845"
+      "bytes": 1417678,
+      "sha256": "a0a78089cf009c21b9fef76ebc8b25d056c29c18633c8bf6045aa5a0f7400b20"
     }
   },
   "coverage": {
@@ -63,7 +63,7 @@
   "browserSmoke": {
     "status": "representative-ui-pass",
     "sourceMatchesCurrent": true,
-    "scope": "Current complete worktree UI smoke in the user-run local HTTP page. This does not claim a full 20,992/3,500-character browser render matrix.",
+    "scope": "Current 0.4.0 page verified in the user-run local HTTP browser against exact worktree bytes. This run covers version identity, desktop/mobile layout, all 17 IDC menu/editor SVGs, empty-notice state, and console errors. Prior interaction evidence below was captured on the immediately preceding UI build; since then only app version identity, project metadata version, and static document copy changed, while the shortcut/selection implementation remained unchanged.",
     "engineVersion": null,
     "report": "browser-review-latest.json"
   },

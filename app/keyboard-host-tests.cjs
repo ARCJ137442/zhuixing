@@ -5,17 +5,22 @@ const html=fs.readFileSync(__dirname+'/index.html','utf8');
 const extract=id=>html.match(new RegExp('<script id="'+id+'">([\\s\\S]*?)</script>'))[1];
 const app=extract('inline-app');
 const handler=app.slice(app.indexOf("  editor.addEventListener('keydown'"),app.indexOf("  editor.addEventListener('beforeinput'"));
-function run({ctrl=false,shift=false,alt=false,meta=false,repeat=false,ime=false,idcInsert='alt-palette',componentInsert='shift-keys',selection={anchor:4,focus:4},unit='ids-grapheme',view='live',key='Backspace',code='',altGraph=false,keyCode=0,initialSource='甲⿰亻二乙'}={}) {
-  const context={initialSelection:selection,ctrl,shift,alt,meta,repeat,ime,idcInsert,componentInsert,unit,view,key,code,altGraph,keyCode,initialSource,Intl,navigator:{platform:'Linux'}};
-  return vm.runInNewContext(['core','unicode-matches','inline-model','edit-boundary','selection-commands','editor-commands'].map(extract).join('\n')+`
+function run({ctrl=false,shift=false,alt=false,meta=false,repeat=false,ime=false,idcInsert='alt-palette',componentInsert='shift-keys',obInput='alt-shift-map',selection={anchor:4,focus:4},unit='ids-grapheme',view='live',key='Backspace',code='',altGraph=false,keyCode=0,initialSource='甲⿰亻二乙'}={}) {
+  const context={initialSelection:selection,ctrl,shift,alt,meta,repeat,ime,idcInsert,componentInsert,obInput,unit,view,key,code,altGraph,keyCode,initialSource,Intl,navigator:{platform:'Linux'}};
+  return vm.runInNewContext(['core','unicode-matches','inline-model','edit-boundary','selection-commands','ob-symbols','editor-commands'].map(extract).join('\n')+`
     let source=initialSource,selection=initialSelection,composing=ime,prevented=false,callback,expanded=null;
     const editor={id:'editor',addEventListener:(name,f)=>callback=f};
-    let paletteOpen=false,idcPaletteOpen=false;
+    let paletteOpen=false,idcPaletteOpen=false,obPaletteOpen=false,obPaletteMode='map',obPendingLetter='',obPrefixArmed=false,obCandidateIndex=0,obMapTimer=0;
     const openIDCCandidatePalette=()=>{paletteOpen=true;idcPaletteOpen=true};
     const closeIDCCandidatePalette=()=>{paletteOpen=false;idcPaletteOpen=false};
     const positionIDCCandidatePalette=()=>{};
-    const setting=key=>key==='shortcuts.idcInsert'?idcInsert:key==='shortcuts.componentInsert'?componentInsert:undefined;
-    const settingsStore={snapshot:{'editor.unit':unit,'editor.view':view,'unicode.presentation':true,'shortcuts.idcInsert':idcInsert,'shortcuts.componentInsert':componentInsert}};
+    const openOBPalette=()=>{obPaletteOpen=true;obPaletteMode='map'};
+    const closeOBPalette=()=>{obPaletteOpen=false;obPaletteMode='map';obPendingLetter='';obPrefixArmed=false};
+    const handleOBKeyGroup=letter=>{obPaletteOpen=true;obPaletteMode='choices';obPendingLetter=letter};
+    const handleOBChoicesKeyDown=()=>false;
+    const positionOBPalette=()=>{};
+    const setting=key=>key==='shortcuts.idcInsert'?idcInsert:key==='shortcuts.componentInsert'?componentInsert:key==='shortcuts.obInput'?obInput:undefined;
+    const settingsStore={snapshot:{'editor.unit':unit,'editor.view':view,'unicode.presentation':true,'shortcuts.idcInsert':idcInsert,'shortcuts.componentInsert':componentInsert,'shortcuts.obInput':obInput}};
     const editable=()=>view!=='preview';
     const capture=()=>selection;
     const motion={cancel(){}};
@@ -24,7 +29,7 @@ function run({ctrl=false,shift=false,alt=false,meta=false,repeat=false,ime=false
     const insert=text=>{if(composing||!editable())return;try{const result=InlineModel.replace(source,selection,text);source=result.source;selection=result.selection}catch{}};
   `+handler+`
     callback({key,code,target:editor,currentTarget:editor,ctrlKey:ctrl,shiftKey:shift,altKey:alt,metaKey:meta,repeat,keyCode,isComposing:ime,getModifierState:()=>altGraph,preventDefault(){prevented=true}});
-    ({source,selection,prevented,paletteOpen});
+    ({source,selection,prevented,paletteOpen,obPaletteOpen,obPaletteMode,obPendingLetter});
   `,context);
 }
 let count=0;function test(name,f){f();count++;console.log('PASS '+name)}
@@ -39,6 +44,7 @@ test('Alt+letter inserts a structural IDC at the tracked source caret',()=>{cons
 test('Alt insertion over the 4000-unit limit rolls back source and selection',()=>{const initialSource='甲'.repeat(4000),selection={anchor:4000,focus:4000};const r=run({initialSource,selection,key:'ArrowLeft',code:'ArrowLeft',alt:true});assert.equal(r.source,initialSource);assert.deepEqual({...r.selection},selection);assert.equal(r.prevented,true);});
 test('Alt insert rejects extra modifiers and protected contexts',()=>{const base={key:'ArrowLeft',code:'ArrowLeft',alt:true};for(const opts of [{...base,ctrl:true},{...base,shift:true},{...base,meta:true},{...base,altGraph:true},{...base,repeat:true},{...base,ime:true},{...base,keyCode:229},{...base,view:'preview'},{...base,idcInsert:'off'}]){const r=run(opts);assert.equal(r.source,'甲⿰亻二乙');}const r=run({...base,alt:false});assert.equal(r.source,'甲⿰亻二乙');assert.equal(r.prevented,true);assert.deepEqual({...r.selection},{anchor:3,focus:3});});
 test('Alt keydown opens only the contextual candidate layer and Escape closes it',()=>{const r=run({key:'Alt',alt:true,code:'AltLeft'});assert.equal(r.paletteOpen,true);assert.equal(r.prevented,true);});
+test('Alt+Shift+letter routes to O symbol candidates and respects protected contexts',()=>{const r=run({key:'F',code:'KeyF',alt:true,shift:true});assert.equal(r.source,'甲⿰亻二乙');assert.equal(r.obPaletteOpen,true);assert.equal(r.obPaletteMode,'choices');assert.equal(r.obPendingLetter,'f');assert.equal(r.prevented,true);for(const opts of [{key:'F',code:'KeyF',alt:true,shift:true,ime:true},{key:'F',code:'KeyF',alt:true,shift:true,repeat:true},{key:'F',code:'KeyF',alt:true,shift:true,obInput:'off'},{key:'F',code:'KeyF',alt:true,shift:true,view:'preview'},{key:'F',code:'KeyF',alt:true,shift:true,altGraph:true}])assert.equal(run(opts).obPaletteOpen,false);});
 test('Shift+F inserts 扌 at the tracked caret as a normal undoable text edit',()=>{const r=run({key:'F',code:'KeyF',shift:true});assert.equal(r.source,'甲⿰亻二扌乙');assert.deepEqual({...r.selection},{anchor:5,focus:5});assert.equal(r.prevented,true);});
 test('Ctrl+Shift+F, IME composition and disabled component shortcuts are not consumed',()=>{for(const opts of [{key:'F',code:'KeyF',shift:true,ctrl:true},{key:'F',code:'KeyF',shift:true,ime:true},{key:'F',code:'KeyF',shift:true,keyCode:229},{key:'F',code:'KeyF',shift:true,altGraph:true},{key:'F',code:'KeyF',shift:true,view:'preview'},{key:'F',code:'KeyF',shift:true,componentInsert:'off'}]){const r=run(opts);assert.equal(r.source,'甲⿰亻二乙');assert.equal(r.prevented,false);}});
 test('unmodified Shift+Left still extends the source selection without inserting IDC',()=>{const r=run({key:'ArrowLeft',code:'ArrowLeft',shift:true});assert.equal(r.source,'甲⿰亻二乙');assert.equal(r.prevented,true);assert.deepEqual({...r.selection},{anchor:4,focus:3});});

@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-10-25T09:49:51.832Z",
+  "timestamp": "2026-10-25T12:02:01.596Z",
   "sourceSHA256": "bbb26b460fb10dd5b1c0323135a8fab2deb699d1437e8ef3827a7fba54779486",
-  "candidateSHA256": "580228a282a6467e04feeeb998924d6cb3616d2e1acdcf587eebd62f5c1a2b7e",
+  "candidateSHA256": "a0a78089cf009c21b9fef76ebc8b25d056c29c18633c8bf6045aa5a0f7400b20",
   "checks": [
     {
       "name": "embedded module exactly matches maintained source module",
@@ -107,9 +107,9 @@
       "examples": []
     },
     "stats": {
-      "characters": 11005,
-      "directExpressions": 11331,
-      "normalForms": 11984,
+      "characters": 11008,
+      "directExpressions": 11334,
+      "normalForms": 11988,
       "blockedCharacters": 1,
       "ambiguousDirect": 0
     },
